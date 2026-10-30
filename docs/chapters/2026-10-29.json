@@ -6,91 +6,91 @@
       "title": "Opening"
     },
     {
-      "startTime": 8.732,
+      "startTime": 11.182,
       "title": "Odysseys2: did the browser agent actually finish?"
     },
     {
-      "startTime": 36.437,
+      "startTime": 39.487,
       "title": "Yavashark: an embeddable JavaScript engine"
     },
     {
-      "startTime": 62.692,
+      "startTime": 66.342,
       "title": "Redox rings: less copying between system services"
     },
     {
-      "startTime": 89.264,
+      "startTime": 93.514,
       "title": "Popkern: CAD parts as versioned scripts"
     },
     {
-      "startTime": 113.464,
+      "startTime": 118.314,
       "title": "Managed Deep Agents: hand the browser back to a person"
     },
     {
-      "startTime": 139.948,
+      "startTime": 145.398,
       "title": "Locals: more agents on one Mac"
     },
     {
-      "startTime": 160.945,
+      "startTime": 166.995,
       "title": "MiniCPM-OCR on MLX: parse locally, then check"
     },
     {
-      "startTime": 186.822,
+      "startTime": 193.472,
       "title": "TAO: scheduling around agent tools"
     },
     {
-      "startTime": 210.566,
+      "startTime": 217.816,
       "title": "OpenCartridge: local game assets in reusable containers"
     },
     {
-      "startTime": 237.586,
+      "startTime": 245.436,
       "title": "SlideBySide: shared slides without screen sharing"
     },
     {
-      "startTime": 258.518,
+      "startTime": 266.968,
       "title": "Thanks to Intelligrit"
     },
     {
-      "startTime": 261.852,
+      "startTime": 270.302,
       "title": "YOLO on AMD: a supported route from training to inference"
     },
     {
-      "startTime": 289.562,
+      "startTime": 298.612,
       "title": "OmniShowcase: keeping video objects consistent"
     },
     {
-      "startTime": 312.844,
+      "startTime": 322.494,
       "title": "Async Rust: an explicit state for being done"
     },
     {
-      "startTime": 339.329,
+      "startTime": 349.579,
       "title": "Nixtamal: keeping NixOS inputs reproducible"
     },
     {
-      "startTime": 362.54,
+      "startTime": 373.39,
       "title": "Document Parsing Protocol: write down the ambiguous choices"
     },
     {
-      "startTime": 389.094,
+      "startTime": 400.544,
       "title": "Floe Agent: a development workspace on a tablet"
     },
     {
-      "startTime": 412.758,
+      "startTime": 424.808,
       "title": "Plushies: squishy Three.js characters for interfaces"
     },
     {
-      "startTime": 437.948,
+      "startTime": 450.598,
       "title": "Falcon: isolating one speaker in a noisy scene"
     },
     {
-      "startTime": 461.007,
+      "startTime": 474.257,
       "title": "Qwenputer: a deliberately constructed computer inside a model"
     },
     {
-      "startTime": 486.426,
+      "startTime": 500.276,
       "title": "Boo Bench: the haunted house for document parsers"
     },
     {
-      "startTime": 512.988,
+      "startTime": 527.438,
       "title": "Closing"
     }
   ]

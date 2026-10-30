@@ -30,24 +30,24 @@ const digest = bytes => createHash('sha256').update(bytes).digest('hex');
       const doc = new DOMParser().parseFromString(xml, 'application/xml');
       if (doc.querySelector('parsererror')) throw new Error('Invalid feed XML');
       const channel = doc.querySelector('channel');
-      const item = channel.querySelector('item');
+      const items = [...channel.querySelectorAll('item')];
       const itunes = 'http://www.itunes.com/dtds/podcast-1.0.dtd';
       const podcast = 'https://podcastindex.org/namespace/1.0';
       return {
         owner: channel.getElementsByTagNameNS(itunes, 'email')[0].textContent,
         cover: channel.getElementsByTagNameNS(itunes, 'image')[0].getAttribute('href'),
-        guid: item.querySelector('guid').textContent,
-        edition: item.querySelector('link').textContent,
-        audio: item.querySelector('enclosure').getAttribute('url'),
-        bytes: Number(item.querySelector('enclosure').getAttribute('length')),
-        transcript: item.getElementsByTagNameNS(podcast, 'transcript')[0].getAttribute('url'),
-        chapters: item.getElementsByTagNameNS(podcast, 'chapters')[0].getAttribute('url'),
+        episodes: items.map(item => ({
+          guid: item.querySelector('guid').textContent,
+          edition: item.querySelector('link').textContent,
+          audio: item.querySelector('enclosure').getAttribute('url'),
+          bytes: Number(item.querySelector('enclosure').getAttribute('length')),
+          transcript: item.getElementsByTagNameNS(podcast, 'transcript')[0].getAttribute('url'),
+          chapters: item.getElementsByTagNameNS(podcast, 'chapters')[0].getAttribute('url'),
+        })),
       };
     }, xml);
     assert.equal(feed.owner, 'podcasts@robertmelton.com');
-    assert.match(feed.guid, /^urn:uuid:/);
-    const day = new URL(feed.edition).pathname.split('/').filter(Boolean).join('-');
-    const datePath = day.replaceAll('-', '/');
+    assert.ok(feed.episodes.length >= 2);
     const reload = await page.reload();
     assert.equal(await reload.text(), xml, 'The public feed must persist unchanged across reloads');
     const localAsset = value => new URL(new URL(value).pathname.replace(/^\//, ''), target).href;
@@ -60,29 +60,36 @@ const digest = bytes => createHash('sha256').update(bytes).digest('hex');
       if (!response.ok) throw new Error(`HTTP ${response.status}: ${url}`);
       return response.json();
     }, url);
-    const chapters = await browserJson(localAsset(feed.chapters));
-    assert.equal(chapters.chapters.length, 23);
-    assert.equal(chapters.chapters[0].startTime, 0);
-    await page.goto(target);
-    await page.locator(`.archive a[href="${datePath}/"]`).click();
-    assert.equal(page.url(), feed.edition);
-    assert.equal(await page.getByRole('link', { name: /Public story archive & site source/ }).getAttribute('href'),
-      'https://github.com/robertmeta/trendingnotpeak.com');
-    const record = await browserJson(new URL(`data/${day}.json`, target).href);
-    assert.equal(await page.getByRole('link', { name: 'Download the MP3 ↗', exact: true }).getAttribute('href'), feed.audio);
-    const audioResponse = await page.request.get(feed.audio);
-    assert.ok(audioResponse.ok());
-    const audio = await audioResponse.body();
-    assert.equal(audio.length, feed.bytes);
-    assert.equal(digest(audio), record.audio.sha256);
-    await page.getByRole('link', { name: 'Transcript ↗', exact: true }).click();
-    assert.match(await page.locator('body').innerText(), /Intelligrit/);
-    const transcript = await page.locator('body').innerText();
-    await page.reload();
-    assert.equal(await page.locator('body').innerText(), transcript);
+    const checked = [];
+    for (const episode of feed.episodes) {
+      assert.match(episode.guid, /^urn:uuid:/);
+      const day = new URL(episode.edition).pathname.split('/').filter(Boolean).join('-');
+      const datePath = day.replaceAll('-', '/');
+      const chapters = await browserJson(localAsset(episode.chapters));
+      assert.equal(chapters.chapters.length, 23);
+      assert.equal(chapters.chapters[0].startTime, 0);
+      await page.goto(target);
+      await page.locator(`.archive a[href="${datePath}/"]`).click();
+      assert.equal(page.url(), localAsset(episode.edition));
+      assert.equal(await page.getByRole('link', { name: /Public story archive & site source/ }).getAttribute('href'),
+        'https://github.com/robertmeta/trendingnotpeak.com');
+      const record = await browserJson(new URL(`data/${day}.json`, target).href);
+      assert.equal(await page.getByRole('link', { name: 'Download the MP3 ↗', exact: true }).getAttribute('href'), episode.audio);
+      const audioResponse = await page.request.get(episode.audio);
+      assert.ok(audioResponse.ok());
+      const audio = await audioResponse.body();
+      assert.equal(audio.length, episode.bytes);
+      assert.equal(digest(audio), record.audio.sha256);
+      await page.getByRole('link', { name: 'Transcript ↗', exact: true }).click();
+      assert.match(await page.locator('body').innerText(), /Intelligrit/);
+      const transcript = await page.locator('body').innerText();
+      await page.reload();
+      assert.equal(await page.locator('body').innerText(), transcript);
+      checked.push({ day, guid: episode.guid, audio_sha256: digest(audio) });
+    }
     const result = { result: 'passed', site: target, dns_override: dnsOverride, feed: new URL('feed.xml', target).href,
-      guid: feed.guid, audio_sha256: digest(audio), checks: ['mobile-rss-navigation', 'feed-reload',
-        'approved-email', '3000px-cover', '23-chapters', 'actual-mp3-hash', 'transcript-reload'] };
+      episodes: checked, checks: ['mobile-rss-navigation', 'feed-reload',
+        'approved-email', '3000px-cover', '23-chapters-each', 'actual-mp3-hash-each', 'transcript-reload-each'] };
     fs.writeFileSync(path.join(artifacts, 'journey.json'), JSON.stringify(result, null, 2));
     console.log(JSON.stringify(result));
   } finally { await browser.close(); }

@@ -5,11 +5,11 @@
   "outro": "That's Trending Not Peak. Missed something? The links and details are at trending not peak dot com.",
   "schema_version": 1,
   "audio": {
-    "url": "https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-10-29/trending-not-peak-2026-10-29-r4-chapters.mp3",
-    "duration_seconds": 518.241293,
-    "bytes": 8295001,
+    "url": "https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-10-29/trending-not-peak-2026-10-29-kinetic-grid.mp3",
+    "duration_seconds": 534.941293,
+    "bytes": 8562495,
     "embedded_chapters": 23,
-    "sha256": "9c805621c28f6e141045d4c4ec872a11f3d53c80df2f680d8f93c283a643372a"
+    "sha256": "581b3ff6c0a9cd404645ca31f79fca900e77684fe61aafbad74a1695f98a4adb"
   },
   "stories": [
     {
