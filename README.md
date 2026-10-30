@@ -48,9 +48,10 @@ published edition so its numbered links continue to identify the same story.
 ## Visual identity
 
 The site uses a pixel-art palette, original SVG illustration, stepped graph-arrow
-logo, block borders and locally hosted pixel headings. Long-form story text uses
-the system monospace font for readability. The arrow's outlined amber peak stays
-ahead of its mint tip. The reusable mark is [assets/mark.svg](assets/mark.svg).
+logo and block borders. Smooth Avenir/system sans-serif lettering keeps headings,
+navigation and story copy easy to read; the pixel font is reserved for small
+numeric accents. Headings have no hard text shadow. The arrow's outlined amber
+peak stays ahead of its mint tip. The reusable mark is [assets/mark.svg](assets/mark.svg).
 
 [Pixelify Sans](https://github.com/google/fonts/tree/main/ofl/pixelifysans) is
 bundled unmodified with its [SIL Open Font License](assets/fonts/OFL.txt).
