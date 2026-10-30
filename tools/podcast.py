@@ -66,10 +66,34 @@ def validate_chapters(data, episode):
         raise ValueError('The first chapter must start at zero')
 
 
+def notes_header(episode, url):
+    """Put every story's permanent detail link near the top of the notes."""
+    parsed = urlsplit(url)
+    transcript_url = (f'{parsed.scheme}://{parsed.netloc}/transcripts/'
+                      f'{episode["date"]}.txt')
+    links = ''.join(
+        f'<li><a href="{escape(url + "#" + str(number), quote=True)}">'
+        f'{number:02d} · {escape(story["title"])}</a></li>'
+        for number, story in enumerate(episode['stories'], 1))
+    return (f'<p>{escape(episode["intro"])}</p>'
+            f'<p>Twenty stories. Tap one for its transcript, why we picked it, and source links:</p>'
+            f'<ul>{links}</ul>'
+            f'<p><a href="{escape(transcript_url, quote=True)}">Full transcript</a> · '
+            f'<a href="{escape(url, quote=True)}">All story details and sources</a></p>')
+
+
+def episode_description(episode, url):
+    """Apple-compatible compact show notes, including the numbered story links."""
+    notes = (notes_header(episode, url) + f'<p>{escape(episode["outro"])}</p>'
+             f'<p>{DISCLOSURE}</p>')
+    if len(notes) > 10000:
+        raise ValueError('Episode description exceeds Apple Podcasts 10,000-character limit')
+    return notes
+
+
 def show_notes(episode, url):
     """Include useful episode context and primary-source links, never manifests."""
-    parts = [f'<p>{escape(episode["intro"])}</p>',
-             f'<p><a href="{escape(url, quote=True)}">Read the full transcript and sources</a></p>']
+    parts = [notes_header(episode, url)]
     for number, story in enumerate(episode['stories'], 1):
         sources = ' '.join(f'<a href="{escape(https_url(source["url"]), quote=True)}">Source {i}</a>'
                            for i, source in enumerate(story['sources'], 1))
@@ -126,6 +150,7 @@ def build_feed(site, podcast, episodes, chapter_dates):
     for name, value in (('url', cover), ('title', site['title']), ('link', base + '/')):
         tag(image, name, value)
     seen = set()
+    cdata = {}
     for episode in playable:
         day, audio = episode['date'], episode['audio']
         enclosure_url = https_url(audio['url'])
@@ -141,14 +166,22 @@ def build_feed(site, podcast, episodes, chapter_dates):
         tag(item, 'link', episode_url)
         tag(item, 'guid', 'urn:uuid:' + str(uuid.uuid5(uuid.NAMESPACE_URL, podcast['id'] + '/' + day)), isPermaLink='false')
         tag(item, 'pubDate', format_datetime(published(podcast['publications'][day])))
-        tag(item, 'description', episode['intro'] + '\n\n' + '\n'.join(s['title'] for s in episode['stories']) + '\n\n' + episode['outro'] + '\n\n' + DISCLOSURE)
-        tag(item, f'{{{CONTENT}}}encoded', show_notes(episode, episode_url))
+        for name, value in (('description', episode_description(episode, episode_url)),
+                            (f'{{{CONTENT}}}encoded', show_notes(episode, episode_url))):
+            marker = f'TNP_CDATA_{len(cdata)}_END'
+            cdata[marker] = value
+            tag(item, name, marker)
         tag(item, 'enclosure', url=enclosure_url, length=str(audio['bytes']), type='audio/mpeg')
         tag(item, f'{{{ITUNES}}}duration', round(audio['duration_seconds']))
         tag(item, f'{{{ITUNES}}}explicit', str(podcast['explicit']).lower())
         tag(item, f'{{{ITUNES}}}episodeType', 'full')
-        tag(item, f'{{{PODCAST}}}transcript', url=base + '/transcripts/' + day + '.txt', type='text/plain', language=podcast['language'])
         if day in chapter_dates:
             tag(item, f'{{{PODCAST}}}chapters', url=base + '/chapters/' + day + '.json', type='application/json+chapters')
     ET.indent(root)
-    return ET.tostring(root, encoding='utf-8', xml_declaration=True).decode() + '\n'
+    xml = ET.tostring(root, encoding='utf-8', xml_declaration=True).decode()
+    for marker, value in cdata.items():
+        needle = f'>{marker}<'
+        if xml.count(needle) != 1:
+            raise ValueError('Episode notes CDATA marker was not unique')
+        xml = xml.replace(needle, f'><![CDATA[{value.replace("]]>", "]]]]><![CDATA[>")}]]><')
+    return xml + '\n'

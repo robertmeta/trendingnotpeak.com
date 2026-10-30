@@ -50,10 +50,13 @@ class Podcast(unittest.TestCase):
             self.assertEqual(parsedate_to_datetime(item.findtext('pubDate')),
                              datetime.fromisoformat(self.podcast['publications'][day].replace('Z', '+00:00'))
                              .replace(microsecond=0))
-            for name in ('transcript', 'chapters'):
-                suffix = f'/{"transcripts" if name == "transcript" else "chapters"}/{day}.{ "txt" if name == "transcript" else "json"}'
-                self.assertEqual(item.find(f'{{{PODCAST}}}{name}').get('url'), self.site['base_url'] + suffix)
-                self.assertTrue((OUT / suffix.lstrip('/')).is_file())
+            chapter_url = f'{self.site["base_url"]}/chapters/{day}.json'
+            transcript_url = f'{self.site["base_url"]}/transcripts/{day}.txt'
+            self.assertEqual(item.find(f'{{{PODCAST}}}chapters').get('url'), chapter_url)
+            self.assertIsNone(item.find(f'{{{PODCAST}}}transcript'))
+            for path in (f'chapters/{day}.json', f'transcripts/{day}.txt'):
+                self.assertTrue((OUT / path).is_file())
+            self.assertIn(f'href="{transcript_url}"', item.findtext('description'))
         for page in OUT.rglob('*.html'):
             self.assertIn('rel="alternate" type="application/rss+xml"', page.read_text())
             self.assertIn('>Podcast RSS</a>', page.read_text())
@@ -80,6 +83,27 @@ class Podcast(unittest.TestCase):
         notes = root.findtext(f'channel/item/{{{CONTENT}}}encoded')
         self.assertIn('https://odysseysbench.com/v2', notes)
         self.assertIn('synthetic narration', notes)
+
+    def test_every_story_links_to_its_public_detail_anchor(self):
+        raw = (OUT / 'feed.xml').read_text()
+        root = ET.fromstring(raw)
+        items = root.findall('channel/item')
+        self.assertEqual(raw.count('<![CDATA['), 2 * len(items))
+        for item in items:
+            episode_url = item.findtext('link')
+            day = '-'.join(episode_url.rstrip('/').rsplit('/', 3)[-3:])
+            episode = json.loads((ROOT / f'episodes/{day}.json').read_text())
+            page = (OUT / day.replace('-', '/') / 'index.html').read_text()
+            for tag in ('description', f'{{{CONTENT}}}encoded'):
+                notes = ET.fromstring('<root>' + item.findtext(tag) + '</root>')
+                links = notes.findall('ul/li/a')
+                self.assertEqual(len(links), 20)
+                self.assertEqual([(link.get('href'), link.text) for link in links],
+                                 [(f'{episode_url}#{number}', f'{number:02d} · {story["title"]}')
+                                  for number, story in enumerate(episode['stories'], 1)])
+            self.assertLessEqual(len(item.findtext('description')), 10000)
+            for number in range(1, 21):
+                self.assertIn(f'id="{number}"', page)
 
     def test_reading_editions_are_omitted_and_empty_feed_is_rejected(self):
         reading = dict(self.episode, audio=None, date='2026-10-28')

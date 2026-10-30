@@ -36,14 +36,18 @@ const digest = bytes => createHash('sha256').update(bytes).digest('hex');
       return {
         owner: channel.getElementsByTagNameNS(itunes, 'email')[0].textContent,
         cover: channel.getElementsByTagNameNS(itunes, 'image')[0].getAttribute('href'),
-        episodes: items.map(item => ({
-          guid: item.querySelector('guid').textContent,
-          edition: item.querySelector('link').textContent,
-          audio: item.querySelector('enclosure').getAttribute('url'),
-          bytes: Number(item.querySelector('enclosure').getAttribute('length')),
-          transcript: item.getElementsByTagNameNS(podcast, 'transcript')[0].getAttribute('url'),
-          chapters: item.getElementsByTagNameNS(podcast, 'chapters')[0].getAttribute('url'),
-        })),
+        episodes: items.map(item => {
+          const notes = new DOMParser().parseFromString(item.querySelector('description').textContent, 'text/html');
+          return {
+            guid: item.querySelector('guid').textContent,
+            edition: item.querySelector('link').textContent,
+            audio: item.querySelector('enclosure').getAttribute('url'),
+            bytes: Number(item.querySelector('enclosure').getAttribute('length')),
+            transcript: notes.querySelector('a[href*="/transcripts/"]')?.href,
+            storyLinks: [...notes.querySelectorAll('ul li a')].map(link => ({ href: link.href, title: link.textContent })),
+            chapters: item.getElementsByTagNameNS(podcast, 'chapters')[0].getAttribute('url'),
+          };
+        }),
       };
     }, xml);
     assert.equal(feed.owner, 'podcasts@robertmelton.com');
@@ -74,6 +78,16 @@ const digest = bytes => createHash('sha256').update(bytes).digest('hex');
       assert.equal(await page.getByRole('link', { name: /Public story archive & site source/ }).getAttribute('href'),
         'https://github.com/robertmeta/trendingnotpeak.com');
       const record = await browserJson(new URL(`data/${day}.json`, target).href);
+      assert.equal(episode.storyLinks.length, 20);
+      assert.equal(episode.transcript, new URL(`transcripts/${day}.txt`, target).href);
+      for (const number of [1, 10, 20]) {
+        const storyLink = episode.storyLinks[number - 1];
+        assert.equal(storyLink.href, `${episode.edition}#${number}`);
+        await page.goto(storyLink.href);
+        const story = page.locator(`article.story[id="${number}"]`);
+        assert.equal(await story.locator('h2').innerText(), record.stories[number - 1].title);
+        assert.ok(await story.getByRole('heading', { name: 'Sources & further reading' }).isVisible());
+      }
       assert.equal(await page.getByRole('link', { name: 'Download the MP3 ↗', exact: true }).getAttribute('href'), episode.audio);
       const audioResponse = await page.request.get(episode.audio);
       assert.ok(audioResponse.ok());
@@ -85,11 +99,12 @@ const digest = bytes => createHash('sha256').update(bytes).digest('hex');
       const transcript = await page.locator('body').innerText();
       await page.reload();
       assert.equal(await page.locator('body').innerText(), transcript);
-      checked.push({ day, guid: episode.guid, audio_sha256: digest(audio) });
+      checked.push({ day, guid: episode.guid, audio_sha256: digest(audio), story_links: 20 });
     }
     const result = { result: 'passed', site: target, dns_override: dnsOverride, feed: new URL('feed.xml', target).href,
       episodes: checked, checks: ['mobile-rss-navigation', 'feed-reload',
-        'approved-email', '3000px-cover', '23-chapters-each', 'actual-mp3-hash-each', 'transcript-reload-each'] };
+        'approved-email', '3000px-cover', '23-chapters-each', '20-story-detail-links-each',
+        'actual-mp3-hash-each', 'transcript-reload-each'] };
     fs.writeFileSync(path.join(artifacts, 'journey.json'), JSON.stringify(result, null, 2));
     console.log(JSON.stringify(result));
   } finally { await browser.close(); }
