@@ -4,6 +4,7 @@ import copy
 import json
 import unittest
 import xml.etree.ElementTree as ET
+from datetime import datetime
 from email.utils import parsedate_to_datetime
 
 from build import ROOT, OUT
@@ -23,16 +24,29 @@ class Podcast(unittest.TestCase):
     def test_published_feed_has_real_resources_and_contact(self):
         root = ET.parse(OUT / 'feed.xml').getroot()
         channel = root.find('channel')
-        item = channel.find('item')
+        items = channel.findall('item')
+        episodes = {p.stem: json.loads(p.read_text()) for p in (ROOT / 'episodes').glob('*.json')}
+        playable = {day: episode for day, episode in episodes.items() if episode.get('audio')}
+        self.assertEqual(len(items), len(playable))
         self.assertEqual(channel.findtext(f'{{{ITUNES}}}owner/{{{ITUNES}}}email'), 'podcasts@robertmelton.com')
         self.assertEqual(channel.find(f'{{{ATOM}}}link').get('href'), 'https://trendingnotpeak.com/feed.xml')
-        self.assertEqual(item.find('enclosure').attrib, {'url': self.episode['audio']['url'],
-                         'length': str(self.episode['audio']['bytes']), 'type': 'audio/mpeg'})
-        self.assertEqual(parsedate_to_datetime(item.findtext('pubDate')).isoformat(), '2026-10-30T02:05:59+00:00')
-        self.assertEqual(item.findtext('link'), 'https://trendingnotpeak.com/2026/10/29/')
-        for name, suffix in (('transcript', '/transcripts/2026-10-29.txt'), ('chapters', '/chapters/2026-10-29.json')):
-            self.assertEqual(item.find(f'{{{PODCAST}}}{name}').get('url'), self.site['base_url'] + suffix)
-            self.assertTrue((OUT / suffix.lstrip('/')).is_file())
+        self.assertEqual([item.findtext('link') for item in items],
+                         [f'https://trendingnotpeak.com/{day.replace("-", "/")}/' for day in
+                          sorted(playable, key=lambda day: self.podcast['publications'][day], reverse=True)])
+        for item in items:
+            day = item.findtext('link').rstrip('/').rsplit('/', 3)[-3:]
+            day = '-'.join(day)
+            episode = playable[day]
+            self.assertEqual(item.find('enclosure').attrib,
+                             {'url': episode['audio']['url'], 'length': str(episode['audio']['bytes']),
+                              'type': 'audio/mpeg'})
+            self.assertEqual(parsedate_to_datetime(item.findtext('pubDate')),
+                             datetime.fromisoformat(self.podcast['publications'][day].replace('Z', '+00:00'))
+                             .replace(microsecond=0))
+            for name in ('transcript', 'chapters'):
+                suffix = f'/{"transcripts" if name == "transcript" else "chapters"}/{day}.{ "txt" if name == "transcript" else "json"}'
+                self.assertEqual(item.find(f'{{{PODCAST}}}{name}').get('url'), self.site['base_url'] + suffix)
+                self.assertTrue((OUT / suffix.lstrip('/')).is_file())
         for page in OUT.rglob('*.html'):
             self.assertIn('rel="alternate" type="application/rss+xml"', page.read_text())
             self.assertIn('>Podcast RSS</a>', page.read_text())
