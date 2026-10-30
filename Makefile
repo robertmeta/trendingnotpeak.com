@@ -1,5 +1,5 @@
 PYTHON ?= python3
-.PHONY: help build lint test verify serve test-journeys test-mobile-audio test-podcast
+.PHONY: help build lint test verify serve test-journeys test-mobile-audio test-podcast test-reel-motion
 help:
 	@echo 'make build | verify | serve PORT=8765'
 build:
@@ -13,6 +13,8 @@ test-journeys:
 	node tools/browser-journey.cjs
 test-mobile-audio:
 	node tools/mobile-audio-journey.cjs
+test-reel-motion:
+	node tools/reel-motion-journey.cjs
 test-podcast:
 	node tools/podcast-journey.cjs
 serve: build

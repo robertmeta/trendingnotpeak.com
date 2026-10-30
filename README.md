@@ -71,8 +71,10 @@ bundled unmodified with its [SIL Open Font License](assets/fonts/OFL.txt).
 No font CDN or frontend dependencies are required. The cassette player adapts
 [dqnamo’s Kitchen Cassette Audio Player](https://www.dqnamo.com/experiments/cassette-player)
 to static HTML, CSS and JavaScript, with episode playback, seeking, restart,
-mute and volume controls. Keyboard focus and reduced-motion behavior are
-preserved. Native audio controls remain available when JavaScript is disabled.
+mute, volume and playback-speed controls. The reels turn automatically with
+playback, matching the original Kitchen component; pause stops them. Reduced
+motion still disables decorative hover effects and smooth scrolling. Native
+audio controls remain available when JavaScript is disabled.
 
 This repository contains public story records and website source. Do not add
 credentials, account information, internal operational notes, or original

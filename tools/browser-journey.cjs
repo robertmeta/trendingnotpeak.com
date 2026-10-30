@@ -73,7 +73,7 @@ const ARTIFACTS = process.env.TNP_TEST_ARTIFACTS || path.resolve('.cache/browser
     await page.getByRole('button', { name: 'Pause episode', exact: true }).press('Space');
     assert.ok(await player.evaluate(element => element.paused));
     // Wait for the pause event to update the UI and WebKit's final media clock.
-    await page.waitForFunction(() => document.querySelector('[data-play]').getAttribute('aria-label') === 'Play episode' && document.querySelector('.cassette').style.getPropertyValue('--rotation') === `${document.querySelector('audio').currentTime * 85}deg`);
+    await page.waitForFunction(() => document.querySelector('[data-play]').getAttribute('aria-label') === 'Play episode' && document.querySelector('.cassette').style.getPropertyValue('--rotation') === `${(document.querySelector('audio').currentTime * 300) % 360}deg`);
     const pausedRotation = await page.locator('.reel').first().evaluate(el => getComputedStyle(el).transform);
     await page.evaluate(() => new Promise(resolve => { let frames = 0; const tick = () => ++frames === 8 ? resolve() : requestAnimationFrame(tick); requestAnimationFrame(tick); }));
     assert.equal(await page.locator('.reel').first().evaluate(el => getComputedStyle(el).transform), pausedRotation);
@@ -90,16 +90,17 @@ const ARTIFACTS = process.env.TNP_TEST_ARTIFACTS || path.resolve('.cache/browser
     await page.getByRole('button', { name: 'Restart episode', exact: true }).click();
     assert.equal(await player.evaluate(element => element.currentTime), 0);
     await page.emulateMedia({ reducedMotion: 'reduce' });
-    await page.waitForFunction(() => getComputedStyle(document.querySelector('.reel')).transform === 'none');
-    await page.getByRole('checkbox', { name: 'Animate reels' }).check();
-    assert.notEqual(await page.locator('.reel').first().evaluate(el => getComputedStyle(el).transform), 'none');
+    // Playback-driven motion matches Kitchen, including Reduce Motion devices.
     await page.reload();
     assert.equal(await speed.inputValue(), '1.5');
     assert.equal(await player.evaluate(a => a.playbackRate), 1.5);
-    assert.ok(await page.getByRole('checkbox', { name: 'Animate reels' }).isChecked());
-    await page.getByRole('checkbox', { name: 'Animate reels' }).uncheck();
-    await page.reload();
-    assert.equal(await page.locator('.reel').first().evaluate(el => getComputedStyle(el).transform), 'none');
+    await page.getByRole('button', { name: 'Play episode', exact: true }).click();
+    await page.waitForFunction(() => document.querySelector('audio').currentTime > 1);
+    const reducedRotation = await page.locator('.reel').first().evaluate(el => getComputedStyle(el).transform);
+    const reducedTime = await player.evaluate(a => a.currentTime);
+    await page.waitForFunction(t => document.querySelector('audio').currentTime > t + .15, reducedTime);
+    assert.notEqual(await page.locator('.reel').first().evaluate(el => getComputedStyle(el).transform), reducedRotation);
+    await page.getByRole('button', { name: 'Pause episode', exact: true }).click();
     await page.locator('.listen').screenshot({ path: path.join(ARTIFACTS, 'cassette-desktop.png') });
     await page.locator('.story').first().getByText('Dated signal snapshots').click();
     await page.locator('.story').first().getByRole('heading', { name: 'Our snapshot' }).waitFor();
@@ -196,7 +197,7 @@ const ARTIFACTS = process.env.TNP_TEST_ARTIFACTS || path.resolve('.cache/browser
     await logo.close();
     assert.deepEqual(errors, []);
     const result = { result: 'passed', url: TARGET_URL, stories: record.stories.length,
-      views: [1380, 320, 390, 768], audio_seconds: duration, checks: ['cassette-volume-mute-restart', 'reel-motion-and-override', 'speed-focus-and-persistence', 'reduced-motion', 'no-js-audio-fallback', 'audio-error-feedback', 'public-footer-copy', 'pixel-font', 'calendar-route', 'direct-story-three', 'legacy-route-hash', 'same-fragment-filter-recovery', 'visible-selection-notes', 'home-to-edition', 'audio-keyboard-play-seek-pause', 'source-provenance', 'search', 'category', 'empty-reset', 'permalink-reload', 'public-json', 'mp3-download-hash', 'transcript-midpoint-credit', 'mobile-overflow'], errors };
+      views: [1380, 320, 390, 768], audio_seconds: duration, checks: ['cassette-volume-mute-restart', 'automatic-reel-motion', 'speed-focus-and-persistence', 'playback-motion-with-reduced-motion', 'no-js-audio-fallback', 'audio-error-feedback', 'public-footer-copy', 'pixel-font', 'calendar-route', 'direct-story-three', 'legacy-route-hash', 'same-fragment-filter-recovery', 'visible-selection-notes', 'home-to-edition', 'audio-keyboard-play-seek-pause', 'source-provenance', 'search', 'category', 'empty-reset', 'permalink-reload', 'public-json', 'mp3-download-hash', 'transcript-midpoint-credit', 'mobile-overflow'], errors };
     fs.writeFileSync(path.join(ARTIFACTS, 'journey.json'), JSON.stringify(result, null, 2));
     console.log(JSON.stringify(result));
   } catch (error) {

@@ -9,9 +9,7 @@ for (const player of document.querySelectorAll('[data-cassette]')) {
   const seek = player.querySelector('#episode-seek');
   const volume = player.querySelector('#episode-volume');
   const speed = player.querySelector('#episode-speed');
-  const motion = player.querySelector('#episode-motion');
   const error = player.querySelector('.cassette-error');
-  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const preference = (key, value) => {
     try {
       if (value === undefined) return localStorage.getItem(key);
@@ -20,8 +18,6 @@ for (const player of document.querySelectorAll('[data-cassette]')) {
   };
   const savedSpeed = preference('tnp-playback-rate');
   if ([...speed.options].some(option => option.value === savedSpeed)) speed.value = savedSpeed;
-  let savedMotion = preference('tnp-reel-motion');
-  motion.checked = savedMotion === 'on' || (savedMotion !== 'off' && !reducedMotion.matches);
   const applySpeed = () => {
     audio.defaultPlaybackRate = Number(speed.value);
     audio.playbackRate = Number(speed.value);
@@ -42,15 +38,15 @@ for (const player of document.querySelectorAll('[data-cassette]')) {
     const progress = duration ? audio.currentTime / duration : 0;
     cassette.style.setProperty('--left-tape', 1 - progress * 0.4);
     cassette.style.setProperty('--right-tape', 0.6 + progress * 0.4);
-    cassette.dataset.motion = motion.checked ? 'on' : 'off';
-    if (motion.checked) cassette.style.setProperty('--rotation', `${audio.currentTime * 85}deg`);
+    // Match Kitchen: playback itself drives the reels, with no separate opt-in.
+    cassette.style.setProperty('--rotation', `${(audio.currentTime * 300) % 360}deg`);
   };
   const animate = () => { update(); if (!audio.paused) frame = requestAnimationFrame(animate); };
   const updatePlayback = () => {
     play.setAttribute('aria-label', audio.paused ? 'Play episode' : 'Pause episode');
     play.firstElementChild.textContent = audio.paused ? '▶' : 'Ⅱ';
     cancelAnimationFrame(frame);
-    if (!audio.paused && motion.checked) frame = requestAnimationFrame(animate);
+    if (!audio.paused) frame = requestAnimationFrame(animate);
     update();
   };
   play.addEventListener('click', async () => {
@@ -69,11 +65,6 @@ for (const player of document.querySelectorAll('[data-cassette]')) {
     applySpeed();
     preference('tnp-playback-rate', speed.value);
   });
-  motion.addEventListener('change', () => {
-    savedMotion = motion.checked ? 'on' : 'off';
-    preference('tnp-reel-motion', savedMotion);
-    updatePlayback();
-  });
   mute.addEventListener('click', () => {
     if (audio.muted || audio.volume === 0) { audio.muted = false; if (!audio.volume) audio.volume = 0.78; }
     else audio.muted = true;
@@ -90,10 +81,6 @@ for (const player of document.querySelectorAll('[data-cassette]')) {
   audio.addEventListener('error', loadError);
   audio.querySelector('source')?.addEventListener('error', loadError);
   audio.addEventListener('playing', () => { error.hidden = true; });
-  reducedMotion.addEventListener('change', () => {
-    if (savedMotion !== 'on' && savedMotion !== 'off') motion.checked = !reducedMotion.matches;
-    updatePlayback();
-  });
   audio.addEventListener('loadedmetadata', applySpeed);
   applySpeed();
   audio.volume = Number(volume.value);

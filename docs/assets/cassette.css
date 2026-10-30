@@ -18,7 +18,6 @@
 .reel { position: absolute; top: 15%; height: 70%; aspect-ratio: 1; border-radius: 50%; background: repeating-conic-gradient(#1b1a18 0 20deg,#d3d1c5 20deg 60deg); border: 3px solid #c5c3b9; box-shadow: 0 0 0 4px #141311,0 2px 4px #000b; transform: rotate(var(--rotation)); }
 .reel::after { content: ''; position: absolute; inset: 29%; border-radius: 50%; background: #171613; border: 2px solid #eceadb; }
 .reel::before { content: ''; position: absolute; top: 5%; left: 42%; width: 16%; height: 20%; border-radius: 2px; background: #f5ad63; box-shadow: 0 0 0 1px #25211d; }
-.cassette[data-motion="off"] .reel { transform: none; }
 .left-reel { left: 5%; }.right-reel { right: 5%; }
 .tape-guides { position: absolute; inset: 26% 31%; text-align: center; font-size: clamp(6px,2cqw,13px); color: #a8a395; background: #393631; border: 2px solid #111; white-space: nowrap; overflow: hidden; }
 .cassette-progress { position: absolute; inset: auto 4% 5%; }
@@ -33,7 +32,6 @@
 .cassette-settings { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 20px; margin-top: 20px; font: 14px/1.4 system-ui,sans-serif; }
 .cassette-settings label, .cassette-volume { display: flex; align-items: center; gap: 8px; min-height: 44px; }
 .cassette-settings select { font: 16px system-ui,sans-serif; min-height: 44px; padding: 6px; border: 1px solid #8588a5; border-radius: 6px; background: #24283e; color: #f5f3e8; }
-.cassette-settings input[type="checkbox"] { width: 20px; height: 20px; accent-color: #b3d7be; }
 .cassette-volume input { width: 100px; accent-color: #b3d7be; }
 .cassette-error { color: #ffc5b5; font-size: 14px; }
 @media (max-width: 560px) { .listen { padding-inline: 10px; }.cassette { border-radius: 12px; }.cassette-label { border-width: 2px; border-radius: 6px; }.cassette-heading { top: 6%; }.cassette-kicker { margin-bottom: 4px; }.cassette-progress { bottom: 4%; }.reel { border-width: 2px; } }

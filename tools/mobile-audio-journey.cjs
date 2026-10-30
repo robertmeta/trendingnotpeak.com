@@ -42,7 +42,7 @@ const artifacts = process.env.TNP_TEST_ARTIFACTS || path.resolve('.cache/mobile-
     await page.getByRole('button', { name: 'Pause episode', exact: true }).tap();
     assert.ok(await audio.evaluate(element => element.paused));
     // Wait for the pause event to update the UI and WebKit's final media clock.
-    await page.waitForFunction(() => document.querySelector('[data-play]').getAttribute('aria-label') === 'Play episode' && document.querySelector('.cassette').style.getPropertyValue('--rotation') === `${document.querySelector('audio').currentTime * 85}deg`);
+    await page.waitForFunction(() => document.querySelector('[data-play]').getAttribute('aria-label') === 'Play episode' && document.querySelector('.cassette').style.getPropertyValue('--rotation') === `${(document.querySelector('audio').currentTime * 300) % 360}deg`);
     const pausedRotation = await page.locator('.reel').first().evaluate(el => getComputedStyle(el).transform);
     await page.evaluate(() => new Promise(resolve => { let frames = 0; const tick = () => ++frames === 8 ? resolve() : requestAnimationFrame(tick); requestAnimationFrame(tick); }));
     assert.equal(await page.locator('.reel').first().evaluate(el => getComputedStyle(el).transform), pausedRotation);
