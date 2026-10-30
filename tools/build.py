@@ -59,7 +59,7 @@ def shell(title, body, prefix, canonical, config):
 <header class="site-header"><a class="brand" href="{prefix}" aria-label="Trending Not Peak home"><img src="{asset('mark.svg')}" width="48" height="48" alt="">trending<span>not</span>peak<span class="brand-dot">.</span></a>
 <nav aria-label="Main navigation"><a href="{prefix}#archive">Editions</a><a href="{prefix}#method">How we pick</a><a href="{link(config['repository'])}">Source</a></nav></header>
 <main id="main">{body}</main>
-<footer><p class="footer-brand">Curious before the crowd.</p><p>Thanks to Intelligrit for sponsoring this daily update.</p>
+<footer><p class="footer-brand">Curious before the crowd.</p><p>Thanks to <a href="https://intelligrit.com/">Intelligrit</a> for sponsoring this daily update.</p>
 <p class="fine">Original summaries. Linked sources. AI-assisted writing and narration, with editorial review.<br>Trending Not Peak is in its launch preview. The custom domain and podcast subscriptions are coming.</p>
 <a href="{link(config['repository'])}">Public story archive &amp; site source ↗</a></footer></body></html>'''
 
@@ -130,7 +130,7 @@ def episode_page(episode, config, prefix='../../../'):
 <div><label for="category">Topic</label><select id="category"><option value="">All topics</option>{options}</select></div><button type="reset">Reset</button>
 <p id="result-count" role="status" aria-live="polite">{len(episode['stories'])} stories</p></form>
 <div class="stories">{''.join(card(story, prefix) for story in episode['stories'])}</div><p class="empty" hidden>No stories match. Try another search or reset the filters.</p>
-<aside class="edition-end"><p class="eyebrow">Caught up.</p><h2>Keep the useful bits.<br>Leave the hype.</h2><p>Thanks to Intelligrit for sponsoring this daily update.</p><a href="{prefix}#archive">Browse the archive →</a></aside>'''
+<aside class="edition-end"><p class="eyebrow">Caught up.</p><h2>Keep the useful bits.<br>Leave the hype.</h2><p>Thanks to <a href="https://intelligrit.com/">Intelligrit</a> for sponsoring this daily update.</p><a href="{prefix}#archive">Browse the archive →</a></aside>'''
     return shell(label(day), body, prefix, config['base_url'] + '/' + episode_path(day), config)
 
 
