@@ -1,0 +1,93 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0.0,
+      "title": "Opening"
+    },
+    {
+      "startTime": 11.477,
+      "title": "Odysseys2: did the browser agent actually finish?"
+    },
+    {
+      "startTime": 39.182,
+      "title": "Yavashark: an embeddable JavaScript engine"
+    },
+    {
+      "startTime": 65.436,
+      "title": "Redox rings: less copying between system services"
+    },
+    {
+      "startTime": 92.009,
+      "title": "Popkern: CAD parts as versioned scripts"
+    },
+    {
+      "startTime": 116.209,
+      "title": "Managed Deep Agents: hand the browser back to a person"
+    },
+    {
+      "startTime": 142.693,
+      "title": "Locals: more agents on one Mac"
+    },
+    {
+      "startTime": 163.689,
+      "title": "MiniCPM-OCR on MLX: parse locally, then check"
+    },
+    {
+      "startTime": 189.567,
+      "title": "TAO: scheduling around agent tools"
+    },
+    {
+      "startTime": 213.311,
+      "title": "OpenCartridge: local game assets in reusable containers"
+    },
+    {
+      "startTime": 240.331,
+      "title": "SlideBySide: shared slides without screen sharing"
+    },
+    {
+      "startTime": 261.263,
+      "title": "YOLO on AMD: a supported route from training to inference"
+    },
+    {
+      "startTime": 288.973,
+      "title": "OmniShowcase: keeping video objects consistent"
+    },
+    {
+      "startTime": 312.255,
+      "title": "Async Rust: an explicit state for being done"
+    },
+    {
+      "startTime": 338.74,
+      "title": "Nixtamal: keeping NixOS inputs reproducible"
+    },
+    {
+      "startTime": 361.951,
+      "title": "Document Parsing Protocol: write down the ambiguous choices"
+    },
+    {
+      "startTime": 388.505,
+      "title": "Floe Agent: a development workspace on a tablet"
+    },
+    {
+      "startTime": 412.169,
+      "title": "Plushies: squishy Three.js characters for interfaces"
+    },
+    {
+      "startTime": 437.36,
+      "title": "Falcon: isolating one speaker in a noisy scene"
+    },
+    {
+      "startTime": 460.418,
+      "title": "Qwenputer: a deliberately constructed computer inside a model"
+    },
+    {
+      "startTime": 485.837,
+      "title": "Boo Bench: the haunted house for document parsers"
+    },
+    {
+      "startTime": 512.399,
+      "title": "Closing"
+    }
+  ]
+}

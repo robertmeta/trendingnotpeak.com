@@ -65,7 +65,7 @@ button, input, select { font: inherit; }
 .brand img { margin-right: 13px; image-rendering: pixelated; }
 .brand > span:not(.brand-dot) { color: var(--pink); }
 .brand-dot { color: var(--mint); }
-nav { display: flex; gap: 10px; }
+nav { display: flex; flex-wrap: wrap; gap: 10px; }
 nav a {
   padding: 7px 13px;
   background: var(--panel);
@@ -257,6 +257,7 @@ summary::-webkit-details-marker { display: none; }
   .story-index ol { grid-template-columns: 1fr; }
 }
 @media (max-width: 460px) {
+  nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .site-header, main, footer { padding-left: 20px; padding-right: 20px; }
   .brand { font-size: 22px; }
   .brand img { width: 40px; height: 40px; margin-right: 9px; }

@@ -10,6 +10,8 @@ from pathlib import Path
 from urllib.parse import urlsplit
 from zoneinfo import ZoneInfo
 
+from podcast import build_feed, validate_chapters, validate_cover
+
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'docs'
 
@@ -53,12 +55,13 @@ def shell(title, body, prefix, canonical, config):
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{escape(title)} · Trending Not Peak</title><meta name="description" content="{escape(config['description'], quote=True)}">
 <link rel="canonical" href="{link(canonical)}"><link rel="icon" href="{asset('mark.svg')}" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="Trending Not Peak podcast" href="{prefix}feed.xml">
 <meta name="theme-color" content="#15182f"><link rel="preload" href="{prefix}assets/fonts/PixelifySans.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="stylesheet" href="{asset('style.css')}"><script src="{asset('site.js')}" defer></script>
 <link rel="stylesheet" href="{asset('cassette.css')}"><script src="{asset('cassette.js')}" defer></script>
 </head><body><a class="skip" href="#main">Skip to content</a>
 <header class="site-header"><a class="brand" href="{prefix}" aria-label="Trending Not Peak home"><img src="{asset('mark.svg')}" width="48" height="48" alt="">trending<span>not</span>peak<span class="brand-dot">.</span></a>
-<nav aria-label="Main navigation"><a href="{prefix}#archive">Editions</a><a href="{prefix}#method">How we pick</a><a href="{link(config['repository'])}">Source</a></nav></header>
+<nav aria-label="Main navigation"><a href="{prefix}#archive">Editions</a><a href="{prefix}#method">How we pick</a><a href="{prefix}feed.xml">Podcast RSS</a><a href="{link(config['repository'])}">Source</a></nav></header>
 <main id="main">{body}</main>
 <footer><p class="footer-brand">Curious before the crowd.</p><p>Thanks to <a href="https://intelligrit.com/">Intelligrit</a> for sponsoring this daily update.</p>
 <p class="fine">Original summaries. Linked sources. AI-assisted writing and narration, with editorial review.</p>
@@ -166,6 +169,16 @@ def build():
     episodes = [json.loads(path.read_text()) for path in sorted((ROOT / 'episodes').glob('*.json'))]
     if not episodes:
         raise ValueError('Add at least one public episode record before building')
+    podcast = json.loads((ROOT / 'podcast.json').read_text())
+    validate_cover((ROOT / podcast['cover']).read_bytes())
+    chapters = {}
+    for episode in episodes:
+        chapter_path = ROOT / 'chapters' / f"{episode['date']}.json"
+        if episode.get('audio') and chapter_path.is_file():
+            data = json.loads(chapter_path.read_text())
+            validate_chapters(data, episode)
+            chapters[episode['date']] = data
+    feed = build_feed(config, podcast, episodes, chapters)
     for episode in episodes:
         day = episode['date']
         if date.fromisoformat(day).isoformat() != day or episode['schema_version'] != 1:
@@ -185,6 +198,9 @@ def build():
         text.append(episode['outro'])
         write(OUT / 'transcripts' / f'{day}.txt', '\n\n'.join(text) + '\n')
     write(OUT / 'index.html', home(episodes, config))
+    write(OUT / 'feed.xml', feed)
+    for day, data in chapters.items():
+        write(OUT / 'chapters' / f'{day}.json', json.dumps(data, ensure_ascii=False, indent=2) + '\n')
     write(OUT / '.nojekyll', '')
     shutil.copytree(ROOT / 'assets', OUT / 'assets', dirs_exist_ok=True)
     print(json.dumps({'editions': len(episodes), 'latest': episodes[-1]['date'], 'output': 'docs'}))

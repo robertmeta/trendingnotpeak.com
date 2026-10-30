@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3000" height="3000" viewBox="0 0 3000 3000" role="img" aria-labelledby="title desc">
+  <title id="title">Trending Not Peak podcast cover</title>
+  <desc id="desc">Cream and mint pixel lettering over a midnight blue background. A rising mint arrow approaches an outlined amber peak. AI and development.</desc>
+  <style>@font-face{font-family:Pixelify;src:url('fonts/PixelifySans.ttf')}text{font-family:Pixelify,sans-serif;font-weight:700}</style>
+  <rect width="3000" height="3000" fill="#15182f"/>
+  <g fill="#343c5c" shape-rendering="crispEdges">
+    <path d="M180 180h180v24H204v156h-24zM2640 180h180v180h-24V204h-156zM180 2640h24v156h156v24H180zM2796 2640h24v180h-180v-24h156z"/>
+    <path d="M2460 1420h24v24h-24zM540 1580h24v24h-24zM410 2160h24v24h-24zM2510 2330h24v24h-24z"/>
+  </g>
+  <text x="220" y="680" font-size="480" fill="#f6f0dc">TRENDING</text>
+  <text x="220" y="1160" font-size="480" fill="#b8ef8b">NOT <tspan fill="#f6f0dc">PEAK</tspan></text>
+  <path d="M230 1280h680v24H230z" fill="#ffcb81"/>
+  <g transform="translate(880 1390) scale(19)" shape-rendering="crispEdges">
+    <path d="M8 8h4v48h44v4H8z" fill="#343c5c"/>
+    <path d="M12 48h8v-8h8v-8h8v-8h8v8h-4v8h-8v8h-8v8H12z" fill="#b8ef8b"/>
+    <path d="M28 20h20v20h-8V28H28z" fill="#b8ef8b"/>
+    <path d="M48 12h4v4h-4z" fill="#a6b7a2"/>
+    <path d="M52 4h8v8h-8z" fill="#ffcb81"/>
+    <path d="M54 6h4v4h-4z" fill="#15182f"/>
+  </g>
+  <text x="230" y="2750" style="font-family:Arial,sans-serif;font-weight:600" font-size="90" letter-spacing="8" fill="#a6b7a2">AI + DEVELOPMENT</text>
+</svg>

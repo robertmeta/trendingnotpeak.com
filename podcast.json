@@ -1,0 +1,12 @@
+{
+  "id": "urn:trending-not-peak:show:1",
+  "author": "Trending Not Peak",
+  "owner_email": "podcasts@robertmelton.com",
+  "language": "en-us",
+  "category": "Technology",
+  "explicit": false,
+  "cover": "assets/cover.png",
+  "publications": {
+    "2026-10-29": "2026-10-30T02:05:59Z"
+  }
+}

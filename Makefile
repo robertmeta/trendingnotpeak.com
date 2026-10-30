@@ -1,5 +1,5 @@
 PYTHON ?= python3
-.PHONY: help build lint test verify serve test-journeys test-mobile-audio
+.PHONY: help build lint test verify serve test-journeys test-mobile-audio test-podcast
 help:
 	@echo 'make build | verify | serve PORT=8765'
 build:
@@ -13,6 +13,8 @@ test-journeys:
 	node tools/browser-journey.cjs
 test-mobile-audio:
 	node tools/mobile-audio-journey.cjs
+test-podcast:
+	node tools/podcast-journey.cjs
 serve: build
 	@test -n "$(PORT)" || (echo 'Set PORT explicitly: make serve PORT=8765'; exit 1)
 	$(PYTHON) -m http.server $(PORT) --bind 127.0.0.1 --directory docs
