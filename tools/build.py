@@ -8,6 +8,7 @@ from datetime import date, datetime
 from html import escape
 from pathlib import Path
 from urllib.parse import urlsplit
+from xml.etree import ElementTree as ET
 from zoneinfo import ZoneInfo
 
 from podcast import build_feed, validate_chapters, validate_cover
@@ -47,14 +48,25 @@ def write(path, content):
 
 
 def shell(title, body, prefix, canonical, config):
-    def asset(name):
+    def asset(name, absolute=False):
         version = hashlib.sha256((ROOT / 'assets' / name).read_bytes()).hexdigest()[:12]
-        return f'{prefix}assets/{name}?v={version}'
+        root = config['base_url'] + '/' if absolute else prefix
+        return f'{root}assets/{name}?v={version}'
+
+    page_title = f'{title} · Trending Not Peak'
+    share_image = link(asset('share-card.png', absolute=True))
+    description = escape(config['description'], quote=True)
 
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{escape(title)} · Trending Not Peak</title><meta name="description" content="{escape(config['description'], quote=True)}">
+<title>{escape(page_title)}</title><meta name="description" content="{description}">
 <link rel="canonical" href="{link(canonical)}"><link rel="icon" href="{asset('mark.svg')}" type="image/svg+xml">
+<link rel="icon" href="{asset('mark-32.png')}" type="image/png" sizes="32x32"><link rel="apple-touch-icon" href="{asset('mark-180.png')}" sizes="180x180">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Trending Not Peak">
+<meta property="og:title" content="{escape(page_title, quote=True)}"><meta property="og:description" content="{description}"><meta property="og:url" content="{link(canonical)}">
+<meta property="og:image" content="{share_image}"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Trending Not Peak arrow graph logo: rising before the peak">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{escape(page_title, quote=True)}"><meta name="twitter:description" content="{description}"><meta name="twitter:image" content="{share_image}"><meta name="twitter:image:alt" content="Trending Not Peak arrow graph logo: rising before the peak">
 <link rel="alternate" type="application/rss+xml" title="Trending Not Peak podcast" href="{prefix}feed.xml">
 <meta name="theme-color" content="#15182f"><link rel="preload" href="{prefix}assets/fonts/PixelifySans.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="stylesheet" href="{asset('style.css')}"><script src="{asset('site.js')}" defer></script>
@@ -63,8 +75,12 @@ def shell(title, body, prefix, canonical, config):
 <header class="site-header"><a class="brand" href="{prefix}" aria-label="Trending Not Peak home"><img src="{asset('mark.svg')}" width="48" height="48" alt="">trending<span>not</span>peak<span class="brand-dot">.</span></a>
 <nav aria-label="Main navigation"><a href="{prefix}#archive">Editions</a><a href="{prefix}#method">How we pick</a><a href="{prefix}feed.xml">Podcast RSS</a><a href="{link(config['repository'])}">Source</a></nav></header>
 <main id="main">{body}</main>
-<footer><p class="footer-brand">Curious before the crowd.</p><p>Thanks to <a href="https://intelligrit.com/">Intelligrit</a> for sponsoring this daily update.</p>
+<footer><p class="footer-brand">Curious before the crowd.</p>
+<form class="site-search" action="https://duckduckgo.com/" method="get" role="search" aria-label="Search every edition with DuckDuckGo" data-site-search><label for="site-query">Search every edition with DuckDuckGo</label><div><input id="site-query" type="search" name="q" placeholder="A project, topic or idea…" required><button type="submit">Search ↗</button></div><p class="fine">Your search opens DuckDuckGo and stays within trendingnotpeak.com.</p></form>
+<noscript><p class="fine">For a site-only search without JavaScript, add site:trendingnotpeak.com to your query.</p></noscript>
+<p>Thanks to <a href="https://intelligrit.com/">Intelligrit</a> for sponsoring this daily update.</p>
 <p class="fine">Original summaries. Linked sources. AI-assisted writing and narration, with editorial review.</p>
+<p class="fine">Original show content: <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Credit Trending Not Peak, link to this site and the license, and mark changes. <a href="{link(config['repository'] + '/blob/main/LICENSE-CONTENT.md')}">Reuse details ↗</a><br>Original site code: <a href="{link(config['repository'] + '/blob/main/LICENSE')}">MIT</a>. Linked sources and bundled third-party assets retain their own terms.</p>
 <a href="{link(config['repository'])}">Public story archive &amp; site source ↗</a></footer></body></html>'''
 
 
@@ -169,6 +185,45 @@ def home(episodes, config):
     return shell('Early signals in AI & development', body, './', config['base_url'] + '/', config)
 
 
+def discovery_files(episodes, config):
+    """Write crawler and reader indexes for the public archive only."""
+    base = config['base_url'].rstrip('/')
+    pages = [base + '/'] + [base + '/' + episode_path(item['date']) for item in episodes]
+    sitemap = ET.Element('urlset', xmlns='http://www.sitemaps.org/schemas/sitemap/0.9')
+    for url in pages:
+        ET.SubElement(ET.SubElement(sitemap, 'url'), 'loc').text = url
+    ET.indent(sitemap)
+    write(OUT / 'sitemap.xml', ET.tostring(sitemap, encoding='unicode', xml_declaration=True) + '\n')
+    write(OUT / 'robots.txt', f'User-agent: *\nAllow: /\n\nSitemap: {base}/sitemap.xml\n')
+    lines = [
+        '# Trending Not Peak',
+        '',
+        '> Daily AI and development podcast: emerging stories, original summaries, transcripts, evidence and source links.',
+        '',
+        '## Archive and downloads',
+        f'- [All editions]({base}/): Browse the full public archive.',
+        f'- [Podcast RSS]({base}/feed.xml): Subscribe and find episode audio.',
+        f'- [Sitemap]({base}/sitemap.xml): Canonical pages.',
+    ]
+    for item in reversed(episodes):
+        day = item['date']
+        lines.extend([
+            f'- [{label(day)} edition]({base}/{episode_path(day)}): Stories, selection reasons and source links.',
+            f'- [{day} transcript]({base}/transcripts/{day}.txt): Full spoken script.',
+            f'- [{day} story data]({base}/data/{day}.json): Structured public records and dated signal snapshots.',
+        ])
+        if item.get('audio'):
+            lines.append(f'- [{day} audio]({item["audio"]["url"]}): Download the MP3.')
+    lines.extend([
+        '',
+        '## Reuse and source',
+        f'- [Content license]({config["repository"]}/blob/main/LICENSE-CONTENT.md): Original show content is CC BY 4.0 with credit.',
+        f'- [Site code]({config["repository"]}): Original website code is MIT licensed; linked sources retain their own rights.',
+        '',
+    ])
+    write(OUT / 'llms.txt', '\n'.join(lines))
+
+
 def build():
     config = json.loads((ROOT / 'site.json').read_text())
     link(config['base_url'])
@@ -208,6 +263,7 @@ def build():
         write(OUT / 'transcripts' / f'{day}.txt', '\n\n'.join(text) + '\n')
     write(OUT / 'index.html', home(episodes, config))
     write(OUT / 'feed.xml', feed)
+    discovery_files(episodes, config)
     for day, data in chapters.items():
         write(OUT / 'chapters' / f'{day}.json', json.dumps(data, ensure_ascii=False, indent=2) + '\n')
     write(OUT / '.nojekyll', '')

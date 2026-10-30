@@ -2,10 +2,12 @@
 
 import json
 import re
+import struct
 import unittest
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
+from xml.etree import ElementTree as ET
 
 from build import ROOT, OUT, card, episode_path, link, shell
 
@@ -15,9 +17,15 @@ class Links(HTMLParser):
         super().__init__()
         self.links = []
         self.ids = set()
+        self.meta = {}
+        self.relations = {}
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if tag == 'meta':
+            self.meta[attrs.get('property') or attrs.get('name')] = attrs.get('content')
+        if tag == 'link':
+            self.relations.setdefault(attrs.get('rel'), []).append(attrs.get('href'))
         if 'id' in attrs:
             self.ids.add(attrs['id'])
         for key in ('href', 'src'):
@@ -26,6 +34,50 @@ class Links(HTMLParser):
 
 
 class Archive(unittest.TestCase):
+    def test_share_metadata_icons_and_license_on_all_pages(self):
+        config = json.loads((ROOT / 'site.json').read_text())
+        image = (ROOT / 'assets/share-card.png').read_bytes()
+        self.assertEqual(image[:8], b'\x89PNG\r\n\x1a\n')
+        self.assertEqual(struct.unpack('>II', image[16:24]), (1200, 630))
+        for name, size in (('mark-32.png', 32), ('mark-180.png', 180)):
+            icon = (OUT / 'assets' / name).read_bytes()
+            self.assertEqual(struct.unpack('>II', icon[16:24]), (size, size))
+        for path in OUT.rglob('*.html'):
+            page = Links()
+            page.feed(path.read_text())
+            with self.subTest(page=path):
+                canonical = page.relations['canonical'][0]
+                self.assertEqual(page.meta['og:url'], canonical)
+                self.assertIn(config['base_url'] + '/assets/share-card.png?v=', page.meta['og:image'])
+                self.assertEqual(page.meta['twitter:image'], page.meta['og:image'])
+                self.assertEqual(page.meta['og:image:width'], '1200')
+                self.assertEqual(page.meta['og:image:height'], '630')
+                self.assertEqual(page.meta['twitter:card'], 'summary_large_image')
+                self.assertIn('Trending Not Peak', page.meta['og:title'])
+                self.assertEqual(page.meta['og:description'], page.meta['twitter:description'])
+                self.assertIn('https://creativecommons.org/licenses/by/4.0/', page.relations['license'])
+                self.assertIn('Search every edition with DuckDuckGo', path.read_text())
+        self.assertIn('MIT License', (ROOT / 'LICENSE').read_text())
+        self.assertIn('Creative Commons Attribution 4.0', (ROOT / 'LICENSE-CONTENT.md').read_text())
+
+    def test_open_discovery_indexes_current_canonical_editions(self):
+        config = json.loads((ROOT / 'site.json').read_text())
+        robots = (OUT / 'robots.txt').read_text()
+        self.assertIn('User-agent: *\nAllow: /', robots)
+        self.assertNotIn('Disallow:', robots)
+        self.assertIn(config['base_url'] + '/sitemap.xml', robots)
+        sitemap = ET.parse(OUT / 'sitemap.xml')
+        locations = {node.text for node in sitemap.iter() if node.tag.endswith('}loc')}
+        llms = (OUT / 'llms.txt').read_text()
+        self.assertIn(config['base_url'] + '/', locations)
+        self.assertIn(config['repository'], llms)
+        self.assertIn(config['base_url'] + '/feed.xml', llms)
+        for path in (ROOT / 'episodes').glob('*.json'):
+            day = path.stem
+            self.assertIn(config['base_url'] + '/' + episode_path(day), locations)
+            self.assertIn(config['base_url'] + '/data/' + day + '.json', llms)
+            self.assertIn(config['base_url'] + '/transcripts/' + day + '.txt', llms)
+
     def test_public_copy_excludes_operational_status(self):
         documents = {'README.md': (ROOT / 'README.md').read_text()}
         for path in OUT.rglob('*.html'):

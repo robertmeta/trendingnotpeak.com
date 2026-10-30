@@ -30,6 +30,9 @@ class Podcast(unittest.TestCase):
         self.assertEqual(len(items), len(playable))
         self.assertEqual(channel.findtext(f'{{{ITUNES}}}owner/{{{ITUNES}}}email'), 'podcasts@robertmelton.com')
         self.assertEqual(channel.find(f'{{{ATOM}}}link').get('href'), 'https://trendingnotpeak.com/feed.xml')
+        license_tag = channel.find(f'{{{PODCAST}}}license')
+        self.assertEqual(license_tag.text, 'CC BY 4.0')
+        self.assertEqual(license_tag.get('url'), 'https://creativecommons.org/licenses/by/4.0/')
         self.assertEqual([item.findtext('link') for item in items],
                          [f'https://trendingnotpeak.com/{day.replace("-", "/")}/' for day in
                           sorted(playable, key=lambda day: self.podcast['publications'][day], reverse=True)])

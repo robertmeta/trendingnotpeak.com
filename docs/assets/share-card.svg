@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#15182f"/>
+  <path d="M0 0h1200v12H0zM0 618h1200v12H0z" fill="#465173"/>
+  <path d="M38 38h1124v554H38z" fill="none" stroke="#465173" stroke-width="4"/>
+  <rect x="88" y="115" width="400" height="400" fill="#272e4c"/>
+  <image href="mark.svg" x="104" y="131" width="368" height="368" image-rendering="pixelated"/>
+  <text x="548" y="235" fill="#f3eedc" font-family="Avenir Next, Avenir, Helvetica, sans-serif" font-size="67" font-weight="800" letter-spacing="-2">TRENDING</text>
+  <text x="548" y="330" fill="#b8ef8b" font-family="Avenir Next, Avenir, Helvetica, sans-serif" font-size="76" font-weight="800" letter-spacing="-2">NOT PEAK</text>
+  <path d="M548 357h560" stroke="#ffcb81" stroke-width="6"/>
+  <text x="548" y="422" fill="#f3eedc" font-family="Avenir Next, Avenir, Helvetica, sans-serif" font-size="31" font-weight="600">AI + DEVELOPMENT</text>
+  <text x="548" y="469" fill="#b7bfd5" font-family="Avenir Next, Avenir, Helvetica, sans-serif" font-size="24">Curious before the crowd.</text>
+  <text x="548" y="543" fill="#ffcb81" font-family="Avenir Next, Avenir, Helvetica, sans-serif" font-size="21" font-weight="700">trendingnotpeak.com</text>
+</svg>

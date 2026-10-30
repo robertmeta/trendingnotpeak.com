@@ -37,3 +37,15 @@ if (filters) {
   update();
   revealLink();
 }
+
+const siteSearch = document.querySelector('[data-site-search]');
+if (siteSearch) {
+  siteSearch.addEventListener('submit', event => {
+    event.preventDefault();
+    const query = siteSearch.elements.q.value.trim();
+    if (!query) return;
+    const url = new URL(siteSearch.action);
+    url.searchParams.set('q', `${query} site:trendingnotpeak.com`);
+    location.assign(url.href);
+  });
+}

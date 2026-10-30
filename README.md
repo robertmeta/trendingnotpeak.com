@@ -29,6 +29,8 @@ For visual or interaction changes, also run `TNP_TEST_URL=https://your-site-root
 Run `make test-podcast` for feed navigation, artwork, transcript and enclosure
 checks. Also run `make test-mobile-audio` for the WebKit iPhone playback journey; this
 catches media-loading failures that viewport resizing in Chromium cannot.
+Run `make test-discovery` for link previews, site search, licenses, crawler
+files and a mobile layout check.
 An existing WebKit executable can be selected with `TNP_WEBKIT_EXECUTABLE`.
 These browser checks install nothing. It navigates from the homepage to
 the retained October 29 fixture, tests playback, filters, numbered and legacy
@@ -80,5 +82,13 @@ This repository contains public story records and website source. Do not add
 credentials, account information, internal operational notes, or original
 third-party article bodies.
 Public availability of this repository does not relicense linked third-party work.
+
+## Reuse
+
+Original episode recordings, scripts, transcripts, summaries, story data and
+original artwork are [CC BY 4.0](LICENSE-CONTENT.md): reuse them with credit to
+Trending Not Peak, a link to the relevant edition and license, and a note about
+any changes. Original website code is [MIT licensed](LICENSE). Linked sources,
+the bundled font and other third-party material retain their own terms.
 
 Thanks to Intelligrit for sponsoring this daily update.

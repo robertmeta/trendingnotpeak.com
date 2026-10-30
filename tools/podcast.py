@@ -109,6 +109,8 @@ def build_feed(site, podcast, episodes, chapter_dates):
     for name, value in (('title', site['title']), ('link', base + '/'),
                         ('description', site['description']), ('language', podcast['language'])):
         tag(channel, name, value)
+    tag(channel, 'copyright', '© 2026 Trending Not Peak. Original content CC BY 4.0: https://creativecommons.org/licenses/by/4.0/')
+    tag(channel, f'{{{PODCAST}}}license', 'CC BY 4.0', url='https://creativecommons.org/licenses/by/4.0/')
     tag(channel, f'{{{ATOM}}}link', href=base + '/feed.xml', rel='self', type='application/rss+xml')
     tag(channel, f'{{{ITUNES}}}author', podcast['author'])
     tag(channel, f'{{{ITUNES}}}explicit', str(podcast['explicit']).lower())

@@ -5,6 +5,8 @@
     <link>https://trendingnotpeak.com/</link>
     <description>Twenty emerging stories in AI and development, with useful details, original sources and the evidence behind each pick. AI-assisted writing and synthetic narration, with editorial review. Sponsored by Intelligrit.</description>
     <language>en-us</language>
+    <copyright>© 2026 Trending Not Peak. Original content CC BY 4.0: https://creativecommons.org/licenses/by/4.0/</copyright>
+    <podcast:license url="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</podcast:license>
     <atom:link href="https://trendingnotpeak.com/feed.xml" rel="self" type="application/rss+xml" />
     <itunes:author>Trending Not Peak</itunes:author>
     <itunes:explicit>false</itunes:explicit>
