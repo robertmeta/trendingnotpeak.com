@@ -92,10 +92,25 @@ class Archive(unittest.TestCase):
         for path in (ROOT / 'episodes').glob('*.json'):
             record = json.loads(path.read_text())
             self.assertEqual(allowed, set(record))
+            if record['audio']:
+                self.assertEqual(set(record['audio']), {'url', 'duration_seconds', 'bytes', 'embedded_chapters', 'sha256'})
             self.assertEqual(record, json.loads((OUT / 'data' / path.name).read_text()))
             self.assertGreaterEqual(len(record['stories']), 20)
             html = (OUT / 'episodes' / record['date'] / 'index.html').read_text()
             for story in record['stories']:
+                self.assertLessEqual(set(story), {'id', 'number', 'category', 'role', 'title', 'script',
+                                     'why_now', 'why_early', 'watch_next', 'sources', 'observations', 'follow_up'})
+                for source in story['sources']:
+                    self.assertLessEqual(set(source), {'url', 'kind'})
+                if story.get('follow_up'):
+                    self.assertEqual(set(story['follow_up']), {'previous_date', 'what_changed', 'why_revisit'})
+                for observation in story['observations']:
+                    self.assertLessEqual(set(observation), {'kind', 'published_at', 'observed_at',
+                                         'url', 'metrics', 'community', 'momentum'})
+                    self.assertLessEqual(set(observation.get('metrics', {})), {'stars', 'forks'})
+                    self.assertLessEqual(set(observation.get('community', {})), {'family', 'score', 'comments', 'views', 'url'})
+                    self.assertLessEqual(set(observation.get('momentum', {})), {'type', 'stars_gained', 'hours',
+                                         'stars_per_day', 'baseline_stars', 'current_stars', 'baseline_at', 'observed_at', 'caveat'})
                 self.assertIn(f'id="{story["id"]}"', html)
                 self.assertTrue(story['sources'])
                 self.assertNotIn('evidence_text', story)

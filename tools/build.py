@@ -55,6 +55,7 @@ def shell(title, body, prefix, canonical, config):
 <link rel="canonical" href="{link(canonical)}"><link rel="icon" href="{asset('mark.svg')}" type="image/svg+xml">
 <meta name="theme-color" content="#15182f"><link rel="preload" href="{prefix}assets/fonts/PixelifySans.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="stylesheet" href="{asset('style.css')}"><script src="{asset('site.js')}" defer></script>
+<link rel="stylesheet" href="{asset('cassette.css')}"><script src="{asset('cassette.js')}" defer></script>
 </head><body><a class="skip" href="#main">Skip to content</a>
 <header class="site-header"><a class="brand" href="{prefix}" aria-label="Trending Not Peak home"><img src="{asset('mark.svg')}" width="48" height="48" alt="">trending<span>not</span>peak<span class="brand-dot">.</span></a>
 <nav aria-label="Main navigation"><a href="{prefix}#archive">Editions</a><a href="{prefix}#method">How we pick</a><a href="{link(config['repository'])}">Source</a></nav></header>
@@ -111,7 +112,16 @@ def audio_html(episode):
         return '<div class="audio-status"><span class="status-dot" aria-hidden="true"></span><div><strong>The reading edition is ready.</strong><p>The full audio edition is coming. All twenty stories and their sources are below.</p></div></div>'
     chapter_note = f" · {audio['embedded_chapters']} embedded MP3 chapters" if audio.get('embedded_chapters') else ''
     return f'''<section class="listen" aria-label="Listen to the episode"><p class="eyebrow">Now playing / {label(episode['date'])}</p><h2>Press play. Follow the links later.</h2>
-<audio controls preload="metadata" src="{link(audio['url'])}">Your browser does not support audio playback.</audio>
+<div class="cassette-player" data-cassette>
+<audio controls preload="metadata" aria-label="Episode audio" src="{link(audio['url'])}">Your browser does not support audio playback.</audio>
+<div class="cassette" hidden>
+<i class="screw tl" aria-hidden="true"></i><i class="screw tr" aria-hidden="true"></i><i class="screw bl" aria-hidden="true"></i><i class="screw br" aria-hidden="true"></i>
+<div class="cassette-label"><div class="cassette-heading"><div><span class="cassette-kicker">Trending Not Peak</span><strong>{label(episode['date'])}</strong></div><span class="cassette-side">Side A</span></div>
+<div class="cassette-stripes" aria-hidden="true"><div class="tape-window"><span class="tape left-tape"></span><span class="tape right-tape"></span><span class="reel left-reel"></span><span class="reel right-reel"></span><span class="tape-guides">│ │ │ │ │</span></div></div>
+<div class="cassette-progress"><label class="sr-only" for="episode-seek">Seek through episode</label><input id="episode-seek" type="range" min="0" max="1" value="0" step="1" disabled><div class="cassette-times"><span><span class="sr-only">Elapsed time </span><time data-elapsed>0:00</time></span><span><span class="sr-only">Total time </span><time data-duration>0:00</time></span></div></div></div>
+<div class="cassette-controls"><button type="button" data-restart aria-label="Restart episode" disabled><span aria-hidden="true">↶</span></button><button type="button" data-play aria-label="Play episode"><span aria-hidden="true">▶</span></button><button type="button" data-mute aria-label="Mute"><span aria-hidden="true">♪</span></button></div>
+</div><div class="cassette-volume" hidden><label for="episode-volume">Volume</label><input id="episode-volume" type="range" min="0" max="1" value="0.78" step="0.05"></div>
+<p class="cassette-error" role="alert" hidden></p></div>
 <a href="{link(audio['url'])}">Download the MP3 ↗</a><p class="fine">{audio['duration_seconds'] / 60:.1f} minutes · AI narration{chapter_note}</p></section>'''
 
 

@@ -54,8 +54,11 @@ peak stays ahead of its mint tip. The reusable mark is [assets/mark.svg](assets/
 
 [Pixelify Sans](https://github.com/google/fonts/tree/main/ofl/pixelifysans) is
 bundled unmodified with its [SIL Open Font License](assets/fonts/OFL.txt).
-No font CDN or frontend dependencies are required. Native audio controls,
-visible keyboard focus and reduced-motion behavior are preserved.
+No font CDN or frontend dependencies are required. The cassette player adapts
+[dqnamo’s Kitchen Cassette Audio Player](https://www.dqnamo.com/experiments/cassette-player)
+to static HTML, CSS and JavaScript, with episode playback, seeking, restart,
+mute and volume controls. Keyboard focus and reduced-motion behavior are
+preserved. Native audio controls remain available when JavaScript is disabled.
 
 This repository contains public story records and website source. Do not add
 credentials, account information, internal operational notes, or original

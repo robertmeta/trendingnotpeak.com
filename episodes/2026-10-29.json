@@ -5,11 +5,11 @@
   "outro": "That's Trending Not Peak. Missed something? The links and details are at trending not peak dot com. Thanks to Intelligrit for sponsoring this daily update.",
   "schema_version": 1,
   "audio": {
-    "url": "https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-10-29/trending-not-peak-2026-10-29-chapters.mp3",
-    "duration_seconds": 556.409524,
-    "bytes": 8905988,
+    "url": "https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-10-29/trending-not-peak-2026-10-29-r2-chapters.mp3",
+    "duration_seconds": 517.649705,
+    "bytes": 8285737,
     "embedded_chapters": 22,
-    "sha256": "c7a9a21b0e6fee878fc7262e958192054291d1d2d281fa600598bbc957191a4d"
+    "sha256": "6db1fa9164bca47ed439d69336c324d0d2ea40c61d61258a102e7615610f1759"
   },
   "stories": [
     {
