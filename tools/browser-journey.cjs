@@ -16,6 +16,8 @@ const ARTIFACTS = process.env.TNP_TEST_ARTIFACTS || path.resolve('.cache/browser
   try {
     await page.goto(TARGET_URL);
     await page.getByRole('heading', { name: 'Early signals. Useful details.' }).waitFor();
+    const operationalStatus = /launch checklist|launch preview|private producer|pending approval|coming soon/i;
+    assert.doesNotMatch(await page.locator('footer').innerText(), operationalStatus);
     await page.evaluate(() => document.fonts.ready);
     assert.ok(await page.evaluate(() => [...document.fonts].some(font => font.family.includes('Pixelify Sans') && font.status === 'loaded')));
     await page.screenshot({ path: path.join(ARTIFACTS, 'home-desktop.png'), fullPage: true });
@@ -28,6 +30,7 @@ const ARTIFACTS = process.env.TNP_TEST_ARTIFACTS || path.resolve('.cache/browser
     assert.equal(await page.getByText('Why picked', { exact: true }).count(), 20);
     await page.reload();
     assert.match(await page.locator('.story:target h2').innerText(), /Redox/);
+    assert.doesNotMatch(await page.locator('footer').innerText(), operationalStatus);
     await page.getByLabel('Find something you missed').fill('BooBench');
     await page.getByText('Jump to a story', { exact: false }).click();
     await page.getByRole('link', { name: /03Redox|03 Redox/ }).click();
@@ -114,7 +117,7 @@ const ARTIFACTS = process.env.TNP_TEST_ARTIFACTS || path.resolve('.cache/browser
     await logo.close();
     assert.deepEqual(errors, []);
     const result = { result: 'passed', url: TARGET_URL, stories: record.stories.length,
-      views: [1380, 320, 390, 768], audio_seconds: duration, checks: ['pixel-font', 'calendar-route', 'direct-story-three', 'legacy-route-hash', 'same-fragment-filter-recovery', 'visible-selection-notes', 'home-to-edition', 'audio-keyboard-play-seek-pause', 'source-provenance', 'search', 'category', 'empty-reset', 'permalink-reload', 'public-json', 'transcript-signoff', 'mobile-overflow'], errors };
+      views: [1380, 320, 390, 768], audio_seconds: duration, checks: ['public-footer-copy', 'pixel-font', 'calendar-route', 'direct-story-three', 'legacy-route-hash', 'same-fragment-filter-recovery', 'visible-selection-notes', 'home-to-edition', 'audio-keyboard-play-seek-pause', 'source-provenance', 'search', 'category', 'empty-reset', 'permalink-reload', 'public-json', 'transcript-signoff', 'mobile-overflow'], errors };
     fs.writeFileSync(path.join(ARTIFACTS, 'journey.json'), JSON.stringify(result, null, 2));
     console.log(JSON.stringify(result));
   } catch (error) {

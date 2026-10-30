@@ -1,6 +1,7 @@
 """Check the real generated archive, source boundary and portable links."""
 
 import json
+import re
 import unittest
 from html.parser import HTMLParser
 from pathlib import Path
@@ -25,6 +26,18 @@ class Links(HTMLParser):
 
 
 class Archive(unittest.TestCase):
+    def test_public_copy_excludes_operational_status(self):
+        documents = {'README.md': (ROOT / 'README.md').read_text()}
+        for path in OUT.rglob('*.html'):
+            documents[str(path.relative_to(ROOT))] = path.read_text().split('<footer>', 1)[1]
+        operational_status = re.compile(
+            r'launch checklist|launch preview|private producer|pending approval|coming soon',
+            re.IGNORECASE,
+        )
+        for name, content in documents.items():
+            with self.subTest(document=name):
+                self.assertNotRegex(content, operational_status)
+
     def test_calendar_routes_numbered_stories_and_legacy_links(self):
         config = json.loads((ROOT / 'site.json').read_text())
         for path in (ROOT / 'episodes').glob('*.json'):

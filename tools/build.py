@@ -60,7 +60,7 @@ def shell(title, body, prefix, canonical, config):
 <nav aria-label="Main navigation"><a href="{prefix}#archive">Editions</a><a href="{prefix}#method">How we pick</a><a href="{link(config['repository'])}">Source</a></nav></header>
 <main id="main">{body}</main>
 <footer><p class="footer-brand">Curious before the crowd.</p><p>Thanks to <a href="https://intelligrit.com/">Intelligrit</a> for sponsoring this daily update.</p>
-<p class="fine">Original summaries. Linked sources. AI-assisted writing and narration, with editorial review.<br>Trending Not Peak is in its launch preview. The custom domain and podcast subscriptions are coming.</p>
+<p class="fine">Original summaries. Linked sources. AI-assisted writing and narration, with editorial review.</p>
 <a href="{link(config['repository'])}">Public story archive &amp; site source ↗</a></footer></body></html>'''
 
 
