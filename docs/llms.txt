@@ -9,11 +9,11 @@
 - [October 30, 2026 edition](https://trendingnotpeak.com/2026/10/30/): Stories, selection reasons and source links.
 - [2026-10-30 transcript](https://trendingnotpeak.com/transcripts/2026-10-30.txt): Full spoken script.
 - [2026-10-30 story data](https://trendingnotpeak.com/data/2026-10-30.json): Structured public records and dated signal snapshots.
-- [2026-10-30 audio](https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-10-30/trending-not-peak-2026-10-30-kinetic-grid-r2.mp3): Download the MP3.
+- [2026-10-30 audio](https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-10-30/trending-not-peak-2026-10-30-kinetic-grid-r3-ai-disclosure.mp3): Download the MP3.
 - [October 29, 2026 edition](https://trendingnotpeak.com/2026/10/29/): Stories, selection reasons and source links.
 - [2026-10-29 transcript](https://trendingnotpeak.com/transcripts/2026-10-29.txt): Full spoken script.
 - [2026-10-29 story data](https://trendingnotpeak.com/data/2026-10-29.json): Structured public records and dated signal snapshots.
-- [2026-10-29 audio](https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-10-29/trending-not-peak-2026-10-29-kinetic-grid-r2.mp3): Download the MP3.
+- [2026-10-29 audio](https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-10-29/trending-not-peak-2026-10-29-kinetic-grid-r3-ai-disclosure.mp3): Download the MP3.
 
 ## Reuse and source
 - [Content license](https://github.com/robertmeta/trendingnotpeak.com/blob/main/LICENSE-CONTENT.md): Original show content is CC BY 4.0 with credit.

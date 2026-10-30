@@ -116,6 +116,8 @@ def build_feed(site, podcast, episodes, chapter_dates):
     tag(channel, f'{{{ITUNES}}}explicit', str(podcast['explicit']).lower())
     tag(channel, f'{{{ITUNES}}}type', 'episodic')
     tag(channel, f'{{{ITUNES}}}category', text=podcast['category'])
+    news = tag(channel, f'{{{ITUNES}}}category', text='News')
+    tag(news, f'{{{ITUNES}}}category', text='Tech News')
     tag(channel, f'{{{ITUNES}}}image', href=cover)
     owner = tag(channel, f'{{{ITUNES}}}owner')
     tag(owner, f'{{{ITUNES}}}name', podcast['author'])
@@ -135,6 +137,7 @@ def build_feed(site, podcast, episodes, chapter_dates):
         episode_url = base + '/' + day.replace('-', '/') + '/'
         item = tag(channel, 'item')
         tag(item, 'title', episode['title'])
+        tag(item, f'{{{ITUNES}}}author', podcast['author'])
         tag(item, 'link', episode_url)
         tag(item, 'guid', 'urn:uuid:' + str(uuid.uuid5(uuid.NAMESPACE_URL, podcast['id'] + '/' + day)), isPermaLink='false')
         tag(item, 'pubDate', format_datetime(published(podcast['publications'][day])))

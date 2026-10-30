@@ -6,91 +6,91 @@
       "title": "Opening"
     },
     {
-      "startTime": 11.108,
+      "startTime": 15.452,
       "title": "Give agents the metric definitions you already use"
     },
     {
-      "startTime": 39.413,
+      "startTime": 43.756,
       "title": "An agent backdoor can survive clean training"
     },
     {
-      "startTime": 66.879,
+      "startTime": 71.223,
       "title": "Overtone fits captions to different screens"
     },
     {
-      "startTime": 93.051,
+      "startTime": 97.395,
       "title": "PyTorch adds practical Apple Silicon inference paths"
     },
     {
-      "startTime": 118.689,
+      "startTime": 123.033,
       "title": "A small local model spots sensitive text"
     },
     {
-      "startTime": 146.92,
+      "startTime": 151.263,
       "title": "Agent coordination needs reading rules"
     },
     {
-      "startTime": 174.003,
+      "startTime": 178.347,
       "title": "Automatically decline repetitive macOS prompts"
     },
     {
-      "startTime": 201.162,
+      "startTime": 205.506,
       "title": "Mistral Large 4 arrives with deployment support"
     },
     {
-      "startTime": 232.211,
+      "startTime": 236.555,
       "title": "Research agents propose more than they can prioritize"
     },
     {
-      "startTime": 259.598,
+      "startTime": 263.942,
       "title": "Lasm brings Lean toward web runtimes"
     },
     {
-      "startTime": 286.751,
+      "startTime": 291.095,
       "title": "Thanks to Intelligrit"
     },
     {
-      "startTime": 290.677,
+      "startTime": 295.02,
       "title": "Teach robot manipulation through human demonstrations"
     },
     {
-      "startTime": 319.745,
+      "startTime": 324.089,
       "title": "Disease-mention extraction on a CPU"
     },
     {
-      "startTime": 348.279,
+      "startTime": 352.623,
       "title": "Tax instructions as executable, cited data"
     },
     {
-      "startTime": 378.188,
+      "startTime": 382.531,
       "title": "Redirect a robot policy while it runs"
     },
     {
-      "startTime": 404.131,
+      "startTime": 408.475,
       "title": "A dataset for checking compute-growth assumptions"
     },
     {
-      "startTime": 431.826,
+      "startTime": 436.17,
       "title": "Bivia offers decisions with an abstain option"
     },
     {
-      "startTime": 461.349,
+      "startTime": 465.692,
       "title": "Exo separates agent mechanisms from editable policy"
     },
     {
-      "startTime": 490.187,
+      "startTime": 494.531,
       "title": "An AT Protocol privacy surprise for app builders"
     },
     {
-      "startTime": 519.262,
+      "startTime": 523.606,
       "title": "A multiplayer browser game with flying cats"
     },
     {
-      "startTime": 547.489,
+      "startTime": 551.833,
       "title": "Doom becomes a neural-network execution engine"
     },
     {
-      "startTime": 574.576,
+      "startTime": 578.92,
       "title": "Closing"
     }
   ]
