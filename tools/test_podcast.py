@@ -85,15 +85,16 @@ class Podcast(unittest.TestCase):
         self.assertIn('synthetic narration', root.findtext('channel/item/description'))
         with self.assertRaisesRegex(ValueError, 'Show metadata'):
             self.feed(site=dict(self.site, description='A daily technology show.'))
-        with self.assertRaisesRegex(ValueError, 'Audio introduction'):
-            self.feed([dict(self.episode, intro='This is Trending Not Peak.')])
+        plain = self.feed([dict(self.episode, intro='This is Trending Not Peak.')])
+        self.assertIn('synthetic narration', plain.findtext('channel/item/description'))
 
     def test_cover_and_chapters_match_the_actual_episode(self):
         self.assertEqual(validate_cover((OUT / 'assets/cover.png').read_bytes()), (3000, 3000))
         chapters = json.loads((OUT / 'chapters/2026-10-29.json').read_text())
         validate_chapters(chapters, self.episode)
-        self.assertEqual(len(chapters['chapters']), 22)
-        self.assertEqual([c['title'] for c in chapters['chapters'][1:-1]], [s['title'] for s in self.episode['stories']])
+        self.assertEqual(len(chapters['chapters']), 23)
+        self.assertEqual(chapters['chapters'][11]['title'], 'Thanks to Intelligrit')
+        self.assertEqual([c['title'] for i, c in enumerate(chapters['chapters']) if i not in (0, 11, 22)], [s['title'] for s in self.episode['stories']])
         chapters['chapters'][-1]['startTime'] = self.episode['audio']['duration_seconds'] + 1
         with self.assertRaisesRegex(ValueError, 'within the audio'):
             validate_chapters(chapters, self.episode)

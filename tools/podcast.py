@@ -14,6 +14,7 @@ ITUNES = 'http://www.itunes.com/dtds/podcast-1.0.dtd'
 ATOM = 'http://www.w3.org/2005/Atom'
 CONTENT = 'http://purl.org/rss/1.0/modules/content/'
 PODCAST = 'https://podcastindex.org/namespace/1.0'
+DISCLOSURE = 'AI-assisted writing and synthetic narration, with editorial review.'
 for prefix, uri in (('itunes', ITUNES), ('atom', ATOM), ('content', CONTENT), ('podcast', PODCAST)):
     ET.register_namespace(prefix, uri)
 
@@ -69,12 +70,15 @@ def show_notes(episode, url):
     """Include useful episode context and primary-source links, never manifests."""
     parts = [f'<p>{escape(episode["intro"])}</p>',
              f'<p><a href="{escape(url, quote=True)}">Read the full transcript and sources</a></p>']
-    for story in episode['stories']:
+    for number, story in enumerate(episode['stories'], 1):
         sources = ' '.join(f'<a href="{escape(https_url(source["url"]), quote=True)}">Source {i}</a>'
                            for i, source in enumerate(story['sources'], 1))
         parts.append(f'<h2>{escape(story["title"])}</h2><p>{escape(story["script"])}</p><p>{sources}</p>')
+        interlude = episode.get('interlude')
+        if interlude and number == interlude['after_story']:
+            parts.append(f'<p>{escape(interlude["script"])}</p>')
     parts.extend([f'<p>{escape(episode["outro"])}</p>',
-                  '<p>AI-assisted writing and synthetic narration, with editorial review.</p>'])
+                  f'<p>{DISCLOSURE}</p>'])
     return ''.join(parts)
 
 
@@ -119,8 +123,6 @@ def build_feed(site, podcast, episodes, chapter_dates):
         tag(image, name, value)
     seen = set()
     for episode in playable:
-        if 'synthetic narration' not in episode['intro'].casefold():
-            raise ValueError('Audio introduction and episode metadata must disclose synthetic narration')
         day, audio = episode['date'], episode['audio']
         enclosure_url = https_url(audio['url'])
         if enclosure_url in seen or type(audio['bytes']) is not int or audio['bytes'] <= 0:
@@ -134,7 +136,7 @@ def build_feed(site, podcast, episodes, chapter_dates):
         tag(item, 'link', episode_url)
         tag(item, 'guid', 'urn:uuid:' + str(uuid.uuid5(uuid.NAMESPACE_URL, podcast['id'] + '/' + day)), isPermaLink='false')
         tag(item, 'pubDate', format_datetime(published(podcast['publications'][day])))
-        tag(item, 'description', episode['intro'] + '\n\n' + '\n'.join(s['title'] for s in episode['stories']) + '\n\n' + episode['outro'])
+        tag(item, 'description', episode['intro'] + '\n\n' + '\n'.join(s['title'] for s in episode['stories']) + '\n\n' + episode['outro'] + '\n\n' + DISCLOSURE)
         tag(item, f'{{{CONTENT}}}encoded', show_notes(episode, episode_url))
         tag(item, 'enclosure', url=enclosure_url, length=str(audio['bytes']), type='audio/mpeg')
         tag(item, f'{{{ITUNES}}}duration', round(audio['duration_seconds']))

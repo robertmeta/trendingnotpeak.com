@@ -1,6 +1,6 @@
 Trending Not Peak — October 29, 2026
 
-This is Trending Not Peak, with AI-assisted writing and synthetic narration. Before we dive in, all the links and details are at trending not peak dot com. Miss something? You can always catch up there.
+This is Trending Not Peak. Before we dive in, all the links and details are at trending not peak dot com. Miss something? You can always catch up there.
 
 Odysseys2: did the browser agent actually finish?
 
@@ -42,6 +42,10 @@ SlideBySide: shared slides without screen sharing
 
 For your next technical walkthrough, here's SlideBySide. It lets everyone follow a presentation in their own browser, with shared cursors, drawing, and controls for who can navigate. The appeal is discussing the same diagram without another round of requests to zoom in. Check how your slides look, and read its privacy terms before uploading a confidential deck. Convenience isn't a data policy.
 
+Thanks to Intelligrit
+
+Thanks to Intelligrit for sponsoring this daily update.
+
 YOLO on AMD: a supported route from training to inference
 
 Switching to computer vision, Ultralytics now officially supports AMD GPUs through ROCm. The practical win is keeping the familiar Python interface for training and inference, with an export path to AMD's inference engine. AMD's guide lists the hardware and workflows it actually tested, which is refreshingly useful. This is Linux support; Windows isn't supported, and WSL hasn't been tested. Check the compatibility list before deciding your spare graphics card has a new career.
@@ -82,4 +86,4 @@ Boo Bench: the haunted house for document parsers
 
 And finally, a haunted house for document parsers. LlamaIndex's Boo Bench has a hundred and seventy-nine pages designed to make models repeat themselves. In one example, a page with a few hundred letter Xs produced more than twenty-three thousand. Apparently the ghost is a stuck keyboard. The dataset includes real pages and deliberately tricky ones. It's a useful stress test, not a complete accuracy ranking. Happy Halloween to everyone debugging a PDF.
 
-That's Trending Not Peak. Missed something? The links and details are at trending not peak dot com. Thanks to Intelligrit for sponsoring this daily update.
+That's Trending Not Peak. Missed something? The links and details are at trending not peak dot com.

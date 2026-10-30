@@ -184,6 +184,7 @@ footer p a { font-size: inherit; }
 .filters input::placeholder { color: #9ba7c2; opacity: 1; }
 .filters button { height: 48px; padding: 8px 20px; box-shadow: 4px 4px 0 #9d7654; font-size: 16px; }
 .filters #result-count { font-size: 11px; margin: 0; grid-column: 1/-1; color: var(--mint); }
+.sponsor-note { grid-column: 1 / -1; text-align: center; padding: 8px 16px; border-block: 1px solid var(--line); }
 .stories { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
 .story { position: relative; align-self: start; min-width: 0; padding: 28px; background: var(--panel); border: 3px solid var(--line); box-shadow: 6px 6px 0 var(--black); scroll-margin-top: 28px; }
 .story:target, .story:has(.legacy-anchor:target) { outline: 3px solid var(--gold); outline-offset: 6px; }

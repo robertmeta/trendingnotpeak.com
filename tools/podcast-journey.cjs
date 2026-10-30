@@ -58,7 +58,7 @@ const digest = bytes => createHash('sha256').update(bytes).digest('hex');
       return response.json();
     }, url);
     const chapters = await browserJson(localAsset(feed.chapters));
-    assert.equal(chapters.chapters.length, 22);
+    assert.equal(chapters.chapters.length, 23);
     assert.equal(chapters.chapters[0].startTime, 0);
     await page.goto(target);
     await page.locator('.archive').getByRole('link', { name: /October 29, 2026/ }).click();
@@ -76,7 +76,7 @@ const digest = bytes => createHash('sha256').update(bytes).digest('hex');
     assert.equal(await page.locator('body').innerText(), transcript);
     const result = { result: 'passed', site: target, dns_override: dnsOverride, feed: new URL('feed.xml', target).href,
       guid: feed.guid, audio_sha256: digest(audio), checks: ['mobile-rss-navigation', 'feed-reload',
-        'approved-email', '3000px-cover', '22-chapters', 'actual-mp3-hash', 'transcript-reload'] };
+        'approved-email', '3000px-cover', '23-chapters', 'actual-mp3-hash', 'transcript-reload'] };
     fs.writeFileSync(path.join(artifacts, 'journey.json'), JSON.stringify(result, null, 2));
     console.log(JSON.stringify(result));
   } finally { await browser.close(); }

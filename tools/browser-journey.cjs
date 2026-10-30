@@ -45,14 +45,39 @@ const ARTIFACTS = process.env.TNP_TEST_ARTIFACTS || path.resolve('.cache/browser
     await page.waitForFunction(() => Number.isFinite(document.querySelector('audio')?.duration));
     const duration = await player.evaluate(element => element.duration);
     assert.ok(duration > 400 && duration < 660);
+    await page.emulateMedia({ reducedMotion: 'no-preference' });
+    const speed = page.getByRole('combobox', { name: 'Playback speed' });
+    await speed.focus();
+    assert.ok(await speed.evaluate(el => el === document.activeElement));
+    // macOS native popup menus are outside Playwright's keyboard event target.
+    await speed.selectOption('1.5');
+    assert.equal(await player.evaluate(a => a.playbackRate), 1.5);
     await page.getByRole('button', { name: 'Play episode', exact: true }).press('Space');
     await page.waitForFunction(() => { const audio = document.querySelector('audio'); return !audio.paused && audio.currentTime > 0; });
+    const pacing = await page.evaluate(() => ({ time: document.querySelector('audio').currentTime, clock: performance.now() }));
+    await page.waitForFunction(t => document.querySelector('audio').currentTime > t + 1.5, pacing.time);
+    const actualRate = await page.evaluate(before => (document.querySelector('audio').currentTime - before.time) / ((performance.now() - before.clock) / 1000), pacing);
+    assert.ok(actualRate > 1.25 && actualRate < 1.75, `Expected actual 1.5× playback, observed ${actualRate}`);
+    for (const value of ['0.75', '1', '1.25', '1.75', '2', '1.5']) {
+      await speed.selectOption(value);
+      assert.equal(await player.evaluate(a => a.playbackRate), Number(value));
+    }
+    const rotation = await page.locator('.reel').first().evaluate(el => getComputedStyle(el).transform);
+    const started = await player.evaluate(a => a.currentTime);
+    await page.waitForFunction(t => document.querySelector('audio').currentTime > t + .5, started);
+    assert.notEqual(await page.locator('.reel').first().evaluate(el => getComputedStyle(el).transform), rotation);
     const seek = page.getByRole('slider', { name: 'Seek through episode' });
     await seek.press('Home');
     for (let i = 0; i < 6; i++) await seek.press('ArrowRight');
     await page.waitForFunction(() => document.querySelector('audio').currentTime > 5);
     await page.getByRole('button', { name: 'Pause episode', exact: true }).press('Space');
     assert.ok(await player.evaluate(element => element.paused));
+    // Wait for the pause event to update the UI and WebKit's final media clock.
+    await page.waitForFunction(() => document.querySelector('[data-play]').getAttribute('aria-label') === 'Play episode' && document.querySelector('.cassette').style.getPropertyValue('--rotation') === `${document.querySelector('audio').currentTime * 85}deg`);
+    const pausedRotation = await page.locator('.reel').first().evaluate(el => getComputedStyle(el).transform);
+    await page.evaluate(() => new Promise(resolve => { let frames = 0; const tick = () => ++frames === 8 ? resolve() : requestAnimationFrame(tick); requestAnimationFrame(tick); }));
+    assert.equal(await page.locator('.reel').first().evaluate(el => getComputedStyle(el).transform), pausedRotation);
+
     await page.getByRole('button', { name: 'Mute', exact: true }).click();
     assert.ok(await player.evaluate(element => element.muted));
     await page.getByRole('button', { name: 'Unmute', exact: true }).click();
@@ -65,7 +90,16 @@ const ARTIFACTS = process.env.TNP_TEST_ARTIFACTS || path.resolve('.cache/browser
     await page.getByRole('button', { name: 'Restart episode', exact: true }).click();
     assert.equal(await player.evaluate(element => element.currentTime), 0);
     await page.emulateMedia({ reducedMotion: 'reduce' });
-    assert.equal(await page.locator('.reel').first().evaluate(element => getComputedStyle(element).transform), 'none');
+    await page.waitForFunction(() => getComputedStyle(document.querySelector('.reel')).transform === 'none');
+    await page.getByRole('checkbox', { name: 'Animate reels' }).check();
+    assert.notEqual(await page.locator('.reel').first().evaluate(el => getComputedStyle(el).transform), 'none');
+    await page.reload();
+    assert.equal(await speed.inputValue(), '1.5');
+    assert.equal(await player.evaluate(a => a.playbackRate), 1.5);
+    assert.ok(await page.getByRole('checkbox', { name: 'Animate reels' }).isChecked());
+    await page.getByRole('checkbox', { name: 'Animate reels' }).uncheck();
+    await page.reload();
+    assert.equal(await page.locator('.reel').first().evaluate(el => getComputedStyle(el).transform), 'none');
     await page.locator('.listen').screenshot({ path: path.join(ARTIFACTS, 'cassette-desktop.png') });
     await page.locator('.story').first().getByText('Dated signal snapshots').click();
     await page.locator('.story').first().getByRole('heading', { name: 'Our snapshot' }).waitFor();
@@ -96,7 +130,7 @@ const ARTIFACTS = process.env.TNP_TEST_ARTIFACTS || path.resolve('.cache/browser
     await page.waitForURL('**/data/2026-10-29.json');
     const record = JSON.parse(await page.locator('body').innerText());
     assert.equal(record.stories.length, 20);
-    assert.equal(record.audio.embedded_chapters, 22);
+    assert.equal(record.audio.embedded_chapters, 23);
     assert.ok(record.audio.url.endsWith('-chapters.mp3'));
     assert.ok(Math.abs(record.audio.duration_seconds - duration) < 0.1);
     assert.equal(record.stories[0].observations[0].community.score, 143);
@@ -114,7 +148,10 @@ const ARTIFACTS = process.env.TNP_TEST_ARTIFACTS || path.resolve('.cache/browser
     await page.waitForURL('**/transcripts/2026-10-29.txt');
     const transcript = await page.locator('body').innerText();
     assert.match(transcript, /Boo ?Bench/);
-    assert.ok(transcript.trim().endsWith('Thanks to Intelligrit for sponsoring this daily update.'));
+    assert.ok(transcript.trim().endsWith('trending not peak dot com.'));
+    assert.ok(transcript.indexOf(record.stories[9].script) < transcript.indexOf(record.interlude.script));
+    assert.ok(transcript.indexOf(record.interlude.script) < transcript.indexOf(record.stories[10].script));
+    assert.doesNotMatch(transcript, /synthetic narration/);
     for (const width of [320, 390, 768]) {
       await page.setViewportSize({ width, height: 844 });
       await page.goto(TARGET_URL);
@@ -159,7 +196,7 @@ const ARTIFACTS = process.env.TNP_TEST_ARTIFACTS || path.resolve('.cache/browser
     await logo.close();
     assert.deepEqual(errors, []);
     const result = { result: 'passed', url: TARGET_URL, stories: record.stories.length,
-      views: [1380, 320, 390, 768], audio_seconds: duration, checks: ['cassette-volume-mute-restart', 'reduced-motion', 'no-js-audio-fallback', 'audio-error-feedback', 'public-footer-copy', 'pixel-font', 'calendar-route', 'direct-story-three', 'legacy-route-hash', 'same-fragment-filter-recovery', 'visible-selection-notes', 'home-to-edition', 'audio-keyboard-play-seek-pause', 'source-provenance', 'search', 'category', 'empty-reset', 'permalink-reload', 'public-json', 'mp3-download-hash', 'transcript-signoff', 'mobile-overflow'], errors };
+      views: [1380, 320, 390, 768], audio_seconds: duration, checks: ['cassette-volume-mute-restart', 'reel-motion-and-override', 'speed-focus-and-persistence', 'reduced-motion', 'no-js-audio-fallback', 'audio-error-feedback', 'public-footer-copy', 'pixel-font', 'calendar-route', 'direct-story-three', 'legacy-route-hash', 'same-fragment-filter-recovery', 'visible-selection-notes', 'home-to-edition', 'audio-keyboard-play-seek-pause', 'source-provenance', 'search', 'category', 'empty-reset', 'permalink-reload', 'public-json', 'mp3-download-hash', 'transcript-midpoint-credit', 'mobile-overflow'], errors };
     fs.writeFileSync(path.join(ARTIFACTS, 'journey.json'), JSON.stringify(result, null, 2));
     console.log(JSON.stringify(result));
   } catch (error) {

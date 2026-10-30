@@ -123,7 +123,7 @@ def audio_html(episode):
 <div class="cassette-stripes" aria-hidden="true"><div class="tape-window"><span class="tape left-tape"></span><span class="tape right-tape"></span><span class="reel left-reel"></span><span class="reel right-reel"></span><span class="tape-guides">│ │ │ │ │</span></div></div>
 <div class="cassette-progress"><label class="sr-only" for="episode-seek">Seek through episode</label><input id="episode-seek" type="range" min="0" max="1" value="0" step="1" disabled><div class="cassette-times"><span><span class="sr-only">Elapsed time </span><time data-elapsed>0:00</time></span><span><span class="sr-only">Total time </span><time data-duration>0:00</time></span></div></div></div>
 <div class="cassette-controls"><button type="button" data-restart aria-label="Restart episode" disabled><span aria-hidden="true">↶</span></button><button type="button" data-play aria-label="Play episode"><span aria-hidden="true">▶</span></button><button type="button" data-mute aria-label="Mute"><span aria-hidden="true">♪</span></button></div>
-</div><div class="cassette-volume" hidden><label for="episode-volume">Volume</label><input id="episode-volume" type="range" min="0" max="1" value="0.78" step="0.05"></div>
+</div><div class="cassette-settings" hidden><label for="episode-speed">Speed <select id="episode-speed" aria-label="Playback speed"><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="1.75">1.75×</option><option value="2">2×</option></select></label><div class="cassette-volume"><label for="episode-volume">Volume</label><input id="episode-volume" type="range" min="0" max="1" value="0.78" step="0.05"></div><label for="episode-motion"><input id="episode-motion" type="checkbox">Animate reels</label></div>
 <p class="cassette-error" role="alert" hidden></p></div>
 <a href="{link(audio['url'])}">Download the MP3 ↗</a><p class="fine">{audio['duration_seconds'] / 60:.1f} minutes · AI narration{chapter_note}</p></section>'''
 
@@ -133,6 +133,12 @@ def episode_page(episode, config, prefix='../../../'):
     categories = sorted({story['category'] for story in episode['stories']})
     options = ''.join(f'<option>{escape(category)}</option>' for category in categories)
     contents = ''.join(f'<li><a href="#{story["number"]}"><span>{story["number"]:02d}</span>{escape(story["title"])}</a></li>' for story in episode['stories'])
+    story_cards = []
+    for story in episode['stories']:
+        story_cards.append(card(story, prefix))
+        interlude = episode.get('interlude')
+        if interlude and story['number'] == interlude['after_story']:
+            story_cards.append(f'<aside class="sponsor-note"><p>{escape(interlude["script"])}</p></aside>')
     body = f'''<section class="edition-heading"><a class="back" href="{prefix}">← All editions</a><p class="eyebrow">The daily field notes · {label(day)}</p>
 <h1>Twenty things<br>worth a closer look<span class="accent">.</span></h1>
 <p class="dek">The strongest signal first. A little weirdness at the end. Everything you need to follow the threads in between.</p>
@@ -142,7 +148,7 @@ def episode_page(episode, config, prefix='../../../'):
 <form class="filters" data-filter hidden role="search"><div><label for="search">Find something you missed</label><input id="search" type="search" placeholder="A project, a topic, a strange idea…" autocomplete="off"></div>
 <div><label for="category">Topic</label><select id="category"><option value="">All topics</option>{options}</select></div><button type="reset">Reset</button>
 <p id="result-count" role="status" aria-live="polite">{len(episode['stories'])} stories</p></form>
-<div class="stories">{''.join(card(story, prefix) for story in episode['stories'])}</div><p class="empty" hidden>No stories match. Try another search or reset the filters.</p>
+<div class="stories">{''.join(story_cards)}</div><p class="empty" hidden>No stories match. Try another search or reset the filters.</p>
 <aside class="edition-end"><p class="eyebrow">Caught up.</p><h2>Keep the useful bits.<br>Leave the hype.</h2><p>Thanks to <a href="https://intelligrit.com/">Intelligrit</a> for sponsoring this daily update.</p><a href="{prefix}#archive">Browse the archive →</a></aside>'''
     return shell(label(day), body, prefix, config['base_url'] + '/' + episode_path(day), config)
 
@@ -193,8 +199,11 @@ def build():
         write(OUT / 'episodes' / day / 'index.html', episode_page(episode, config, prefix='../../'))
         write(OUT / 'data' / f'{day}.json', json.dumps(episode, ensure_ascii=False, indent=2) + '\n')
         text = [episode['title'], episode['intro']]
-        for story in episode['stories']:
+        for number, story in enumerate(episode['stories'], 1):
             text.extend([story['title'], story['script']])
+            interlude = episode.get('interlude')
+            if interlude and number == interlude['after_story']:
+                text.extend([interlude['title'], interlude['script']])
         text.append(episode['outro'])
         write(OUT / 'transcripts' / f'{day}.txt', '\n\n'.join(text) + '\n')
     write(OUT / 'index.html', home(episodes, config))

@@ -88,10 +88,13 @@ class Archive(unittest.TestCase):
                     self.assertIn(unquote(url.fragment), pages[target].ids)
 
     def test_story_records_are_public_and_retained_in_built_output(self):
-        allowed = {'schema_version', 'date', 'title', 'intro', 'outro', 'audio', 'stories'}
+        allowed = {'schema_version', 'date', 'title', 'intro', 'outro', 'audio', 'stories', 'interlude'}
         for path in (ROOT / 'episodes').glob('*.json'):
             record = json.loads(path.read_text())
-            self.assertEqual(allowed, set(record))
+            self.assertEqual(allowed - {'interlude'}, set(record) - {'interlude'})
+            if record.get('interlude'):
+                self.assertEqual(set(record['interlude']), {'after_story', 'title', 'script'})
+                self.assertEqual(record['interlude']['after_story'], 10)
             if record['audio']:
                 self.assertEqual(set(record['audio']), {'url', 'duration_seconds', 'bytes', 'embedded_chapters', 'sha256'})
             self.assertEqual(record, json.loads((OUT / 'data' / path.name).read_text()))

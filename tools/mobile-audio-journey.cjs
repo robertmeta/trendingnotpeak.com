@@ -10,7 +10,7 @@ const artifacts = process.env.TNP_TEST_ARTIFACTS || path.resolve('.cache/mobile-
 
 (async () => {
   fs.mkdirSync(artifacts, { recursive: true });
-  const browser = await webkit.launch({ headless: true, executablePath: process.env.TNP_WEBKIT_EXECUTABLE });
+  const browser = await webkit.launch({ headless: false, executablePath: process.env.TNP_WEBKIT_EXECUTABLE });
   const page = await browser.newPage(devices['iPhone 13']);
   page.setDefaultTimeout(15000);
   const errors = [];
@@ -19,12 +19,34 @@ const artifacts = process.env.TNP_TEST_ARTIFACTS || path.resolve('.cache/mobile-
     await page.goto(url);
     await page.locator('.archive').getByRole('link', { name: /October 29, 2026/ }).tap();
     const audio = page.locator('audio');
+    await page.emulateMedia({ reducedMotion: 'no-preference' });
+    const speed = page.getByRole('combobox', { name: 'Playback speed' });
+    await speed.selectOption('1.5');
+    assert.equal(await audio.evaluate(a => a.playbackRate), 1.5);
     // iOS may wait for a user gesture before loading metadata.
     await page.getByRole('button', { name: 'Play episode', exact: true }).tap();
     await page.waitForFunction(() => document.querySelector('audio').currentTime > 1);
     const duration = await audio.evaluate(element => element.duration);
+    const pacing = await page.evaluate(() => ({ time: document.querySelector('audio').currentTime, clock: performance.now() }));
+    await page.waitForFunction(t => document.querySelector('audio').currentTime > t + 1.5, pacing.time);
+    const actualRate = await page.evaluate(before => (document.querySelector('audio').currentTime - before.time) / ((performance.now() - before.clock) / 1000), pacing);
+    assert.ok(actualRate > 1.25 && actualRate < 1.75, `Expected actual 1.5× playback, observed ${actualRate}`);
+    for (const value of ['0.75', '1', '1.25', '1.75', '2', '1.5']) {
+      await speed.selectOption(value);
+      assert.equal(await audio.evaluate(a => a.playbackRate), Number(value));
+    }
+    const rotation = await page.locator('.reel').first().evaluate(el => getComputedStyle(el).transform);
+    const start = await audio.evaluate(a => a.currentTime);
+    await page.waitForFunction(t => document.querySelector('audio').currentTime > t + .6, start);
+    assert.notEqual(await page.locator('.reel').first().evaluate(el => getComputedStyle(el).transform), rotation);
     await page.getByRole('button', { name: 'Pause episode', exact: true }).tap();
     assert.ok(await audio.evaluate(element => element.paused));
+    // Wait for the pause event to update the UI and WebKit's final media clock.
+    await page.waitForFunction(() => document.querySelector('[data-play]').getAttribute('aria-label') === 'Play episode' && document.querySelector('.cassette').style.getPropertyValue('--rotation') === `${document.querySelector('audio').currentTime * 85}deg`);
+    const pausedRotation = await page.locator('.reel').first().evaluate(el => getComputedStyle(el).transform);
+    await page.evaluate(() => new Promise(resolve => { let frames = 0; const tick = () => ++frames === 8 ? resolve() : requestAnimationFrame(tick); requestAnimationFrame(tick); }));
+    assert.equal(await page.locator('.reel').first().evaluate(el => getComputedStyle(el).transform), pausedRotation);
+
     const seek = page.getByRole('slider', { name: 'Seek through episode' });
     const box = await seek.boundingBox();
     await seek.tap({ position: { x: box.width / 2, y: box.height / 2 } });
@@ -40,6 +62,8 @@ const artifacts = process.env.TNP_TEST_ARTIFACTS || path.resolve('.cache/mobile-
     await page.getByRole('button', { name: 'Restart episode', exact: true }).tap();
     assert.equal(await audio.evaluate(element => element.currentTime), 0);
     await page.reload();
+    assert.equal(await speed.inputValue(), '1.5');
+    assert.equal(await audio.evaluate(a => a.playbackRate), 1.5);
     await page.getByRole('button', { name: 'Play episode', exact: true }).tap();
     await page.waitForFunction(() => document.querySelector('audio').currentTime > 1);
     await page.getByRole('button', { name: 'Pause episode', exact: true }).tap();
@@ -57,10 +81,10 @@ const artifacts = process.env.TNP_TEST_ARTIFACTS || path.resolve('.cache/mobile-
     assert.equal(bytes.length, record.audio.bytes);
     assert.equal(createHash('sha256').update(bytes).digest('hex'), record.audio.sha256);
     assert.ok(Math.abs(duration - record.audio.duration_seconds) < 0.1);
-    assert.equal(record.audio.embedded_chapters, 22);
+    assert.equal(record.audio.embedded_chapters, 23);
     assert.deepEqual(errors, []);
     const result = { result: 'passed', engine: 'webkit', device: 'iPhone 13 emulation', url,
-      duration, checks: ['home-to-edition', 'touch-play-pause', 'touch-seek-resume', 'mute', 'restart', 'reload-play', 'mp3-download-hash', 'mobile-overflow'], errors };
+      duration, checks: ['home-to-edition', 'touch-play-pause', 'touch-seek-resume', 'mute', 'restart', 'reload-play', 'reel-rotation', 'speed-persistence', 'mp3-download-hash', 'mobile-overflow'], errors };
     fs.writeFileSync(path.join(artifacts, 'journey.json'), JSON.stringify(result, null, 2));
     console.log(JSON.stringify(result));
   } catch (error) {
