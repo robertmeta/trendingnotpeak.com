@@ -16,9 +16,9 @@ if (filters) {
     document.querySelector('#result-count').textContent = `${count} of ${stories.length} stories`;
     document.querySelector('.empty').hidden = count !== 0;
   };
-  const revealLink = () => {
-    if (!location.hash) return;
-    const story = stories.find(item => `#${item.id}` === location.hash);
+  const revealLink = (hash = location.hash) => {
+    if (!hash) return;
+    const story = stories.find(item => `#${item.id}` === hash || `#${item.dataset.storyId}` === hash);
     if (story?.hidden) {
       filters.reset();
       update();
@@ -29,7 +29,11 @@ if (filters) {
   filters.addEventListener('input', update);
   filters.addEventListener('submit', event => event.preventDefault());
   filters.addEventListener('reset', () => { search.value = ''; category.value = ''; update(); });
-  window.addEventListener('hashchange', revealLink);
+  window.addEventListener('hashchange', () => revealLink());
+  document.addEventListener('click', event => {
+    const link = event.target.closest('a[href^="#"]');
+    if (link) revealLink(link.getAttribute('href'));
+  });
   update();
   revealLink();
 }

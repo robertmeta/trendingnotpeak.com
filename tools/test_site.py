@@ -6,7 +6,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
-from build import ROOT, OUT, link, shell
+from build import ROOT, OUT, card, episode_path, link, shell
 
 
 class Links(HTMLParser):
@@ -25,6 +25,34 @@ class Links(HTMLParser):
 
 
 class Archive(unittest.TestCase):
+    def test_calendar_routes_numbered_stories_and_legacy_links(self):
+        config = json.loads((ROOT / 'site.json').read_text())
+        for path in (ROOT / 'episodes').glob('*.json'):
+            record = json.loads(path.read_text())
+            route = episode_path(record['date'])
+            canonical = (OUT / route / 'index.html').read_text()
+            legacy = (OUT / 'episodes' / record['date'] / 'index.html').read_text()
+            for html in (canonical, legacy):
+                self.assertIn(f'href="{config["base_url"]}/{route}"', html)
+                for number, story in enumerate(record['stories'], 1):
+                    self.assertIn(f'id="{number}"', html)
+                    self.assertIn(f'href="#{number}"', html)
+                    self.assertIn(f'id="{story["id"]}"', html)
+                self.assertIn('Story transcript', html)
+                self.assertIn('<dt>Why picked</dt>', html)
+                self.assertIn('Sources &amp; further reading', html)
+            self.assertIn(f'href="{route}"', (OUT / 'index.html').read_text())
+
+    def test_followup_links_use_calendar_routes(self):
+        record = json.loads(next((ROOT / 'episodes').glob('*.json')).read_text())
+        story = dict(record['stories'][0], follow_up={'previous_date': '2026-10-28',
+                     'what_changed': 'New release adds a documented capability.',
+                     'why_revisit': 'This materially changes the prior result.'})
+        self.assertIn('href="../../../2026/10/28/"', card(story, '../../../'))
+        self.assertIn('href="../../2026/10/28/"', card(story, '../../'))
+        with self.assertRaises(ValueError):
+            episode_path('../../escape')
+
     def test_every_generated_local_link_and_anchor_resolves(self):
         pages = {}
         for path in OUT.rglob('*.html'):

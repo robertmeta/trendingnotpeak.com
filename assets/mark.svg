@@ -1,1 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><rect width="48" height="48" rx="12" fill="#183c32"/><path d="M10 32V26M19 32V21M28 32V15M37 32V9" stroke="#d8f59e" stroke-width="5" stroke-linecap="round"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" shape-rendering="crispEdges" role="img" aria-labelledby="title desc">
+  <title id="title">Trending Not Peak</title>
+  <desc id="desc">A mint pixel arrow climbs a stepped graph toward an outlined amber peak that remains higher and ahead.</desc>
+  <path d="M4 0h56v4h4v56h-4v4H4v-4H0V4h4z" fill="#15182f"/>
+  <path d="M8 8h4v48h44v4H8z" fill="#343c5c"/>
+  <path d="M12 48h8v-8h8v-8h8v-8h8v8h-4v8h-8v8h-8v8H12z" fill="#b8ef8b"/>
+  <path d="M28 20h20v20h-8V28H28z" fill="#b8ef8b"/>
+  <path d="M48 12h4v4h-4z" fill="#a6b7a2"/>
+  <path d="M52 4h8v8h-8z" fill="#ffcb81"/>
+  <path d="M54 6h4v4h-4z" fill="#15182f"/>
+</svg>
