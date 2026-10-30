@@ -37,6 +37,7 @@ const digest = bytes => createHash('sha256').update(bytes).digest('hex');
         owner: channel.getElementsByTagNameNS(itunes, 'email')[0].textContent,
         cover: channel.getElementsByTagNameNS(itunes, 'image')[0].getAttribute('href'),
         guid: item.querySelector('guid').textContent,
+        edition: item.querySelector('link').textContent,
         audio: item.querySelector('enclosure').getAttribute('url'),
         bytes: Number(item.querySelector('enclosure').getAttribute('length')),
         transcript: item.getElementsByTagNameNS(podcast, 'transcript')[0].getAttribute('url'),
@@ -45,6 +46,8 @@ const digest = bytes => createHash('sha256').update(bytes).digest('hex');
     }, xml);
     assert.equal(feed.owner, 'podcasts@robertmelton.com');
     assert.match(feed.guid, /^urn:uuid:/);
+    const day = new URL(feed.edition).pathname.split('/').filter(Boolean).join('-');
+    const datePath = day.replaceAll('-', '/');
     const reload = await page.reload();
     assert.equal(await reload.text(), xml, 'The public feed must persist unchanged across reloads');
     const localAsset = value => new URL(new URL(value).pathname.replace(/^\//, ''), target).href;
@@ -61,8 +64,11 @@ const digest = bytes => createHash('sha256').update(bytes).digest('hex');
     assert.equal(chapters.chapters.length, 23);
     assert.equal(chapters.chapters[0].startTime, 0);
     await page.goto(target);
-    await page.locator('.archive').getByRole('link', { name: /October 29, 2026/ }).click();
-    const record = await browserJson(new URL('data/2026-10-29.json', target).href);
+    await page.locator(`.archive a[href="${datePath}/"]`).click();
+    assert.equal(page.url(), feed.edition);
+    assert.equal(await page.getByRole('link', { name: /Public story archive & site source/ }).getAttribute('href'),
+      'https://github.com/robertmeta/trendingnotpeak.com');
+    const record = await browserJson(new URL(`data/${day}.json`, target).href);
     assert.equal(await page.getByRole('link', { name: 'Download the MP3 ↗', exact: true }).getAttribute('href'), feed.audio);
     const audioResponse = await page.request.get(feed.audio);
     assert.ok(audioResponse.ok());
