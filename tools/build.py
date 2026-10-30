@@ -113,7 +113,7 @@ def audio_html(episode):
     chapter_note = f" · {audio['embedded_chapters']} embedded MP3 chapters" if audio.get('embedded_chapters') else ''
     return f'''<section class="listen" aria-label="Listen to the episode"><p class="eyebrow">Now playing / {label(episode['date'])}</p><h2>Press play. Follow the links later.</h2>
 <div class="cassette-player" data-cassette>
-<audio controls preload="metadata" aria-label="Episode audio" src="{link(audio['url'])}">Your browser does not support audio playback.</audio>
+<audio controls preload="metadata" aria-label="Episode audio"><source src="{link(audio['url'])}" type="audio/mpeg">Your browser does not support audio playback.</audio>
 <div class="cassette" hidden>
 <i class="screw tl" aria-hidden="true"></i><i class="screw tr" aria-hidden="true"></i><i class="screw bl" aria-hidden="true"></i><i class="screw br" aria-hidden="true"></i>
 <div class="cassette-label"><div class="cassette-heading"><div><span class="cassette-kicker">Trending Not Peak</span><strong>{label(episode['date'])}</strong></div><span class="cassette-side">Side A</span></div>

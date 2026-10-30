@@ -38,6 +38,8 @@ for (const player of document.querySelectorAll('[data-cassette]')) {
   play.addEventListener('click', async () => {
     if (!audio.paused) { audio.pause(); return; }
     error.hidden = true;
+    // A failed <source> selection needs a fresh load before a listener can retry.
+    if (audio.networkState === HTMLMediaElement.NETWORK_NO_SOURCE) audio.load();
     try { await audio.play(); }
     catch { showError('Playback could not start. Press play to retry, or download the MP3 below.'); }
     updatePlayback();
@@ -57,11 +59,14 @@ for (const player of document.querySelectorAll('[data-cassette]')) {
   });
   for (const event of ['loadedmetadata', 'durationchange', 'timeupdate', 'seeked']) audio.addEventListener(event, update);
   for (const event of ['play', 'pause', 'ended']) audio.addEventListener(event, updatePlayback);
-  audio.addEventListener('error', () => showError('This audio could not load. Check your connection and try the MP3 link below.'));
+  const loadError = () => showError('This audio could not load. Check your connection and try the MP3 link below.');
+  audio.addEventListener('error', loadError);
+  audio.querySelector('source')?.addEventListener('error', loadError);
   audio.addEventListener('playing', () => { error.hidden = true; });
   reducedMotion.addEventListener('change', updatePlayback);
   audio.volume = Number(volume.value);
   update();
+  if (audio.error) loadError();
   audio.hidden = true;
   cassette.hidden = false;
   player.querySelector('.cassette-volume').hidden = false;

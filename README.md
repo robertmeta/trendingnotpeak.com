@@ -21,7 +21,10 @@ and transcripts. Commit both the source and generated files. GitHub Pages serves
 
 For visual or interaction changes, also run `TNP_TEST_URL=https://your-site-root/`
 `make test-journeys` with Playwright and Chromium already available to Node.
-This optional browser check installs nothing. It navigates from the homepage to
+Also run `make test-mobile-audio` for the WebKit iPhone playback journey; this
+catches media-loading failures that viewport resizing in Chromium cannot.
+An existing WebKit executable can be selected with `TNP_WEBKIT_EXECUTABLE`.
+These browser checks install nothing. It navigates from the homepage to
 the retained October 29 fixture, tests playback, filters, numbered and legacy
 links, reloads and downloads at desktop/mobile widths. It retains the regression
 for clicking the same story fragment after filtering. Screenshots and its JSON
