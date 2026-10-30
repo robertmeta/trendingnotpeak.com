@@ -1,0 +1,97 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0.0,
+      "title": "Opening"
+    },
+    {
+      "startTime": 8.658,
+      "title": "Give agents the metric definitions you already use"
+    },
+    {
+      "startTime": 36.363,
+      "title": "An agent backdoor can survive clean training"
+    },
+    {
+      "startTime": 63.229,
+      "title": "Overtone fits captions to different screens"
+    },
+    {
+      "startTime": 88.801,
+      "title": "PyTorch adds practical Apple Silicon inference paths"
+    },
+    {
+      "startTime": 113.839,
+      "title": "A small local model spots sensitive text"
+    },
+    {
+      "startTime": 141.47,
+      "title": "Agent coordination needs reading rules"
+    },
+    {
+      "startTime": 167.953,
+      "title": "Automatically decline repetitive macOS prompts"
+    },
+    {
+      "startTime": 194.512,
+      "title": "Mistral Large 4 arrives with deployment support"
+    },
+    {
+      "startTime": 224.961,
+      "title": "Research agents propose more than they can prioritize"
+    },
+    {
+      "startTime": 251.748,
+      "title": "Lasm brings Lean toward web runtimes"
+    },
+    {
+      "startTime": 278.301,
+      "title": "Thanks to Intelligrit"
+    },
+    {
+      "startTime": 281.627,
+      "title": "Teach robot manipulation through human demonstrations"
+    },
+    {
+      "startTime": 310.095,
+      "title": "Disease-mention extraction on a CPU"
+    },
+    {
+      "startTime": 338.029,
+      "title": "Tax instructions as executable, cited data"
+    },
+    {
+      "startTime": 367.338,
+      "title": "Redirect a robot policy while it runs"
+    },
+    {
+      "startTime": 392.681,
+      "title": "A dataset for checking compute-growth assumptions"
+    },
+    {
+      "startTime": 419.776,
+      "title": "Bivia offers decisions with an abstain option"
+    },
+    {
+      "startTime": 448.699,
+      "title": "Exo separates agent mechanisms from editable policy"
+    },
+    {
+      "startTime": 476.937,
+      "title": "An AT Protocol privacy surprise for app builders"
+    },
+    {
+      "startTime": 505.412,
+      "title": "A multiplayer browser game with flying cats"
+    },
+    {
+      "startTime": 533.039,
+      "title": "Doom becomes a neural-network execution engine"
+    },
+    {
+      "startTime": 559.526,
+      "title": "Closing"
+    }
+  ]
+}
