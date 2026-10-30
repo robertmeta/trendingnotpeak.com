@@ -1,0 +1,35 @@
+const filters = document.querySelector('[data-filter]');
+if (filters) {
+  const search = document.querySelector('#search');
+  const category = document.querySelector('#category');
+  const stories = [...document.querySelectorAll('.story')];
+  const normalized = value => value.toLowerCase().replace(/[^\p{L}\p{N}]/gu, '');
+  const update = () => {
+    const query = normalized(search.value);
+    let count = 0;
+    for (const story of stories) {
+      const visible = normalized(story.textContent).includes(query) &&
+        (!category.value || story.dataset.category === category.value);
+      story.hidden = !visible;
+      count += Number(visible);
+    }
+    document.querySelector('#result-count').textContent = `${count} of ${stories.length} stories`;
+    document.querySelector('.empty').hidden = count !== 0;
+  };
+  const revealLink = () => {
+    if (!location.hash) return;
+    const story = stories.find(item => `#${item.id}` === location.hash);
+    if (story?.hidden) {
+      filters.reset();
+      update();
+      story.scrollIntoView();
+    }
+  };
+  filters.hidden = false;
+  filters.addEventListener('input', update);
+  filters.addEventListener('submit', event => event.preventDefault());
+  filters.addEventListener('reset', () => { search.value = ''; category.value = ''; update(); });
+  window.addEventListener('hashchange', revealLink);
+  update();
+  revealLink();
+}

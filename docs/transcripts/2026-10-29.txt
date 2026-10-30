@@ -1,0 +1,85 @@
+Trending Not Peak — October 29, 2026
+
+This is Trending Not Peak. Before we dive in, all the links and details are at trending not peak dot com. Miss something? You can always catch up there.
+
+Odysseys2: did the browser agent actually finish?
+
+Our lead today is Odysseys two, a browser-agent benchmark with a very reasonable demand: show your work, including the actual file you produced. Researchers at Carnegie Mellon and Browser Use built a hundred tasks from real user requests. Their strongest tested agent finished fewer than half perfectly. For developers, that's a useful antidote to impressive-looking demos. The tasks and rubrics are available, though automated judging and a changing live web still make comparisons imperfect.
+
+Yavashark: an embeddable JavaScript engine
+
+Next up, a different kind of JavaScript engine. Yavashark is written in Rust and was announced yesterday. The attraction is embedding JavaScript inside another application, with Rust bindings. The developer reports passing about eighty-two percent of the language test suite. That's progress, with a sizeable asterisk: compatibility is incomplete and speed needs work. Watch small embedded applications first, rather than expecting a browser replacement.
+
+Redox rings: less copying between system services
+
+Down in operating-system land, Redox has published the results of its ring-buffer project. Applications and system services can exchange requests through shared memory, with less copying along the way. The team also built an asynchronous driver executor and demonstrated storage support. It's plumbing, but the useful kind. The work finished in September; this week's report explains it. Their benchmark gains still need testing against messier, more realistic workloads before we generalize.
+
+Popkern: CAD parts as versioned scripts
+
+Switching from code to physical parts, Popkern approaches computer-aided design with parts written as scripts and changes organized like database migrations. Its open-source geometry engine runs in a browser or locally, and exports models from the command line. That could suit developers who prefer repeatable scripts to manual edits. The demonstrations include smooth corner blends; test awkward real parts before manufacturing anything expensive.
+
+Managed Deep Agents: hand the browser back to a person
+
+Next, a practical browser-agent detail. LangChain's Managed Deep Agents can hand you the browser when a site needs a login, then resume after you return control. Browser state can belong to one conversation or follow an authenticated person across conversations. That's useful for testing applications and working with sites without APIs. It's still a beta platform. Shared login state needs care, and the documentation recommends using a direct API when one does the job.
+
+Locals: more agents on one Mac
+
+Meanwhile, on the Mac, here's Locals. It runs several AI agents on Apple Silicon. Its benchmark reports roughly three times the combined output at eight simultaneous requests, compared with its baseline. Useful if your coding assistants queue for the same model. The practical question is whether that gain holds for your workload. Independent performance checks are the next thing to watch.
+
+MiniCPM-OCR on MLX: parse locally, then check
+
+Now, a useful little document pipeline for your Mac. Nativ has brought Mini CPM OCR and its separate checking model to MLX. One model reads the page; the other compares the result with the original. That separation is handy for invoices or archives where confident nonsense is still nonsense. The port is available now, but its small validation set doesn't establish general accuracy. Try your messiest pages before trusting the scores.
+
+TAO: scheduling around agent tools
+
+Staying with performance, here's TAO. AI agents spend time waiting for tools. This new research scheduler accounts for that waiting when allocating work to graphics processors. The authors report latency reductions of up to twenty-seven percent in their tested setups. The useful idea is coordinating model work with tool readiness. Watch whether those research gains survive the less cooperative workloads of everyday production.
+
+OpenCartridge: local game assets in reusable containers
+
+For game developers, OpenCartridge packages local asset-generation workflows as cartridges. A canvas interface connects to ComfyUI workers for images, animation and other assets, with the models running on your own hardware. That's an appealing way to keep a working setup together. The documented workers still want a substantial NVIDIA GPU, and the example storage configuration is permissive. Treat it as an early local experiment, and review those defaults before exposing anything to a network.
+
+SlideBySide: shared slides without screen sharing
+
+For your next technical walkthrough, here's SlideBySide. It lets everyone follow a presentation in their own browser, with shared cursors, drawing, and controls for who can navigate. The appeal is discussing the same diagram without another round of requests to zoom in. Check how your slides look, and read its privacy terms before uploading a confidential deck. Convenience isn't a data policy.
+
+YOLO on AMD: a supported route from training to inference
+
+Switching to computer vision, Ultralytics now officially supports AMD GPUs through ROCm. The practical win is keeping the familiar Python interface for training and inference, with an export path to AMD's inference engine. AMD's guide lists the hardware and workflows it actually tested, which is refreshingly useful. This is Linux support; Windows isn't supported, and WSL hasn't been tested. Check the compatibility list before deciding your spare graphics card has a new career.
+
+OmniShowcase: keeping video objects consistent
+
+Over in AI video, OmniShowcase tackles objects changing identity as a generated video's camera moves. The researchers reconstruct shape information from several reference pictures, then use it to guide the video. The aim is to keep the same object recognizable from more angles. Product demonstrations are a possible use. For now, it's research with curated benchmarks; watch how it handles ordinary photographs.
+
+Async Rust: an explicit state for being done
+
+For the Rust crowd, here's a tiny missing word with surprisingly large consequences: done. Yosh Wuyts argues that async Rust needs a clearer way to represent a future that already returned its value. Polling it again can currently panic or cause other trouble. An explicit finished state could simplify coordination and help embedded use cases. This is a design argument, not a shipped language change. Compatibility is the awkward part.
+
+Nixtamal: keeping NixOS inputs reproducible
+
+Back to developer tooling, Nixtamal has a walkthrough for building a reproducible NixOS machine. It uses pinned inputs and the system dot nix entry point. The benefit is tying configuration to specific versions, rather than whatever a mutable channel contains. That gives you a more explicit recipe to revisit. This is a specialist workflow, not a new operating system. Watch how it fits your existing configuration.
+
+Document Parsing Protocol: write down the ambiguous choices
+
+Speaking of documents, what counts as a table when the page is just carefully aligned text? The Document Parsing Protocol tries to make those judgment calls explicit. Its working draft covers tables, forms, marginal notes and other awkward details, with examples and rules for uncertainty. That could make parser evaluations much easier to compare. It's an early proposal, not an established standard. The interesting test is whether different implementations can follow it consistently.
+
+Floe Agent: a development workspace on a tablet
+
+Now, development on a smaller screen. Floe Agent brings a Linux workspace, terminal, Git, and local web previews to phones and tablets. It's built around the iPad; Android remains in alpha. The appeal is a familiar development workflow without carrying a laptop. But local workspace doesn't automatically mean local AI: cloud models still send requests away. Check which backend you're using.
+
+Plushies: squishy Three.js characters for interfaces
+
+And a small treat for people building interfaces: Plushies turns simple shapes into squishy three-dimensional characters using Three dot J S. There's a browser editor, reusable code, and animated cursors that can show what an assistant is doing. The demo is very cute; it is also a demo, not evidence that your agent became more capable. For a real application, the interesting test is whether the character communicates useful status without getting in the way.
+
+Falcon: isolating one speaker in a noisy scene
+
+Turning to audio, Falcon combines sound with video of a speaker's mouth to separate that voice from a noisy scene. Published last week, the research reports lower compute costs than its comparison model, with simulated and recorded evaluations. Meeting transcription is a plausible application. The catch is needing useful video of the target speaker. Watch what happens when faces are obscured or the camera moves.
+
+Qwenputer: a deliberately constructed computer inside a model
+
+Now for something a little stranger. Qwenputer constructs a deterministic processor inside a language model by compiling its operations into model weights. Last week's write-up describes engineered computation, not a model spontaneously learning to become a computer. It's an intriguing bridge between compilers and neural networks, worth watching for independent reproductions and clearer practical applications. Your laptop probably needn't feel threatened yet.
+
+Boo Bench: the haunted house for document parsers
+
+And finally, a haunted house for document parsers. LlamaIndex's Boo Bench has a hundred and seventy-nine pages designed to make models repeat themselves. In one example, a page with a few hundred letter Xs produced more than twenty-three thousand. Apparently the ghost is a stuck keyboard. The dataset includes real pages and deliberately tricky ones. It's a useful stress test, not a complete accuracy ranking. Happy Halloween to everyone debugging a PDF.
+
+That's Trending Not Peak. Missed something? The links and details are at trending not peak dot com. Thanks to Intelligrit for sponsoring this daily update.
