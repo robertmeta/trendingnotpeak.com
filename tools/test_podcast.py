@@ -97,12 +97,12 @@ class Podcast(unittest.TestCase):
             for tag in ('description', f'{{{CONTENT}}}encoded'):
                 notes = ET.fromstring('<root>' + item.findtext(tag) + '</root>')
                 links = notes.findall('ul/li/a')
-                self.assertEqual(len(links), 20)
+                self.assertEqual(len(links), len(episode['stories']))
                 self.assertEqual([(link.get('href'), link.text) for link in links],
                                  [(f'{episode_url}#{number}', f'{number:02d} · {story["title"]}')
                                   for number, story in enumerate(episode['stories'], 1)])
             self.assertLessEqual(len(item.findtext('description')), 10000)
-            for number in range(1, 21):
+            for number in range(1, len(episode['stories']) + 1):
                 self.assertIn(f'id="{number}"', page)
 
     def test_reading_editions_are_omitted_and_empty_feed_is_rejected(self):

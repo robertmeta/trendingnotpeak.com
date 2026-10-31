@@ -6,6 +6,10 @@
 - [All editions](https://trendingnotpeak.com/): Browse the full public archive.
 - [Podcast RSS](https://trendingnotpeak.com/feed.xml): Subscribe and find episode audio.
 - [Sitemap](https://trendingnotpeak.com/sitemap.xml): Canonical pages.
+- [October 31, 2026 edition](https://trendingnotpeak.com/2026/10/31/): Stories, selection reasons and source links.
+- [2026-10-31 transcript](https://trendingnotpeak.com/transcripts/2026-10-31.txt): Full spoken script.
+- [2026-10-31 story data](https://trendingnotpeak.com/data/2026-10-31.json): Structured public records and dated signal snapshots.
+- [2026-10-31 audio](https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-10-31/trending-not-peak-2026-10-31-kinetic-grid-r2.mp3): Download the MP3.
 - [October 30, 2026 edition](https://trendingnotpeak.com/2026/10/30/): Stories, selection reasons and source links.
 - [2026-10-30 transcript](https://trendingnotpeak.com/transcripts/2026-10-30.txt): Full spoken script.
 - [2026-10-30 story data](https://trendingnotpeak.com/data/2026-10-30.json): Structured public records and dated signal snapshots.

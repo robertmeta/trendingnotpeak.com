@@ -1,0 +1,73 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0.0,
+      "title": "Opening"
+    },
+    {
+      "startTime": 15.751,
+      "title": "Build defect detection without collecting defects"
+    },
+    {
+      "startTime": 46.334,
+      "title": "Tangled makes the forge more separable"
+    },
+    {
+      "startTime": 77.46,
+      "title": "An Apple MLX path from one image to 3D"
+    },
+    {
+      "startTime": 106.752,
+      "title": "ParticleDB gets a detailed correctness reality check"
+    },
+    {
+      "startTime": 138.636,
+      "title": "Coordinate Claude sessions using reported terminal status"
+    },
+    {
+      "startTime": 168.081,
+      "title": "Simulated interviews improve a psychiatric research agent"
+    },
+    {
+      "startTime": 201.253,
+      "title": "Kubernetes-style control reaches ESP32 boards"
+    },
+    {
+      "startTime": 235.878,
+      "title": "Thanks to Intelligrit"
+    },
+    {
+      "startTime": 245.589,
+      "title": "Learn the loops around an agent"
+    },
+    {
+      "startTime": 274.574,
+      "title": "Read once, score several questions"
+    },
+    {
+      "startTime": 305.699,
+      "title": "Go explains the limits of a TCP vulnerability workaround"
+    },
+    {
+      "startTime": 336.066,
+      "title": "A personal DJ app becomes a browser experiment"
+    },
+    {
+      "startTime": 366.808,
+      "title": "A measured recipe for NixOS on a tiny VPS"
+    },
+    {
+      "startTime": 397.398,
+      "title": "BeOS joins Infinite Mac in the browser"
+    },
+    {
+      "startTime": 429.593,
+      "title": "Let your agent embarrass itself at Pictionary"
+    },
+    {
+      "startTime": 458.744,
+      "title": "Closing"
+    }
+  ]
+}
