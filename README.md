@@ -1,6 +1,6 @@
 # Trending Not Peak
 
-The public story archive for a daily AI and developer podcast: twenty emerging
+The public story archive for a daily AI and developer podcast: up to twenty emerging
 stories, around ten minutes, with original summaries and links to the evidence.
 
 Read it at **https://trendingnotpeak.com/**.

@@ -146,11 +146,11 @@ class Archive(unittest.TestCase):
             self.assertEqual(allowed - {'interlude'}, set(record) - {'interlude'})
             if record.get('interlude'):
                 self.assertEqual(set(record['interlude']), {'after_story', 'title', 'script'})
-                self.assertEqual(record['interlude']['after_story'], 10)
+                self.assertEqual(record['interlude']['after_story'], len(record['stories']) // 2)
             if record['audio']:
                 self.assertEqual(set(record['audio']), {'url', 'duration_seconds', 'bytes', 'embedded_chapters', 'sha256'})
             self.assertEqual(record, json.loads((OUT / 'data' / path.name).read_text()))
-            self.assertGreaterEqual(len(record['stories']), 20)
+            self.assertTrue(6 <= len(record['stories']) <= 20)
             html = (OUT / 'episodes' / record['date'] / 'index.html').read_text()
             for story in record['stories']:
                 self.assertLessEqual(set(story), {'id', 'number', 'category', 'role', 'title', 'script',

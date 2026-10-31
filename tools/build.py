@@ -128,7 +128,9 @@ def card(story, prefix):
 def audio_html(episode):
     audio = episode.get('audio')
     if not audio:
-        return '<div class="audio-status"><span class="status-dot" aria-hidden="true"></span><div><strong>The reading edition is ready.</strong><p>The full audio edition is coming. All twenty stories and their sources are below.</p></div></div>'
+        return (f'<div class="audio-status"><span class="status-dot" aria-hidden="true"></span>'
+                f'<div><strong>The reading edition is ready.</strong><p>The full audio edition is coming. '
+                f'All {len(episode["stories"])} stories and their sources are below.</p></div></div>')
     chapter_note = f" · {audio['embedded_chapters']} embedded MP3 chapters" if audio.get('embedded_chapters') else ''
     return f'''<section class="listen" aria-label="Listen to the episode"><p class="eyebrow">Now playing / {label(episode['date'])}</p><h2>Press play. Follow the links later.</h2>
 <div class="cassette-player" data-cassette>
@@ -156,7 +158,7 @@ def episode_page(episode, config, prefix='../../../'):
         if interlude and story['number'] == interlude['after_story']:
             story_cards.append(f'<aside class="sponsor-note"><p>{escape(interlude["script"])}</p></aside>')
     body = f'''<section class="edition-heading"><a class="back" href="{prefix}">← All editions</a><p class="eyebrow">The daily field notes · {label(day)}</p>
-<h1>Twenty things<br>worth a closer look<span class="accent">.</span></h1>
+<h1>Things worth<br>a closer look<span class="accent">.</span></h1>
 <p class="dek">The strongest signal first. A little weirdness at the end. Everything you need to follow the threads in between.</p>
 <div class="edition-meta"><span>{len(episode['stories'])} stories</span><span>AI + development</span><a href="{prefix}data/{day}.json">Story data ↗</a><a href="{prefix}transcripts/{day}.txt">Transcript ↗</a></div>
 {audio_html(episode)}</section>
@@ -176,7 +178,7 @@ def home(episodes, config):
     route = episode_path(day)
     editions = ''.join(f'<li><a href="{episode_path(episode["date"])}"><time datetime="{episode["date"]}">{label(episode["date"])}</time><span>{escape(episode["stories"][0]["title"])}</span><span class="archive-count">{len(episode["stories"])} stories ↗</span></a></li>' for episode in reversed(episodes))
     body = f'''<section class="hero"><div class="hero-copy"><p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> AI &amp; development · Before the peak</p>
-<h1>Early signals.<br>Useful details<span class="accent">.</span></h1><p class="dek">A daily dose of things gathering momentum. Twenty stories, about ten minutes, and enough context to decide what deserves your attention.</p>
+<h1>Early signals.<br>Useful details<span class="accent">.</span></h1><p class="dek">A daily dose of things gathering momentum. Up to twenty stories, ten minutes or less, and enough context to decide what deserves your attention.</p>
 <a class="button" href="{route}">Explore the latest edition <span aria-hidden="true">↗</span></a><p class="fine">{label(day)} · {len(latest['stories'])} stories · {'Audio + field notes' if latest.get('audio') else 'Reading edition available'}</p></div>
 <a class="lead-panel" href="{route}#1"><div class="panel-top"><span class="eyebrow">Today's strongest signal</span><span>01 / {len(latest['stories']):02d}</span></div><img class="signal-art" src="./assets/signal-landscape.svg" width="576" height="336" alt="">
 <p class="eyebrow">{escape(lead['category'])}</p><h2>{escape(lead['title'])}</h2><p>{escape(lead['script'].split('. ')[0])}.</p><span class="panel-cta">Follow this thread ↗</span></a></section>

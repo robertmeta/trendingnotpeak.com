@@ -76,7 +76,7 @@ def notes_header(episode, url):
         f'{number:02d} · {escape(story["title"])}</a></li>'
         for number, story in enumerate(episode['stories'], 1))
     return (f'<p>{escape(episode["intro"])}</p>'
-            f'<p>Twenty stories. Tap one for its transcript, why we picked it, and source links:</p>'
+            f'<p>{len(episode["stories"])} stories. Tap one for its transcript, why we picked it, and source links:</p>'
             f'<ul>{links}</ul>'
             f'<p><a href="{escape(transcript_url, quote=True)}">Full transcript</a> · '
             f'<a href="{escape(url, quote=True)}">All story details and sources</a></p>')

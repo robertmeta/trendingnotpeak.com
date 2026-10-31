@@ -70,17 +70,17 @@ const digest = bytes => createHash('sha256').update(bytes).digest('hex');
       const day = new URL(episode.edition).pathname.split('/').filter(Boolean).join('-');
       const datePath = day.replaceAll('-', '/');
       const chapters = await browserJson(localAsset(episode.chapters));
-      assert.equal(chapters.chapters.length, 23);
-      assert.equal(chapters.chapters[0].startTime, 0);
       await page.goto(target);
       await page.locator(`.archive a[href="${datePath}/"]`).click();
       assert.equal(page.url(), localAsset(episode.edition));
       assert.equal(await page.getByRole('link', { name: /Public story archive & site source/ }).getAttribute('href'),
         'https://github.com/robertmeta/trendingnotpeak.com');
       const record = await browserJson(new URL(`data/${day}.json`, target).href);
-      assert.equal(episode.storyLinks.length, 20);
+      assert.equal(chapters.chapters.length, record.stories.length + 3);
+      assert.equal(chapters.chapters[0].startTime, 0);
+      assert.equal(episode.storyLinks.length, record.stories.length);
       assert.equal(episode.transcript, new URL(`transcripts/${day}.txt`, target).href);
-      for (const number of [1, 10, 20]) {
+      for (const number of [1, Math.ceil(record.stories.length / 2), record.stories.length]) {
         const storyLink = episode.storyLinks[number - 1];
         assert.equal(storyLink.href, `${episode.edition}#${number}`);
         await page.goto(storyLink.href);
@@ -99,11 +99,11 @@ const digest = bytes => createHash('sha256').update(bytes).digest('hex');
       const transcript = await page.locator('body').innerText();
       await page.reload();
       assert.equal(await page.locator('body').innerText(), transcript);
-      checked.push({ day, guid: episode.guid, audio_sha256: digest(audio), story_links: 20 });
+      checked.push({ day, guid: episode.guid, audio_sha256: digest(audio), story_links: record.stories.length });
     }
     const result = { result: 'passed', site: target, dns_override: dnsOverride, feed: new URL('feed.xml', target).href,
       episodes: checked, checks: ['mobile-rss-navigation', 'feed-reload',
-        'approved-email', '3000px-cover', '23-chapters-each', '20-story-detail-links-each',
+        'approved-email', '3000px-cover', 'chapters-per-episode', 'story-detail-links-each',
         'actual-mp3-hash-each', 'transcript-reload-each'] };
     fs.writeFileSync(path.join(artifacts, 'journey.json'), JSON.stringify(result, null, 2));
     console.log(JSON.stringify(result));
