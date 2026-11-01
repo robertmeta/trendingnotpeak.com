@@ -151,7 +151,7 @@ def listen_html(config, prefix, section_id=''):
     cards = []
     for platform in config.get('listen', []):
         icon = platform['icon']
-        if icon not in {'listen-amazon.svg', 'listen-pocketcasts.svg'}:
+        if icon not in {'listen-spotify.svg', 'listen-amazon.svg', 'listen-pocketcasts.svg'}:
             raise ValueError('Unknown listening platform icon')
         cards.append(f'''<a class="listen-option" href="{link(platform['url'])}"><img src="{prefix}assets/{icon}" width="42" height="42" alt=""><span>{escape(platform['name'])}<small>Open show ↗</small></span></a>''')
     cards.append(f'''<a class="listen-option" href="{link(config['base_url'] + '/feed.xml')}"><img src="{prefix}assets/listen-rss.svg" width="42" height="42" alt=""><span>Podcast RSS<small>Use any podcast app ↗</small></span></a>''')

@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Spotify">
+  <rect width="48" height="48" rx="8" fill="#1db954"/>
+  <path d="M9 18c10-3 21-2 30 3M11 25c9-2 18-1 26 3M14 32c7-1 14 0 20 3" fill="none" stroke="#092517" stroke-width="4" stroke-linecap="round"/>
+</svg>

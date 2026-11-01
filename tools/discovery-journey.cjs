@@ -29,9 +29,11 @@ const artifacts = process.env.TNP_TEST_ARTIFACTS || path.resolve('.cache/discove
     await page.getByRole('heading', { name: 'Early signals. Useful details.' }).waitFor();
     const subscribe = page.locator('#listen');
     await subscribe.getByRole('heading', { name: 'Listen your way.' }).waitFor();
+    const spotify = subscribe.getByRole('link', { name: /Spotify/ });
     const amazon = subscribe.getByRole('link', { name: /Amazon Music/ });
     const pocket = subscribe.getByRole('link', { name: /Pocket Casts/ });
     const rss = subscribe.getByRole('link', { name: /Podcast RSS/ });
+    assert.equal(await spotify.getAttribute('href'), 'https://open.spotify.com/show/6G7qqBP9q53Dy4Lb52mqwf');
     assert.equal(await amazon.getAttribute('href'), 'https://music.amazon.com/podcasts/43b76143-2a5d-4f9d-bf71-3b32c3ab5344');
     assert.equal(await pocket.getAttribute('href'), 'https://pocketcasts.com/follow/https://trendingnotpeak.com/feed.xml');
     assert.equal(await rss.getAttribute('href'), 'https://trendingnotpeak.com/feed.xml');
@@ -40,7 +42,7 @@ const artifacts = process.env.TNP_TEST_ARTIFACTS || path.resolve('.cache/discove
     }
     await subscribe.screenshot({ path: path.join(artifacts, 'subscribe-desktop.png') });
     let destination;
-    for (const [button, pattern] of [[amazon, 'https://music.amazon.com/podcasts/**'], [pocket, 'https://pocketcasts.com/follow/**']]) {
+    for (const [button, pattern] of [[spotify, 'https://open.spotify.com/show/**'], [amazon, 'https://music.amazon.com/podcasts/**'], [pocket, 'https://pocketcasts.com/follow/**']]) {
       await page.route(pattern, route => {
         destination = route.request().url();
         route.fulfill({ status: 200, contentType: 'text/html', body: '<h1>Podcast app opened</h1>' });
@@ -72,7 +74,7 @@ const artifacts = process.env.TNP_TEST_ARTIFACTS || path.resolve('.cache/discove
 
     await page.goto(new URL('2026/10/30/#3', root).href);
     await page.locator('article[id="3"]').waitFor();
-    assert.equal(await page.locator('.subscribe .listen-option').count(), 3);
+    assert.equal(await page.locator('.subscribe .listen-option').count(), 4);
     assert.equal(await page.locator('meta[property="og:url"]').getAttribute('content'), 'https://trendingnotpeak.com/2026/10/30/');
     assert.equal(await image(), shareImage);
     assert.equal(await page.locator('link[rel="license"]').getAttribute('href'), 'https://creativecommons.org/licenses/by/4.0/');
@@ -91,7 +93,7 @@ const artifacts = process.env.TNP_TEST_ARTIFACTS || path.resolve('.cache/discove
 
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto(root);
-    assert.equal(await subscribe.getByRole('link').count(), 3);
+    assert.equal(await subscribe.getByRole('link').count(), 4);
     await subscribe.screenshot({ path: path.join(artifacts, 'subscribe-mobile.png') });
     await search.getByRole('searchbox').fill('tinygrad');
     assert.equal(await search.getByRole('button', { name: 'Search' }).isVisible(), true);
