@@ -73,7 +73,7 @@ def shell(title, body, prefix, canonical, config):
 <link rel="stylesheet" href="{asset('cassette.css')}"><script src="{asset('cassette.js')}" defer></script>
 </head><body><a class="skip" href="#main">Skip to content</a>
 <header class="site-header"><a class="brand" href="{prefix}" aria-label="Trending Not Peak home"><img src="{asset('mark.svg')}" width="48" height="48" alt="">trending<span>not</span>peak<span class="brand-dot">.</span></a>
-<nav aria-label="Main navigation"><a href="{prefix}#archive">Editions</a><a href="{prefix}#method">How we pick</a><a href="{prefix}feed.xml">Podcast RSS</a><a href="{link(config['repository'])}">Source</a></nav></header>
+<nav aria-label="Main navigation"><a href="{prefix}#listen">Listen</a><a href="{prefix}#archive">Editions</a><a href="{prefix}#method">How we pick</a><a href="{prefix}feed.xml">Podcast RSS</a><a href="{link(config['repository'])}">Source</a></nav></header>
 <main id="main">{body}</main>
 <footer><p class="footer-brand">Curious before the crowd.</p>
 <form class="site-search" action="https://duckduckgo.com/" method="get" role="search" aria-label="Search every edition with DuckDuckGo" data-site-search><label for="site-query">Search every edition with DuckDuckGo</label><div><input id="site-query" type="search" name="q" placeholder="A project, topic or idea…" required><button type="submit">Search ↗</button></div><p class="fine">Your search opens DuckDuckGo and stays within trendingnotpeak.com.</p></form>
@@ -146,6 +146,19 @@ def audio_html(episode):
 <a href="{link(audio['url'])}">Download the MP3 ↗</a><p class="fine">{audio['duration_seconds'] / 60:.1f} minutes · AI narration{chapter_note}</p></section>'''
 
 
+def listen_html(config, prefix, section_id=''):
+    """Render only listener destinations that have a direct show or feed route."""
+    cards = []
+    for platform in config.get('listen', []):
+        icon = platform['icon']
+        if icon not in {'listen-amazon.svg', 'listen-pocketcasts.svg'}:
+            raise ValueError('Unknown listening platform icon')
+        cards.append(f'''<a class="listen-option" href="{link(platform['url'])}"><img src="{prefix}assets/{icon}" width="42" height="42" alt=""><span>{escape(platform['name'])}<small>Open show ↗</small></span></a>''')
+    cards.append(f'''<a class="listen-option" href="{link(config['base_url'] + '/feed.xml')}"><img src="{prefix}assets/listen-rss.svg" width="42" height="42" alt=""><span>Podcast RSS<small>Use any podcast app ↗</small></span></a>''')
+    identifier = f' id="{section_id}"' if section_id else ''
+    return f'''<section class="subscribe"{identifier} aria-labelledby="subscribe-title"><div class="subscribe-heading"><p class="eyebrow">Keep it coming</p><h2 id="subscribe-title">Listen your way.</h2><p>Choose an app to follow the show. New editions land every morning.</p></div><div class="listen-options">{''.join(cards)}</div></section>'''
+
+
 def episode_page(episode, config, prefix='../../../'):
     day = episode['date']
     categories = sorted({story['category'] for story in episode['stories']})
@@ -162,6 +175,7 @@ def episode_page(episode, config, prefix='../../../'):
 <p class="dek">The strongest signal first. A little weirdness at the end. Everything you need to follow the threads in between.</p>
 <div class="edition-meta"><span>{len(episode['stories'])} stories</span><span>AI + development</span><a href="{prefix}data/{day}.json">Story data ↗</a><a href="{prefix}transcripts/{day}.txt">Transcript ↗</a></div>
 {audio_html(episode)}</section>
+{listen_html(config, prefix)}
 <details class="story-index"><summary>Jump to a story <span>{len(episode['stories'])} signals ↓</span></summary><ol>{contents}</ol></details>
 <form class="filters" data-filter hidden role="search"><div><label for="search">Find something you missed</label><input id="search" type="search" placeholder="A project, a topic, a strange idea…" autocomplete="off"></div>
 <div><label for="category">Topic</label><select id="category"><option value="">All topics</option>{options}</select></div><button type="reset">Reset</button>
@@ -182,6 +196,7 @@ def home(episodes, config):
 <a class="button" href="{route}">Explore the latest edition <span aria-hidden="true">↗</span></a><p class="fine">{label(day)} · {len(latest['stories'])} stories · {'Audio + field notes' if latest.get('audio') else 'Reading edition available'}</p></div>
 <a class="lead-panel" href="{route}#1"><div class="panel-top"><span class="eyebrow">Today's strongest signal</span><span>01 / {len(latest['stories']):02d}</span></div><img class="signal-art" src="./assets/signal-landscape.svg" width="576" height="336" alt="">
 <p class="eyebrow">{escape(lead['category'])}</p><h2>{escape(lead['title'])}</h2><p>{escape(lead['script'].split('. ')[0])}.</p><span class="panel-cta">Follow this thread ↗</span></a></section>
+{listen_html(config, './', 'listen')}
 <section class="archive" id="archive"><div class="section-heading"><div><p class="eyebrow">Miss something?</p><h2>It's all here.</h2></div><span class="fine">The story archive</span></div><ul>{editions}</ul></section>
 <section class="method" id="method"><p class="eyebrow">How we pick</p><h2>Interesting is a start.<br>Evidence gets it in.</h2><div class="method-grid"><div><span>01 / Find the signal</span><p>We look across project activity, developer communities, research and curated public posts. GitHub is one source, not the whole map.</p></div><div><span>02 / Follow the source</span><p>Posts lead us to work we can inspect: a paper, a release, a working project. Big claims stay attributed. Limitations stay visible.</p></div><div><span>03 / Show the receipts</span><p>Every story links its sources and explains why it made the cut. Dated counts are clues, not a prediction that something will take off.</p></div></div><p class="fine">We keep a coverage history. When a topic returns, we explain what changed. These are editorial picks from a bounded source sample, not a claim to have measured the entire internet.</p></section>'''
     return shell('Early signals in AI & development', body, './', config['base_url'] + '/', config)

@@ -27,6 +27,33 @@ const artifacts = process.env.TNP_TEST_ARTIFACTS || path.resolve('.cache/discove
 
     await page.goto(root);
     await page.getByRole('heading', { name: 'Early signals. Useful details.' }).waitFor();
+    const subscribe = page.locator('#listen');
+    await subscribe.getByRole('heading', { name: 'Listen your way.' }).waitFor();
+    const amazon = subscribe.getByRole('link', { name: /Amazon Music/ });
+    const pocket = subscribe.getByRole('link', { name: /Pocket Casts/ });
+    const rss = subscribe.getByRole('link', { name: /Podcast RSS/ });
+    assert.equal(await amazon.getAttribute('href'), 'https://music.amazon.com/podcasts/43b76143-2a5d-4f9d-bf71-3b32c3ab5344');
+    assert.equal(await pocket.getAttribute('href'), 'https://pocketcasts.com/follow/https://trendingnotpeak.com/feed.xml');
+    assert.equal(await rss.getAttribute('href'), 'https://trendingnotpeak.com/feed.xml');
+    for (const icon of await subscribe.locator('img').all()) {
+      assert.equal(await icon.evaluate(element => element.complete && element.naturalWidth > 0), true);
+    }
+    await subscribe.screenshot({ path: path.join(artifacts, 'subscribe-desktop.png') });
+    let destination;
+    for (const [button, pattern] of [[amazon, 'https://music.amazon.com/podcasts/**'], [pocket, 'https://pocketcasts.com/follow/**']]) {
+      await page.route(pattern, route => {
+        destination = route.request().url();
+        route.fulfill({ status: 200, contentType: 'text/html', body: '<h1>Podcast app opened</h1>' });
+      });
+      await button.click();
+      await page.getByRole('heading', { name: 'Podcast app opened' }).waitFor();
+      assert.equal(page.url(), destination);
+      await page.goto(root);
+    }
+    await rss.click();
+    await page.waitForURL('**/feed.xml');
+    assert.match(await page.locator('body').innerText(), /Trending Not Peak/);
+    await page.goto(root);
     assert.equal(await page.locator('meta[property="og:url"]').getAttribute('content'), 'https://trendingnotpeak.com/');
     const shareImage = await image();
     assert.match(await page.locator('footer').innerText(), /CC BY 4\.0/);
@@ -45,6 +72,7 @@ const artifacts = process.env.TNP_TEST_ARTIFACTS || path.resolve('.cache/discove
 
     await page.goto(new URL('2026/10/30/#3', root).href);
     await page.locator('article[id="3"]').waitFor();
+    assert.equal(await page.locator('.subscribe .listen-option').count(), 3);
     assert.equal(await page.locator('meta[property="og:url"]').getAttribute('content'), 'https://trendingnotpeak.com/2026/10/30/');
     assert.equal(await image(), shareImage);
     assert.equal(await page.locator('link[rel="license"]').getAttribute('href'), 'https://creativecommons.org/licenses/by/4.0/');
@@ -63,11 +91,13 @@ const artifacts = process.env.TNP_TEST_ARTIFACTS || path.resolve('.cache/discove
 
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto(root);
+    assert.equal(await subscribe.getByRole('link').count(), 3);
+    await subscribe.screenshot({ path: path.join(artifacts, 'subscribe-mobile.png') });
     await search.getByRole('searchbox').fill('tinygrad');
     assert.equal(await search.getByRole('button', { name: 'Search' }).isVisible(), true);
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
     await page.locator('footer').screenshot({ path: path.join(artifacts, 'footer-mobile.png') });
-    fs.writeFileSync(path.join(artifacts, 'result.json'), JSON.stringify({ root, shareImage, searchUrl, checked: ['share image', 'license', 'site search', 'robots', 'llms', 'sitemap', 'mobile'] }, null, 2));
+    fs.writeFileSync(path.join(artifacts, 'result.json'), JSON.stringify({ root, shareImage, searchUrl, checked: ['subscribe buttons and icons', 'episode subscribe options', 'rss destination', 'share image', 'license', 'site search', 'robots', 'llms', 'sitemap', 'mobile'] }, null, 2));
     console.log(`Discovery journey passed: ${root}`);
   } finally {
     await browser.close();

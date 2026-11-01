@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Amazon Music">
+  <rect width="48" height="48" rx="8" fill="#3325a9"/>
+  <path d="M8 30.5V17l5-2 5 6 5-6 5 2v13.5h-5V22l-5 6-5-6v8.5Z" fill="#fff"/>
+  <path d="M11 35c9 5 20 4 28-3" fill="none" stroke="#53d6ff" stroke-width="3" stroke-linecap="round"/>
+  <path d="m34 31 6 1-2 6" fill="none" stroke="#53d6ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

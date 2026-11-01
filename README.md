@@ -7,6 +7,9 @@ Read it at **https://trendingnotpeak.com/**.
 
 Subscribe in your podcast app with [the RSS feed](https://trendingnotpeak.com/feed.xml).
 The feed includes episode audio, source notes, transcripts and chapters.
+The homepage also links to confirmed listening destinations. Edit `site.json` to
+add a platform only after its direct show page or documented feed-open route is
+available, and supply a matching local icon in `assets/`.
 
 ## Build
 

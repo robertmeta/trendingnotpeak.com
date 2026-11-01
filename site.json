@@ -2,5 +2,17 @@
   "title": "Trending Not Peak",
   "base_url": "https://trendingnotpeak.com",
   "repository": "https://github.com/robertmeta/trendingnotpeak.com",
-  "description": "Up to twenty emerging stories in AI and development, with useful details, original sources and the evidence behind each pick. AI-assisted writing and synthetic narration, with editorial review. Sponsored by Intelligrit."
+  "description": "Up to twenty emerging stories in AI and development, with useful details, original sources and the evidence behind each pick. AI-assisted writing and synthetic narration, with editorial review. Sponsored by Intelligrit.",
+  "listen": [
+    {
+      "name": "Amazon Music",
+      "url": "https://music.amazon.com/podcasts/43b76143-2a5d-4f9d-bf71-3b32c3ab5344",
+      "icon": "listen-amazon.svg"
+    },
+    {
+      "name": "Pocket Casts",
+      "url": "https://pocketcasts.com/follow/https://trendingnotpeak.com/feed.xml",
+      "icon": "listen-pocketcasts.svg"
+    }
+  ]
 }
