@@ -1,0 +1,65 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0.0,
+      "title": "Opening"
+    },
+    {
+      "startTime": 15.599,
+      "title": "Give agent actions a checkpoint"
+    },
+    {
+      "startTime": 45.276,
+      "title": "Ghostty's terminal engine meets KDE"
+    },
+    {
+      "startTime": 74.889,
+      "title": "One trainer for several learning stages"
+    },
+    {
+      "startTime": 105.711,
+      "title": "A computer phone line as an open board design"
+    },
+    {
+      "startTime": 133.938,
+      "title": "A screenshot-heavy agent hits the HTTP ceiling"
+    },
+    {
+      "startTime": 163.692,
+      "title": "Test the claim that a framework helps agents"
+    },
+    {
+      "startTime": 194.822,
+      "title": "Thanks to Intelligrit"
+    },
+    {
+      "startTime": 203.625,
+      "title": "Align image and text models through better examples"
+    },
+    {
+      "startTime": 235.437,
+      "title": "Turn a portrait hairstyle into an avatar asset"
+    },
+    {
+      "startTime": 263.971,
+      "title": "Make GPU copying respect the array layout"
+    },
+    {
+      "startTime": 292.878,
+      "title": "Enlightenment updates the everyday desktop plumbing"
+    },
+    {
+      "startTime": 322.628,
+      "title": "Contra takes a new route into the browser"
+    },
+    {
+      "startTime": 351.849,
+      "title": "A bootloader that dreams up Linux logs"
+    },
+    {
+      "startTime": 384.647,
+      "title": "Closing"
+    }
+  ]
+}

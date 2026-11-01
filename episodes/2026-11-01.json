@@ -1,0 +1,518 @@
+{
+  "date": "2026-11-01",
+  "title": "Trending Not Peak — 2026-11-01",
+  "intro": "This is Trending Not Peak. Quick note: this podcast uses AI-assisted writing and a synthetic voice. Before we dive in, all the links and details are at trending not peak dot com. Miss something? You can always catch up there.",
+  "outro": "That's Trending Not Peak. Missed something? The links and details are at trending not peak dot com.",
+  "schema_version": 1,
+  "audio": {
+    "url": "https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-11-01/trending-not-peak-2026-11-01-kinetic-grid-r2.mp3",
+    "duration_seconds": 392.311088,
+    "bytes": 6279599,
+    "embedded_chapters": 15,
+    "sha256": "862a73aee7129859c33ee198f26d82733eb070db4a428ae9a9487f2e6ad9bbcb"
+  },
+  "stories": [
+    {
+      "title": "Give agent actions a checkpoint",
+      "script": "First up, JevAct puts a checkpoint between an agent and selected tool calls. It combines code that checks recorded facts with a decision model that assesses the conversation, then sends rejected actions back for revision. Developers building service agents could explore enforcing business rules without retraining the underlying model. Researchers report consistent gains on telecom and function-calling benchmarks, with mixed airline results. The useful experiment: check a proposed action before it becomes a customer problem.",
+      "why_now": "Paper submitted October 28, 2026. The October 31 discovery post had 202 likes, 89 replies and 14220 views at 2026-11-01T08:00:05.944725+00:00.",
+      "why_early": "A recent runtime-verification framework evaluated on benchmark agents. The primary abstract supports model-independent interception and revision, but production reliability and the accuracy of probabilistic policy judgments remain unestablished. Community attention was observed once; global saturation is unknown.",
+      "watch_next": "Whether policy gates improve real workflows while keeping false rejections, latency and revision costs manageable.",
+      "id": "story-55856add7a80",
+      "number": 1,
+      "category": "Agents",
+      "role": "anchor",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.38620",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/omarsar0/status/2116547247018229999",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-10-31T11:06:01-04:00",
+          "observed_at": "2026-11-01T08:00:05.944725+00:00",
+          "url": "https://arxiv.org/abs/2610.38620",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 202,
+            "comments": 89,
+            "views": 14220,
+            "url": "https://x.com/omarsar0/status/2116547247018229999"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-01T08:00:05.944725+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Ghostty's terminal engine meets KDE",
+      "script": "Next up, Kwi is a new KDE terminal built around Ghostty's reusable terminal engine. KDE supplies the desktop integration, while Qt Quick handles GPU rendering. For Linux developers who spend their day inside terminal applications, that's another way to explore modern terminal features with a familiar desktop interface. Its creator reports substantial benchmark speedups over Konsole, depending on the test. Features are still comparatively limited, so start with your everyday shell and favorite text interface.",
+      "why_now": "Creator Eike Hein introduced Kwi on November 1, 2026. Its Lobsters discussion had 16 points and 4 comments at 2026-11-01T08:00:05.944725+00:00.",
+      "why_early": "A newly introduced application with an explicitly narrower feature set than Konsole. Its libghostty-vt dependency has not yet promised a stable version-one API; performance figures are creator-reported benchmark results.",
+      "watch_next": "Compatibility with demanding terminal applications, independent rendering measurements and progress toward stable dependencies.",
+      "id": "story-3e8fb83915e6",
+      "number": 2,
+      "category": "Developer tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://blogs.kde.org/2026/11/01/introducing-kwi",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/lt44rt/introducing_kwi_new_kde_terminal",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-10-31T21:56:29.237-05:00",
+          "observed_at": "2026-11-01T08:00:05.944725+00:00",
+          "url": "https://blogs.kde.org/2026/11/01/introducing-kwi",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 16,
+            "comments": 4,
+            "url": "https://lobste.rs/s/lt44rt/introducing_kwi_new_kde_terminal"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-01T08:00:05.944725+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "One trainer for several learning stages",
+      "script": "Over in training research, a new paper asks whether pretraining, fine-tuning and reinforcement learning need different algorithms. Its unified approach mixes static examples and model-generated learning targets inside one trainer. For teams experimenting with continued training, that opens a different control panel: which data, how much, and when. The small-scale experiments show promising tradeoffs, rather than one universally winning recipe. Try asking whether mixing old material into new training helps your model retain useful abilities.",
+      "why_now": "Paper submitted October 29, 2026. The October 31 discovery post had 133 likes, 36 replies and 13814 views at 2026-11-01T08:00:05.944725+00:00.",
+      "why_early": "The primary paper introduces a unified likelihood-based formulation and training system. Reported experiments are small-scale, with budget-dependent results and no mixture or schedule established as best across tasks.",
+      "watch_next": "Larger-scale reproductions and data schedules that preserve prior capabilities while learning new tasks.",
+      "id": "story-a0a322ba27df",
+      "number": 3,
+      "category": "AI research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.40564",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/omarsar0/status/2116629539623473617",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-10-31T16:33:01-04:00",
+          "observed_at": "2026-11-01T08:00:05.944725+00:00",
+          "url": "https://arxiv.org/abs/2610.40564",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 133,
+            "comments": 36,
+            "views": 13814,
+            "url": "https://x.com/omarsar0/status/2116629539623473617"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-01T08:00:05.944725+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "A computer phone line as an open board design",
+      "script": "Switching to hardware, Koppar has published a USB-C modem board design intended to give a computer LTE data, text messages and voice calls, including call audio over USB. That could interest developers building phone-connected scripts or experimenting with voice agents. The repository includes the original one-page specification and a component review. Working-board trials aren't documented here, so this is a design to inspect before it's a phone line to depend on. Start with the schematic.",
+      "why_now": "Show HN introduced the design October 31, 2026 at 15:56:41+00:00. It had 55 points and 37 comments at 2026-11-01T08:00:05.944725+00:00; the retrieved repository showed 37 stars and one commit.",
+      "why_early": "A newly shared four-layer KiCad design with firmware, specification and review files. The evidence describes intended operation and datasheet review, without documented fabrication or working-board validation.",
+      "watch_next": "Fabricated-board tests covering USB audio, calls, power behavior and carrier compatibility.",
+      "id": "story-51fc5533df28",
+      "number": 4,
+      "category": "Open hardware",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/Koppar-AI/koppar-lte-modem",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50317331",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-10-31T15:56:41+00:00",
+          "observed_at": "2026-11-01T08:00:05.944725+00:00",
+          "url": "https://github.com/Koppar-AI/koppar-lte-modem",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 55,
+            "comments": 37,
+            "url": "https://news.ycombinator.com/item?id=50317331"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-01T08:00:05.944725+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "A screenshot-heavy agent hits the HTTP ceiling",
+      "script": "Back at the local-model server, a ds4 contributor traced repeated bad-request errors to something delightfully ordinary: too many screenshot bytes. A vision agent kept resending its conversation until it exceeded the server's request limit. An open patch raises that limit and makes it configurable, with reported tests on an M3 Ultra. If your local agent fails after a long visual session, inspect payload size. The patch is pending, and larger requests also mean larger buffered memory allocations.",
+      "why_now": "Pull request 1309 was opened October 31, 2026 and remained open in the retrieved page. The contributor's post had 55 likes, 17 replies and 4249 views at 2026-11-01T08:00:05.944725+00:00.",
+      "why_early": "A concrete proposed fix changes the default body cap from 64 MiB to 256 MiB and adds DS4_SERVER_MAX_BODY_MB. Tests are contributor-reported; merge and released-build availability are not established.",
+      "watch_next": "Merge status, release availability and memory behavior during long sessions with repeated image payloads.",
+      "id": "story-3eacb4655aba",
+      "number": 5,
+      "category": "Local AI",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/antirez/ds4/pull/1309",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/ivanfioravanti/status/2116631889897300066",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-10-31T16:42:22-04:00",
+          "observed_at": "2026-11-01T08:00:05.944725+00:00",
+          "url": "https://github.com/antirez/ds4/pull/1309",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 55,
+            "comments": 17,
+            "views": 4249,
+            "url": "https://x.com/ivanfioravanti/status/2116631889897300066"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-01T08:00:05.944725+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Test the claim that a framework helps agents",
+      "script": "Speaking of developer choices, Nolan Lawson has built a benchmark for a surprisingly slippery claim: this JavaScript framework is better for coding agents. Agents build the same Pokémon application, then face specification checks and measurements of time, tokens, performance and accessibility. Web teams get a concrete evaluation design to adapt before rewriting an app around that claim. It's one relatively content-heavy application, so the interesting next experiment is your own product's workload, especially if it's much more interactive.",
+      "why_now": "The benchmark write-up was published October 28, 2026. Its November 1 Hacker News discussion had 14 points and 4 comments at 2026-11-01T08:00:05.944725+00:00.",
+      "why_early": "A recent first-person benchmark introduces a defined application, conformance checks and multiple cost and output metrics. The excerpt does not provide comparative results, and the author explicitly limits generalization from one application type.",
+      "watch_next": "Replications across interactive applications, different agents and repeated runs with equivalent specifications.",
+      "id": "story-967be99077d1",
+      "number": 6,
+      "category": "Developer evaluation",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://nolanlawson.com/2026/10/28/the-ai-cost-of-javascript-frameworks",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50323088",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-01T06:06:19+00:00",
+          "observed_at": "2026-11-01T08:00:05.944725+00:00",
+          "url": "https://nolanlawson.com/2026/10/28/the-ai-cost-of-javascript-frameworks",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 14,
+            "comments": 4,
+            "url": "https://news.ycombinator.com/item?id=50323088"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-01T08:00:05.944725+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Align image and text models through better examples",
+      "script": "Returning to model research, a new JEPA paper explores aligning separately trained image and text encoders. Its key ingredient is training on different observations of the same scene, rather than simply making models bigger. The authors report reaching comparable alignment with forty-two times fewer training samples in their comparison. Multimodal researchers could explore smaller encoders for connecting pictures and descriptions. The theorem depends on specific assumptions, and alignment scores don't establish general language ability. Investigate the training pairs first.",
+      "why_now": "Paper submitted October 29, 2026. The November 1 discovery post had 52 likes, 3 replies and 2034 views at 2026-11-01T08:00:05.944725+00:00; the retrieved alphaXiv page displayed '#1 on Trending'.",
+      "why_early": "Recent theoretical and experimental work with explicit conditions on positive views. The sample-efficiency and model comparisons concern representation alignment, not general model superiority; independent reproduction is absent.",
+      "watch_next": "Independent reproductions and practical cross-modal tasks where suitable scene-related training views are available.",
+      "id": "story-87ba36312466",
+      "number": 7,
+      "category": "AI research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.alphaxiv.org/abs/2610.39302",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/askalphaxiv/status/2116779287390896418",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-01T01:28:04-05:00",
+          "observed_at": "2026-11-01T08:00:05.944725+00:00",
+          "url": "https://www.alphaxiv.org/abs/2610.39302",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 52,
+            "comments": 3,
+            "views": 2034,
+            "url": "https://x.com/askalphaxiv/status/2116779287390896418"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-01T08:00:05.944725+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Turn a portrait hairstyle into an avatar asset",
+      "script": "For character creators, VRM Hair Maker packages a very specific pipeline: generate stylized hair from one portrait, preview it on an avatar, and download a VRM file with spring bones included. It builds on HairDeck and bundles the supporting software in a GPU-enabled Docker image. Game developers and avatar tinkerers could try turning a reference hairstyle into a moving asset. The practical test is how it bends and clips on your character. Give that digital haircut a vigorous head shake.",
+      "why_now": "The creator announced VRM Hair Maker October 31, 2026 at 21:43:27-04:00. The post had 51 likes, 1 reply and 2331 views at 2026-11-01T08:00:05.944725+00:00; the retrieved repository showed 6 stars and 10 commits.",
+      "why_early": "A newly shared integration documents generation, browser preview and VRM export. The emerging contribution is the packaged workflow; independent asset-quality, hardware-requirement and animation validation remain limited.",
+      "watch_next": "Reproducible setup requirements and exported hair behavior across different avatars, poses and hairstyles.",
+      "id": "story-3f3fc6af9890",
+      "number": 8,
+      "category": "Creative tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/camenduru/VRMHairMaker",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/camenduru/status/2116707660082839775",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-10-31T21:43:27-04:00",
+          "observed_at": "2026-11-01T08:00:05.944725+00:00",
+          "url": "https://github.com/camenduru/VRMHairMaker",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 51,
+            "comments": 1,
+            "views": 2331,
+            "url": "https://x.com/camenduru/status/2116707660082839775"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-01T08:00:05.944725+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Make GPU copying respect the array layout",
+      "script": "Down in compiler land, Futhark now makes certain GPU copies faster using array-layout information available at runtime. The useful idea is that an array's logical shape and its physical arrangement in memory are separate things. Developers working on numerical tools can explore how that distinction creates optimization opportunities, even for plain copying. The author describes only a small impact on some programs. Still, if you're building an array system, this is a concrete implementation technique to investigate.",
+      "why_now": "Futhark published the implementation explanation October 31, 2026. Its Lobsters discussion had 6 points and 2 comments at 2026-11-01T08:00:05.944725+00:00.",
+      "why_early": "The primary project post describes a newly implemented optimization using runtime array-layout information. Its author explicitly characterizes the application-level impact as small on some programs; no broad speedup claim is justified.",
+      "watch_next": "Which array layouts and real workloads benefit, including the overhead of deciding how to copy.",
+      "id": "story-a646dccb670a",
+      "number": 9,
+      "category": "Compilers",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://futhark-lang.org/blog/2026-10-31-faster-copying.html",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/1abkzu/speeding_up_gpu_copies_by_permuting",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-10-31T12:03:04.915-05:00",
+          "observed_at": "2026-11-01T08:00:05.944725+00:00",
+          "url": "https://futhark-lang.org/blog/2026-10-31-faster-copying.html",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 6,
+            "comments": 2,
+            "url": "https://lobste.rs/s/1abkzu/speeding_up_gpu_copies_by_permuting"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-01T08:00:05.944725+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Enlightenment updates the everyday desktop plumbing",
+      "script": "On the desktop, Enlightenment's new release adds native PipeWire mixing, a NetworkManager module and integrated clipboard history. For Linux tinkerers exploring another desktop environment, those are practical pieces that make an experiment easier to live in: choose an audio output, manage a VPN, recover copied text. There's also initial NetBSD support. Start with a spare session and test your own networking and audio setup. The interesting possibility is making an alternative desktop fit the tools you already use.",
+      "why_now": "Enlightenment 0.28.0 was released October 31, 2026. Its Lobsters discussion had 13 points and 1 comment at 2026-11-01T08:00:05.944725+00:00.",
+      "why_early": "The emerging angle is a concrete new release within an established desktop project. Its changelog documents the integrations and initial NetBSD support, without establishing reliability across distributions or hardware.",
+      "watch_next": "Distribution packaging and user reports on PipeWire, VPN workflows and initial NetBSD support.",
+      "id": "story-bdf3e16a2c81",
+      "number": 10,
+      "category": "Open systems",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.enlightenment.org/news/2026-10-31-enlightenment-0.28.0",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/fmawla/enlightenment_0_28_0_release",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-10-31T13:02:18.321-05:00",
+          "observed_at": "2026-11-01T08:00:05.944725+00:00",
+          "url": "https://www.enlightenment.org/news/2026-10-31-enlightenment-0.28.0",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 13,
+            "comments": 1,
+            "url": "https://lobste.rs/s/fmawla/enlightenment_0_28_0_release"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-01T08:00:05.944725+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Contra takes a new route into the browser",
+      "script": "Taking that retro turn further, a newly shared Contra port brings the NES game into a browser through WebAssembly. Its creator describes translating assembly to C, then compiling C for the web. The playable interface also offers hosting and joining an online two-player game. For developers curious about software preservation, that's a concrete translation approach to explore alongside the game itself. Multiplayer quality isn't established, so recruit a friend and see how the familiar chaos survives the browser.",
+      "why_now": "Show HN launched October 31, 2026 at 19:18:48+00:00. It had 82 points and 55 comments at 2026-11-01T08:00:05.944725+00:00.",
+      "why_early": "A newly shared browser port with visible local and online play controls. The translation path is creator-described; comprehensive game fidelity and networking performance are not documented in the supplied page.",
+      "watch_next": "Technical details of the translation and independent checks of gameplay fidelity and two-player synchronization.",
+      "id": "story-af71a5cc4007",
+      "number": 11,
+      "category": "Web experiments",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://epoyraz.github.io/nes-contra-us",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50319169",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-10-31T19:18:48+00:00",
+          "observed_at": "2026-11-01T08:00:05.944725+00:00",
+          "url": "https://epoyraz.github.io/nes-contra-us",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 82,
+            "comments": 55,
+            "url": "https://news.ycombinator.com/item?id=50319169"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-01T08:00:05.944725+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "A bootloader that dreams up Linux logs",
+      "script": "And finally, BootGPT boots straight into a tiny neural network that invents Linux startup logs. The boot sector itself is five hundred twelve bytes; it loads an additional eleven-and-a-half-kilobyte model and runs without an operating system. For assembly enthusiasts and machine-learning educators, that's a wonderfully compact way to explore inference below the usual software stack. Its eight-character context produces appropriately scrambled output. Try the emulator setup and watch a computer announce hardware that never existed. Extremely confident imaginary peripherals.",
+      "why_now": "Show HN introduced BootGPT October 31, 2026 at 12:58:29+00:00. It had 81 points and 3 comments at 2026-11-01T08:00:05.944725+00:00; the retrieved repository showed 30 stars and 3 commits.",
+      "why_early": "A fresh sizecoding experiment with assembly, training and build files. The README distinguishes the 512-byte loader from the separately stored 11.5 KB int8 model; independent execution checks are not supplied.",
+      "watch_next": "Independent emulator reproduction and clear explanations of the model's arithmetic and storage constraints.",
+      "id": "story-778916995661",
+      "number": 12,
+      "category": "Offbeat experiments",
+      "role": "closer",
+      "sources": [
+        {
+          "url": "https://github.com/kerlenton/bootgpt",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50315782",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-10-31T12:58:29+00:00",
+          "observed_at": "2026-11-01T08:00:05.944725+00:00",
+          "url": "https://github.com/kerlenton/bootgpt",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 81,
+            "comments": 3,
+            "url": "https://news.ycombinator.com/item?id=50315782"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-01T08:00:05.944725+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    }
+  ],
+  "interlude": {
+    "after_story": 6,
+    "title": "Thanks to Intelligrit",
+    "script": "Before we move from testing applications to training models, thank you to Intelligrit, this episode's sponsor, for supporting Trending Not Peak."
+  }
+}

@@ -1,0 +1,57 @@
+Trending Not Peak — 2026-11-01
+
+This is Trending Not Peak. Quick note: this podcast uses AI-assisted writing and a synthetic voice. Before we dive in, all the links and details are at trending not peak dot com. Miss something? You can always catch up there.
+
+Give agent actions a checkpoint
+
+First up, JevAct puts a checkpoint between an agent and selected tool calls. It combines code that checks recorded facts with a decision model that assesses the conversation, then sends rejected actions back for revision. Developers building service agents could explore enforcing business rules without retraining the underlying model. Researchers report consistent gains on telecom and function-calling benchmarks, with mixed airline results. The useful experiment: check a proposed action before it becomes a customer problem.
+
+Ghostty's terminal engine meets KDE
+
+Next up, Kwi is a new KDE terminal built around Ghostty's reusable terminal engine. KDE supplies the desktop integration, while Qt Quick handles GPU rendering. For Linux developers who spend their day inside terminal applications, that's another way to explore modern terminal features with a familiar desktop interface. Its creator reports substantial benchmark speedups over Konsole, depending on the test. Features are still comparatively limited, so start with your everyday shell and favorite text interface.
+
+One trainer for several learning stages
+
+Over in training research, a new paper asks whether pretraining, fine-tuning and reinforcement learning need different algorithms. Its unified approach mixes static examples and model-generated learning targets inside one trainer. For teams experimenting with continued training, that opens a different control panel: which data, how much, and when. The small-scale experiments show promising tradeoffs, rather than one universally winning recipe. Try asking whether mixing old material into new training helps your model retain useful abilities.
+
+A computer phone line as an open board design
+
+Switching to hardware, Koppar has published a USB-C modem board design intended to give a computer LTE data, text messages and voice calls, including call audio over USB. That could interest developers building phone-connected scripts or experimenting with voice agents. The repository includes the original one-page specification and a component review. Working-board trials aren't documented here, so this is a design to inspect before it's a phone line to depend on. Start with the schematic.
+
+A screenshot-heavy agent hits the HTTP ceiling
+
+Back at the local-model server, a ds4 contributor traced repeated bad-request errors to something delightfully ordinary: too many screenshot bytes. A vision agent kept resending its conversation until it exceeded the server's request limit. An open patch raises that limit and makes it configurable, with reported tests on an M3 Ultra. If your local agent fails after a long visual session, inspect payload size. The patch is pending, and larger requests also mean larger buffered memory allocations.
+
+Test the claim that a framework helps agents
+
+Speaking of developer choices, Nolan Lawson has built a benchmark for a surprisingly slippery claim: this JavaScript framework is better for coding agents. Agents build the same Pokémon application, then face specification checks and measurements of time, tokens, performance and accessibility. Web teams get a concrete evaluation design to adapt before rewriting an app around that claim. It's one relatively content-heavy application, so the interesting next experiment is your own product's workload, especially if it's much more interactive.
+
+Thanks to Intelligrit
+
+Before we move from testing applications to training models, thank you to Intelligrit, this episode's sponsor, for supporting Trending Not Peak.
+
+Align image and text models through better examples
+
+Returning to model research, a new JEPA paper explores aligning separately trained image and text encoders. Its key ingredient is training on different observations of the same scene, rather than simply making models bigger. The authors report reaching comparable alignment with forty-two times fewer training samples in their comparison. Multimodal researchers could explore smaller encoders for connecting pictures and descriptions. The theorem depends on specific assumptions, and alignment scores don't establish general language ability. Investigate the training pairs first.
+
+Turn a portrait hairstyle into an avatar asset
+
+For character creators, VRM Hair Maker packages a very specific pipeline: generate stylized hair from one portrait, preview it on an avatar, and download a VRM file with spring bones included. It builds on HairDeck and bundles the supporting software in a GPU-enabled Docker image. Game developers and avatar tinkerers could try turning a reference hairstyle into a moving asset. The practical test is how it bends and clips on your character. Give that digital haircut a vigorous head shake.
+
+Make GPU copying respect the array layout
+
+Down in compiler land, Futhark now makes certain GPU copies faster using array-layout information available at runtime. The useful idea is that an array's logical shape and its physical arrangement in memory are separate things. Developers working on numerical tools can explore how that distinction creates optimization opportunities, even for plain copying. The author describes only a small impact on some programs. Still, if you're building an array system, this is a concrete implementation technique to investigate.
+
+Enlightenment updates the everyday desktop plumbing
+
+On the desktop, Enlightenment's new release adds native PipeWire mixing, a NetworkManager module and integrated clipboard history. For Linux tinkerers exploring another desktop environment, those are practical pieces that make an experiment easier to live in: choose an audio output, manage a VPN, recover copied text. There's also initial NetBSD support. Start with a spare session and test your own networking and audio setup. The interesting possibility is making an alternative desktop fit the tools you already use.
+
+Contra takes a new route into the browser
+
+Taking that retro turn further, a newly shared Contra port brings the NES game into a browser through WebAssembly. Its creator describes translating assembly to C, then compiling C for the web. The playable interface also offers hosting and joining an online two-player game. For developers curious about software preservation, that's a concrete translation approach to explore alongside the game itself. Multiplayer quality isn't established, so recruit a friend and see how the familiar chaos survives the browser.
+
+A bootloader that dreams up Linux logs
+
+And finally, BootGPT boots straight into a tiny neural network that invents Linux startup logs. The boot sector itself is five hundred twelve bytes; it loads an additional eleven-and-a-half-kilobyte model and runs without an operating system. For assembly enthusiasts and machine-learning educators, that's a wonderfully compact way to explore inference below the usual software stack. Its eight-character context produces appropriately scrambled output. Try the emulator setup and watch a computer announce hardware that never existed. Extremely confident imaginary peripherals.
+
+That's Trending Not Peak. Missed something? The links and details are at trending not peak dot com.
