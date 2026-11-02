@@ -118,6 +118,14 @@ class Archive(unittest.TestCase):
         with self.assertRaises(ValueError):
             episode_path('../../escape')
 
+    def test_editors_desk_story_is_labelled(self):
+        record = json.loads(next((ROOT / 'episodes').glob('*.json')).read_text())
+        story = dict(record['stories'][1], role='story', editors_desk=True)
+        html = card(story, '../../../')
+        self.assertIn('class="story story editors-desk"', html)
+        self.assertIn('From the editor&#x27;s desk', html)
+        self.assertNotIn('editors-desk', card(record['stories'][1], '../../../'))
+
     def test_every_generated_local_link_and_anchor_resolves(self):
         pages = {}
         for path in OUT.rglob('*.html'):

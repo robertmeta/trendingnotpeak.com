@@ -225,6 +225,8 @@ footer p a { font-size: inherit; }
 .story.anchor .selection > div { margin-top: 0; }
 .story.closer { background: #30243e; border-color: #a175a0; border-top: 8px solid var(--pink); }
 .story.closer .eyebrow { color: var(--pink); }
+.story.editors-desk { border-top: 8px solid var(--gold); }
+.story.editors-desk .eyebrow { color: var(--gold); }
 .sources { list-style: none; padding: 0; margin: 10px 0 24px; font-size: 14px; overflow-wrap: anywhere; }
 .sources li { margin: 10px 0; }
 .sources a { color: var(--mint); text-decoration: none; border-bottom: 1px solid #6b8d71; }

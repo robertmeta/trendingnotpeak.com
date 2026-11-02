@@ -106,13 +106,17 @@ def observations_html(rows):
 
 def card(story, prefix):
     role = {'anchor': 'The lead · hottest, not peak', 'closer': 'One for the road'}.get(story['role'], story['category'])
+    desk = ' editors-desk' if story.get('editors_desk') else ''
+    if desk:
+        role = "From the editor's desk"
+
     sources = ''.join(f'<li><a href="{link(source["url"])}">{escape(urlsplit(source["url"]).hostname)} <span class="fine">/ {escape(source["kind"].replace("_", " "))}</span> ↗</a></li>' for source in story['sources'])
     followup = ''
     if story.get('follow_up'):
         follow = story['follow_up']
         old_day = date.fromisoformat(follow['previous_date']).isoformat()
         followup = f'<p class="follow-up">Following our <a href="{prefix}{episode_path(old_day)}">{label(old_day)} edition</a>: {escape(follow["what_changed"])} {escape(follow["why_revisit"])}</p>'
-    return f'''<article class="story {escape(story['role'])}" id="{story['number']}" data-story-id="{escape(story['id'])}" data-category="{escape(story['category'], quote=True)}">
+    return f'''<article class="story {escape(story['role'])}{desk}" id="{story['number']}" data-story-id="{escape(story['id'])}" data-category="{escape(story['category'], quote=True)}">
 <span class="legacy-anchor" id="{escape(story['id'])}" aria-hidden="true"></span>
 <div class="story-top"><span class="eyebrow">{escape(role)}</span><a class="number" href="#{story['number']}" aria-label="Permalink to story {story['number']}">#{story['number']:02d} ↗</a></div>
 <h2>{escape(story['title'])}</h2><h3 class="transcript-label">Story transcript</h3><p class="script">{escape(story['script'])}</p>{followup}
