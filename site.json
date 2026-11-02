@@ -5,6 +5,11 @@
   "description": "Up to twenty emerging stories in AI and development, with useful details, original sources and the evidence behind each pick. AI-assisted writing and synthetic narration, with editorial review. Sponsored by Intelligrit.",
   "listen": [
     {
+      "name": "Apple Podcasts",
+      "url": "https://podcasts.apple.com/us/podcast/trending-not-peak/id6829022558",
+      "icon": "listen-apple.svg"
+    },
+    {
       "name": "Spotify",
       "url": "https://open.spotify.com/show/6G7qqBP9q53Dy4Lb52mqwf",
       "icon": "listen-spotify.svg"
