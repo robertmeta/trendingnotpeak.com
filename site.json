@@ -23,6 +23,11 @@
       "name": "Pocket Casts",
       "url": "https://pocketcasts.com/follow/https://trendingnotpeak.com/feed.xml",
       "icon": "listen-pocketcasts.svg"
+    },
+    {
+      "name": "YouTube",
+      "url": "https://www.youtube.com/playlist?list=PLftp87T5o9ag",
+      "icon": "listen-youtube.svg"
     }
   ]
 }
