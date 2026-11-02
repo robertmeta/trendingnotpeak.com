@@ -1,0 +1,526 @@
+{
+  "date": "2026-11-02",
+  "title": "Trending Not Peak — 2026-11-02",
+  "intro": "This is Trending Not Peak. Quick note: this podcast uses AI-assisted writing and a synthetic voice. Before we dive in, all the links and details are at trending not peak dot com. Miss something? You can always catch up there.",
+  "outro": "That's Trending Not Peak. Missed something? The links and details are at trending not peak dot com.",
+  "schema_version": 1,
+  "audio": {
+    "url": "https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-11-02/trending-not-peak-2026-11-02-kinetic-grid-r2.mp3",
+    "duration_seconds": 376.143855,
+    "bytes": 6020887,
+    "embedded_chapters": 15,
+    "sha256": "a9760fc05cdf1655a1c528168854347f67f920f584bd80198d7a52a636db6529"
+  },
+  "stories": [
+    {
+      "title": "Corgi shares Rust builds across worktrees",
+      "script": "First up, Corgi tackles something Rust developers with several worktrees know painfully well: compiling the same dependencies again. It shares a machine-wide build cache, caches successful tests, and restricts build scripts so stray environment changes don't wreck reuse. You can experiment locally while keeping Cargo in CI. Currently, it supports macOS and NixOS; other Linux distributions and Windows are in progress. A useful first test: switch branches and see how much work actually repeats.",
+      "why_now": "Zed introduced Corgi on November 1, 2026 at 17:54:31-05:00. Its post had 192 likes, 8 replies and 16316 views at 2026-11-02T08:00:05.841859+00:00.",
+      "why_early": "A newly introduced toolchain with documented cache isolation, configuration and current platform limits. The single community observation measures interest, not adoption or build-speed gains; global saturation is unknown.",
+      "watch_next": "Independent rebuild measurements across worktrees and compatibility with projects using custom build scripts.",
+      "id": "story-3e0b2928f45d",
+      "number": 1,
+      "category": "Developer tools",
+      "role": "anchor",
+      "sources": [
+        {
+          "url": "https://corgi.build",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/zeddotdev/status/2117027534084706410",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-01T17:54:31-05:00",
+          "observed_at": "2026-11-02T08:00:05.841859+00:00",
+          "url": "https://corgi.build",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 192,
+            "comments": 8,
+            "views": 16316,
+            "url": "https://x.com/zeddotdev/status/2117027534084706410"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-02T08:00:05.841859+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "DeepSeek shares an internal agent experiment",
+      "script": "Next up, DeepSeek has published a research prototype that grew out of its team's everyday development work. The repository includes source, prompts, skills and examples, giving agent builders something concrete to inspect when exploring more autonomous workflows. Much of its engineering was itself done by coding agents. This isn't an official DeepSeek product, and the published version differs from the internal system. Pick one mechanism to study before borrowing the whole machine.",
+      "why_now": "The public prototype was highlighted October 31, 2026 at 17:32:25-04:00. That post had 22 likes, 2 replies and 1590 views at 2026-11-02T08:00:05.841859+00:00. The retrieved repository displayed 10.1k stars, 1.0k forks and one commit.",
+      "why_early": "The meaningful artifact is newly shared research code adapted from internal development. The maintainers explicitly distinguish it from an official product and from their internal implementation. Repository attention is substantial within this snapshot, but production readiness and global saturation are unestablished.",
+      "watch_next": "Reproducible examples that explain which published mechanisms improve task completion and what they cost.",
+      "id": "story-5bd78febd4a5",
+      "number": 2,
+      "category": "Agents",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/deepseek-ai/dsh-superagent-prototype",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/jiqizhixin/status/2116644486092849359",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-10-31T17:32:25-04:00",
+          "observed_at": "2026-11-02T08:00:05.841859+00:00",
+          "url": "https://github.com/deepseek-ai/dsh-superagent-prototype",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 22,
+            "comments": 2,
+            "views": 1590,
+            "url": "https://x.com/jiqizhixin/status/2116644486092849359"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-02T08:00:05.841859+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Phoria2 rebuilds a small web 3D toolkit",
+      "script": "Turning to browser graphics, Phoria2 rebuilds a canvas library from twenty thirteen around WebGL two. It packages labels, picking, shadows and model loading without runtime dependencies, and only redraws views when something changes. That gives dashboard developers a compact option for interactive diagrams or product viewers. Its option validation also returns errors explaining the fix, which could help coding agents recover. Start with a labeled scene and see whether the API fits your project.",
+      "why_now": "The creator's Show HN introduction was posted October 31, 2026 at 09:49:42+00:00. It had 87 points and 17 comments at 2026-11-02T08:00:05.841859+00:00.",
+      "why_early": "A newly introduced WebGL 2 rewrite with an MIT license, documentation and a React example. Its small launch discussion does not establish performance, accessibility or production adoption.",
+      "watch_next": "Independent examples testing label readability, picking and rendering costs in real dashboards.",
+      "id": "story-ed5a84bff1c5",
+      "number": 3,
+      "category": "Creative tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://kevs3d.co.uk/phoria2",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50314508",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-10-31T09:49:42+00:00",
+          "observed_at": "2026-11-02T08:00:05.841859+00:00",
+          "url": "https://kevs3d.co.uk/phoria2",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 87,
+            "comments": 17,
+            "url": "https://news.ycombinator.com/item?id=50314508"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-02T08:00:05.841859+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "OpenMed adds a larger disease extractor",
+      "script": "Back to local AI. We covered OpenMed's smaller disease extractor on October thirtieth; this release adds a 576-million-parameter GLiFormer checkpoint. It runs on a CPU and returns disease mentions with character offsets and confidence scores. OpenMed reports sixty-nine F1 on BC5CDR, which it says wasn't training data. Biomedical developers now have another checkpoint to compare for document indexing. The useful comparison includes missed mentions and processing time, plus whether surrounding text says the disease is actually present.",
+      "why_now": "OpenMed announced the checkpoint October 31, 2026 at 09:30:00-04:00. Its post had 21 likes, 2 replies and 1299 views at 2026-11-02T08:00:05.841859+00:00.",
+      "why_early": "A distinct newly announced checkpoint in a previously covered model family, with 576M parameters, an Apache-2.0 license and developer-reported evaluation. The reported BC5CDR result does not establish clinical performance or superiority on a listener's documents.",
+      "watch_next": "Independent comparisons of extraction recall, context handling and CPU cost against the smaller checkpoint.",
+      "id": "story-6dfe6a4dbad1",
+      "number": 4,
+      "category": "Local AI",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://huggingface.co/OpenMed/GLiFormer-BioNER-Disease-Large-v1",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/openmed_ai/status/2116523083842646188",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-10-31T09:30:00-04:00",
+          "observed_at": "2026-11-02T08:00:05.841859+00:00",
+          "url": "https://huggingface.co/OpenMed/GLiFormer-BioNER-Disease-Large-v1",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 21,
+            "comments": 2,
+            "views": 1299,
+            "url": "https://x.com/openmed_ai/status/2116523083842646188"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-02T08:00:05.841859+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ],
+      "follow_up": {
+        "previous_date": "2026-10-30",
+        "what_changed": "this release adds a 576-million-parameter GLiFormer checkpoint",
+        "why_revisit": "A new architecture and larger checkpoint create a concrete accuracy-versus-compute comparison within the previously covered disease-extraction family."
+      }
+    },
+    {
+      "title": "PostgreSQL's bug-finding bottleneck moves",
+      "script": "Meanwhile, PostgreSQL contributor Robert Haas describes an unexpected consequence of AI-assisted bug hunting: finding problems faster than maintainers can review fixes. His new account connects that pressure with PostgreSQL nineteen's delayed release and late feature reversions. He reports over sixty percent more backpatched commits in the compared release-development periods. Open-source contributors could use this as a prompt to pair bug reports with careful reproductions and tested fixes. Finding the bug is increasingly the beginning of the work.",
+      "why_now": "Haas published the account October 30, 2026. Its November 1 Lobsters discussion had 9 points and 1 comment at 2026-11-02T08:00:05.841859+00:00.",
+      "why_early": "A recent first-person account from a PostgreSQL committer identifies a concrete maintenance consequence of AI-assisted discovery. Commit comparisons support increased backpatch activity; the causal explanation is Haas's interpretation, not a controlled measurement of AI's contribution.",
+      "watch_next": "Whether improved reproduction and patch-review workflows help maintainers absorb the increased volume of findings.",
+      "id": "story-38937f7fd47a",
+      "number": 5,
+      "category": "Software maintenance",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://rhaas.blogspot.com/2026/10/postgres-19-is-late-and-its-ais-fault.html",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/0yxkvs/postgres_19_is_late_it_s_ai_s_fault",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-01T20:19:02.905-06:00",
+          "observed_at": "2026-11-02T08:00:05.841859+00:00",
+          "url": "https://rhaas.blogspot.com/2026/10/postgres-19-is-late-and-its-ais-fault.html",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 9,
+            "comments": 1,
+            "url": "https://lobste.rs/s/0yxkvs/postgres_19_is_late_it_s_ai_s_fault"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-02T08:00:05.841859+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Org's rewritten math previews stay responsive",
+      "script": "For people writing technical notes, Org mode's rewritten LaTeX previews bring asynchronous rendering and near-live visual feedback to Emacs. The implementation is available in Org's development branch, and a new explanation walks through its event loop, subprocesses and image overlays. Researchers can explore a smoother math-writing workflow; package authors get a substantial case study in responsive editor features. You can keep the editable text and see the equation take shape around it.",
+      "why_now": "Coauthor Karthinks published the implementation explanation November 1, 2026. At 2026-11-02T08:00:05.841859+00:00, the Lobsters discussion had 6 points and no comments; the Hacker News posting was dated November 2 at 06:50:46+00:00.",
+      "why_early": "The rewrite is now part of Org's development branch, creating a concrete preview and implementation-learning opportunity. Stable-release availability and behavior across different TeX installations are not established here.",
+      "watch_next": "Stable Org release availability and reports on responsiveness with large mathematical documents.",
+      "id": "story-7113d0ee8026",
+      "number": 6,
+      "category": "Developer tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://karthinks.com/software/understanding-org-latex-preview",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50333837",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/yihs7m/understanding_org_s_latex_previews",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-02T06:50:46+00:00",
+          "observed_at": "2026-11-02T08:00:05.841859+00:00",
+          "url": "https://karthinks.com/software/understanding-org-latex-preview",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 6,
+            "comments": 0,
+            "url": "https://lobste.rs/s/yihs7m/understanding_org_s_latex_previews"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-02T08:00:05.841859+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Sakana starts its own pretraining program",
+      "script": "Looking ahead, Sakana AI has announced that it's developing language models from pretraining onward, under the provisional Sawara name. Its first small model is planned for spring twenty twenty-seven, if development goes smoothly. Researchers interested in alternatives to simply scaling larger models can explore the newly published symposium report, including its world-model and autonomous-discovery directions. There's no new checkpoint to download here. The concrete thing to follow is how those research ideas become an inspectable small model.",
+      "why_now": "Sakana's report is dated November 2, 2026 and describes its October 26 symposium announcement. Its post, published November 1 at 20:43:12-05:00, had 105 likes, 6 replies and 16499 views at 2026-11-02T08:00:05.841859+00:00.",
+      "why_early": "The material change is an announced in-house pretraining program and a provisional first-model target. Publication in spring 2027 is conditional; weights, licensing, benchmarks and practical capabilities are not established.",
+      "watch_next": "A model card, release terms and evaluations for the planned Sawara Small checkpoint.",
+      "id": "story-c174d37326d2",
+      "number": 7,
+      "category": "AI research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://sakana.ai/symposium-2026",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/sakanaailabs/status/2117069983679467522",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-01T20:43:12-05:00",
+          "observed_at": "2026-11-02T08:00:05.841859+00:00",
+          "url": "https://sakana.ai/symposium-2026",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 105,
+            "comments": 6,
+            "views": 16499,
+            "url": "https://x.com/sakanaailabs/status/2117069983679467522"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-02T08:00:05.841859+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "GEFS gains OpenBSD filesystem creation tools",
+      "script": "Down in storage, the experimental Good Enough File System has made another step toward OpenBSD use. Developer Ori Bernstein reports updated error handling, important fixes carried over from 9front, and userspace tools that can now create a filesystem on OpenBSD. Filesystem developers have concrete new code to test and an open design problem to study. The consistency protocol remains the biggest missing piece, so this belongs on disposable test storage. Crash ordering is very much part of the assignment.",
+      "why_now": "The November 1, 2026 OpenBSD Journal report reproduces Bernstein's October 31 update at 17:08:42. Its Lobsters discussion had 39 points and 2 comments at 2026-11-02T08:00:05.841859+00:00.",
+      "why_early": "The quoted developer update documents specific implementation progress while explicitly identifying missing snapshot control and consistency work. General-use reliability is not established.",
+      "watch_next": "Implementation and crash testing of the consistency protocol, followed by snapshot-control tooling.",
+      "id": "story-c4e02c20e3ff",
+      "number": 8,
+      "category": "Systems",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.undeadly.org/cgi?action=article%3Bsid%3D20261101115637",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/zjjvbo/work_on_gefs_good_enough_file_system_for",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-01T14:13:29.256-06:00",
+          "observed_at": "2026-11-02T08:00:05.841859+00:00",
+          "url": "https://www.undeadly.org/cgi?action=article%3Bsid%3D20261101115637",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 39,
+            "comments": 2,
+            "url": "https://lobste.rs/s/zjjvbo/work_on_gefs_good_enough_file_system_for"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-02T08:00:05.841859+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "A Haskell processor learns to talk",
+      "script": "Switching to unusual hardware, Ouros runs Haskell programs on a specialized FPGA processor, and its new demonstration adds input and output through a serial connection. Instead of executing conventional instructions, the machine reduces graphs representing function applications. It also supports automatic fine-grained threading and hardware garbage collection. Language implementers and FPGA enthusiasts can explore the simulator or reproduction guide. That's a lovely experiment: change the processor to fit the language, then make the resulting computer say something.",
+      "why_now": "Yukang Xie published the demonstration and architecture explanation October 30, 2026. Its November 1 Lobsters discussion had 12 points and 3 comments at 2026-11-02T08:00:05.841859+00:00.",
+      "why_early": "The new work adds IO capability and demonstrates FPGA execution in a research processor, with reproduction guidance. It does not establish a practical performance advantage over conventional Haskell implementations.",
+      "watch_next": "Independent simulator or FPGA reproduction and workload comparisons that include IO and memory-management costs.",
+      "id": "story-1c810899b43d",
+      "number": 9,
+      "category": "Hardware research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://bathtub-01.github.io/technical/ouros-demo",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/8o9wus/specialised_haskell_processor_on_fpga",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-01T10:13:20.448-06:00",
+          "observed_at": "2026-11-02T08:00:05.841859+00:00",
+          "url": "https://bathtub-01.github.io/technical/ouros-demo",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 12,
+            "comments": 3,
+            "url": "https://lobste.rs/s/8o9wus/specialised_haskell_processor_on_fpga"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-02T08:00:05.841859+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Explore an eight-bit computer on virtual breadboards",
+      "script": "For a more visual hardware experiment, BBRouter's newly shared demonstration puts Ben Eater's eight-bit computer on simulated three-dimensional breadboards. The interface offers schematic views, slowed simulation and single stepping, giving educators a way to connect wires with the behavior they produce. If it loads for you, follow one clock tick through the circuit before reaching for another abstraction.",
+      "why_now": "Show HN introduced the demonstration November 1, 2026 at 00:10:30+00:00. It had 51 points and 11 comments at 2026-11-02T08:00:05.841859+00:00.",
+      "why_early": "A fresh demonstration announcement is supported by a simulator interface with schematic and execution controls. The retrieved application shell showed no project open, so successful loading and simulation fidelity remain unverified.",
+      "watch_next": "Reliable loading of the shared computer and independent checks of stepping behavior against the intended circuit.",
+      "id": "story-6d1f79546fa5",
+      "number": 10,
+      "category": "Developer education",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://bbrouter.com/bbrouter/ben-eater-sap-1",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50321522",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-01T00:10:30+00:00",
+          "observed_at": "2026-11-02T08:00:05.841859+00:00",
+          "url": "https://bbrouter.com/bbrouter/ben-eater-sap-1",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 51,
+            "comments": 11,
+            "url": "https://news.ycombinator.com/item?id=50321522"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-02T08:00:05.841859+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "A dangling string view haunts a permission check",
+      "script": "One last coding puzzle before we play: a new C-plus-plus demonstration shows a permission comparison changing when optimization is enabled. The culprit is undefined behavior: a string view outlives the temporary string it refers to. The author reproduces the surprise with Clang and GCC, under specific conditions. C-plus-plus teachers have a compact lifetime exercise here. Read the example, predict which object owns the characters, and then make ownership explicit.",
+      "why_now": "The author published the example October 31, 2026. Its November 1 Lobsters discussion had 8 points and 1 comment at 2026-11-02T08:00:05.841859+00:00.",
+      "why_early": "A newly published, bounded reproduction illustrates an existing language hazard. It is an educational experiment, not a newly discovered compiler vulnerability or demonstrated real-world privilege escalation.",
+      "watch_next": "Independent reproduction and whether lifetime diagnostics identify the underlying mistake.",
+      "id": "story-d1cab37b3dfe",
+      "number": 11,
+      "category": "Programming",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.nablag.com/spooky_cpp",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/4yxx6f/spooky_c",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-01T12:17:14.094-06:00",
+          "observed_at": "2026-11-02T08:00:05.841859+00:00",
+          "url": "https://www.nablag.com/spooky_cpp",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 8,
+            "comments": 1,
+            "url": "https://lobste.rs/s/4yxx6f/spooky_c"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-02T08:00:05.841859+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Jointter hides words in a dot-and-line graph",
+      "script": "And finally, Jointter turns a daily word puzzle into a little graph investigation. Letters are drawn with dots and lines, but most lines start hidden. Guess a word and matching lines stay green; you've got five attempts, with hints spending one. Puzzle designers can explore how partial structure changes the guessing strategy. Today's Monday puzzle uses three letters, and dragging dots only tidies the picture. Go ahead and rearrange the evidence.",
+      "why_now": "Show HN introduced Jointter October 31, 2026 at 16:24:24+00:00. It had 14 points and 28 comments at 2026-11-02T08:00:05.841859+00:00. The retrieved page displayed puzzle 63 for November 2, 2026.",
+      "why_early": "A newly shared playable puzzle with directly documented rules and a current dated board. Its launch discussion does not establish retention or broad popularity.",
+      "watch_next": "How the dot-and-line mechanic develops as puzzles become harder through the week.",
+      "id": "story-a130c14a2ee4",
+      "number": 12,
+      "category": "Offbeat experiments",
+      "role": "closer",
+      "sources": [
+        {
+          "url": "https://www.jointter.com",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50317548",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-10-31T16:24:24+00:00",
+          "observed_at": "2026-11-02T08:00:05.841859+00:00",
+          "url": "https://www.jointter.com",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 14,
+            "comments": 28,
+            "url": "https://news.ycombinator.com/item?id=50317548"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-02T08:00:05.841859+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    }
+  ],
+  "interlude": {
+    "after_story": 6,
+    "title": "Thanks to Intelligrit",
+    "script": "We're halfway through today's finds. Thank you to Intelligrit, this episode's sponsor, for helping us keep these useful little discoveries coming."
+  }
+}

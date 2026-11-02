@@ -1,0 +1,65 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0.0,
+      "title": "Opening"
+    },
+    {
+      "startTime": 15.45,
+      "title": "Corgi shares Rust builds across worktrees"
+    },
+    {
+      "startTime": 45.428,
+      "title": "DeepSeek shares an internal agent experiment"
+    },
+    {
+      "startTime": 72.438,
+      "title": "Phoria2 rebuilds a small web 3D toolkit"
+    },
+    {
+      "startTime": 101.121,
+      "title": "OpenMed adds a larger disease extractor"
+    },
+    {
+      "startTime": 133.464,
+      "title": "PostgreSQL's bug-finding bottleneck moves"
+    },
+    {
+      "startTime": 164.82,
+      "title": "Org's rewritten math previews stay responsive"
+    },
+    {
+      "startTime": 191.513,
+      "title": "Thanks to Intelligrit"
+    },
+    {
+      "startTime": 199.78,
+      "title": "Sakana starts its own pretraining program"
+    },
+    {
+      "startTime": 229.461,
+      "title": "GEFS gains OpenBSD filesystem creation tools"
+    },
+    {
+      "startTime": 258.909,
+      "title": "A Haskell processor learns to talk"
+    },
+    {
+      "startTime": 291.856,
+      "title": "Explore an eight-bit computer on virtual breadboards"
+    },
+    {
+      "startTime": 313.986,
+      "title": "A dangling string view haunts a permission check"
+    },
+    {
+      "startTime": 342.758,
+      "title": "Jointter hides words in a dot-and-line graph"
+    },
+    {
+      "startTime": 368.48,
+      "title": "Closing"
+    }
+  ]
+}

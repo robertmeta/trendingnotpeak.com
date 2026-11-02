@@ -1,0 +1,57 @@
+Trending Not Peak — 2026-11-02
+
+This is Trending Not Peak. Quick note: this podcast uses AI-assisted writing and a synthetic voice. Before we dive in, all the links and details are at trending not peak dot com. Miss something? You can always catch up there.
+
+Corgi shares Rust builds across worktrees
+
+First up, Corgi tackles something Rust developers with several worktrees know painfully well: compiling the same dependencies again. It shares a machine-wide build cache, caches successful tests, and restricts build scripts so stray environment changes don't wreck reuse. You can experiment locally while keeping Cargo in CI. Currently, it supports macOS and NixOS; other Linux distributions and Windows are in progress. A useful first test: switch branches and see how much work actually repeats.
+
+DeepSeek shares an internal agent experiment
+
+Next up, DeepSeek has published a research prototype that grew out of its team's everyday development work. The repository includes source, prompts, skills and examples, giving agent builders something concrete to inspect when exploring more autonomous workflows. Much of its engineering was itself done by coding agents. This isn't an official DeepSeek product, and the published version differs from the internal system. Pick one mechanism to study before borrowing the whole machine.
+
+Phoria2 rebuilds a small web 3D toolkit
+
+Turning to browser graphics, Phoria2 rebuilds a canvas library from twenty thirteen around WebGL two. It packages labels, picking, shadows and model loading without runtime dependencies, and only redraws views when something changes. That gives dashboard developers a compact option for interactive diagrams or product viewers. Its option validation also returns errors explaining the fix, which could help coding agents recover. Start with a labeled scene and see whether the API fits your project.
+
+OpenMed adds a larger disease extractor
+
+Back to local AI. We covered OpenMed's smaller disease extractor on October thirtieth; this release adds a 576-million-parameter GLiFormer checkpoint. It runs on a CPU and returns disease mentions with character offsets and confidence scores. OpenMed reports sixty-nine F1 on BC5CDR, which it says wasn't training data. Biomedical developers now have another checkpoint to compare for document indexing. The useful comparison includes missed mentions and processing time, plus whether surrounding text says the disease is actually present.
+
+PostgreSQL's bug-finding bottleneck moves
+
+Meanwhile, PostgreSQL contributor Robert Haas describes an unexpected consequence of AI-assisted bug hunting: finding problems faster than maintainers can review fixes. His new account connects that pressure with PostgreSQL nineteen's delayed release and late feature reversions. He reports over sixty percent more backpatched commits in the compared release-development periods. Open-source contributors could use this as a prompt to pair bug reports with careful reproductions and tested fixes. Finding the bug is increasingly the beginning of the work.
+
+Org's rewritten math previews stay responsive
+
+For people writing technical notes, Org mode's rewritten LaTeX previews bring asynchronous rendering and near-live visual feedback to Emacs. The implementation is available in Org's development branch, and a new explanation walks through its event loop, subprocesses and image overlays. Researchers can explore a smoother math-writing workflow; package authors get a substantial case study in responsive editor features. You can keep the editable text and see the equation take shape around it.
+
+Thanks to Intelligrit
+
+We're halfway through today's finds. Thank you to Intelligrit, this episode's sponsor, for helping us keep these useful little discoveries coming.
+
+Sakana starts its own pretraining program
+
+Looking ahead, Sakana AI has announced that it's developing language models from pretraining onward, under the provisional Sawara name. Its first small model is planned for spring twenty twenty-seven, if development goes smoothly. Researchers interested in alternatives to simply scaling larger models can explore the newly published symposium report, including its world-model and autonomous-discovery directions. There's no new checkpoint to download here. The concrete thing to follow is how those research ideas become an inspectable small model.
+
+GEFS gains OpenBSD filesystem creation tools
+
+Down in storage, the experimental Good Enough File System has made another step toward OpenBSD use. Developer Ori Bernstein reports updated error handling, important fixes carried over from 9front, and userspace tools that can now create a filesystem on OpenBSD. Filesystem developers have concrete new code to test and an open design problem to study. The consistency protocol remains the biggest missing piece, so this belongs on disposable test storage. Crash ordering is very much part of the assignment.
+
+A Haskell processor learns to talk
+
+Switching to unusual hardware, Ouros runs Haskell programs on a specialized FPGA processor, and its new demonstration adds input and output through a serial connection. Instead of executing conventional instructions, the machine reduces graphs representing function applications. It also supports automatic fine-grained threading and hardware garbage collection. Language implementers and FPGA enthusiasts can explore the simulator or reproduction guide. That's a lovely experiment: change the processor to fit the language, then make the resulting computer say something.
+
+Explore an eight-bit computer on virtual breadboards
+
+For a more visual hardware experiment, BBRouter's newly shared demonstration puts Ben Eater's eight-bit computer on simulated three-dimensional breadboards. The interface offers schematic views, slowed simulation and single stepping, giving educators a way to connect wires with the behavior they produce. If it loads for you, follow one clock tick through the circuit before reaching for another abstraction.
+
+A dangling string view haunts a permission check
+
+One last coding puzzle before we play: a new C-plus-plus demonstration shows a permission comparison changing when optimization is enabled. The culprit is undefined behavior: a string view outlives the temporary string it refers to. The author reproduces the surprise with Clang and GCC, under specific conditions. C-plus-plus teachers have a compact lifetime exercise here. Read the example, predict which object owns the characters, and then make ownership explicit.
+
+Jointter hides words in a dot-and-line graph
+
+And finally, Jointter turns a daily word puzzle into a little graph investigation. Letters are drawn with dots and lines, but most lines start hidden. Guess a word and matching lines stay green; you've got five attempts, with hints spending one. Puzzle designers can explore how partial structure changes the guessing strategy. Today's Monday puzzle uses three letters, and dragging dots only tidies the picture. Go ahead and rearrange the evidence.
+
+That's Trending Not Peak. Missed something? The links and details are at trending not peak dot com.
