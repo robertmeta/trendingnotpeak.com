@@ -162,7 +162,10 @@ class Archive(unittest.TestCase):
             html = (OUT / 'episodes' / record['date'] / 'index.html').read_text()
             for story in record['stories']:
                 self.assertLessEqual(set(story), {'id', 'number', 'category', 'role', 'title', 'script',
-                                     'why_now', 'why_early', 'watch_next', 'sources', 'observations', 'follow_up'})
+                                     'why_now', 'why_early', 'watch_next', 'sources', 'observations',
+                                     'follow_up', 'editors_desk'})
+                if 'editors_desk' in story:
+                    self.assertIs(story['editors_desk'], True)
                 for source in story['sources']:
                     self.assertLessEqual(set(source), {'url', 'kind'})
                 if story.get('follow_up'):
