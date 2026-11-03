@@ -1,0 +1,73 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0.0,
+      "title": "Opening"
+    },
+    {
+      "startTime": 15.526,
+      "title": "Ask a model to edit another model's weights"
+    },
+    {
+      "startTime": 45.585,
+      "title": "Laya makes typed decisions in one pass"
+    },
+    {
+      "startTime": 70.233,
+      "title": "Forecast related time series together"
+    },
+    {
+      "startTime": 98.459,
+      "title": "Rustable puts database edits up for review"
+    },
+    {
+      "startTime": 127.379,
+      "title": "The first reasoning tokens change controllability"
+    },
+    {
+      "startTime": 155.99,
+      "title": "AMD tutorials launch into prepared GPU environments"
+    },
+    {
+      "startTime": 184.216,
+      "title": "A forge audit traces a path to upstream access"
+    },
+    {
+      "startTime": 211.979,
+      "title": "Thanks to Intelligrit"
+    },
+    {
+      "startTime": 219.864,
+      "title": "Embed Office-file editing in a browser"
+    },
+    {
+      "startTime": 246.409,
+      "title": "An MLX reference pack preserves released precision"
+    },
+    {
+      "startTime": 274.866,
+      "title": "Tor can hide page names from window titles"
+    },
+    {
+      "startTime": 303.093,
+      "title": "Validate the infrastructure beneath model serving"
+    },
+    {
+      "startTime": 331.244,
+      "title": "Practice Vim through small real edits"
+    },
+    {
+      "startTime": 357.644,
+      "title": "Study a raycasting game built in Python"
+    },
+    {
+      "startTime": 385.34,
+      "title": "A personal art museum gets a sculpture hall"
+    },
+    {
+      "startTime": 411.584,
+      "title": "Closing"
+    }
+  ]
+}

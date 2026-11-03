@@ -1,0 +1,575 @@
+{
+  "date": "2026-11-03",
+  "title": "TNP - 2026-11-03",
+  "intro": "This is Trending Not Peak. Quick note: this podcast uses AI-assisted writing and a synthetic voice. Before we dive in, all the links and details are at trending not peak dot com. Miss something? You can always catch up there.",
+  "outro": "That's Trending Not Peak. Missed something? The links and details are at trending not peak dot com.",
+  "schema_version": 1,
+  "audio": {
+    "url": "https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-11-03/trending-not-peak-2026-11-03-kinetic-grid-r2.mp3",
+    "duration_seconds": 419.017823,
+    "bytes": 6706899,
+    "embedded_chapters": 17,
+    "sha256": "27a5d22049ef06804df4b4050a3bd3eebaee8779ac9ddf9ac3c2ccf9979678f8"
+  },
+  "stories": [
+    {
+      "title": "Ask a model to edit another model's weights",
+      "script": "First up, weight-space programming asks a language model to change neural-network weights directly. MIT researchers report that GPT-6 Astra edited just zero point zero one six percent of a small Qwen model's weights, raising MATH-500 accuracy from seven point nine to forty-eight point one percent under the same sampling settings. That's an intriguing experiment for interpretability researchers: investigate a behavior, then test a targeted repair. Independent reproduction would make this much more interesting.",
+      "why_now": "The researchers published their experiments November 2, 2026. The Lobsters discussion had 15 points and 2 comments at 2026-11-03T08:00:06.332127+00:00.",
+      "why_early": "New author-reported experiments describe direct weight inspection and editing without writing training loops. The Qwen result concerns a specific small model and evaluation setup; it does not establish a general replacement for optimization. Global saturation is unknown within the configured sources.",
+      "watch_next": "Independent reproduction of the Qwen weight correction, including retained capabilities and comparisons with conventional fixes.",
+      "id": "story-32b3bf2b225f",
+      "number": 1,
+      "category": "AI research",
+      "role": "anchor",
+      "sources": [
+        {
+          "url": "https://rikiyat.github.io/blog/weight-space-programming",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/u7wdqj/sparks_weight_space_programming_llms_can",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-02T13:24:33.645-06:00",
+          "observed_at": "2026-11-03T08:00:06.332127+00:00",
+          "url": "https://rikiyat.github.io/blog/weight-space-programming",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 15,
+            "comments": 2,
+            "url": "https://lobste.rs/s/u7wdqj/sparks_weight_space_programming_llms_can"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-03T08:00:06.332127+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Laya makes typed decisions in one pass",
+      "script": "From the editor's desk, Laya is worth knowing about if your pipeline needs a decision rather than a paragraph. Convai Innovations' Apache-licensed model answers typed questions in one forward pass: choose an option, assign a score, or answer yes or no. You can install it today for routing experiments. The base checkpoints perform near chance on typed decisions, though, so plan to fine-tune and calibrate confidence using your own examples.",
+      "why_now": "The editor selected Laya for its practical fit in routing, classification and guardrail pipelines. Primary-source research was checked November 3, 2026; PyPI version 0.4.21 was uploaded November 1, following the first release on September 18.",
+      "why_early": "Picked for usefulness rather than timing. Three checkpoints and a compatible serving protocol are available, while task-specific fine-tuning and confidence calibration remain necessary. Reported latency and calibration improvements are project measurements.",
+      "watch_next": "Task-specific accuracy, calibration and latency after fine-tuning on realistic routing examples.",
+      "id": "story-5d885f2b9705",
+      "number": 2,
+      "category": "Open models",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://huggingface.co/convaiinnovations/laya",
+          "kind": "source"
+        },
+        {
+          "url": "https://github.com/NandhaKishorM/laya",
+          "kind": "source"
+        },
+        {
+          "url": "https://pypi.org/project/laya",
+          "kind": "source"
+        }
+      ],
+      "observations": [],
+      "editors_desk": true
+    },
+    {
+      "title": "Forecast related time series together",
+      "script": "Another editor's desk pick: Google's TimesFM-three forecasts several related time series together, including inputs known in advance, such as promotions. Analysts could use it to establish a demand or capacity baseline without training a separate model for every series. Released in August, it produces a forecast and uncertainty quantiles in one pass. Self-hosted version-three weights prohibit both commercial and production use; Google offers those uses through Cloud, including BigQuery.",
+      "why_now": "The editor selected TimesFM-3 for its concrete forecasting workflow and available research and production paths. Google announced it August 31, 2026; the README says its BigQuery rollout finished in September. Sources were checked November 3.",
+      "why_early": "Picked for usefulness rather than timing. Multivariate forecasting and covariate support are available capabilities. Google's benchmark rankings are vendor-reported. Despite Apache-2.0 code, version-three weights have separate terms prohibiting both commercial and production use when self-hosted.",
+      "watch_next": "Performance against simple seasonal baselines on actual demand or capacity data, including uncertainty calibration.",
+      "id": "story-dea1017d6754",
+      "number": 3,
+      "category": "Forecasting models",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://research.google/blog/timesfm-3-a-zero-shot-foundation-model-for-multivariate-forecasting",
+          "kind": "source"
+        },
+        {
+          "url": "https://github.com/google-research/timesfm",
+          "kind": "source"
+        },
+        {
+          "url": "https://huggingface.co/google/timesfm-3.0-pytorch",
+          "kind": "source"
+        },
+        {
+          "url": "https://docs.cloud.google.com/bigquery/docs/timesfm-model",
+          "kind": "source"
+        }
+      ],
+      "observations": [],
+      "editors_desk": true
+    },
+    {
+      "title": "Rustable puts database edits up for review",
+      "script": "Over at the database desk, Rustable is a newly introduced native client supporting PostgreSQL, SQLite, MySQL, MariaDB and standalone Redis. It includes SSH tunnels, saved queries and row edits you review before saving. Database developers can explore the browser demo with disposable data before downloading the desktop app. Server connections require that app, and Redis Cluster and Sentinel aren't included. A useful first task is checking how clearly it presents a pending edit.",
+      "why_now": "Show HN introduced Rustable November 3, 2026 at 03:06:53+00:00. The discussion had 20 points and 11 comments at 2026-11-03T08:00:06.332127+00:00. The product page identified version 0.4.8.",
+      "why_early": "A same-day public introduction with downloadable desktop builds and a disposable browser demonstration. The creator labels it early software; broad reliability and performance are unestablished. The retrieved page displayed a WASM-startup fallback.",
+      "watch_next": "Independent checks of connection handling, edit previews and supported database-version behavior.",
+      "id": "story-60617b912f40",
+      "number": 4,
+      "category": "Developer tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://rustable.app",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50347524",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-03T03:06:53+00:00",
+          "observed_at": "2026-11-03T08:00:06.332127+00:00",
+          "url": "https://rustable.app",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 20,
+            "comments": 11,
+            "url": "https://news.ycombinator.com/item?id=50347524"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-03T08:00:06.332127+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "The first reasoning tokens change controllability",
+      "script": "Turning to model oversight, a new paper finds that the first few reasoning tokens can strongly affect how well models follow instructions about their reasoning traces. Banning common openings and adding examples improved compliance by thirty-four to forty-one percentage points across tested models. Evaluation builders could use this to separate an awkward opening from a broader control limitation. Adding or restyling information improved more consistently than suppressing it, so those abilities deserve separate tests.",
+      "why_now": "The paper was submitted October 29, 2026. A November 2 discovery post had 103 likes, 36 replies and 8572 views at 2026-11-03T08:00:06.332127+00:00.",
+      "why_early": "Recent research identifies an inference-time mechanism and differentiated evaluation categories. Results concern tested controllability tasks; they do not show that reasoning traces reliably reveal all internal computation or that oversight is generally defeated.",
+      "watch_next": "Independent evaluations separating opening-token effects, information addition, style changes and information suppression.",
+      "id": "story-12b5b6769e9e",
+      "number": 5,
+      "category": "AI evaluation",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.40939",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/omarsar0/status/2117277307866063107",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-02T10:27:01-05:00",
+          "observed_at": "2026-11-03T08:00:06.332127+00:00",
+          "url": "https://arxiv.org/abs/2610.40939",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 103,
+            "comments": 36,
+            "views": 8572,
+            "url": "https://x.com/omarsar0/status/2117277307866063107"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-03T08:00:06.332127+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "AMD tutorials launch into prepared GPU environments",
+      "script": "For some hands-on GPU time, five AMD tutorials now open directly in Developer Cloud with prepared MI300 environments. Options include vision-model OCR, a PydanticAI agent using vLLM, and Triton kernel development. That gives developers exploring AMD hardware a shorter route from reading a notebook to running it. Cloud sign-in is required. Pick a familiar workload first, so you can spend the session comparing behavior rather than wondering whether your setup is broken.",
+      "why_now": "AMD announced the five direct-launch tutorials November 2, 2026 at 11:27:30-05:00. The post had 41 likes, 6 replies and 2317 views at 2026-11-03T08:00:06.332127+00:00.",
+      "why_early": "The meaningful change is preconfigured cloud launch for five existing tutorial workflows. The documentation provides downloadable notebooks; availability, costs and performance for a particular account are not established by the announcement.",
+      "watch_next": "Whether the prepared environments reproduce notebook results and make workload-specific profiling straightforward.",
+      "id": "story-130de2d509c0",
+      "number": 6,
+      "category": "Developer education",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://rocm.docs.amd.com/projects/ai-developer-hub/en/latest",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/aiatamd/status/2117292526944047331",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-02T11:27:30-05:00",
+          "observed_at": "2026-11-03T08:00:06.332127+00:00",
+          "url": "https://rocm.docs.amd.com/projects/ai-developer-hub/en/latest",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 41,
+            "comments": 6,
+            "views": 2317,
+            "url": "https://x.com/aiatamd/status/2117292526944047331"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-03T08:00:06.332127+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "A forge audit traces a path to upstream access",
+      "script": "On the security side, Hacktron's new account traces a GNU Savannah compromise from an email-address shell injection to the ability to add a key with upstream Bash push access. The researchers say they reported the chain and helped the FSF fix twenty-six vulnerabilities. They describe access, not a planted Bash backdoor. Forge maintainers get a concrete audit exercise: follow user-controlled fields through command execution, account administration and repository permissions.",
+      "why_now": "Hacktron published its first-person research account October 30, 2026. The November 2 Lobsters discussion had 5 points and no comments at 2026-11-03T08:00:06.332127+00:00. The report dates initial disclosure to May 11.",
+      "why_early": "The emerging artifact is a newly public technical account of a reported and remediated exploit chain. Findings and the total of 26 confirmed vulnerabilities are attributed to the researchers; the supplied evidence does not independently verify the remediation.",
+      "watch_next": "Maintainer incident details and audits of comparable paths from account data to repository authorization.",
+      "id": "story-d343b60c3222",
+      "number": 7,
+      "category": "Security",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.hacktron.ai/blog/hacking-gnu-savannah",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/0mdf8w/securing_internet_critical_software_how",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-02T09:06:38.656-06:00",
+          "observed_at": "2026-11-03T08:00:06.332127+00:00",
+          "url": "https://www.hacktron.ai/blog/hacking-gnu-savannah",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 5,
+            "comments": 0,
+            "url": "https://lobste.rs/s/0mdf8w/securing_internet_critical_software_how"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-03T08:00:06.332127+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Embed Office-file editing in a browser",
+      "script": "Back to building interfaces, office-engine has launched a browser toolkit for viewing and editing Word, Excel and PowerPoint files, then saving their original formats. Its React embed and progressive loading could help developers add document review to an existing application. The creator claims a three-hundred-thousand-row spreadsheet opens in about three hundred milliseconds; that's a launch measurement to reproduce. Start with a troublesome real file and check what survives a save and reopen.",
+      "why_now": "Show HN launched November 3, 2026 at 05:13:30+00:00. It had 15 points and 1 comment at 2026-11-03T08:00:06.332127+00:00; the retrieved repository showed 9 stars and 20 commits.",
+      "why_early": "A same-day toolkit introduction with a public implementation, React embedding and progressive-loading claims. The spreadsheet timing is creator-reported; format fidelity, formula coverage and collaboration behavior need independent testing.",
+      "watch_next": "Round-trip fidelity on complex documents and reproducible loading measurements with specified hardware and files.",
+      "id": "story-cf2316ee0135",
+      "number": 8,
+      "category": "Web development",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/p10node/office-engine",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50348361",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-03T05:13:30+00:00",
+          "observed_at": "2026-11-03T08:00:06.332127+00:00",
+          "url": "https://github.com/p10node/office-engine",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 15,
+            "comments": 1,
+            "url": "https://news.ycombinator.com/item?id=50348361"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-03T08:00:06.332127+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "An MLX reference pack preserves released precision",
+      "script": "Meanwhile, on very large Macs, a community DeepSeek V4.1 Flash pack preserves the released weight precision in MLX layout. It's a reference for comparing smaller quantized packs, giving local-inference developers an artifact to investigate. The download is about four hundred seventy-seven gigabytes. A contributor reports running it on an M3 Ultra with five hundred twelve gigabytes; the pack authors couldn't load it on their own five-hundred-twelve-gigabyte machine. Reproducing that setup comes first.",
+      "why_now": "A contributor reported testing the pack November 2, 2026 at 10:35:00-05:00. The post had 122 likes, 15 replies and 7650 views at 2026-11-03T08:00:06.332127+00:00.",
+      "why_early": "A community MLX repack and contributor-reported execution create a new local evaluation path. The card specifies about 288 GB resident weights and 189 GB of SSD-read Engram tables, but also says its authors could not load it on their own 512 GB machine. No comparative speed claim is established.",
+      "watch_next": "Reproducible loading instructions, peak memory measurements and output comparisons against the original release.",
+      "id": "story-aa3e9823fe10",
+      "number": 9,
+      "category": "Local AI",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://huggingface.co/ddalcu/DeepSeek-V4.1-Flash-1017-MLX-Serve-Lossless",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/ivanfioravanti/status/2117279314110488577",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-02T10:35:00-05:00",
+          "observed_at": "2026-11-03T08:00:06.332127+00:00",
+          "url": "https://huggingface.co/ddalcu/DeepSeek-V4.1-Flash-1017-MLX-Serve-Lossless",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 122,
+            "comments": 15,
+            "views": 7650,
+            "url": "https://x.com/ivanfioravanti/status/2117279314110488577"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-03T08:00:06.332127+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Tor can hide page names from window titles",
+      "script": "Over in browser privacy, Tor Browser sixteen adds an option to replace page-specific window titles with simply Tor Browser. That closes one way other desktop applications can learn which pages you're viewing. Privacy-tool developers can explore a small interface choice with a surprisingly useful effect. It's opt-in because accessibility and desktop integration effects haven't been fully evaluated. If you use a screen reader or a customized window switcher, that interaction is worth testing carefully.",
+      "why_now": "Tor Browser 16.0 was released October 29, 2026. Its November 2 Lobsters discussion had 7 points and no comments at 2026-11-03T08:00:06.332127+00:00.",
+      "why_early": "The focused emerging capability is a newly shipped, optional generic-window-title setting within an established browser. The Tor Project explicitly identifies unresolved usability questions for accessibility tools and customized desktop environments.",
+      "watch_next": "Accessibility feedback and desktop-switcher behavior with generic titles enabled.",
+      "id": "story-9193d15c770e",
+      "number": 10,
+      "category": "Privacy tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://blog.torproject.org/new-release-tor-browser-160",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/ifznly/new_release_tor_browser_16_0",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-02T10:28:17.226-06:00",
+          "observed_at": "2026-11-03T08:00:06.332127+00:00",
+          "url": "https://blog.torproject.org/new-release-tor-browser-160",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 7,
+            "comments": 0,
+            "url": "https://lobste.rs/s/ifznly/new_release_tor_browser_16_0"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-03T08:00:06.332127+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Validate the infrastructure beneath model serving",
+      "script": "Down in the cluster, NVIDIA's AI Cluster Runtime packages Dynamo's supporting infrastructure into recipes with pinned versions and validation checks. Platform engineers can use the new walkthrough to configure drivers, scheduling and networking before deploying model workloads. That's useful when a serving failure could come from several layers below your application. The concrete experiment is deploying a recipe into a test cluster, then checking whether its validation catches the configuration mistakes you actually encounter.",
+      "why_now": "NVIDIA published the walkthrough October 30, 2026 and highlighted it November 3 at 00:44:29-05:00. The post had 42 likes, 6 replies and 5220 views at 2026-11-03T08:00:06.332127+00:00.",
+      "why_early": "The recent primary walkthrough documents reproducible runtime recipes and pre-application validation. This supports an implementation opportunity, not a claim that every cluster configuration is covered or that inference performance automatically improves.",
+      "watch_next": "Independent deployment reports showing which incompatibilities validation detects and which still require manual diagnosis.",
+      "id": "story-0f90cacb6853",
+      "number": 11,
+      "category": "AI infrastructure",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://nvda.ws/4sAxU0a",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/nvidiaai/status/2117493094849622097",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-03T00:44:29-05:00",
+          "observed_at": "2026-11-03T08:00:06.332127+00:00",
+          "url": "https://nvda.ws/4sAxU0a",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 42,
+            "comments": 6,
+            "views": 5220,
+            "url": "https://x.com/nvidiaai/status/2117493094849622097"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-03T08:00:06.332127+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Practice Vim through small real edits",
+      "script": "For a smaller learning loop, hjkl is a newly launched browser game for practicing Vim through actual editing tasks. Choose motions, text objects or repeats, then work through guided and independent exercises. Any valid edit reaching the target passes, so you're free to discover another route. It's free, requires no account, and needs a desktop browser with a physical keyboard. Pick one command you keep forgetting and give your fingers a useful five-minute assignment.",
+      "why_now": "Show HN introduced hjkl November 3, 2026 at 03:10:04+00:00. It had 20 points and 14 comments at 2026-11-03T08:00:06.332127+00:00.",
+      "why_early": "A same-day interactive educational launch with documented exercises, accepted-result behavior and browser requirements. Learning retention and editor fidelity have not been independently evaluated.",
+      "watch_next": "Whether practicing counts, text objects and repeats transfers to everyday editing tasks.",
+      "id": "story-f6a27acca830",
+      "number": 12,
+      "category": "Developer education",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://hjkl.duy.run",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50347552",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-03T03:10:04+00:00",
+          "observed_at": "2026-11-03T08:00:06.332127+00:00",
+          "url": "https://hjkl.duy.run",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 20,
+            "comments": 14,
+            "url": "https://news.ycombinator.com/item?id=50347552"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-03T08:00:06.332127+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Study a raycasting game built in Python",
+      "script": "Taking a retro turn, PyWolf3D is a newly shared Wolfenstein-style engine and game clone written from scratch in Python and Pygame. The creator built it for fun and learning, with map parsing, rendering and actor behavior in the public code. Aspiring engine developers could follow how those pieces become a playable scene, then change one mechanic. The repository includes instructions for the first episode's shareware version. There's your excuse to study raycasting between corridor patrols.",
+      "why_now": "Show HN introduced PyWolf3D November 2, 2026 at 16:09:13+00:00. It had 22 points and 4 comments at 2026-11-03T08:00:06.332127+00:00; the retrieved repository showed 20 stars and 340 commits.",
+      "why_early": "A fresh public introduction of a learning-oriented implementation with source and play instructions. The creator describes authorship and purpose; the launch does not establish complete game fidelity or performance across machines.",
+      "watch_next": "Independent play reports and explanations connecting the renderer, map representation and actor logic.",
+      "id": "story-516ae2e2ddd9",
+      "number": 13,
+      "category": "Game development",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/atifcodesalot/pyWolf3D",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50338891",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-02T16:09:13+00:00",
+          "observed_at": "2026-11-03T08:00:06.332127+00:00",
+          "url": "https://github.com/atifcodesalot/pyWolf3D",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 22,
+            "comments": 4,
+            "url": "https://news.ycombinator.com/item?id=50338891"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-03T08:00:06.332127+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "A personal art museum gets a sculpture hall",
+      "script": "And finally, a developer built a virtual museum for his wife's artwork, then added a sculpture hall with a model reconstructed from photographs. Visitors can walk around, change the weather and adjust the time of day. Artists and web developers could borrow the idea for a personal exhibition that feels like a place. Mobile performance is still being tuned. The creator also recommends turning on rain if you like cats. That's a very specific museum forecast.",
+      "why_now": "The creator's post is dated October 27, 2026 and includes an update adding a sculpture hall and one reconstructed sculpture. The November 2 Lobsters introduction had 6 points and 9 comments at 2026-11-03T08:00:06.332127+00:00.",
+      "why_early": "A newly shared, explicitly unfinished personal exhibition includes a concrete sculpture-hall addition. The update's exact date is unspecified; the creator reports Android frame-rate drops and acknowledges reconstruction limitations.",
+      "watch_next": "Mobile performance improvements and future sculpture captures made with access to the original objects.",
+      "id": "story-53696ec921b3",
+      "number": 14,
+      "category": "Offbeat experiments",
+      "role": "closer",
+      "sources": [
+        {
+          "url": "https://dostoynikov.bearblog.dev/virtual-museum-for-my-wifes-artworks",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/c8ayyw/virtual_art_museum_built_with_three_js",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-02T09:51:17.980-06:00",
+          "observed_at": "2026-11-03T08:00:06.332127+00:00",
+          "url": "https://dostoynikov.bearblog.dev/virtual-museum-for-my-wifes-artworks",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 6,
+            "comments": 9,
+            "url": "https://lobste.rs/s/c8ayyw/virtual_art_museum_built_with_three_js"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-03T08:00:06.332127+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    }
+  ],
+  "interlude": {
+    "after_story": 7,
+    "title": "Thanks to Intelligrit",
+    "script": "Thanks to Intelligrit, this episode's sponsor. Your support helps us make room for experiments worth opening up and understanding."
+  }
+}

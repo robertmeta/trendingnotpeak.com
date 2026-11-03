@@ -1,0 +1,65 @@
+TNP - 2026-11-03
+
+This is Trending Not Peak. Quick note: this podcast uses AI-assisted writing and a synthetic voice. Before we dive in, all the links and details are at trending not peak dot com. Miss something? You can always catch up there.
+
+Ask a model to edit another model's weights
+
+First up, weight-space programming asks a language model to change neural-network weights directly. MIT researchers report that GPT-6 Astra edited just zero point zero one six percent of a small Qwen model's weights, raising MATH-500 accuracy from seven point nine to forty-eight point one percent under the same sampling settings. That's an intriguing experiment for interpretability researchers: investigate a behavior, then test a targeted repair. Independent reproduction would make this much more interesting.
+
+Laya makes typed decisions in one pass
+
+From the editor's desk, Laya is worth knowing about if your pipeline needs a decision rather than a paragraph. Convai Innovations' Apache-licensed model answers typed questions in one forward pass: choose an option, assign a score, or answer yes or no. You can install it today for routing experiments. The base checkpoints perform near chance on typed decisions, though, so plan to fine-tune and calibrate confidence using your own examples.
+
+Forecast related time series together
+
+Another editor's desk pick: Google's TimesFM-three forecasts several related time series together, including inputs known in advance, such as promotions. Analysts could use it to establish a demand or capacity baseline without training a separate model for every series. Released in August, it produces a forecast and uncertainty quantiles in one pass. Self-hosted version-three weights prohibit both commercial and production use; Google offers those uses through Cloud, including BigQuery.
+
+Rustable puts database edits up for review
+
+Over at the database desk, Rustable is a newly introduced native client supporting PostgreSQL, SQLite, MySQL, MariaDB and standalone Redis. It includes SSH tunnels, saved queries and row edits you review before saving. Database developers can explore the browser demo with disposable data before downloading the desktop app. Server connections require that app, and Redis Cluster and Sentinel aren't included. A useful first task is checking how clearly it presents a pending edit.
+
+The first reasoning tokens change controllability
+
+Turning to model oversight, a new paper finds that the first few reasoning tokens can strongly affect how well models follow instructions about their reasoning traces. Banning common openings and adding examples improved compliance by thirty-four to forty-one percentage points across tested models. Evaluation builders could use this to separate an awkward opening from a broader control limitation. Adding or restyling information improved more consistently than suppressing it, so those abilities deserve separate tests.
+
+AMD tutorials launch into prepared GPU environments
+
+For some hands-on GPU time, five AMD tutorials now open directly in Developer Cloud with prepared MI300 environments. Options include vision-model OCR, a PydanticAI agent using vLLM, and Triton kernel development. That gives developers exploring AMD hardware a shorter route from reading a notebook to running it. Cloud sign-in is required. Pick a familiar workload first, so you can spend the session comparing behavior rather than wondering whether your setup is broken.
+
+A forge audit traces a path to upstream access
+
+On the security side, Hacktron's new account traces a GNU Savannah compromise from an email-address shell injection to the ability to add a key with upstream Bash push access. The researchers say they reported the chain and helped the FSF fix twenty-six vulnerabilities. They describe access, not a planted Bash backdoor. Forge maintainers get a concrete audit exercise: follow user-controlled fields through command execution, account administration and repository permissions.
+
+Thanks to Intelligrit
+
+Thanks to Intelligrit, this episode's sponsor. Your support helps us make room for experiments worth opening up and understanding.
+
+Embed Office-file editing in a browser
+
+Back to building interfaces, office-engine has launched a browser toolkit for viewing and editing Word, Excel and PowerPoint files, then saving their original formats. Its React embed and progressive loading could help developers add document review to an existing application. The creator claims a three-hundred-thousand-row spreadsheet opens in about three hundred milliseconds; that's a launch measurement to reproduce. Start with a troublesome real file and check what survives a save and reopen.
+
+An MLX reference pack preserves released precision
+
+Meanwhile, on very large Macs, a community DeepSeek V4.1 Flash pack preserves the released weight precision in MLX layout. It's a reference for comparing smaller quantized packs, giving local-inference developers an artifact to investigate. The download is about four hundred seventy-seven gigabytes. A contributor reports running it on an M3 Ultra with five hundred twelve gigabytes; the pack authors couldn't load it on their own five-hundred-twelve-gigabyte machine. Reproducing that setup comes first.
+
+Tor can hide page names from window titles
+
+Over in browser privacy, Tor Browser sixteen adds an option to replace page-specific window titles with simply Tor Browser. That closes one way other desktop applications can learn which pages you're viewing. Privacy-tool developers can explore a small interface choice with a surprisingly useful effect. It's opt-in because accessibility and desktop integration effects haven't been fully evaluated. If you use a screen reader or a customized window switcher, that interaction is worth testing carefully.
+
+Validate the infrastructure beneath model serving
+
+Down in the cluster, NVIDIA's AI Cluster Runtime packages Dynamo's supporting infrastructure into recipes with pinned versions and validation checks. Platform engineers can use the new walkthrough to configure drivers, scheduling and networking before deploying model workloads. That's useful when a serving failure could come from several layers below your application. The concrete experiment is deploying a recipe into a test cluster, then checking whether its validation catches the configuration mistakes you actually encounter.
+
+Practice Vim through small real edits
+
+For a smaller learning loop, hjkl is a newly launched browser game for practicing Vim through actual editing tasks. Choose motions, text objects or repeats, then work through guided and independent exercises. Any valid edit reaching the target passes, so you're free to discover another route. It's free, requires no account, and needs a desktop browser with a physical keyboard. Pick one command you keep forgetting and give your fingers a useful five-minute assignment.
+
+Study a raycasting game built in Python
+
+Taking a retro turn, PyWolf3D is a newly shared Wolfenstein-style engine and game clone written from scratch in Python and Pygame. The creator built it for fun and learning, with map parsing, rendering and actor behavior in the public code. Aspiring engine developers could follow how those pieces become a playable scene, then change one mechanic. The repository includes instructions for the first episode's shareware version. There's your excuse to study raycasting between corridor patrols.
+
+A personal art museum gets a sculpture hall
+
+And finally, a developer built a virtual museum for his wife's artwork, then added a sculpture hall with a model reconstructed from photographs. Visitors can walk around, change the weather and adjust the time of day. Artists and web developers could borrow the idea for a personal exhibition that feels like a place. Mobile performance is still being tuned. The creator also recommends turning on rain if you like cats. That's a very specific museum forecast.
+
+That's Trending Not Peak. Missed something? The links and details are at trending not peak dot com.
