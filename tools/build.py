@@ -196,7 +196,7 @@ def home(episodes, config):
     route = episode_path(day)
     editions = ''.join(f'<li><a href="{episode_path(episode["date"])}"><time datetime="{episode["date"]}">{label(episode["date"])}</time><span>{escape(episode["stories"][0]["title"])}</span><span class="archive-count">{len(episode["stories"])} stories ↗</span></a></li>' for episode in reversed(episodes))
     body = f'''<section class="hero"><div class="hero-copy"><p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> AI &amp; development · Before the peak</p>
-<h1>Early signals.<br>Useful details<span class="accent">.</span></h1><p class="dek">A daily dose of things gathering momentum. Up to twenty stories, ten minutes or less, and enough context to decide what deserves your attention.</p>
+<h1>Early signals.<br>Useful details<span class="accent">.</span></h1><p class="dek">A daily dose of things gathering momentum. Ten stories around ten minutes, with enough context to decide what deserves your attention.</p>
 <a class="button" href="{route}">Explore the latest edition <span aria-hidden="true">↗</span></a><p class="fine">{label(day)} · {len(latest['stories'])} stories · {'Audio + field notes' if latest.get('audio') else 'Reading edition available'}</p></div>
 <a class="lead-panel" href="{route}#1"><div class="panel-top"><span class="eyebrow">Today's strongest signal</span><span>01 / {len(latest['stories']):02d}</span></div><img class="signal-art" src="./assets/signal-landscape.svg" width="576" height="336" alt="">
 <p class="eyebrow">{escape(lead['category'])}</p><h2>{escape(lead['title'])}</h2><p>{escape(lead['script'].split('. ')[0])}.</p><span class="panel-cta">Follow this thread ↗</span></a></section>
