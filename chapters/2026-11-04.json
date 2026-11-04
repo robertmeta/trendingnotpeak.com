@@ -1,0 +1,69 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0.0,
+      "title": "Opening"
+    },
+    {
+      "startTime": 15.829,
+      "title": "Agents help hunt silent compiler failures"
+    },
+    {
+      "startTime": 43.829,
+      "title": "Kairos opens up fraud decision infrastructure"
+    },
+    {
+      "startTime": 71.673,
+      "title": "Check whether a model remembers what changed"
+    },
+    {
+      "startTime": 101.955,
+      "title": "FastVideo adds synchronized video and audio"
+    },
+    {
+      "startTime": 132.853,
+      "title": "An agent checks why a strategy failed"
+    },
+    {
+      "startTime": 164.281,
+      "title": "AMD packages Quark workflows for coding agents"
+    },
+    {
+      "startTime": 195.254,
+      "title": "Thanks to Intelligrit"
+    },
+    {
+      "startTime": 204.895,
+      "title": "OWASP turns AI data security into a rollout plan"
+    },
+    {
+      "startTime": 234.267,
+      "title": "Keep promising agent designs before choosing a budget"
+    },
+    {
+      "startTime": 264.482,
+      "title": "Retinal photographs become a research risk marker"
+    },
+    {
+      "startTime": 296.066,
+      "title": "NetBSD fixes open up more reliable hardware experiments"
+    },
+    {
+      "startTime": 324.83,
+      "title": "Generate a compiler by specializing the specializer"
+    },
+    {
+      "startTime": 353.969,
+      "title": "Question fictional suspects in your own words"
+    },
+    {
+      "startTime": 383.806,
+      "title": "A Pentium gets thirty years of chess improvements"
+    },
+    {
+      "startTime": 413.099,
+      "title": "Closing"
+    }
+  ]
+}

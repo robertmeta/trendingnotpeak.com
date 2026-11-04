@@ -1,0 +1,562 @@
+{
+  "date": "2026-11-04",
+  "title": "TNP - 2026-11-04",
+  "intro": "This is Trending Not Peak. Quick note: this podcast uses AI-assisted writing and a synthetic voice. Before we dive in, all the links and details are at trending not peak dot com. Miss something? You can always catch up there.",
+  "outro": "That's Trending Not Peak. Missed something? The links and details are at trending not peak dot com.",
+  "schema_version": 1,
+  "audio": {
+    "url": "https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-11-04/trending-not-peak-2026-11-04-kinetic-grid-r2.mp3",
+    "duration_seconds": 420.680385,
+    "bytes": 6733602,
+    "embedded_chapters": 16,
+    "sha256": "749edf002711cef508c589d9f7c01f90cf0ee922912ca2500038c66d16bd75c2"
+  },
+  "stories": [
+    {
+      "title": "Agents help hunt silent compiler failures",
+      "script": "First up, Google's XLA team has published a practical account of agents hunting compiler bugs that quietly produce wrong results. The system combines generated stress tests with production traces, then narrows failures down to individual operations inside fused kernels. The authors report over a hundred forty-two bugs resolved. Compiler and numerical-library maintainers could borrow the workflow: give agents a reproducible failure and a precise correctness check, then review the proposed repair.",
+      "why_now": "Paper submitted October 31, 2026. The November 3 discovery post had 118 likes, 77 replies and 10666 views at 2026-11-04T08:00:06.301833+00:00.",
+      "why_early": "A newly published primary account describes a production-deployed verification methodology and reports over 142 resolved bugs, with 103 additional findings under review. These are author-reported outcomes from an integrated framework, not an isolated measurement of agent effectiveness. Global saturation is unknown within the configured sources.",
+      "watch_next": "Reproducible examples showing how generated tests, differential bisection and patch review contribute to resolving silent miscompilations.",
+      "id": "story-7c256f3c1922",
+      "number": 1,
+      "category": "Compiler engineering",
+      "role": "anchor",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2611.00624",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/omarsar0/status/2117613273189376072",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-03T08:42:02-05:00",
+          "observed_at": "2026-11-04T08:00:06.301833+00:00",
+          "url": "https://arxiv.org/abs/2611.00624",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 118,
+            "comments": 77,
+            "views": 10666,
+            "url": "https://x.com/omarsar0/status/2117613273189376072"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-04T08:00:06.301833+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Kairos opens up fraud decision infrastructure",
+      "script": "Next up, Kairos has launched an open-source platform for making fraud and risk decisions as events arrive. Its repository describes handling sign-ups, logins, orders, payments and payouts, while keeping a record of each decision. That gives application developers an implementation to inspect when building their own event-driven checks. It's Apache licensed. A useful starting experiment is replaying known events and checking whether the resulting decisions explain what your application would actually do.",
+      "why_now": "Show HN introduced Kairos November 3, 2026 at 21:16:48+00:00. It had 86 points and 19 comments at 2026-11-04T08:00:06.301833+00:00. The retrieved repository showed 144 stars, 7 forks and 35 commits.",
+      "why_early": "A fresh public introduction provides an Apache-2.0 implementation for real-time fraud and risk decisioning. The available excerpt does not establish decision accuracy, latency or production reliability; launch attention measures interest.",
+      "watch_next": "Documented event-replay examples and independent checks of decision records, latency and false-positive behavior.",
+      "id": "story-f1213d42ab13",
+      "number": 2,
+      "category": "Developer tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/finic-ai/kairos",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50358314",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-03T21:16:48+00:00",
+          "observed_at": "2026-11-04T08:00:06.301833+00:00",
+          "url": "https://github.com/finic-ai/kairos",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 86,
+            "comments": 19,
+            "url": "https://news.ycombinator.com/item?id=50358314"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-04T08:00:06.301833+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Check whether a model remembers what changed",
+      "script": "Speaking of keeping records, Allen AI's new StateBench asks whether models can follow changing state through long texts. Think objects changing hands, or variables getting reassigned. Allen AI reports that frontier models, including GPT-six Sol and Claude Opus five point five, fell to thirteen percent accuracy or lower on the hardest, longest problems. Agent builders can explore reproducible assignment traces rendered in different forms, then test whether explicit state storage helps their own workflow.",
+      "why_now": "Allen AI announced StateBench November 3, 2026 at 12:28:37-05:00. Its post had 206 likes, 16 replies and 14994 views at 2026-11-04T08:00:06.301833+00:00. The retrieved repository showed 8 stars, 1 fork and 106 commits.",
+      "why_early": "A newly announced Apache-2.0 evaluation generator preserves canonical assignment traces across different surface forms. The hardest-case accuracy figures come from the lab's announcement and do not describe general task accuracy or directly measure a production agent's reliability.",
+      "watch_next": "Independent reproductions and comparisons between long-context prompting and explicit external state tracking.",
+      "id": "story-4d4d1c7e8897",
+      "number": 3,
+      "category": "AI evaluation",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/allenai/state-bench",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/allen_ai/status/2117670295339171994",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-03T12:28:37-05:00",
+          "observed_at": "2026-11-04T08:00:06.301833+00:00",
+          "url": "https://github.com/allenai/state-bench",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 206,
+            "comments": 16,
+            "views": 14994,
+            "url": "https://x.com/allen_ai/status/2117670295339171994"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-04T08:00:06.301833+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "FastVideo adds synchronized video and audio",
+      "script": "Turning to moving pictures, FastVideo now supports Pika H3 Flex, a post-trained MiniMax model that generates synchronized video and stereo audio. The recipe supports text, endpoint frames or reference media, with clips from five to fifteen seconds. Creative-tool developers get an open-weight workflow to explore. Hao AI Lab reports five seconds of four-eighty-p video plus audio in five point eight seconds on one NVIDIA GB200. That's specific hardware; start by reproducing the maintained example.",
+      "why_now": "Hao AI Lab announced the FastVideo integration November 3, 2026 at 14:42:50-05:00. The post had 97 likes, 8 replies and 5672 views at 2026-11-04T08:00:06.301833+00:00.",
+      "why_early": "The concrete change is FastVideo integration following the model's recent open release. Documentation lists six forwards, 480p or 768p output, BF16 and Blackwell-specific NVFP4 options. The up-to-7x speedup and GB200 timing are maintainer measurements, not independent results or consumer-hardware estimates.",
+      "watch_next": "Independent timing and audiovisual-quality comparisons using the same hardware, precision and generation settings.",
+      "id": "story-aca596eb3d24",
+      "number": 4,
+      "category": "Open models",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://haoailab.com/FastVideo/cookbook/minimax-h3/models/pika-h3-flex-t2va",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/haoailab/status/2117704073248174180",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-03T14:42:50-05:00",
+          "observed_at": "2026-11-04T08:00:06.301833+00:00",
+          "url": "https://haoailab.com/FastVideo/cookbook/minimax-h3/models/pika-h3-flex-t2va",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 97,
+            "comments": 8,
+            "views": 5672,
+            "url": "https://x.com/haoailab/status/2117704073248174180"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-04T08:00:06.301833+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "An agent checks why a strategy failed",
+      "script": "Back to agents, SPAR adds an interesting step before remembering a lesson: ask whether the strategy actually caused the outcome. Its sales agent keeps merchant-specific memories and a shared playbook of testable hypotheses, without updating model weights. The authors report a fifteen point eight percent conversion lift in an A/B test involving over two hundred thousand merchants on Alibaba's sixteen-eighty-eight platform. Workflow designers could investigate that attribution step before letting every failed interaction rewrite their agent's playbook.",
+      "why_now": "Paper submitted November 1, 2026. The November 3 discovery post had 148 likes, 46 replies and 10814 views at 2026-11-04T08:00:06.301833+00:00.",
+      "why_early": "A recent primary paper reports a live platform A/B test, +15.8% conversion lift, +35.8% high-intent merchant growth and a 4.62/5 expert sales-quality rating. These are author-reported results in one sales setting; attribution quality and transfer to other workflows remain unestablished.",
+      "watch_next": "Ablations and replications showing when attribution prevents incorrect lessons from entering shared memory.",
+      "id": "story-8d621f323f52",
+      "number": 5,
+      "category": "Agents",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2611.01695",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/omarsar0/status/2117633659763339668",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-03T10:03:02-05:00",
+          "observed_at": "2026-11-04T08:00:06.301833+00:00",
+          "url": "https://arxiv.org/abs/2611.01695",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 148,
+            "comments": 46,
+            "views": 10814,
+            "url": "https://x.com/omarsar0/status/2117633659763339668"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-04T08:00:06.301833+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "AMD packages Quark workflows for coding agents",
+      "script": "Over on AMD hardware, two new Quark skills package environment setup and language-model quantization for coding agents. One handles installation; the other guides post-training quantization of models such as Llama, Qwen and Mistral to eight-bit or four-bit formats. Developers exploring smaller model deployments can inspect the scripts and conventions instead of assembling every instruction themselves. AMD's example asks an agent to quantize Qwen-three eight-B to FP8. Compare its output quality and memory use with your original model.",
+      "why_now": "AMD announced quark-install and quark-torch-llm-ptq November 3, 2026 at 14:00:21-05:00. The post had 56 likes, 10 replies and 2700 views at 2026-11-04T08:00:06.301833+00:00. The retrieved catalog showed 478 stars and 46 forks.",
+      "why_early": "Two specifically announced skills add concrete workflows to AMD's existing official MIT-licensed catalog. The announcement establishes packaged guidance and scripts, not universal model compatibility, successful autonomous execution or measured quality retention.",
+      "watch_next": "Reproducible quantization runs with documented GPU support, calibration data, memory savings and accuracy changes.",
+      "id": "story-549d5001578c",
+      "number": 6,
+      "category": "Developer tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/amd/skills",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/aiatamd/status/2117693378838122703",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-03T14:00:21-05:00",
+          "observed_at": "2026-11-04T08:00:06.301833+00:00",
+          "url": "https://github.com/amd/skills",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 56,
+            "comments": 10,
+            "views": 2700,
+            "url": "https://x.com/aiatamd/status/2117693378838122703"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-04T08:00:06.301833+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "OWASP turns AI data security into a rollout plan",
+      "script": "Back from the break, OWASP has published the first part of its version-two GenAI data-security implementation playbook. It covers operating models, build-versus-buy decisions, operational measurements and staged rollouts at ninety, a hundred eighty and three hundred sixty-five days. Teams connecting models to organizational data can use it to turn a broad security ambition into assigned work. This is guidance, rather than a tested security product. Take one existing workflow and map who owns its data controls.",
+      "why_now": "OWASP published Part 1 November 3, 2026. The discovery post had 50 likes, no replies and 1489 views at 2026-11-04T08:00:06.301833+00:00.",
+      "why_early": "A same-day primary publication begins a twelve-part implementation playbook accompanying the Risks and Mitigations 2026 document. The available description establishes its scope and sequencing; it does not demonstrate that following the guide prevents particular incidents.",
+      "watch_next": "Subsequent implementation parts and worked examples connecting controls, ownership and operational measurements.",
+      "id": "story-2dddfc332192",
+      "number": 7,
+      "category": "Security",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://genai.owasp.org/resource/genai-data-security-best-practices-v2-part1",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/aisechub/status/2117762132439605350",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-03T18:33:33-05:00",
+          "observed_at": "2026-11-04T08:00:06.301833+00:00",
+          "url": "https://genai.owasp.org/resource/genai-data-security-best-practices-v2-part1",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 50,
+            "comments": 0,
+            "views": 1489,
+            "url": "https://x.com/aisechub/status/2117762132439605350"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-04T08:00:06.301833+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Keep promising agent designs before choosing a budget",
+      "script": "Now for a useful optimization wrinkle: ParetoSaddler keeps agent setups that improve either quality or cost, then applies the deployment preference at the end. Rejecting every temporarily expensive candidate can close off a better design later. The researchers report GAIA-two quality rising from fifty-six point two-two to sixty-two point eight-nine percent, while cost falls from seventy-eight to forty-five cents per task. Agent evaluators could borrow the repeated-run comparison before deciding which experiments deserve another round.",
+      "why_now": "Paper submitted November 1, 2026. The November 3 discovery post had 64 likes, 35 replies and 7436 views at 2026-11-04T08:00:06.301833+00:00.",
+      "why_early": "Recent research separates intermediate candidate promotion from final deployment selection, using repeated executions and Bayesian bootstrap Pareto support. Results are author-reported on GAIA2 and ClawMark with domain-disjoint splits. The abstract says project code will be available, so current code availability is unconfirmed.",
+      "watch_next": "Code release and independent comparisons that include the expense of the optimization search itself.",
+      "id": "story-7b8d4e7e0eaf",
+      "number": 8,
+      "category": "AI research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2611.02079",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/omarsar0/status/2117738094069944347",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-03T16:58:01-05:00",
+          "observed_at": "2026-11-04T08:00:06.301833+00:00",
+          "url": "https://arxiv.org/abs/2611.02079",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 64,
+            "comments": 35,
+            "views": 7436,
+            "url": "https://x.com/omarsar0/status/2117738094069944347"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-04T08:00:06.301833+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Retinal photographs become a research risk marker",
+      "script": "Turning to imaging research, RetiME uses retinal photographs to model mortality risk and individual lifespan trajectories. Researchers trained it on a European cohort and validated it in three external cohorts across Southeast Asia, Eurasia and North America. Health-data researchers could explore whether a relatively inexpensive image adds useful information to broader risk assessment. The study reports associations and predictions; it doesn't show that using the model prevents disease. The next useful question is whether it improves actual care decisions.",
+      "why_now": "Nature Biomedical Engineering published the study November 2, 2026. The discovery post had 159 likes, 37 replies and 25863 views at 2026-11-04T08:00:06.301833+00:00.",
+      "why_early": "A newly published primary study describes one training cohort and three geographically distinct external validation cohorts. The supplied abstract supports predictive associations and further evaluation as one assessment component, without establishing prospective clinical utility, prevention benefits or public model availability.",
+      "watch_next": "Prospective evaluation of incremental value, calibration and whether model-informed decisions improve outcomes.",
+      "id": "story-9a0659eab93f",
+      "number": 9,
+      "category": "AI research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.nature.com/articles/s41551-026-01822-4",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/erictopol/status/2117271053588394280",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-02T10:02:10-05:00",
+          "observed_at": "2026-11-04T08:00:06.301833+00:00",
+          "url": "https://www.nature.com/articles/s41551-026-01822-4",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 159,
+            "comments": 37,
+            "views": 25863,
+            "url": "https://x.com/erictopol/status/2117271053588394280"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-04T08:00:06.301833+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "NetBSD fixes open up more reliable hardware experiments",
+      "script": "Down at the operating-system layer, NetBSD eleven point one brings security fixes and some very specific hardware repairs. Raspberry Pi USB stability gets attention, Atari TT kernels boot again, and supported Sun machines gain better sensor handling. There's also battery monitoring for Microsoft's Surface Go three. Systems tinkerers can check whether a previously awkward machine now makes a better test box. The release notes offer a concrete shopping list of fixes to match against your hardware drawer.",
+      "why_now": "NetBSD announced 11.1 November 2, 2026. Its November 3 Lobsters discussion had 27 points and 1 comment at 2026-11-04T08:00:06.301833+00:00.",
+      "why_early": "A new point release in an established operating system supplies specific security, stability and hardware changes. The early angle is newly available fixes for bounded experiments, not a new OS or evidence of reliability across all supported machines.",
+      "watch_next": "User verification of the listed hardware repairs and security fixes on affected installations.",
+      "id": "story-ab303e84bcea",
+      "number": 10,
+      "category": "Open systems",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.netbsd.org/releases/formal-11/NetBSD-11.1.html",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/siqsg7/announcing_netbsd_11_1",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-03T16:00:17.275-06:00",
+          "observed_at": "2026-11-04T08:00:06.301833+00:00",
+          "url": "https://www.netbsd.org/releases/formal-11/NetBSD-11.1.html",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 27,
+            "comments": 1,
+            "url": "https://lobste.rs/s/siqsg7/announcing_netbsd_11_1"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-04T08:00:06.301833+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Generate a compiler by specializing the specializer",
+      "script": "For a different kind of machinery, Veit Heller's new tutorial builds a compiler by specializing a program specializer against an interpreter. That's the second Futamura projection, and yes, the machinery folds back on itself. Language implementers get a worked Brainfuck example showing how repeated interpretation work can become a reusable compiler. The tutorial deliberately takes some shortcuts rather than providing a fully generic implementation. Follow one static input through the transformation and see what code remains.",
+      "why_now": "Heller published the tutorial November 3, 2026. Its Lobsters discussion had 8 points and 3 comments at 2026-11-04T08:00:06.301833+00:00.",
+      "why_early": "The fresh contribution is a worked implementation extending the author's earlier specialization tutorial. The underlying technique is established, and the author explicitly limits implementation generality; this is a new learning artifact rather than a new compiler theorem.",
+      "watch_next": "Independent reproduction and clear identification of the implementation shortcuts needed for self-specialization.",
+      "id": "story-ac98a4c3da03",
+      "number": 11,
+      "category": "Programming languages",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://blog.veitheller.de/A_Second_Futamura_Projection.html",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/ihvhfk/second_futamura_projection",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-03T10:14:27.370-06:00",
+          "observed_at": "2026-11-04T08:00:06.301833+00:00",
+          "url": "https://blog.veitheller.de/A_Second_Futamura_Projection.html",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 8,
+            "comments": 3,
+            "url": "https://lobste.rs/s/ihvhfk/second_futamura_projection"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-04T08:00:06.301833+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Question fictional suspects in your own words",
+      "script": "Taking a detective detour, Uncracked City has introduced a game where you question suspects using typed or spoken questions in six languages. The launch describes LLM suspects that lie; the game asks you to compare their statements with clues, then submit a report with three attempts. Narrative-game developers can explore an interface built around investigating conversation. The site lists Google Play availability and an upcoming App Store version. See whether a follow-up question exposes a contradiction you can actually prove.",
+      "why_now": "Show HN introduced Uncracked City November 3, 2026 at 21:20:03+00:00. It had 35 points and 9 comments at 2026-11-04T08:00:06.301833+00:00.",
+      "why_early": "A fresh game introduction is backed by a primary product page documenting freeform questioning, six languages, clues and limited report attempts. The LLM characterization comes from the launch title; narrative consistency, platform operation and language quality have not been independently checked.",
+      "watch_next": "Player reports on whether suspect answers remain consistent with case facts across varied questions and languages.",
+      "id": "story-309d5deba160",
+      "number": 12,
+      "category": "Creative tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://uncracked.city",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50358352",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-03T21:20:03+00:00",
+          "observed_at": "2026-11-04T08:00:06.301833+00:00",
+          "url": "https://uncracked.city",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 35,
+            "comments": 9,
+            "url": "https://news.ycombinator.com/item?id=50358352"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-04T08:00:06.301833+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "A Pentium gets thirty years of chess improvements",
+      "script": "And finally, Nicholas Carlini has put a custom Stockfish port on a two-hundred-megahertz Pentium Pro with sixty-four megabytes of RAM. He estimates its classical chess strength at thirty-three hundred Elo, plus or minus eighty-seven, and has connected the machine so visitors can play it. It's a playful experiment for anyone studying algorithmic progress: hold the old hardware still and change the software. The Kasparov matchup is hypothetical. Your chance to lose to an actual Pentium is considerably more concrete.",
+      "why_now": "Carlini published the experiment November 1, 2026. Its November 3 Lobsters discussion had 40 points and 9 comments at 2026-11-04T08:00:06.301833+00:00.",
+      "why_early": "A newly published first-person hardware experiment includes an interactive route to the machine and an author-estimated 3300 ± 87 classical Elo. It illustrates modern software on period hardware; no actual match against Kasparov took place, and the rating is not independently verified here.",
+      "watch_next": "Reproduction of the port and rating methodology, including time controls and comparisons with period chess engines.",
+      "id": "story-921aede24621",
+      "number": 13,
+      "category": "Offbeat experiments",
+      "role": "closer",
+      "sources": [
+        {
+          "url": "https://nicholas.carlini.com/writing/2026/algorithmic-improvements-chess.html",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/1gndxr/could_modern_chess_engine_on_pentium_have",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-03T09:44:27.749-06:00",
+          "observed_at": "2026-11-04T08:00:06.301833+00:00",
+          "url": "https://nicholas.carlini.com/writing/2026/algorithmic-improvements-chess.html",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 40,
+            "comments": 9,
+            "url": "https://lobste.rs/s/1gndxr/could_modern_chess_engine_on_pentium_have"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-04T08:00:06.301833+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    }
+  ],
+  "interlude": {
+    "after_story": 6,
+    "title": "Thanks to Intelligrit",
+    "script": "We've explored tools for checking and changing models. Before we turn to their data, thank you to Intelligrit, this episode's sponsor, for supporting today's discoveries."
+  }
+}
