@@ -1,0 +1,57 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0.0,
+      "title": "Opening"
+    },
+    {
+      "startTime": 18.324,
+      "title": "A small classifier earns a production comparison"
+    },
+    {
+      "startTime": 80.32,
+      "title": "Preview an agent's app on its remote machine"
+    },
+    {
+      "startTime": 123.91,
+      "title": "AutoDNA coordinates a laboratory across instruments"
+    },
+    {
+      "startTime": 187.187,
+      "title": "Carry a Go repository map in one HTML file"
+    },
+    {
+      "startTime": 229.345,
+      "title": "A small Catalan model offers an adaptation recipe"
+    },
+    {
+      "startTime": 283.098,
+      "title": "Thanks to Intelligrit"
+    },
+    {
+      "startTime": 293.483,
+      "title": "An RNA model learns from sequence and structure"
+    },
+    {
+      "startTime": 355.963,
+      "title": "Watch agents struggle with your documentation"
+    },
+    {
+      "startTime": 406.439,
+      "title": "Go's new JSON packages reach stable status"
+    },
+    {
+      "startTime": 456.914,
+      "title": "Safari adapts websites that lack dark mode"
+    },
+    {
+      "startTime": 503.952,
+      "title": "An inference engine squeezes under one kilobyte"
+    },
+    {
+      "startTime": 555.068,
+      "title": "Closing"
+    }
+  ]
+}

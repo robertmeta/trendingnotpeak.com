@@ -1,0 +1,437 @@
+{
+  "date": "2026-11-05",
+  "title": "TNP - 2026-11-05",
+  "intro": "Welcome to Trending Not Peak on Thursday, November 5th. Quick note: this podcast uses AI-assisted writing and a synthetic voice. Before we dive in, all the links and details are at trending not peak dot com. Miss something? You can always catch up there.",
+  "outro": "Which one would you try? Codemap to explore a Go module; Gauge to test agent-facing documentation; VS Code to preview remote agent changes. That's Trending Not Peak. Missed something? The links and details are at trending not peak dot com.",
+  "schema_version": 1,
+  "audio": {
+    "url": "https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-11-05/trending-not-peak-2026-11-05-kinetic-grid-r2.mp3",
+    "duration_seconds": 572.195624,
+    "bytes": 9157472,
+    "embedded_chapters": 13,
+    "sha256": "da7531470d723c3a5147d91e780c162b06921208a23c26568c6f37efe81588f8"
+  },
+  "stories": [
+    {
+      "title": "A small classifier earns a production comparison",
+      "script": "First up, Airbnb has shared a useful answer to a very practical question: when does a small, specialized model deserve the job? Its engineers fine-tuned a classifier with two billion effective parameters to screen content against pricing and payment transparency rules. They report matching frontier-model quality in under a hundred milliseconds, at roughly one percent of the cost. The comparison used ten thousand weighted, held-out examples. This matters when a decision blocks publication and your application needs an answer within two hundred milliseconds. A support platform or moderation team could borrow the evaluation approach: measure the mistakes that matter, set a decision threshold, and compare serving costs at realistic volume. Airbnb's GLOWC training framework is internal, and these results describe one production task. Still, the article gives you a concrete reason to investigate specialization. Start with a narrow decision you already make thousands of times, and find out whether your examples can teach a smaller model its boundaries.",
+      "why_now": "Airbnb's production benchmark was highlighted November 4, 2026 at 16:52:49-05:00. The post had 210 likes, 14 replies and 12568 views at 2026-11-05T08:00:05.914908+00:00.",
+      "why_early": "A newly shared production case study provides task-specific evidence for fine-tuning a small classifier. Quality, latency and cost are Airbnb-reported results, not independently reproduced measurements. GLOWC is internal, and the result does not establish equivalent savings on other tasks. Global saturation is unknown within the configured sources.",
+      "watch_next": "Independent task-specific comparisons that include labeling, fine-tuning, serving costs and false-positive thresholds.",
+      "id": "story-16877d78ed61",
+      "number": 1,
+      "category": "Applied AI",
+      "role": "anchor",
+      "sources": [
+        {
+          "url": "https://airbnb.tech/ai-ml/frontier-quality-at-1-of-the-cost-a-production-benchmark-of-llm-classifiers",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/ahmad_al_dahle/status/2118099171051962831",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-04T16:52:49-05:00",
+          "observed_at": "2026-11-05T08:00:05.914908+00:00",
+          "url": "https://airbnb.tech/ai-ml/frontier-quality-at-1-of-the-cost-a-production-benchmark-of-llm-classifiers",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 210,
+            "comments": 14,
+            "views": 12568,
+            "url": "https://x.com/ahmad_al_dahle/status/2118099171051962831"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-05T08:00:05.914908+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Preview an agent's app on its remote machine",
+      "script": "Next up, VS Code makes a remote coding agent's work easier to inspect. Version one point one forty-five adds a preview feature that loads the integrated browser through the remote agent host. When the agent starts a development server over there, you can open the application inside the Agents window and give feedback. Remote interactive canvases get support too. That's useful for developers who want agents working on another machine while keeping the review loop in their editor. Both features require enabling preview settings. The release also adds custom cron schedules for recurring agent tasks. A good first experiment with VS Code is a small interface change: let the remote agent build it, open its running app, and check the behavior before accepting the code.",
+      "why_now": "VS Code 1.145 was released November 4, 2026. Its announcement had 215 likes, 7 replies and 19452 views at 2026-11-05T08:00:05.914908+00:00.",
+      "why_early": "Remote browser proxying and remote canvases are explicitly preview features in a new stable editor release. Their availability is documented, while reliability across remote hosts and applications remains unestablished here.",
+      "watch_next": "Reports on remote development-server access and feedback workflows with the preview settings enabled.",
+      "id": "story-29b3350fcf5d",
+      "number": 2,
+      "category": "Developer tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://code.visualstudio.com/updates/v1_145",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/code/status/2118050323063242970",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-04T13:38:43-05:00",
+          "observed_at": "2026-11-05T08:00:05.914908+00:00",
+          "url": "https://code.visualstudio.com/updates/v1_145",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 215,
+            "comments": 7,
+            "views": 19452,
+            "url": "https://x.com/code/status/2118050323063242970"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-05T08:00:05.914908+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "AutoDNA coordinates a laboratory across instruments",
+      "script": "Turning to the laboratory, AutoDNA connects AI planning with the instruments that actually handle biomolecules. A new Nature paper describes a system coordinating more than twenty instrument types across over eleven thousand steps. The authors report four applications, including a complete DNA data-storage cycle that recovered the original digital content exactly. They also report matching expert-optimized DNA synthesis yields and making concurrent protocol execution three point two times faster. For laboratory automation researchers, the interesting possibility is coordinating several kinds of experiment inside one system. Humans still replenish reagents and labware and maintain the hardware. This is a demonstrated research installation; the paper doesn't give every laboratory a service it can switch on tomorrow. If you build scientific software, explore how AutoDNA connects experimental goals to instrument operations. A useful design exercise is tracing one workflow across those boundaries, including the physical supplies that keep the whole sequence moving.",
+      "why_now": "Nature published the AutoDNA study November 4, 2026. The discovery post had 196 likes, 15 replies and 25242 views at 2026-11-05T08:00:05.914908+00:00.",
+      "why_early": "A newly published primary study reports a multi-instrument research laboratory and four representative applications. Results are author-reported; portability, independent reproduction and general service availability are not established by the abstract.",
+      "watch_next": "Independent reproductions and implementation details showing how experimental planning, instrument control and maintenance interact.",
+      "id": "story-d953d5ad6030",
+      "number": 3,
+      "category": "AI research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.nature.com/articles/s41586-026-11228-6",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/erictopol/status/2118015564933407206",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-04T11:20:36-05:00",
+          "observed_at": "2026-11-05T08:00:05.914908+00:00",
+          "url": "https://www.nature.com/articles/s41586-026-11228-6",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 196,
+            "comments": 15,
+            "views": 25242,
+            "url": "https://x.com/erictopol/status/2118015564933407206"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-05T08:00:05.914908+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Carry a Go repository map in one HTML file",
+      "script": "Back at the codebase, Codemap turns a Go module into one searchable HTML page. It shows packages, their dependencies inside the module, files and functions. Click a package to inspect what it uses and what uses it. For GitHub modules, function links jump to the source line. This could help a new contributor get oriented, or give a maintainer a map to attach to project documentation. It requires Go one point twenty-four or later, and leaves tests out. There's nothing to serve after generation: the output is a single file you can open or publish. Use Codemap to explore a Go module you know well first. See whether its package relationships explain the architecture you usually have to describe in a conversation.",
+      "why_now": "Show HN introduced Codemap November 4, 2026 at 15:18:24+00:00. It had 42 points and 18 comments at 2026-11-05T08:00:05.914908+00:00. The retrieved repository showed 50 stars and 4 commits.",
+      "why_early": "A fresh public introduction includes an MIT-licensed implementation, a runnable command and a GitHub Actions example. The map excludes tests and describes module dependencies, not comprehensive runtime behavior.",
+      "watch_next": "Usability on larger modules and whether generated maps remain useful as packages and functions change.",
+      "id": "story-5e93a6870967",
+      "number": 4,
+      "category": "Developer tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/peterretief/codemap",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50366811",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-04T15:18:24+00:00",
+          "observed_at": "2026-11-05T08:00:05.914908+00:00",
+          "url": "https://github.com/peterretief/codemap",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 42,
+            "comments": 18,
+            "url": "https://news.ycombinator.com/item?id=50366811"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-05T08:00:05.914908+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "A small Catalan model offers an adaptation recipe",
+      "script": "Meanwhile, for language-specific local AI, there's MiniCPM's Catalan Chat version two. This community adaptation of MiniCPM five two-B uses two stages of LoRA fine-tuning. First come a hundred sixty-five thousand, one hundred instruction examples from InstruCAT. Then roughly twenty-three thousand four hundred conversation examples focus the training on dialogue across turns. Merged weights and adapters are available, along with community GGUF versions for llama dot cpp and Ollama. Catalan-speaking developers could explore a small conversational assistant, while language communities get a concrete training recipe to inspect. Independent dialogue-quality results aren't established here. Give the adapted model and its base the same conversation in Catalan, including a correction they'll need several turns later. A fluent speaker can judge whether that correction survives the conversation.",
+      "why_now": "OpenBMB highlighted the community model November 3, 2026 at 08:30:10-05:00. The post had 60 likes, 4 replies and 3019 views at 2026-11-05T08:00:05.914908+00:00.",
+      "why_early": "The recent primary community announcement identifies a distinct version-two checkpoint, training stages and available weight formats. Independent quality measurements are absent, and the retrieved Hugging Face page labels the license 'other', so permissive commercial terms should not be assumed.",
+      "watch_next": "Fluent-speaker evaluations of multi-turn Catalan dialogue and clear documentation of model and dataset usage terms.",
+      "id": "story-1118ea09c150",
+      "number": 5,
+      "category": "Local AI",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://huggingface.co/luispoveda93/MiniCPM5-2B-catalan-chat-v2",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/openbmb/status/2117610288552038581",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-03T08:30:10-05:00",
+          "observed_at": "2026-11-05T08:00:05.914908+00:00",
+          "url": "https://huggingface.co/luispoveda93/MiniCPM5-2B-catalan-chat-v2",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 60,
+            "comments": 4,
+            "views": 3019,
+            "url": "https://x.com/openbmb/status/2117610288552038581"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-05T08:00:05.914908+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "An RNA model learns from sequence and structure",
+      "script": "Back from the break, structRFM gives RNA researchers an open model trained with structural information built into the learning task. The team used twenty-one million RNA sequence-and-structure pairs, combining nucleotide prediction with information about which bases pair together. RNA's shape helps determine what it does, so those pairings give the model information beyond the sequence alone. The authors report improvements in secondary-structure prediction and function-prediction tasks. Their three-dimensional adaptation, Zfold, performed comparably to AlphaFold three across CASP fifteen natural, CASP sixteen and RNA-Puzzles. That's a comparison on particular research tests. The complete training dataset, weights and source code are openly available, according to the paper. Computational biologists can investigate the representations or adapt them to another prediction task. With those resources, a lab could test how well structural guidance transfers to an unfamiliar RNA family, or explore what it contributes to predictions about long non-coding RNAs.",
+      "why_now": "Nature published the structRFM study November 4, 2026. The discovery post had 109 likes, 5 replies and 16595 views at 2026-11-05T08:00:05.914908+00:00.",
+      "why_early": "A newly published primary study announces open weights, source and a 21-million-pair dataset. Benchmark and generalization claims are author-reported. Zfold's comparison with AlphaFold3 concerns CASP15-natural, CASP16 and RNA-Puzzles, not universal equivalence.",
+      "watch_next": "Independent reproduction on newly released RNA families, including long non-coding RNAs and downstream function tasks.",
+      "id": "story-6213b1dca880",
+      "number": 6,
+      "category": "Open research models",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.nature.com/articles/s41586-026-11210-2",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/erictopol/status/2118017088531161262",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-04T11:26:39-05:00",
+          "observed_at": "2026-11-05T08:00:05.914908+00:00",
+          "url": "https://www.nature.com/articles/s41586-026-11210-2",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 109,
+            "comments": 5,
+            "views": 16595,
+            "url": "https://x.com/erictopol/status/2118017088531161262"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-05T08:00:05.914908+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Watch agents struggle with your documentation",
+      "script": "On to developer experience. Gauge runs real coding agents against your product and captures where they get stuck. Its new open-source CLI targets documentation, skills, command-line tools and SDKs, giving your own coding agent a way to test fixes before publication. If you maintain a library, that's an appealing feedback loop: ask an agent to complete a representative integration, inspect the failure, change the confusing instructions, and rerun the task. Gauge runs the loop locally with Docker and your existing agent subscriptions or API keys. Local orchestration can still involve remote model calls. The launch doesn't establish improved completion rates yet. Gauge gives maintainers a concrete experiment: test agent-facing documentation against an actual task, then see whether the revision changes what the agent manages to do.",
+      "why_now": "Show HN introduced Gauge November 4, 2026 at 20:31:30+00:00. It had 29 points and 4 comments at 2026-11-05T08:00:05.914908+00:00. The retrieved repository showed 71 stars, 4 forks and 41 commits.",
+      "why_early": "A fresh MIT-licensed CLI introduction documents real-agent task execution and a local Docker-based improvement loop. The excerpt does not establish measured completion gains, supported-provider breadth or evaluation costs.",
+      "watch_next": "Reproducible before-and-after integration tasks, including agent costs and failures on tasks excluded from the improvement loop.",
+      "id": "story-6669707f3d1e",
+      "number": 7,
+      "category": "Developer evaluation",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/gauge-sh/gauge-cli",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50371090",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-04T20:31:30+00:00",
+          "observed_at": "2026-11-05T08:00:05.914908+00:00",
+          "url": "https://github.com/gauge-sh/gauge-cli",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 29,
+            "comments": 4,
+            "url": "https://news.ycombinator.com/item?id=50371090"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-05T08:00:05.914908+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Go's new JSON packages reach stable status",
+      "script": "Down in the standard library, Go's new JSON API has graduated. The Go team says encoding slash JSON slash v-two and the companion JSON-text package are stable and generally available in Go one point twenty-seven. The announcement follows an experimental API and additional feedback. One motivation is avoiding ambiguous input handling: the older package accepts invalid UTF-eight, which can silently change data. Service developers now have a supported API to investigate when tightening serialization behavior. The useful project is a compatibility check on your own payloads. Include malformed text and examples from the systems you exchange data with, then compare results before migrating. This is also a good reminder that a familiar data format can conceal consequential behavior at the boundary between two programs.",
+      "why_now": "The Go team published the stable API announcement November 4, 2026. Its Lobsters discussion had 24 points and 4 comments at 2026-11-05T08:00:05.914908+00:00.",
+      "why_early": "The material change is graduation of previously experimental JSON packages to stable, generally available status in Go 1.27. The supplied excerpt establishes availability and motivations, without documenting all migration differences or performance results.",
+      "watch_next": "Migration reports identifying behavior differences on existing application payloads and interoperability tests.",
+      "id": "story-c69a4026f5b4",
+      "number": 8,
+      "category": "Programming languages",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://go.dev/blog/jsonv2",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/gfm0xn/new_go_api_for_json",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-04T11:52:32.448-06:00",
+          "observed_at": "2026-11-05T08:00:05.914908+00:00",
+          "url": "https://go.dev/blog/jsonv2",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 24,
+            "comments": 4,
+            "url": "https://lobste.rs/s/gfm0xn/new_go_api_for_json"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-05T08:00:05.914908+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Safari adapts websites that lack dark mode",
+      "script": "Over in the browser, Adaptive Dark Mode is available to try in Safari twenty-seven point three beta. With the user's permission, it transforms light websites into dark ones, aiming to preserve hues and keep text readable. Most images stay unchanged, while some icons and logos get adjustments so they remain visible. Web developers have a new rendering behavior to test, especially around image backgrounds and menus. Sites that declare dark-mode support through the color-scheme setting keep their own presentation. Canvas content also stays unchanged. That creates a concrete testing opportunity for chart and creative-tool builders: put the surrounding controls beside your canvas, enable the feature, and inspect the whole interface together. A dark background is only useful if you can still read the legend.",
+      "why_now": "WebKit introduced Adaptive Dark Mode November 3, 2026 for Safari 27.3 beta. Its November 4 Lobsters discussion had 37 points and 11 comments at 2026-11-05T08:00:05.914908+00:00.",
+      "why_early": "A newly introduced, user-enabled browser beta feature documents color transformation, image handling and exclusions. Broad compatibility and stable-release availability are not established here; its stated contrast target is not proof of universal accessibility.",
+      "watch_next": "Beta feedback on mixed canvas-and-HTML interfaces, semantic colors, logos and hover menus.",
+      "id": "story-a42ee61cf827",
+      "number": 9,
+      "category": "Web development",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://webkit.org/blog/18541/introducing-adaptive-dark-mode",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/yba0yg/introducing_adaptive_dark_mode",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-04T05:04:40.736-06:00",
+          "observed_at": "2026-11-05T08:00:05.914908+00:00",
+          "url": "https://webkit.org/blog/18541/introducing-adaptive-dark-mode",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 37,
+            "comments": 11,
+            "url": "https://lobste.rs/s/yba0yg/introducing_adaptive_dark_mode"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-05T08:00:05.914908+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "An inference engine squeezes under one kilobyte",
+      "script": "And finally, bytesized has an open pull request proposing a language-model inference engine squeezed into a thousand twenty-three bytes. That's the Linux x-eighty-six sixty-four engine; the SmolLM two model weights and tokenizer remain separate files. Sizecoding enthusiasts get sources, packed binaries and reproduction scripts to explore. The squeeze has a measurable cost: its simplified tokenizer passes thirteen of twenty focused cases, and matches on only two hundred thirty-six of fourteen hundred eighty texts in a separate corpus. A slightly larger, eleven-hundred-forty-nine-byte variant passes all twenty focused cases. So here's a charming engineering exercise: inspect what those extra bytes buy you. You could compare the variants and trace a tokenizer disagreement all the way into generated output. One kilobyte makes every shortcut unusually visible.",
+      "why_now": "The contributor opened and highlighted the experimental inference-engine patch November 4, 2026. The post had 130 likes, 4 replies and 5236 views at 2026-11-05T08:00:05.914908+00:00. Pull request 1 remained open in the retrieved page.",
+      "why_early": "A pending experimental patch provides source, binaries and reproducible verification scripts. Its 1,023-byte engine uses greedy longest-vocabulary-match tokenization, always generates 100 tokens and omits the final newline. Matching 300 reference generated IDs across three prompts does not establish general tokenizer equivalence. The separate model files are excluded from the engine-size claim.",
+      "watch_next": "Independent build reproduction and comparisons showing how tokenizer differences affect generation in both engine variants.",
+      "id": "story-a05e3bf8588a",
+      "number": 10,
+      "category": "Offbeat experiments",
+      "role": "closer",
+      "sources": [
+        {
+          "url": "https://github.com/utsav1033/bytesized/pull/1",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/cneuralnetwork/status/2117871577102798864",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-04T01:48:26-05:00",
+          "observed_at": "2026-11-05T08:00:05.914908+00:00",
+          "url": "https://github.com/utsav1033/bytesized/pull/1",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 130,
+            "comments": 4,
+            "views": 5236,
+            "url": "https://x.com/cneuralnetwork/status/2117871577102798864"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-05T08:00:05.914908+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    }
+  ],
+  "interlude": {
+    "after_story": 5,
+    "title": "Thanks to Intelligrit",
+    "script": "A little breathing room between local models and laboratory research. Intelligrit sponsors this episode of Trending Not Peak, and we're grateful for the support."
+  }
+}
