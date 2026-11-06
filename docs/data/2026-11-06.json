@@ -1,0 +1,437 @@
+{
+  "date": "2026-11-06",
+  "title": "TNP - 2026-11-06",
+  "intro": "This is Trending Not Peak for Friday, November 6th. Quick note: this podcast uses AI-assisted writing and a synthetic voice. Before we dive in, all the links and details are at trending not peak dot com. Miss something? You can always catch up there.",
+  "outro": "Which one would you try? Firenook to replay local Firebase tests; Stroq to inspect coding agent sessions; Delta to share an unfinished coding task. That's Trending Not Peak. Missed something? The links and details are at trending not peak dot com.",
+  "schema_version": 1,
+  "audio": {
+    "url": "https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-11-06/trending-not-peak-2026-11-06-kinetic-grid-r2.mp3",
+    "duration_seconds": 556.691247,
+    "bytes": 8909217,
+    "embedded_chapters": 13,
+    "sha256": "9bba7e8cec5a79a87bc5426e97930f32c5818996ef142b0a320207bbe7ba4454"
+  },
+  "stories": [
+    {
+      "title": "Give agents a handoff instead of the whole transcript",
+      "script": "First up, NVIDIA's paper, You Don't Need Long Context, offers an experiment for anyone building a coding agent: keep a useful handoff, and let the transcript go. The researchers report little to no loss of task accuracy across a broad range of long-running and long-input tasks when models frequently compact their context. They even test software engineering with at most one action per conversation. Each fresh conversation gets the task and an updated account of what matters next. That's interesting because carrying more history can make subsequent tokens more expensive to generate. The practical opportunity is a different agent memory design: record progress, preserve unresolved questions, and retrieve details when they're needed. These are research results on tested workloads, so a summary still needs to survive your particular task. Start with an issue that requires several edits and tests. Compare the full transcript with a compact handoff, checking both completion and what the agent forgets along the way.",
+      "why_now": "Submitted November 3, 2026 and highlighted November 6 at 00:29:59-05:00. The discovery post had 125 likes, 8 replies and 5224 views at 2026-11-06T08:00:05.785530+00:00. The retrieved alphaXiv page displayed '#6 on Trending'.",
+      "why_early": "New primary research tests frequent context compaction, including single-action contexts. Its findings concern evaluated models and tasks, not universal equivalence between summaries and full histories. The community observation measures interest, and global saturation is unknown within the configured sources.",
+      "watch_next": "Independent task-completion comparisons that include compaction overhead, retrieval costs and information lost during handoffs.",
+      "id": "story-2a8ea8ecfd34",
+      "number": 1,
+      "category": "AI research",
+      "role": "anchor",
+      "sources": [
+        {
+          "url": "https://www.alphaxiv.org/abs/2611.05306",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/askalphaxiv/status/2118576609603252583",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-06T00:29:59-05:00",
+          "observed_at": "2026-11-06T08:00:05.785530+00:00",
+          "url": "https://www.alphaxiv.org/abs/2611.05306",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 125,
+            "comments": 8,
+            "views": 5224,
+            "url": "https://x.com/askalphaxiv/status/2118576609603252583"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-06T08:00:05.785530+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Firenook offers a faster Firebase test environment",
+      "script": "Next up, Firenook replaces the Firebase Local Emulator Suite while keeping your Firebase configuration, SDKs and usual service ports. It's written in Rust, needs no Java installation, and preserves data across restarts. For a Firebase application team, that could make a large local test environment less cumbersome to run repeatedly. The project's benchmark reports median writes of five point one milliseconds against two hundred eight point two, and peak memory of two point eleven gibibytes against twenty-two point five seven. Those are project measurements from a particular application, rather than a promise for every test suite. The site also provides a service-by-service compatibility guide, which matters before swapping an emulator underneath your tests. Firenook gives you a straightforward comparison to make: replay local Firebase tests with the same seed data, inspect the results, and measure the restart. Faster feedback is useful when the replacement still reproduces the behavior your application depends on.",
+      "why_now": "Show HN introduced Firenook November 5, 2026 at 13:07:29+00:00. It had 105 points and 16 comments at 2026-11-06T08:00:05.785530+00:00. The retrieved product page identified version 0.2.1; its demonstration was recorded with 0.2.0.",
+      "why_early": "A fresh public introduction documents a replacement emulator suite and bounded application benchmarks. Performance figures are project-reported, and retaining configuration and ports does not establish complete behavioral compatibility.",
+      "watch_next": "Independent compatibility checks and repeatable measurements using existing Firebase application test suites.",
+      "id": "story-049abaa0a126",
+      "number": 2,
+      "category": "Developer tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://firenook.dev",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50378643",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-05T13:07:29+00:00",
+          "observed_at": "2026-11-06T08:00:05.785530+00:00",
+          "url": "https://firenook.dev",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 105,
+            "comments": 16,
+            "url": "https://news.ycombinator.com/item?id=50378643"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-06T08:00:05.785530+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Inspect the trail behind a coding agent's commands",
+      "script": "Speaking of checking behavior, Stroq looks inside coding agent sessions for known secrets, then offers local hooks intended to trace risky commands back to the content that prompted them. The open-source project names Claude Code, Codex and Cursor, and says it has no telemetry. That's useful territory for maintainers trying to understand a surprising command after an agent reads a repository or tool response. A command log tells you what ran; connecting it to earlier content could help explain how the session got there. The launch doesn't establish how reliably those connections identify a cause. Use Stroq to inspect coding agent sessions from a disposable project with fake secrets and a known sequence of instructions. See whether its account matches what actually happened.",
+      "why_now": "Show HN introduced Stroq November 5, 2026 at 15:54:41+00:00. It had 82 points and 30 comments at 2026-11-06T08:00:05.785530+00:00. The retrieved repository displayed 132 stars and 7 forks.",
+      "why_early": "A newly shared Apache-2.0 project describes secret discovery and local command-tracing hooks. Coverage, attribution accuracy and prevention effectiveness have not been independently established; no-telemetry behavior is a project claim.",
+      "watch_next": "Reproducible demonstrations measuring missed secrets, false alarms and command attribution across supported agents.",
+      "id": "story-f1653a5ca3bb",
+      "number": 3,
+      "category": "Agent security",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/AGGIB/Stroq",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50380704",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-05T15:54:41+00:00",
+          "observed_at": "2026-11-06T08:00:05.785530+00:00",
+          "url": "https://github.com/AGGIB/Stroq",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 82,
+            "comments": 30,
+            "url": "https://news.ycombinator.com/item?id=50380704"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-06T08:00:05.785530+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Extract avatar motion from an ordinary video",
+      "script": "Turning to animation, VRMExMR packages ExMR, short for Extremity Motion Refinement for Monocular Human Motion Capture. The project describes recovering three-dimensional body, hand and foot motion from a single video, with exports aimed at Blender, Unity, Unreal and humanoid robots. For an animator or game developer, the appealing experiment is using an ordinary camera clip as the starting point for character movement. Camenduru's newly shared fork includes a GPU-enabled Docker setup, making the workflow something you can inspect and attempt to run. Export support doesn't establish that a reconstructed movement is ready for a physical robot. Begin with an avatar: capture a short motion with visible hands and feet, then inspect the exported animation for slipping feet and awkward joints.",
+      "why_now": "Camenduru announced VRMExMR November 5, 2026 at 00:18:26-05:00. The post had 115 likes, no replies and 4536 views at 2026-11-06T08:00:05.785530+00:00. The retrieved fork displayed 13 stars and 39 commits.",
+      "why_early": "The new contribution is a packaged fork and GPU Docker workflow around ExMR research code. Listed export targets do not establish animation fidelity, robot suitability or independently verified setup requirements.",
+      "watch_next": "Independent setup reports and exported-motion checks covering hand detail, foot contact and occlusion.",
+      "id": "story-985c9ae7b2a4",
+      "number": 4,
+      "category": "Creative AI",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/camenduru/VRMExMR",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/camenduru/status/2118211316384976963",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-05T00:18:26-05:00",
+          "observed_at": "2026-11-06T08:00:05.785530+00:00",
+          "url": "https://github.com/camenduru/VRMExMR",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 115,
+            "comments": 0,
+            "views": 4536,
+            "url": "https://x.com/camenduru/status/2118211316384976963"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-06T08:00:05.785530+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Train across separated clusters with different GPUs",
+      "script": "Zooming out to training infrastructure, Core Automation's Compute Islands report describes training one sparse mixture-of-experts model across two differently sized clusters with different GPU types. The clusters were nearly halfway around the world from each other, connected by a bidirectional twenty-five-gigabit-per-second link. That's a concrete experiment for researchers who have access to scattered compute instead of one enormous installation. The team also revisited butterfly mixing, replacing an all-reduce operation with pairwise exchanges among eight learners, and reports that it matched standard training. The broader claim that scattered data centers can support frontier training remains an argument to investigate; this demonstration doesn't establish that whole proposition. What it does offer is a useful systems question: how often must learners communicate, and what information must they exchange? If you work on distributed training, explore the case study with your own network limits in mind. It could change which combinations of available machines are worth testing together.",
+      "why_now": "Core Automation published the report November 2, 2026. Rohan Anil highlighted it November 4 at 12:13:55-05:00; that post had 140 likes, 8 replies and 12046 views at 2026-11-06T08:00:05.785530+00:00.",
+      "why_early": "A recent first-person technical report describes a heterogeneous two-cluster training experiment and an eight-learner mixing comparison. Outcomes are author-reported; frontier-scale feasibility, economics and general convergence behavior remain unestablished.",
+      "watch_next": "Reproductions specifying model scale, network utilization, convergence and total training cost across heterogeneous clusters.",
+      "id": "story-6c691f24642b",
+      "number": 5,
+      "category": "AI infrastructure",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.coreauto.com/hitchhikers-guide-to-training-on-compute-islands",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/_arohan_/status/2118028985716351294",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-04T12:13:55-05:00",
+          "observed_at": "2026-11-06T08:00:05.785530+00:00",
+          "url": "https://www.coreauto.com/hitchhikers-guide-to-training-on-compute-islands",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 140,
+            "comments": 8,
+            "views": 12046,
+            "url": "https://x.com/_arohan_/status/2118028985716351294"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-06T08:00:05.785530+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Hand a live coding session to a teammate",
+      "script": "Back from the break, Delta now lets a teammate pick up a shared Claude Code session mid-task, either from their own Claude Code session or inside Delta. Its November update also documents nested subthreads and mentions that bring colleagues into a conversation. For a development team, the practical possibility is handing over an investigation with its working context attached. Someone could explore a failure, then invite the person who knows that subsystem to continue. The Claude Code plugin is available; plugins for Zed, Pi and Codex are described as upcoming. Delta is in beta. A useful trial is to share an unfinished coding task with a colleague and see whether they can identify the next step without a separate explanation of everything you've already tried.",
+      "why_now": "Delta published its October feature roundup November 5, 2026. The announcement at 11:19:24-05:00 had 121 likes, 11 replies and 6825 views at 2026-11-06T08:00:05.785530+00:00.",
+      "why_early": "The primary update documents available Claude Code session sharing, nested subthreads and remote MCP support within a beta product. Other named editor integrations remain planned, and handoff effectiveness has not been independently measured.",
+      "watch_next": "Team reports on session continuity, permissions and how much additional explanation a handoff requires.",
+      "id": "story-339ad7e46a3e",
+      "number": 6,
+      "category": "Developer collaboration",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://delta.dev/blog/the-diff-2026-10",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/zeddotdev/status/2118377653938139577",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-05T11:19:24-05:00",
+          "observed_at": "2026-11-06T08:00:05.785530+00:00",
+          "url": "https://delta.dev/blog/the-diff-2026-10",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 121,
+            "comments": 11,
+            "views": 6825,
+            "url": "https://x.com/zeddotdev/status/2118377653938139577"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-06T08:00:05.785530+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Teach a coding model at the turn where it fails",
+      "script": "Over in model training, Targeted Guidance asks what happens when a reward says an agent failed, but the model almost never produces the behavior that would succeed. Researchers from Cursor and UC Berkeley study adding textual feedback at the particular turn that went wrong. The model learns from its own feedback-guided predictions while ordinary reinforcement learning continues alongside that correction. Their paper reports success combining this approach with separate rewards for individual requirements and limiting feedback to failed turns. For teams training coding models, that offers a way to investigate stubborn tool formats or communication requirements without treating every action as equally mistaken. This is a training method, rather than a prompt you paste into an existing assistant. Explore whether your failure labels identify the precise turn that needs correction.",
+      "why_now": "The paper was submitted November 4, 2026. Its November 5 discovery post had 65 likes, 7 replies and 4755 views at 2026-11-06T08:00:05.785530+00:00. The retrieved alphaXiv page displayed '#1 on Trending'.",
+      "why_early": "New primary research studies targeted self-distillation in a multi-turn software engineering environment. Reported stability and behavior improvements concern the evaluated training settings; broad transfer and independent reproduction are unestablished.",
+      "watch_next": "Independent training comparisons measuring requirement adherence, retained coding ability and sensitivity to feedback quality.",
+      "id": "story-0b298b9ad0d8",
+      "number": 7,
+      "category": "AI training",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.alphaxiv.org/abs/2611.05266",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/askalphaxiv/status/2118269086157156696",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-05T04:08:00-05:00",
+          "observed_at": "2026-11-06T08:00:05.785530+00:00",
+          "url": "https://www.alphaxiv.org/abs/2611.05266",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 65,
+            "comments": 7,
+            "views": 4755,
+            "url": "https://x.com/askalphaxiv/status/2118269086157156696"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-06T08:00:05.785530+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Crouton fixes a tool-call interruption",
+      "script": "Meanwhile, Crouton Alpha has a small update that matters to agent builders: OpenRouter says it fixed a bug that could stop the model mid-task, usually just before a tool call. Crouton Alpha is a free preview model with a listed one-million-token context, positioned for bounded coding tasks, tool use and document analysis. That gives developers another model to compare for repeated steps inside a larger workflow. Its provider is anonymous, and prompts and completions may be retained, so use public or synthetic material for an initial trial. The practical test is straightforward: replay a multi-step task that needs several tool calls and check whether it reaches a verified result. A completed response and a completed job are still different things to measure.",
+      "why_now": "Released November 3, 2026, Crouton Alpha received the announced early-stopping fix November 5 at 14:25:51-05:00. The post had 205 likes, 19 replies and 14020 views at 2026-11-06T08:00:05.785530+00:00.",
+      "why_early": "A concrete reliability fix affects a newly released stealth preview. OpenRouter routes requests to an anonymous third-party provider; the fix and task suitability are provider claims without independent completion measurements. EU in-region routing is unavailable.",
+      "watch_next": "Reproducible multi-tool completion results and clearer provider, retention and preview-availability information.",
+      "id": "story-5ac328550f0f",
+      "number": 8,
+      "category": "Model serving",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://openrouter.ai/stealth/crouton-alpha",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/openrouter/status/2118424572894818689",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-05T14:25:51-05:00",
+          "observed_at": "2026-11-06T08:00:05.785530+00:00",
+          "url": "https://openrouter.ai/stealth/crouton-alpha",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 205,
+            "comments": 19,
+            "views": 14020,
+            "url": "https://x.com/openrouter/status/2118424572894818689"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-06T08:00:05.785530+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Servo expands the interfaces it can render",
+      "script": "Down in browser engines, Servo's new progress report describes version zero point seven bringing more everyday web features to its embeddable engine. Those include the progress element, the checked selector and rounded rectangles in canvas. If you're building an application that embeds web content, these details determine whether ordinary controls and drawings behave as expected. There's experimental progress too: many rich-text editors become usable when the relevant editing preference is enabled, while accessibility and WebGL two work continue behind preferences. The opportunity is a more capable alternative engine to test against a specific interface. Pick a small editor or dashboard you maintain and compare its interactions. Servo explicitly invites reports of both working sites and failures, so a focused compatibility example could become a useful contribution.",
+      "why_now": "Servo published the report November 5, 2026, describing September changes included in 0.7.0. Its Lobsters discussion had 68 points and 9 comments at 2026-11-06T08:00:05.785530+00:00.",
+      "why_early": "The fresh primary report documents specific shipped platform additions and distinguishes preference-gated work. The underlying changes landed in September; the publication does not establish complete browser compatibility or accessibility readiness.",
+      "watch_next": "Compatibility reports for embedded editors and progress toward broadly usable accessibility and WebGL2 support.",
+      "id": "story-a18ea7bca47b",
+      "number": 9,
+      "category": "Web engines",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://servo.org/blog/2026/11/05/september-in-servo",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/u26wki/september_servo_progress_rounded",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-05T07:47:56.831-06:00",
+          "observed_at": "2026-11-06T08:00:05.785530+00:00",
+          "url": "https://servo.org/blog/2026/11/05/september-in-servo",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 68,
+            "comments": 9,
+            "url": "https://lobste.rs/s/u26wki/september_servo_progress_rounded"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-06T08:00:05.785530+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "An obscure codec gives the Nintendo 64 more music room",
+      "script": "And finally, the Nintendo sixty-four gets an audio experiment worth hearing. Developer Dominic Szablewski reports forty-four-point-one-kilohertz stereo at near-Opus bitrates using about four percent of the console's CPU time, with the Ultra Low Complexity codec, or ULC. His motivation is wonderfully concrete: sound and music occupied about thirty-one megabytes of his thirty-two-megabyte Xibalba sixty-four game ROM using its previous compression. For homebrew developers, better compression with affordable decoding could leave room for more recorded music alongside gameplay. These are the developer's measurements, and the implementation details matter on such constrained hardware. The article walks through why other codecs fit the machine poorly. If you're studying audio systems, follow that tradeoff between storage, decoding work and the hardware available. Your soundtrack has to share the cartridge.",
+      "why_now": "Szablewski published the technical account November 3, 2026. Its November 5 Lobsters discussion had 7 points and no comments at 2026-11-06T08:00:05.785530+00:00.",
+      "why_early": "A newly published first-person account explores a specific codec fit for N64 homebrew. Audio quality, bitrate comparison and CPU use are author-reported, without independent reproduction or evidence of broad integration.",
+      "watch_next": "Independent playback measurements comparing audio quality, ROM size and gameplay performance on the same hardware.",
+      "id": "story-c5ca51374c96",
+      "number": 10,
+      "category": "Offbeat experiments",
+      "role": "closer",
+      "sources": [
+        {
+          "url": "https://phoboslab.org/log/2026/11/n64-ulc-codec",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/cm9b92/ulc_audio_codec_is_perfect_fit_for_n64",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-05T03:25:36.067-06:00",
+          "observed_at": "2026-11-06T08:00:05.785530+00:00",
+          "url": "https://phoboslab.org/log/2026/11/n64-ulc-codec",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 7,
+            "comments": 0,
+            "url": "https://lobste.rs/s/cm9b92/ulc_audio_codec_is_perfect_fit_for_n64"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-06T08:00:05.785530+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    }
+  ],
+  "interlude": {
+    "after_story": 5,
+    "title": "Thanks to Intelligrit",
+    "script": "From scattered compute to shared coding sessions, there's plenty to connect today. Thank you to Intelligrit, this episode's sponsor, for supporting Trending Not Peak."
+  }
+}

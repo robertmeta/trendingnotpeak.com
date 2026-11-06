@@ -1,0 +1,57 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0.0,
+      "title": "Opening"
+    },
+    {
+      "startTime": 17.849,
+      "title": "Give agents a handoff instead of the whole transcript"
+    },
+    {
+      "startTime": 76.325,
+      "title": "Firenook offers a faster Firebase test environment"
+    },
+    {
+      "startTime": 134.163,
+      "title": "Inspect the trail behind a coding agent's commands"
+    },
+    {
+      "startTime": 179.838,
+      "title": "Extract avatar motion from an ordinary video"
+    },
+    {
+      "startTime": 227.913,
+      "title": "Train across separated clusters with different GPUs"
+    },
+    {
+      "startTime": 289.269,
+      "title": "Thanks to Intelligrit"
+    },
+    {
+      "startTime": 299.744,
+      "title": "Hand a live coding session to a teammate"
+    },
+    {
+      "startTime": 343.5,
+      "title": "Teach a coding model at the turn where it fails"
+    },
+    {
+      "startTime": 393.577,
+      "title": "Crouton fixes a tool-call interruption"
+    },
+    {
+      "startTime": 437.894,
+      "title": "Servo expands the interfaces it can render"
+    },
+    {
+      "startTime": 487.809,
+      "title": "An obscure codec gives the Nintendo 64 more music room"
+    },
+    {
+      "startTime": 539.485,
+      "title": "Closing"
+    }
+  ]
+}
