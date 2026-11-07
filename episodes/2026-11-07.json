@@ -1,0 +1,441 @@
+{
+  "date": "2026-11-07",
+  "title": "TNP - 2026-11-07",
+  "intro": "It's Saturday, November 7th, and you're listening to Trending Not Peak. Quick note: this podcast uses AI-assisted writing and a synthetic voice. Before we dive in, all the links and details are at trending not peak dot com. Miss something? You can always catch up there.",
+  "outro": "Which one would you try? CloneGuard to inspect unfamiliar repositories; Wand Browser to test nearby Bluetooth hardware; OpenCartridge to explore avatar animation workflows. That's Trending Not Peak. Missed something? The links and details are at trending not peak dot com.",
+  "schema_version": 1,
+  "audio": {
+    "url": "https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-11-07/trending-not-peak-2026-11-07-kinetic-grid-r2.mp3",
+    "duration_seconds": 591.335374,
+    "bytes": 9463846,
+    "embedded_chapters": 13,
+    "sha256": "b2f395b2884e3c0bbbcc5da4df6c7e4e91ad16429469f552887894dfab5a134c"
+  },
+  "stories": [
+    {
+      "title": "Optimize inference without restarting the engine",
+      "script": "First up, Together Compiler removes an awkward interruption from optimizing model inference: restarting the engine every time an agent changes the code. Together AI's new paper describes keeping the engine loaded while testing replacement forward passes, the computation that produces model outputs. That lets optimization use representative workloads without repeatedly paying the startup cost. A cost model also selects starting configurations for dividing work across GPUs. Together reports up to two point six times the throughput of the best open-source engines on tested frontier models in the InferenceX benchmark. Those are the company's measurements, and configuration changes matter alongside code changes. For inference engineers, the useful idea is the experiment loop itself. Keep expensive infrastructure warm, screen candidate changes quickly, then give promising ones a more realistic test. Together says the compiler already serves production traffic. Public implementation availability remains unconfirmed. Its persistent-engine design offers a concrete starting point for studying how to spend less optimization time waiting for initialization.",
+      "why_now": "Submitted November 4, 2026. The November 6 discovery post at 04:30:01-05:00 had 126 likes, 13 replies and 6840 views at 2026-11-07T08:00:05.306822+00:00. The retrieved alphaXiv page displayed '#3 on Trending'.",
+      "why_early": "New primary research documents a persistent-engine optimization architecture and author-reported production use. The emerging opportunity is its continual optimization method, not a claim that inference optimization is new. Benchmark gains are workload- and configuration-dependent; public implementation availability and independent reproduction are unestablished. Global saturation is unknown within the configured sources.",
+      "watch_next": "Independent comparisons that hold hardware and parallelism constant and include optimization-search costs.",
+      "id": "story-9e3d541fa978",
+      "number": 1,
+      "category": "AI infrastructure",
+      "role": "anchor",
+      "sources": [
+        {
+          "url": "https://www.alphaxiv.org/abs/2611.together-compiler-continual-ai-inference",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/askalphaxiv/status/2118637014882963553",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-06T04:30:01-05:00",
+          "observed_at": "2026-11-07T08:00:05.306822+00:00",
+          "url": "https://www.alphaxiv.org/abs/2611.together-compiler-continual-ai-inference",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 126,
+            "comments": 13,
+            "views": 6840,
+            "url": "https://x.com/askalphaxiv/status/2118637014882963553"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-07T08:00:05.306822+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "A controlled tabletop for robot-learning experiments",
+      "script": "Next up, Allen AI's ToyBlocks gives robot-learning researchers a deliberately manageable world: a simulated arm manipulating blocks. The newly introduced open framework builds on IsaacSim and IsaacLab. Allen AI describes it as a place to control training data and models, run targeted evaluations, and investigate what caused a failure. That's useful when an impressive robot demonstration leaves you wondering which ingredient actually helped. A research team could use a controlled tabletop experiment to compare training choices before tackling a more complicated environment. The Apache-licensed repository is available, with links to documentation, data and models; its technical report is marked coming soon. ToyBlocks offers an inspectable setting for asking narrower questions. Does your change help the arm handle the task, and can you explain where it still fails?",
+      "why_now": "Allen AI introduced ToyBlocks November 6, 2026 at 09:13:53-05:00. Its post had 171 likes, 16 replies and 20203 views at 2026-11-07T08:00:05.306822+00:00. The retrieved repository showed 28 stars, 2 forks and 70 commits.",
+      "why_early": "A newly announced Apache-2.0 simulation framework provides a concrete experimental artifact. The technical report remains forthcoming, and the available material does not establish sim-to-real transfer, benchmark performance or independent reproducibility.",
+      "watch_next": "The technical report and reproducible experiments connecting controlled changes to specific robot-policy failures.",
+      "id": "story-5f8cf7f36117",
+      "number": 2,
+      "category": "Robotics research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/allenai/ToyBlocks",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/allen_ai/status/2118708454378402266",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-06T09:13:53-05:00",
+          "observed_at": "2026-11-07T08:00:05.306822+00:00",
+          "url": "https://github.com/allenai/ToyBlocks",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 171,
+            "comments": 16,
+            "views": 20203,
+            "url": "https://x.com/allen_ai/status/2118708454378402266"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-07T08:00:05.306822+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Chimera experiments with proprietary NVIDIA drivers",
+      "script": "Down at the operating-system layer, Chimera Linux has an experimental route to using proprietary NVIDIA drivers on a musl-based distribution. The obstacle is fairly fundamental: NVIDIA's userspace libraries are built for glibc, a different C library. Chimera's new technical account describes the compatibility work and open pull requests for driver branches five-eighty and six-twenty, covering x-eighty-six sixty-four and ARM sixty-four. The author reports that the work functions, while saying it isn't entirely ready. Stock musl won't do the job. Distribution maintainers and Linux graphics developers now have concrete compatibility work to inspect. It could eventually expand the practical hardware choices for these systems. Follow how OpenGL dispatch and the proprietary libraries fit together before treating this as an ordinary driver installation.",
+      "why_now": "Chimera published its first-person technical account November 6, 2026. The Lobsters posting at 07:23:14.985-06:00 had 54 points and 9 comments at 2026-11-07T08:00:05.306822+00:00.",
+      "why_early": "Open pull requests for NVIDIA driver branches 580 and 620 document specific implementation progress. The author explicitly describes incomplete readiness and required departures from stock musl. General distribution compatibility and independent hardware results remain unestablished.",
+      "watch_next": "Pull-request readiness and independent graphics testing across the two driver branches and supported architectures.",
+      "id": "story-b949d8285a90",
+      "number": 3,
+      "category": "Open systems",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://chimera-linux.org/news/2026/11/musl-nvidia.html",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/hvxjbb/making_musl_proprietary_nvidia_drivers",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-06T07:23:14.985-06:00",
+          "observed_at": "2026-11-07T08:00:05.306822+00:00",
+          "url": "https://chimera-linux.org/news/2026/11/musl-nvidia.html",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 54,
+            "comments": 9,
+            "url": "https://lobste.rs/s/hvxjbb/making_musl_proprietary_nvidia_drivers"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-07T08:00:05.306822+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Combine learned memory with a searchable text store",
+      "script": "Turning to agent memory, Route to Remember explores putting user facts into model weights while keeping a text store available. Its training setup uses the same model in two roles. A teacher reads the user's memory; a student learns to answer without that context. The paper reports that this on-policy self-distillation matches or surpasses strong text-memory baselines on HaluMem while reading fewer tokens per query. A verify-then-regenerate router combines the learned answers with text memory. If you're training a persistent assistant, stable knowledge offers a useful experiment: compare learning recurring facts with retrieving them every time. You'll need to measure training costs as well as query costs. Weight memory also struggles with older facts and recognizing information that was never recorded, according to the research summary. Those gaps make the text store consequential. This is a model-training approach, rather than a memory switch in an existing chat application. The interesting design question is which facts deserve consolidation and which need an editable record.",
+      "why_now": "The paper was submitted November 3, 2026. Its November 6 discovery post at 09:43:01-05:00 had 157 likes, 69 replies and 10566 views at 2026-11-07T08:00:05.306822+00:00.",
+      "why_early": "Recent primary research studies user-specific factual memory through on-policy self-distillation and adaptive routing. The abstract supports HaluMem comparisons and reduced query-token use. Detailed forgetting and missing-fact limitations are described in the discovery summary; independent replication, full lifecycle economics and deployment availability remain unestablished.",
+      "watch_next": "Replications measuring factual updates, forgetting, missing-information detection and total training-plus-serving cost.",
+      "id": "story-81e63e5f8336",
+      "number": 4,
+      "category": "AI research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2611.05636",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/omarsar0/status/2118715786152001580",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-06T09:43:01-05:00",
+          "observed_at": "2026-11-07T08:00:05.306822+00:00",
+          "url": "https://arxiv.org/abs/2611.05636",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 157,
+            "comments": 69,
+            "views": 10566,
+            "url": "https://x.com/omarsar0/status/2118715786152001580"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-07T08:00:05.306822+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Inspect a suspicious repository before running it",
+      "script": "Over at the repository door, CloneGuard is a small Go command-line tool for examining a project before you run it. Its creator built it after encountering a fake-recruiter demo application that tried to steal SSH and AWS keys. The tool looks for credential theft, hidden network calls, obfuscated code and hooks that run automatically. It reads files without running, installing or importing the scanned project, and has no dependencies. That gives developers receiving take-home assignments or unfamiliar example apps another inspection step. Detection coverage hasn't been independently established, so a clean result can't certify a repository. CloneGuard's useful first assignment is a known example: inspect its findings, locate the relevant code, and see whether the explanation helps you understand what would execute.",
+      "why_now": "Show HN introduced CloneGuard November 6, 2026 at 19:49:27+00:00. It had 28 points and 7 comments at 2026-11-07T08:00:05.306822+00:00. The retrieved repository showed 15 stars and 3 commits.",
+      "why_early": "A fresh MIT-licensed tool introduction provides a read-only implementation with a specific threat model. Its detection claims are project descriptions; false-positive rates, missed attacks and resistance to unfamiliar obfuscation have not been independently measured.",
+      "watch_next": "Reproducible tests against known malicious repositories and benign projects with legitimate hooks and network operations.",
+      "id": "story-973fe76bce3b",
+      "number": 5,
+      "category": "Developer security",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/tharun208/cloneguard",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50397435",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-06T19:49:27+00:00",
+          "observed_at": "2026-11-07T08:00:05.306822+00:00",
+          "url": "https://github.com/tharun208/cloneguard",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 28,
+            "comments": 7,
+            "url": "https://news.ycombinator.com/item?id=50397435"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-07T08:00:05.306822+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "OpenCartridge connects more of the avatar pipeline",
+      "script": "Back from the break, OpenCartridge has connected more pieces of its local game-asset workflow. We covered OpenCartridge on October twenty-ninth; it now integrates image-to-VRM and VRMA workflows through GLB2VRM and VRMExMR. Those formats cover humanoid avatars and their animation. We also explored VRMExMR yesterday; today's change brings that component into the broader canvas-based suite. Camenduru has added a UniMate Motion cartridge too, described as a unified model for animating diverse skeletons. Game developers could explore character creation and movement within one composable workspace, backed by ComfyUI workers on their own GPU. Integration doesn't establish animation quality or lower hardware requirements. OpenCartridge gives you a concrete next experiment: follow one character through the available workflow and inspect its exported movement before building a larger asset pipeline.",
+      "why_now": "Camenduru announced the integrations November 6, 2026 at 06:24:19-05:00. The post had 95 likes, 1 reply and 4628 views at 2026-11-07T08:00:05.306822+00:00. The retrieved repository showed 29 stars, 3 forks and 65 commits.",
+      "why_early": "A supported material change adds integrated avatar and animation workflows plus a named motion cartridge to a previously covered local suite. The announcement establishes packaging and integration, not independently measured output fidelity, reduced resource requirements or physical-robot suitability.",
+      "watch_next": "End-to-end reproductions documenting required models, GPU resources and avatar-animation export quality.",
+      "id": "story-8b968bbf3cb7",
+      "number": 6,
+      "category": "Local creative AI",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/camenduru/OpenCartridge",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/camenduru/status/2118665781584285785",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-06T06:24:19-05:00",
+          "observed_at": "2026-11-07T08:00:05.306822+00:00",
+          "url": "https://github.com/camenduru/OpenCartridge",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 95,
+            "comments": 1,
+            "views": 4628,
+            "url": "https://x.com/camenduru/status/2118665781584285785"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-07T08:00:05.306822+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ],
+      "follow_up": {
+        "previous_date": "2026-10-29",
+        "what_changed": "it now integrates image-to-VRM and VRMA workflows through GLB2VRM and VRMExMR",
+        "why_revisit": "Concrete avatar and animation integrations extend the previously covered asset suite, with an additional UniMate Motion cartridge."
+      }
+    },
+    {
+      "title": "Test whether an agent can recover a teammate's work",
+      "script": "Speaking of combining things, the Collaborative Intelligence Benchmark asks whether capable agents make capable teammates. The researchers built two hundred forty tasks across eight teamwork dimensions, using records and existing benchmarks ranging from aviation incidents to coding and negotiations. Each task has a programmatically checkable outcome. Crucially, models are scored only on tasks they can solve alone with full information. That helps separate collaboration trouble from simply lacking the underlying skill. Across eighteen models, the best score was eighty-two point two out of a hundred. In coding takeovers where a weaker model had cheated, the reported pass rate fell from ninety-seven to eighty-one percent. Building an agent team? Give its next agent a handoff containing flawed work and check whether it actually removes the problem. A hundred sixty tasks are public with code and data; eighty are held out. You can investigate recovery and negotiation behavior separately from your usual solo-task score.",
+      "why_now": "The paper was submitted November 2, 2026. Its November 6 discovery post at 17:32:02-05:00 had 105 likes, 40 replies and 7660 views at 2026-11-07T08:00:05.306822+00:00.",
+      "why_early": "A recent primary benchmark introduces capability-controlled teamwork evaluation and public tasks. Scores and takeover effects are author-reported results on these scenarios, not general failure rates for deployed multi-agent systems. Independent validation remains open.",
+      "watch_next": "Independent task reproductions and interventions that improve recovery from flawed handoffs without reducing individual capability.",
+      "id": "story-96197faf377b",
+      "number": 7,
+      "category": "AI evaluation",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2611.02633",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/omarsar0/status/2118833814839705786",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-06T17:32:02-05:00",
+          "observed_at": "2026-11-07T08:00:05.306822+00:00",
+          "url": "https://arxiv.org/abs/2611.02633",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 105,
+            "comments": 40,
+            "views": 7660,
+            "url": "https://x.com/omarsar0/status/2118833814839705786"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-07T08:00:05.306822+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Test Bluetooth and NFC web apps on an iPhone",
+      "script": "For a hands-on hardware detour, Wand Browser puts Web Bluetooth and Web NFC testing on an iPhone. The newly introduced open-source browser lets an HTTPS web app connect to nearby Bluetooth Low Energy devices, read and write GATT characteristics, and receive notifications through the JavaScript Bluetooth interface. It also reads and writes NDEF tags through the NFC interface, and offers permission-controlled camera video. Hardware developers could explore a browser-based sensor dashboard or tag-writing utility without beginning with a separate native interface. The repository links to App Store installation and a TestFlight beta. This is a dedicated browser's capability, so check behavior in the environment you'll actually distribute. With Wand Browser, a small existing HTTPS test page and one nearby device make a useful first experiment.",
+      "why_now": "Show HN introduced Wand Browser November 6, 2026 at 13:45:07+00:00. It had 14 points and no comments at 2026-11-07T08:00:05.306822+00:00. The retrieved repository showed 9 stars, 1 fork and 47 commits.",
+      "why_early": "A fresh MIT-licensed browser introduction documents specific Bluetooth, NFC and camera interfaces with installation links. This does not establish equivalent support in other iOS browsers, full standards coverage or compatibility with every peripheral.",
+      "watch_next": "Independent peripheral tests covering GATT notifications, NDEF read/write behavior and permission handling.",
+      "id": "story-1acbea03e666",
+      "number": 8,
+      "category": "Developer tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/hito-dev/wand-browser",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50392219",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-06T13:45:07+00:00",
+          "observed_at": "2026-11-07T08:00:05.306822+00:00",
+          "url": "https://github.com/hito-dev/wand-browser",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 14,
+            "comments": 0,
+            "url": "https://news.ycombinator.com/item?id=50392219"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-07T08:00:05.306822+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Pion makes DTLS 1.3 the default",
+      "script": "On the networking side, Pion's DTLS implementation now defaults to version one point three, according to a new account from implementation lead Jo Turk. DTLS brings secure communication to datagram connections. The account describes a one-round-trip handshake, post-quantum key exchange, connection identifiers that support network changes, and zero-round-trip resumption. For people building real-time communication or voice applications, reducing connection setup is a practical part of making an interaction feel responsive. Connection continuity matters when a phone changes networks, too. The article combines implementation history with interactive demonstrations, giving protocol learners something they can manipulate. These features don't establish an end-to-end latency improvement for every application. Explore the handshake demonstrations, then compare connection setup and network switching in a test application using Pion.",
+      "why_now": "Turk published the first-person implementation account November 6, 2026. Its Lobsters posting at 18:54:14.490-06:00 had 6 points and no comments at 2026-11-07T08:00:05.306822+00:00.",
+      "why_early": "The new primary account reports DTLS 1.3 becoming the default in pion/dtls after roughly 400 commits over ten months. The material change is implementation availability, rather than a new protocol standard. Independent interoperability and application-level latency measurements are not supplied.",
+      "watch_next": "Interoperability reports and application measurements covering handshake time, resumption and network changes.",
+      "id": "story-1c3cf5a62881",
+      "number": 9,
+      "category": "Networking",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://joturk.net/posts/dtls",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/lssm6h/how_hard_could_implementing_dtls_1_3",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-06T18:54:14.490-06:00",
+          "observed_at": "2026-11-07T08:00:05.306822+00:00",
+          "url": "https://joturk.net/posts/dtls",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 6,
+            "comments": 0,
+            "url": "https://lobste.rs/s/lssm6h/how_hard_could_implementing_dtls_1_3"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-07T08:00:05.306822+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Ask an agent to animate a LEGO mechanism",
+      "script": "And finally, ldraw-mecha gives an AI agent a LEGO model and asks it to work out how the mechanism moves. The newly shared version zero point five provides tooling for inferring mechanics from an LDraw model's source file and producing an animated Blender version. For Technic enthusiasts, educators and Blender tinkerers, that's a delightful connection between a parts description and a moving explanation. The interesting task goes beyond making a nice render: which pieces should rotate together, and what motion follows from their arrangement? The project offers an implementation to explore, rather than evidence that every inferred mechanism is physically correct. Choose a mechanism you understand, compare its animation with the intended movement, and find the first place the agent's mechanical story comes apart.",
+      "why_now": "Show HN introduced the version 0.5.0 demonstration November 6, 2026 at 19:41:20+00:00. It had 27 points and 1 comment at 2026-11-07T08:00:05.306822+00:00. The retrieved repository showed 15 stars and 67 commits.",
+      "why_early": "A fresh versioned public introduction supplies agent tooling for source-based mechanism inference and Blender animation. Mechanical correctness, supported-model breadth and physical validation have not been independently established.",
+      "watch_next": "Reproductions comparing inferred joints and motion with known working LEGO mechanisms.",
+      "id": "story-41608b34c273",
+      "number": 10,
+      "category": "Offbeat experiments",
+      "role": "closer",
+      "sources": [
+        {
+          "url": "https://github.com/anteloc/ldraw-mecha/tree/v0.5.0",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50397325",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-06T19:41:20+00:00",
+          "observed_at": "2026-11-07T08:00:05.306822+00:00",
+          "url": "https://github.com/anteloc/ldraw-mecha/tree/v0.5.0",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 27,
+            "comments": 1,
+            "url": "https://news.ycombinator.com/item?id=50397325"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-07T08:00:05.306822+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    }
+  ],
+  "interlude": {
+    "after_story": 5,
+    "title": "Thanks to Intelligrit",
+    "script": "Before we trade repository checks for animated characters, our thanks to Intelligrit, this episode's sponsor. We appreciate your support for Trending Not Peak."
+  }
+}
