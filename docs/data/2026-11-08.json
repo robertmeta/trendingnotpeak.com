@@ -1,0 +1,488 @@
+{
+  "date": "2026-11-08",
+  "title": "TNP - 2026-11-08",
+  "intro": "This is Trending Not Peak for Sunday, November 8th. AI helps write this podcast, and the voice is synthetic. Want to explore a story? Find the links and details at trending not peak dot com.",
+  "outro": "What would you try from today's finds? ReproBridge to preserve successful experiment setups; Drex Max to classify records without generating text; Jujutsu to maintain evolving tutorial chapters. That's it for Trending Not Peak today. Revisit any of the stories and their sources at trending not peak dot com.",
+  "schema_version": 1,
+  "audio": {
+    "url": "https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-11-08/trending-not-peak-2026-11-08-kinetic-grid-r2.mp3",
+    "duration_seconds": 568.041293,
+    "bytes": 9091070,
+    "embedded_chapters": 13,
+    "sha256": "73cbcccf66181e0ed4ada20e1385ffdb87887c3270f024e85ba4df268eb7df9c"
+  },
+  "stories": [
+    {
+      "title": "Save the experiment setup your next agent needs",
+      "script": "First up, ReproBridge tackles a familiar research problem: you finally get an experiment running, and the next person has to rediscover how. Its agent workflow preserves a refined codebase, environment setup, experiment launchers and a reproduction guide. Another agent starts fresh with that package, while a separate auditor checks evidence that the experiments actually ran. Across four models, the researchers report reproduction success rising from seventy-six point four to ninety-two point six percent, with downstream API spending falling nineteen point seven percent. The benchmark includes a thousand twenty-nine tasks from thirty-six papers, with five human-verified reference scores per task. Those are research results, and the downstream savings don't account for every cost of preparing the package. Still, there's a useful experiment here for anyone maintaining research code. After your next successful run, preserve the setup decisions alongside the scripts. ReproBridge suggests testing that handoff in a fresh session before calling your experiment reproducible.",
+      "why_now": "The paper was submitted November 5, 2026. Its November 7 discovery post at 10:14:02-05:00 had 136 likes, 76 replies and 9939 views at 2026-11-08T08:00:05.565348+00:00.",
+      "why_early": "New primary research introduces a standardized artifact design and an audited reproduction workflow. Improvements are author-reported across four models and 1029 tasks from 387 experiments across 36 papers. Downstream API savings do not establish total lifecycle savings, including artifact construction. Global saturation is unknown within the configured sources.",
+      "watch_next": "Independent fresh-session reproductions that include artifact-construction costs and verify that launchers execute the intended experiments.",
+      "id": "story-01f260f7c655",
+      "number": 1,
+      "category": "AI research",
+      "role": "anchor",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2611.08452",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/omarsar0/status/2119085975880212842",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-07T10:14:02-05:00",
+          "observed_at": "2026-11-08T08:00:05.565348+00:00",
+          "url": "https://arxiv.org/abs/2611.08452",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 136,
+            "comments": 76,
+            "views": 9939,
+            "url": "https://x.com/omarsar0/status/2119085975880212842"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-08T08:00:05.565348+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Search a token hierarchy instead of the whole context",
+      "script": "Turning to model internals, two new papers attack the search hidden inside sparse attention. Reading fewer tokens helps only if finding them doesn't consume the savings. Latent Sparse Attention groups similar keys into a searchable hierarchy. On one H200, its authors report twenty-two point seven times faster prefill for one layer, processing only the last thirty-two thousand seven hundred sixty-eight queries at ten-million-token context. The baseline is GLM-five-point-three Flash's original sparse attention. They also report four point six times faster decoding for one layer, with similar accuracy across tested tasks. These aren't whole-application speedups. Zyphra Hierarchical Attention takes a related route through compressed key summaries, adapting pretrained models with a billion tokens of distillation training. Inference researchers get concrete designs for making long records cheaper to consult. Billion-token assistants remain a possible future application. The useful next comparison would measure retrieval quality and total serving time together, including the work of building and searching the index.",
+      "why_now": "Latent Sparse Attention was submitted November 3, 2026; Zyphra's paper was submitted November 2. Their November 7 discovery posts had respectively 205 likes, 6 replies and 8772 views, and 164 likes, 9 replies and 7936 views, at 2026-11-08T08:00:05.565348+00:00.",
+      "why_early": "Two recent primary papers propose hierarchical indexing to address sparse-attention search costs. LSA's cited GLM timing measures one layer on one H200, prefilling only the last 32768 queries at 10M-token context against GLM-5.3-Flash's original sparse attention; it is not a full-context prefill or end-to-end speedup. Zyphra's extreme-context performance projections are not demonstrated billion-token deployment results. The primary abstract names the method Zyphra Hierarchical Attention; the inconsistent expansion in the page's generated overview is not used.",
+      "watch_next": "Independent end-to-end measurements including index construction, cache storage, routing overhead and retrieval accuracy.",
+      "id": "story-42f7f01624b0",
+      "number": 2,
+      "category": "AI research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://alphaxiv.org/abs/2610.42147",
+          "kind": "source"
+        },
+        {
+          "url": "https://www.alphaxiv.org/abs/2610.42112",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/askalphaxiv/status/2118940099362557982",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/askalphaxiv/status/2119015504363106653",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-07T00:34:22-05:00",
+          "observed_at": "2026-11-08T08:00:05.565348+00:00",
+          "url": "https://alphaxiv.org/abs/2610.42147",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 205,
+            "comments": 6,
+            "views": 8772,
+            "url": "https://x.com/askalphaxiv/status/2118940099362557982"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-08T08:00:05.565348+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        },
+        {
+          "kind": "x",
+          "published_at": "2026-11-07T05:34:00-05:00",
+          "observed_at": "2026-11-08T08:00:05.565348+00:00",
+          "url": "https://www.alphaxiv.org/abs/2610.42112",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 164,
+            "comments": 9,
+            "views": 7936,
+            "url": "https://x.com/askalphaxiv/status/2119015504363106653"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-08T08:00:05.565348+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Drex returns decisions without generating an answer",
+      "script": "Next up, Drex Max gives a model a narrower job: choose among options and return their probabilities. Supply a document, record or image, plus typed questions, and it answers in one forward pass without generating text. Nace AI's new technical report describes four decision models. The twenty-seven-billion-parameter Max model trails Claude Opus five point five by one point six points on Decision Bench version four, with a reported typical response of a hundred eighty-three milliseconds versus three point five seconds. Those are the authors' comparisons on particular tasks. Application builders could investigate document routing or scoring records without parsing a paragraph afterward. There's a local path too: the model card lists a four-bit Apple Silicon checkpoint for Macs with at least twenty-four gigabytes of memory. Drex Max needs its specialized loader, and its weights carry Nace AI's Open RAIL-M license. Compare its probabilities with known outcomes on your own records; calibration matters when those numbers drive a decision.",
+      "why_now": "The Drex technical report was submitted November 5, 2026. The November 6 discovery post at 08:16:02-05:00 had 160 likes, 55 replies and 16985 views at 2026-11-08T08:00:05.565348+00:00. A separate report-discovery post had 56 likes, 11 replies and 6254 views at the same observation time.",
+      "why_early": "The fresh contribution is a technical report covering the model family and its training and evaluations; the model card dates its performance table to October 19. This is distinct from previously covered Laya. Benchmark and latency comparisons are author-reported. The specialized non-causal loader is necessary to reproduce the listed scores, and Open RAIL-M should not be treated as an unrestricted permissive license.",
+      "watch_next": "Independent task-specific accuracy, probability calibration and latency tests using the documented loader and local quantized checkpoints.",
+      "id": "story-3e91645c2c92",
+      "number": 3,
+      "category": "Open models",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://huggingface.co/nace-ai/drex-max-v1",
+          "kind": "source"
+        },
+        {
+          "url": "https://arxiv.org/abs/2611.07854",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/omarsar0/status/2118693892300439722",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/arankomatsuzaki/status/2118705614880940103",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-06T08:16:02-05:00",
+          "observed_at": "2026-11-08T08:00:05.565348+00:00",
+          "url": "https://huggingface.co/nace-ai/drex-max-v1",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 160,
+            "comments": 55,
+            "views": 16985,
+            "url": "https://x.com/omarsar0/status/2118693892300439722"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-08T08:00:05.565348+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        },
+        {
+          "kind": "x",
+          "published_at": "2026-11-06T09:02:36-05:00",
+          "observed_at": "2026-11-08T08:00:05.565348+00:00",
+          "url": "https://arxiv.org/abs/2611.07854",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 56,
+            "comments": 11,
+            "views": 6254,
+            "url": "https://x.com/arankomatsuzaki/status/2118705614880940103"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-08T08:00:05.565348+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "A smaller MiniMax-H3 generates video with stereo sound",
+      "script": "Over in creative tools, HyperFlow H3 Flash offers a compressed version of MiniMax-H3 for generating video and synchronized stereo audio together. Video Rebirth lists thirteen point seven billion parameters, four to eight generation steps, and INT8 and GGUF options. The repository describes clips from five point two to fifteen seconds, at twenty-four frames per second, with a thirty-two-kilohertz stereo soundtrack. Creative-tool developers could explore short audiovisual scene prototypes through its examples, ComfyUI nodes or GGUF setup guide. The smaller parameter count alone doesn't establish which GPU will run your chosen settings, or how much quality compression preserves. A useful comparison is the same scene prompt through this compressed model and the full-size model, listening for whether the sound follows the visible action.",
+      "why_now": "Show HN introduced HyperFlow H3 Flash November 7, 2026 at 15:16:01+00:00. It had 66 points and 12 comments at 2026-11-08T08:00:05.565348+00:00. The retrieved repository showed 109 stars, 2 forks and 1 commit.",
+      "why_early": "A fresh public introduction supplies a distinct 13.7B compressed MiniMax-H3 derivative and integration paths. This differs from the previously covered FastVideo integration of Pika H3 Flex. Compression, step counts and output specifications are project descriptions; independent fidelity, timing and memory measurements are unestablished.",
+      "watch_next": "Reproducible hardware requirements and audiovisual comparisons with full-size MiniMax-H3 at matched prompts and output settings.",
+      "id": "story-e1a206313a9a",
+      "number": 4,
+      "category": "Creative AI",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/Video-Rebirth/hyperflow-h3-flash",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50405263",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-07T15:16:01+00:00",
+          "observed_at": "2026-11-08T08:00:05.565348+00:00",
+          "url": "https://github.com/Video-Rebirth/hyperflow-h3-flash",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 66,
+            "comments": 12,
+            "url": "https://news.ycombinator.com/item?id=50405263"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-08T08:00:05.565348+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Asahi opens its ordinary installer path to M3 Macs",
+      "script": "Down at the operating-system layer, Asahi Linux says M3 support is now generally available without the installer's expert flag. Its Linux seven point three progress report also describes enabling the display coprocessor, bringing performance and battery improvements, sleep support, and usable space around the MacBook notch. That's a concrete opening for Linux developers who already own an M3 machine and want to explore it as a development environment. The team says related bootloader and kernel updates are coming in the following days. Newer chips are at a much earlier stage: initial M4 Pro, M4 Max and M5 device descriptions are only sufficient to boot to a text terminal. Match the report to your actual machine before planning that spare-Mac Linux project.",
+      "why_now": "The new Linux 7.3 progress report was discussed on Lobsters November 7, 2026 at 00:02:38.914-06:00. The discussion had 52 points and 7 comments at 2026-11-08T08:00:05.565348+00:00.",
+      "why_early": "The material change is M3 support graduating from expert-gated installation, alongside newly documented display and sleep enablement. Related updates are described as forthcoming in the report. Initial device descriptions for newer chips do not establish usable desktop support, and drivers submitted for upstream review should not be described as already merged.",
+      "watch_next": "Availability of the announced bootloader and kernel updates, followed by independent M3 sleep, display and battery reports.",
+      "id": "story-93f1507a3094",
+      "number": 5,
+      "category": "Open systems",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://asahilinux.org/2026/11/progress-report-7-3",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/4qiair/progress_report_linux_7_3_asahi_linux",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-07T00:02:38.914-06:00",
+          "observed_at": "2026-11-08T08:00:05.565348+00:00",
+          "url": "https://asahilinux.org/2026/11/progress-report-7-3",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 52,
+            "comments": 7,
+            "url": "https://lobste.rs/s/4qiair/progress_report_linux_7_3_asahi_linux"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-08T08:00:05.565348+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Meridian turns Servo into a configurable Mac browser",
+      "script": "Back from the break, Meridian puts a browser interface around Servo using GPUI, the interface framework behind Zed. This experimental Mac browser includes bookmarks, history, reader mode, media playback and configurable tabs and keybindings. The particularly useful building block is a separate library called gpui-servo, which exposes Servo as an ordinary GPUI component. Rust developers could inspect that connection when experimenting with an application that embeds web content. Meridian's creator says it's already useful for websites with modest JavaScript and layout demands; it's still a work in progress. There's a Nix command for trying it. Start with a small page you maintain, then follow how browser state and page rendering connect to the surrounding interface. That glue is available to study.",
+      "why_now": "Lobsters introduced Meridian November 7, 2026 at 03:21:55.256-06:00. The discussion had 48 points and 7 comments at 2026-11-08T08:00:05.565348+00:00.",
+      "why_early": "A newly shared experimental browser provides a concrete GPUI-and-Servo integration and a reusable component boundary. It is a separate project from the previously covered Servo progress report. The primary page limits its current usefulness to less demanding websites; broad compatibility and production readiness are unestablished.",
+      "watch_next": "Independent build reports and examples embedding gpui-servo in other GPUI applications.",
+      "id": "story-a2ba722f2530",
+      "number": 6,
+      "category": "Web development",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://op.tngl.io/meridian",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/j63dme/meridian_experimental_web_browser_built",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-07T03:21:55.256-06:00",
+          "observed_at": "2026-11-08T08:00:05.565348+00:00",
+          "url": "https://op.tngl.io/meridian",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 48,
+            "comments": 7,
+            "url": "https://lobste.rs/s/j63dme/meridian_experimental_web_browser_built"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-08T08:00:05.565348+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Check the proxy header your application quietly trusts",
+      "script": "On the security side, Lauri Koskela's new investigation follows a mismatch between reverse proxies and web frameworks. A proxy may sanitize the familiar X-Forwarded headers while passing the standardized Forwarded header through unchanged. A backend that trusts that second header can then accept a client-supplied address or hostname. Koskela identifies relevant behavior in frameworks and servers including Rails, Spring and Jetty. Web application teams get a focused audit exercise: send a harmless test value through your staging proxy and check what the application believes about the request. The practical fix is agreement between the layers about which headers carry trusted information, with untrusted values removed at the boundary. It's a useful example of two individually reasonable configurations creating a surprising result together.",
+      "why_now": "Koskela published the investigation November 5, 2026. Its November 7 Lobsters posting at 00:18:48.419-06:00 had 10 points and no comments at 2026-11-08T08:00:05.565348+00:00.",
+      "why_early": "A recent first-person technical investigation documents a concrete proxy-to-framework trust mismatch and remediation approach. Exposure depends on the deployed framework, proxy and configuration; this does not establish that every installation of the named frameworks is vulnerable.",
+      "watch_next": "Framework and proxy guidance clarifying Forwarded handling, plus reproducible tests across common deployment combinations.",
+      "id": "story-c55a48fd80f3",
+      "number": 7,
+      "category": "Security",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.lkoskela.fi/blog/2026-11-05-forwarded-without-question",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/m5kism/forwarded_without_question_how_web",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-07T00:18:48.419-06:00",
+          "observed_at": "2026-11-08T08:00:05.565348+00:00",
+          "url": "https://www.lkoskela.fi/blog/2026-11-05-forwarded-without-question",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 10,
+            "comments": 0,
+            "url": "https://lobste.rs/s/m5kism/forwarded_without_question_how_web"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-08T08:00:05.565348+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Keep tutorial chapters editable as the project grows",
+      "script": "For a different kind of project maintenance, Red Blob Games has published a Jujutsu workflow with two timelines: the order the author worked, and the order a reader learns. The example is a fourteen-chapter roguelike tutorial. Jujutsu lets the author edit an earlier chapter and propagate changes into later ones, while preserving a chapter-by-chapter path through the code. That could help educators maintain runnable lessons as their design improves. There's a useful limitation in the account: cleanly propagated changes can still leave code that doesn't compile, so every chapter needs checking. Jujutsu makes an interesting experiment for your next multi-step tutorial. Fix an early data structure, carry the change forward, and see how much chapter maintenance the workflow actually removes.",
+      "why_now": "The page identifies publication as November 4, 2026, despite its September-dated URL. Its November 7 Lobsters posting at 02:21:50.861-06:00 had 32 points and 1 comment at 2026-11-08T08:00:05.565348+00:00.",
+      "why_early": "The fresh contribution is a detailed first-person workflow for maintaining chapter history with an established version-control system. It includes observed semantic breakage despite conflict-free propagation. This is a new learning artifact, rather than a newly released Jujutsu capability.",
+      "watch_next": "Reproductions maintaining independently runnable chapters, including checks after edits propagate through history.",
+      "id": "story-7beae9d29f66",
+      "number": 8,
+      "category": "Developer workflows",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.redblobgames.com/blog/2026-09-27-jujutsu-experience",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/49o9f3/two_dimensional_version_control",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-07T02:21:50.861-06:00",
+          "observed_at": "2026-11-08T08:00:05.565348+00:00",
+          "url": "https://www.redblobgames.com/blog/2026-09-27-jujutsu-experience",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 32,
+            "comments": 1,
+            "url": "https://lobste.rs/s/49o9f3/two_dimensional_version_control"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-08T08:00:05.565348+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Explore OAuth delegation for an agent's identity",
+      "script": "Speaking of handing work along, Zalando's incubator has introduced Agentic Identity Broker, an open-source identity broker for AI agents with OAuth-two delegation and consent management. That puts a concrete implementation behind a practical question: how should an agent get permission to act through another service? Developers connecting assistants to organizational tools could inspect the project while designing that authorization boundary. The repository is MIT licensed and includes documentation, configuration examples and Kubernetes chart files. Its introduction doesn't establish that the broker fits every identity provider or is ready for your production environment. A useful design exercise is to map one proposed agent action to the user's consent and the delegated access it would require, then compare that map with the broker's documented approach.",
+      "why_now": "Show HN introduced Agentic Identity Broker November 6, 2026 at 15:07:47+00:00. It had 23 points and 3 comments at 2026-11-08T08:00:05.565348+00:00. The retrieved repository showed 68 stars, 8 forks and 265 commits.",
+      "why_early": "A fresh public introduction supplies an MIT-licensed implementation specifically described as OAuth2 delegation and consent management for agents. The retrieved excerpt does not establish provider compatibility, deployment reliability, security audit results or exact permission-lifecycle behavior.",
+      "watch_next": "Worked delegation examples documenting consent, token scope, revocation and integration with specific identity providers.",
+      "id": "story-d2e1d4bcf8ee",
+      "number": 9,
+      "category": "Agent infrastructure",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/zalando-incubator/agentic-identity-broker",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50393235",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-06T15:07:47+00:00",
+          "observed_at": "2026-11-08T08:00:05.565348+00:00",
+          "url": "https://github.com/zalando-incubator/agentic-identity-broker",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 23,
+            "comments": 3,
+            "url": "https://news.ycombinator.com/item?id=50393235"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-08T08:00:05.565348+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Put the aircraft overhead into an e-paper picture",
+      "script": "And finally, Overhead turns nearby air traffic into something for your wall. The newly shared project displays planes flying over your house, each painted from a photograph of that exact aircraft, on an e-paper frame. It runs as four widgets for Tesserae, a self-hosted server that draws dashboards for e-paper panels. The repository shows an example on a Seeed reTerminal E-one-thousand-four color display. Aviation enthusiasts and dashboard tinkerers have a concrete project to explore: connect a changing view of the sky with a physical display you can glance at. You'll need the Tesserae setup before adding Overhead from its widget catalog. The source is available under the AGPL. Your next ambient dashboard could have a rather literal connection to the world outside.",
+      "why_now": "Show HN introduced Overhead November 6, 2026 at 10:30:15+00:00. It had 12 points and no comments at 2026-11-08T08:00:05.565348+00:00. The retrieved repository showed 82 stars, 3 forks and 53 commits.",
+      "why_early": "A fresh public introduction provides an AGPL-3.0 implementation and a documented Tesserae installation path, with a displayed hardware example. Independent checks of aircraft-photo matching, refresh behavior, data availability and operating costs are unestablished.",
+      "watch_next": "Independent installations documenting aircraft matching, data dependencies and practical refresh rates on e-paper hardware.",
+      "id": "story-a5cd09046369",
+      "number": 10,
+      "category": "Offbeat experiments",
+      "role": "closer",
+      "sources": [
+        {
+          "url": "https://github.com/dmellok/tesserae-widget-overhead",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50390605",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-06T10:30:15+00:00",
+          "observed_at": "2026-11-08T08:00:05.565348+00:00",
+          "url": "https://github.com/dmellok/tesserae-widget-overhead",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 12,
+            "comments": 0,
+            "url": "https://news.ycombinator.com/item?id=50390605"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-08T08:00:05.565348+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    }
+  ],
+  "interlude": {
+    "after_story": 5,
+    "title": "Thanks to Intelligrit",
+    "script": "While those experiments settle, a thank-you to Intelligrit, this episode's sponsor, for supporting another day of useful discoveries. Learn more at intelligrit dot com."
+  }
+}

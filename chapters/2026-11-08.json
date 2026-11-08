@@ -1,0 +1,57 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0.0,
+      "title": "Opening"
+    },
+    {
+      "startTime": 14.168,
+      "title": "Save the experiment setup your next agent needs"
+    },
+    {
+      "startTime": 75.284,
+      "title": "Search a token hierarchy instead of the whole context"
+    },
+    {
+      "startTime": 141.28,
+      "title": "Drex returns decisions without generating an answer"
+    },
+    {
+      "startTime": 201.594,
+      "title": "A smaller MiniMax-H3 generates video with stereo sound"
+    },
+    {
+      "startTime": 252.47,
+      "title": "Asahi opens its ordinary installer path to M3 Macs"
+    },
+    {
+      "startTime": 299.023,
+      "title": "Thanks to Intelligrit"
+    },
+    {
+      "startTime": 310.222,
+      "title": "Meridian turns Servo into a configurable Mac browser"
+    },
+    {
+      "startTime": 357.655,
+      "title": "Check the proxy header your application quietly trusts"
+    },
+    {
+      "startTime": 406.766,
+      "title": "Keep tutorial chapters editable as the project grows"
+    },
+    {
+      "startTime": 451.804,
+      "title": "Explore OAuth delegation for an agent's identity"
+    },
+    {
+      "startTime": 501.641,
+      "title": "Put the aircraft overhead into an e-paper picture"
+    },
+    {
+      "startTime": 547.077,
+      "title": "Closing"
+    }
+  ]
+}
