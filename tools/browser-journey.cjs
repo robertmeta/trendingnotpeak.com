@@ -23,7 +23,44 @@ const ARTIFACTS = process.env.TNP_TEST_ARTIFACTS || path.resolve('.cache/browser
     assert.ok(await page.evaluate(() => [...document.fonts].some(font => font.family.includes('Pixelify Sans') && font.status === 'loaded')));
     await page.screenshot({ path: path.join(ARTIFACTS, 'home-desktop.png'), fullPage: true });
     await page.locator('.archive').getByRole('link', { name: /October 29, 2026/ }).click();
-    await page.getByLabel('Find something you missed').waitFor();
+    await page.getByRole('search', { name: 'Search this episode', exact: true }).waitFor({ timeout: 5000 });
+    const episodeSearch = page.getByRole('searchbox', { name: 'Search this episode', exact: true });
+    const originalText = await page.locator('.stories').textContent();
+    const originalLinks = await page.locator('.stories a').evaluateAll(links => links.map(a => a.getAttribute('href')));
+    const filterPlacement = await page.locator('[data-filter]').evaluate(form => form.nextElementSibling.id);
+    assert.equal(filterPlacement, 'episode-stories', 'Episode search belongs immediately above story contents');
+    const searchRequests = [];
+    page.on('request', request => {
+      if (['fetch', 'xhr'].includes(request.resourceType())) searchRequests.push(request.url());
+    });
+    await episodeSearch.fill('MEMORY redox');
+    assert.equal(await page.locator('.story:visible').count(), 1);
+    assert.match(await page.locator('.story:visible h2').innerText(), /Redox/);
+    assert.ok(await page.locator('.story:visible mark[data-episode-match]').count() >= 2);
+    assert.equal(await page.getByRole('status').innerText(), '1 of 20 stories');
+    await page.locator('[data-filter]').scrollIntoViewIfNeeded();
+    await page.screenshot({ path: path.join(ARTIFACTS, 'episode-search-desktop.png'), fullPage: true });
+    await episodeSearch.press('Escape');
+    assert.equal(await episodeSearch.inputValue(), '');
+    assert.equal(await page.locator('.story:visible').count(), 20);
+    assert.equal(await page.locator('mark[data-episode-match]').count(), 0);
+    assert.equal(await page.locator('.stories').textContent(), originalText);
+    assert.deepEqual(await page.locator('.stories a').evaluateAll(links => links.map(a => a.getAttribute('href'))), originalLinks);
+    await episodeSearch.fill('BooBench');
+    assert.equal(await page.locator('.story:visible').count(), 1);
+    assert.match(await page.locator('.story:visible h2 mark').innerText(), /Boo Bench/i);
+    await episodeSearch.fill('not-a-real-topic-unique-20393');
+    assert.equal(await page.locator('.story:visible').count(), 0);
+    await page.getByRole('button', { name: 'Reset', exact: true }).click();
+    await page.getByLabel('Topic', { exact: true }).selectOption('Systems & infrastructure');
+    await episodeSearch.fill('redox');
+    assert.equal(await page.locator('.story:visible').count(), 1);
+    await page.getByRole('button', { name: 'Reset', exact: true }).click();
+    await episodeSearch.fill('<img src=x onerror=alert(1)>');
+    assert.equal(await page.locator('.story:visible').count(), 0);
+    assert.equal(await page.locator('img[src="x"]').count(), 0);
+    await page.getByRole('button', { name: 'Reset', exact: true }).click();
+    assert.deepEqual(searchRequests, [], 'In-episode search must not fetch or send the query');
     assert.ok(page.url().includes('/2026/10/29/'));
     await page.goto(new URL('2026/10/29/#3', TARGET_URL).href);
     await page.waitForFunction(() => { const el=document.getElementById('3'); return el && el.getBoundingClientRect().top >= 0 && el.getBoundingClientRect().top < 100; });
@@ -32,7 +69,7 @@ const ARTIFACTS = process.env.TNP_TEST_ARTIFACTS || path.resolve('.cache/browser
     await page.reload();
     assert.match(await page.locator('.story:target h2').innerText(), /Redox/);
     assert.doesNotMatch(await page.locator('footer').innerText(), operationalStatus);
-    await page.getByLabel('Find something you missed').fill('BooBench');
+    await episodeSearch.fill('BooBench');
     await page.getByText('Jump to a story', { exact: false }).click();
     await page.getByRole('link', { name: /03Redox|03 Redox/ }).click();
     assert.equal(await page.locator('.story:visible').count(), 20, 'A same-fragment link must recover a filtered-out story');
@@ -106,8 +143,9 @@ const ARTIFACTS = process.env.TNP_TEST_ARTIFACTS || path.resolve('.cache/browser
     await page.locator('.story').first().getByRole('heading', { name: 'Our snapshot' }).waitFor();
     assert.match(await page.locator('.story').first().innerText(), /143 likes/);
     assert.equal(await page.locator('.story').first().locator('.sources a').first().getAttribute('href'), 'https://odysseysbench.com/v2');
-    await page.getByLabel('Find something you missed').fill('BooBench');
+    await episodeSearch.fill('BooBench');
     assert.equal(await page.locator('.story:visible').count(), 1);
+    assert.ok(await page.locator('.story:visible mark[data-episode-match]').count() > 0);
     assert.equal(await page.getByRole('status').innerText(), '1 of 20 stories');
     await page.getByRole('link', { name: 'Permalink to story 20' }).click();
     const permalink = page.url();
@@ -119,7 +157,7 @@ const ARTIFACTS = process.env.TNP_TEST_ARTIFACTS || path.resolve('.cache/browser
     await page.goto(new URL('episodes/2026-10-29/#' + legacyId, TARGET_URL).href);
     assert.match(await page.locator('.story:has(.legacy-anchor:target) h2').innerText(), /Redox/);
     await page.goto(permalink);
-    await page.getByLabel('Find something you missed').fill('not-a-real-topic-unique-20393');
+    await episodeSearch.fill('not-a-real-topic-unique-20393');
     assert.equal(await page.locator('.story:visible').count(), 0);
     await page.getByText('No stories match. Try another search or reset the filters.').waitFor();
     await page.getByRole('button', { name: 'Reset', exact: true }).click();
@@ -132,7 +170,7 @@ const ARTIFACTS = process.env.TNP_TEST_ARTIFACTS || path.resolve('.cache/browser
     const record = JSON.parse(await page.locator('body').innerText());
     assert.equal(record.stories.length, 20);
     assert.equal(record.audio.embedded_chapters, 23);
-    assert.ok(record.audio.url.endsWith('-chapters.mp3'));
+    assert.match(new URL(record.audio.url).pathname, /\/episode-2026-10-29\/[^/]+\.mp3$/);
     assert.ok(Math.abs(record.audio.duration_seconds - duration) < 0.1);
     assert.equal(record.stories[0].observations[0].community.score, 143);
     assert.equal(record.production, undefined);
@@ -164,8 +202,11 @@ const ARTIFACTS = process.env.TNP_TEST_ARTIFACTS || path.resolve('.cache/browser
       await page.waitForFunction(() => !document.querySelector('audio').paused);
       await page.getByRole('button', { name: 'Pause episode', exact: true }).click();
       await page.locator('.listen').screenshot({ path: path.join(ARTIFACTS, `cassette-${width}.png`) });
-      await page.getByLabel('Find something you missed').fill('BooBench');
+      await episodeSearch.fill('BooBench');
       assert.equal(await page.locator('.story:visible').count(), 1);
+      assert.ok(await page.locator('.story:visible mark[data-episode-match]').count() > 0);
+      await page.locator('[data-filter]').scrollIntoViewIfNeeded();
+      assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
       await page.locator('.story:visible').getByText('Dated signal snapshots').click();
       await page.locator('.story:visible').getByRole('heading', { name: 'Our snapshot' }).waitFor();
       await page.screenshot({ path: path.join(ARTIFACTS, `story-${width}.png`), fullPage: true });
@@ -181,6 +222,8 @@ const ARTIFACTS = process.env.TNP_TEST_ARTIFACTS || path.resolve('.cache/browser
     await fallback.goto(new URL('2026/10/29/', TARGET_URL).href);
     assert.ok(await fallback.locator('audio[controls]').isVisible());
     assert.ok(await fallback.locator('.cassette').isHidden());
+    assert.ok(await fallback.locator('[data-filter]').isHidden());
+    assert.equal(await fallback.locator('.story:visible').count(), 20);
     await fallback.close();
     const failed = await browser.newPage();
     await failed.route('**/*.mp3', route => route.abort('failed'));
@@ -197,6 +240,7 @@ const ARTIFACTS = process.env.TNP_TEST_ARTIFACTS || path.resolve('.cache/browser
     await logo.close();
     assert.deepEqual(errors, []);
     const result = { result: 'passed', url: TARGET_URL, stories: record.stories.length,
+      episodeSearch: ['directly-above-stories', 'multiword-case-insensitive', 'text-node-highlights', 'punctuation-insensitive-project-names', 'no-query-fetch', 'escape-reset', 'original-text-and-links-restored', 'category-combination', 'safe-query-text', 'mobile-highlights', 'no-js-stories-visible'],
       views: [1380, 320, 390, 768], audio_seconds: duration, checks: ['cassette-volume-mute-restart', 'automatic-reel-motion', 'speed-focus-and-persistence', 'playback-motion-with-reduced-motion', 'no-js-audio-fallback', 'audio-error-feedback', 'public-footer-copy', 'pixel-font', 'calendar-route', 'direct-story-three', 'legacy-route-hash', 'same-fragment-filter-recovery', 'visible-selection-notes', 'home-to-edition', 'audio-keyboard-play-seek-pause', 'source-provenance', 'search', 'category', 'empty-reset', 'permalink-reload', 'public-json', 'mp3-download-hash', 'transcript-midpoint-credit', 'mobile-overflow'], errors };
     fs.writeFileSync(path.join(ARTIFACTS, 'journey.json'), JSON.stringify(result, null, 2));
     console.log(JSON.stringify(result));

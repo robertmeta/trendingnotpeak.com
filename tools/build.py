@@ -181,10 +181,11 @@ def episode_page(episode, config, prefix='../../../'):
 {audio_html(episode)}</section>
 {listen_html(config, prefix)}
 <details class="story-index"><summary>Jump to a story <span>{len(episode['stories'])} signals ↓</span></summary><ol>{contents}</ol></details>
-<form class="filters" data-filter hidden role="search"><div><label for="search">Find something you missed</label><input id="search" type="search" placeholder="A project, a topic, a strange idea…" autocomplete="off"></div>
+<form class="filters" data-filter hidden role="search" aria-label="Search this episode"><div><label for="search">Search this episode</label><input id="search" type="search" placeholder="A project, topic or phrase…" autocomplete="off" aria-describedby="episode-search-help" aria-controls="episode-stories"></div>
 <div><label for="category">Topic</label><select id="category"><option value="">All topics</option>{options}</select></div><button type="reset">Reset</button>
+<p class="fine" id="episode-search-help">Type to filter the stories below. Matching words are highlighted.</p>
 <p id="result-count" role="status" aria-live="polite">{len(episode['stories'])} stories</p></form>
-<div class="stories">{''.join(story_cards)}</div><p class="empty" hidden>No stories match. Try another search or reset the filters.</p>
+<div class="stories" id="episode-stories">{''.join(story_cards)}</div><p class="empty" hidden>No stories match. Try another search or reset the filters.</p>
 <aside class="edition-end"><p class="eyebrow">Caught up.</p><h2>Keep the useful bits.<br>Leave the hype.</h2><p>Thanks to <a href="https://intelligrit.com/">Intelligrit</a> for sponsoring this daily update.</p><a href="{prefix}#archive">Browse the archive →</a></aside>'''
     return shell(label(day), body, prefix, config['base_url'] + '/' + episode_path(day), config)
 

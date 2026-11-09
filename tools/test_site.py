@@ -106,6 +106,10 @@ class Archive(unittest.TestCase):
                 self.assertIn('Story transcript', html)
                 self.assertIn('<dt>Why picked</dt>', html)
                 self.assertIn('Sources &amp; further reading', html)
+                self.assertIn('aria-label="Search this episode"', html)
+                self.assertIn('aria-controls="episode-stories"', html)
+                self.assertIn('aria-describedby="episode-search-help"', html)
+                self.assertRegex(html, r'</form>\s*<div class="stories" id="episode-stories">')
             self.assertIn(f'href="{route}"', (OUT / 'index.html').read_text())
 
     def test_followup_links_use_calendar_routes(self):
