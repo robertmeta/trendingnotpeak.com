@@ -1,0 +1,53 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0.0,
+      "title": "Opening"
+    },
+    {
+      "startTime": 22.088,
+      "title": "Turn an agent's exploration into reusable procedures"
+    },
+    {
+      "startTime": 87.523,
+      "title": "Point Docker clients at systemd-nspawn containers"
+    },
+    {
+      "startTime": 151.92,
+      "title": "Use hints to forecast beyond near-zero benchmark scores"
+    },
+    {
+      "startTime": 203.355,
+      "title": "Explore targeted edits to an open model's output matrix"
+    },
+    {
+      "startTime": 254.788,
+      "title": "Thanks to Intelligrit"
+    },
+    {
+      "startTime": 264.222,
+      "title": "Systemd opens individual components to Rust"
+    },
+    {
+      "startTime": 313.014,
+      "title": "Generate a whole visual plan in one pass"
+    },
+    {
+      "startTime": 371.486,
+      "title": "Redox reaches a shell on Cloud Hypervisor"
+    },
+    {
+      "startTime": 419.963,
+      "title": "Measure the electricity behind a small Linux builder"
+    },
+    {
+      "startTime": 469.32,
+      "title": "A language model takes the SystemVerilog route"
+    },
+    {
+      "startTime": 523.558,
+      "title": "Closing"
+    }
+  ]
+}

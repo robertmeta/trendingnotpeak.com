@@ -1,0 +1,394 @@
+{
+  "date": "2026-11-09",
+  "title": "TNP - 2026-11-09",
+  "intro": "Monday, November 9, and welcome to Trending Not Peak. Today: reusable agent experience, a different container backend, and a language model taking an unusual route through a simulator. AI helped write this episode; you're hearing a synthetic voice. Explore the projects at trending not peak dot com.",
+  "outro": "A few experiments to carry into the week: Evolver to reuse agent procedures, Nspawn to test Docker API workflows, and VFlash to generate visual plans. Pick a small task and see what changes. Trending Not Peak has the sources at trending not peak dot com. I'll leave you with that simulator patiently thinking about Paris.",
+  "schema_version": 1,
+  "audio": {
+    "url": "https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-11-09/trending-not-peak-2026-11-09-kinetic-grid-r2.mp3",
+    "duration_seconds": 545.800726,
+    "bytes": 8734844,
+    "embedded_chapters": 12,
+    "sha256": "c37f26f9bc4963b4fb92f69336c54356347eb5e7528c4cffdf9fc9c9acc9d822"
+  },
+  "stories": [
+    {
+      "title": "Turn an agent's exploration into reusable procedures",
+      "script": "First up, Evolver asks a useful question: why should the next coding agent repeat the exploration the last one already finished? The framework turns execution experience into structured assets called Genes. It collects procedures, retrieves relevant ones before a task, and revises them using feedback, without changing the underlying model's parameters. Researchers evaluated Claude Code and Codex across four benchmarks. On a selected diagnostic set of three hundred twenty paired executions, they report success rising from eighty-three point one three to eighty-seven point five percent, while recorded task-execution tokens fell twenty-four point two four percent. Among the two hundred sixty-five tasks both conditions solved, tokens still fell seventeen point five seven percent. Those are research measurements on a selected set; total costs of maintaining that experience aren't established here. Agent builders could investigate Evolver to reuse agent procedures across recurring tasks. Save a successful troubleshooting route, then check whether it helps on a different failure without dragging yesterday's assumptions into today's code.",
+      "why_now": "Submitted November 5, 2026 and highlighted November 8 at 11:55:02-05:00. The discovery post had 175 likes, 75 replies and 12830 views at 2026-11-09T08:00:06.392392+00:00. This is one observation of interest, not measured acceleration.",
+      "why_early": "Recent primary research describes persistent procedural assets across existing agent harnesses. Results are author-reported on a selected diagnostic set of 320 paired executions; independent replication, generalization and full experience-maintenance costs remain unestablished. Global saturation is unknown within the configured sources.",
+      "watch_next": "Independent comparisons on new tasks that include experience acquisition, retrieval, revision and task-execution costs.",
+      "id": "story-892c565f4555",
+      "number": 1,
+      "category": "AI research",
+      "role": "anchor",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2611.07595",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/omarsar0/status/2119473781689421855",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-08T11:55:02-05:00",
+          "observed_at": "2026-11-09T08:00:06.392392+00:00",
+          "url": "https://arxiv.org/abs/2611.07595",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 175,
+            "comments": 75,
+            "views": 12830,
+            "url": "https://x.com/omarsar0/status/2119473781689421855"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-09T08:00:06.392392+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Point Docker clients at systemd-nspawn containers",
+      "script": "Next up, Nspawn three point zero opens a different container engine to tools that already speak the Docker Engine API. Its new host socket lets those clients manage systemd-nspawn machines. The release account shows the Docker command running containers, executing commands inside them and copying files out. GitLab Runner's Docker executor is a named compatibility target. That gives Linux infrastructure teams a concrete way to investigate another backend without first rewriting every client integration. The socket ships disabled, and access follows the project's existing authorization rules. One detail matters before sharing it: permission to manage machines amounts to root access on the host, because those machines can run privileged commands and mount host paths. API compatibility also needs checking against the operations your tools actually use. Nspawn offers a focused trial: test Docker API workflows with a disposable CI job, then inspect container cleanup, logs and copied artifacts. A familiar client can become a useful probe of a different runtime.",
+      "why_now": "Nspawn published the 3.0 account November 7, 2026. Its November 8 Lobsters posting had 15 points and 5 comments at 2026-11-09T08:00:06.392392+00:00.",
+      "why_early": "Version 3.0 materially extends the earlier read-only compatibility API with host-side operations. The primary account documents commands, socket activation and authorization, but does not establish complete Docker API compatibility or independent GitLab Runner results.",
+      "watch_next": "Reproducible CI integrations covering supported API operations, permissions, resource cleanup and failure handling.",
+      "id": "story-cdbeedeaaefd",
+      "number": 2,
+      "category": "Developer tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://blog.nspawn.org/posts/nspawn-3-0-a-docker-compatible-engine-api-for-systemd-nspawn-containers",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/lh0qbr/nspawn_3_0_docker_compatible_engine_api",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-08T02:41:38.183-06:00",
+          "observed_at": "2026-11-09T08:00:06.392392+00:00",
+          "url": "https://blog.nspawn.org/posts/nspawn-3-0-a-docker-compatible-engine-api-for-systemd-nspawn-containers",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 15,
+            "comments": 5,
+            "url": "https://lobste.rs/s/lh0qbr/nspawn_3_0_docker_compatible_engine_api"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-09T08:00:06.392392+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Use hints to forecast beyond near-zero benchmark scores",
+      "script": "Over in model evaluation, Hinted Scaling Laws tackles a forecasting problem: small models can all score almost zero on a difficult benchmark, leaving no useful trend to extend. The researchers give those models graduated help, such as partial solutions, and measure how performance changes. They then use that relationship to forecast larger models answering without help. Across GSM-eight-K, AIME and HLE, the authors report median forecasting error falling from twenty-one percentage points to four point three. That's percentage points, which matters when reading the comparison. Model-development teams could investigate this before committing to an expensive training run. The method also offers an evaluation experiment: hints can separate models whose ordinary scores look nearly identical. Check whether that ordering survives when you remove the help.",
+      "why_now": "Submitted November 1, 2026 and highlighted November 8 at 03:39:29-05:00. The discovery post had 111 likes, 5 replies and 6215 views at 2026-11-09T08:00:06.392392+00:00; alphaXiv displayed '#5 in November'.",
+      "why_early": "Recent primary research proposes hint-conditioned extrapolation and reports results across a pretraining ladder and post-trained model families. The primary abstract specifies percentage-point forecasting errors, correcting the less precise social summary. Independent forecasting performance on new training runs remains unestablished.",
+      "watch_next": "Prospective forecasts made before larger runs finish, with disclosed hint construction and prediction intervals.",
+      "id": "story-eaa74dc6c3c8",
+      "number": 3,
+      "category": "AI evaluation",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.alphaxiv.org/abs/2611.02270",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/askalphaxiv/status/2119349075619598711",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-08T03:39:29-05:00",
+          "observed_at": "2026-11-09T08:00:06.392392+00:00",
+          "url": "https://www.alphaxiv.org/abs/2611.02270",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 111,
+            "comments": 5,
+            "views": 6215,
+            "url": "https://x.com/askalphaxiv/status/2119349075619598711"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-09T08:00:06.392392+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Explore targeted edits to an open model's output matrix",
+      "script": "For a closer look inside open models, Laplace's Scissors introduces an experimental weight-editing tool built around rotating a model's output matrix. The project describes protected readout rotations: calculate corrections for wrong answers while preserving designated successful answers. Its implementation uses Rust and Triton, with CUDA and HIP paths. That gives model researchers something concrete to inspect when studying whether a narrow output repair can leave chosen behaviors intact. The repository's stated protection goal doesn't establish that unrelated generations remain unchanged. An informative experiment would separate the examples you protect from a larger evaluation set the editing procedure never sees. Compare the proposed correction, the protected answers and those untouched prompts. The interesting result would be understanding exactly where the edit's effects spread.",
+      "why_now": "Show HN introduced the project November 8, 2026 at 02:37:10+00:00. It had 13 points and 2 comments at 2026-11-09T08:00:06.392392+00:00. The retrieved MIT-licensed repository displayed 27 stars, 7 forks and 9 commits.",
+      "why_early": "A fresh public introduction supplies an experimental implementation and a specific output-matrix editing approach. The available excerpt supports the project's stated purpose and implementation stack, but supplies no independent accuracy, preservation or scaling measurements. Stars measure interest, not adoption.",
+      "watch_next": "Reproducible edits with held-out evaluations showing correction success and changes outside the protected examples.",
+      "id": "story-2010816851d2",
+      "number": 4,
+      "category": "Open model tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/Miyamoto-Renya/LaplacesScissors",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50409986",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-08T02:37:10+00:00",
+          "observed_at": "2026-11-09T08:00:06.392392+00:00",
+          "url": "https://github.com/Miyamoto-Renya/LaplacesScissors",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 13,
+            "comments": 2,
+            "url": "https://news.ycombinator.com/item?id=50409986"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-09T08:00:06.392392+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Systemd opens individual components to Rust",
+      "script": "Back from the break, systemd has merged support for writing individual binaries in Rust alongside C. Christian Brauner and Lennart Poettering explain a useful architectural boundary: shared core libraries remain C, with Rust wrappers exposing those APIs to Rust components. Rust in the foundational shared library is currently excluded because of shared-library and ABI requirements. Builds stay with Meson rather than adding Cargo as another build system. For systems contributors, this creates a concrete route to using Rust while retaining systemd's existing helpers and conventions. The account also requires consistent option parsing, help and errors across both languages. Maintainers introducing a language into an established project could study those choices, then map which interfaces and build rules their own first component would need to preserve.",
+      "why_now": "Brauner and Poettering published the account November 3, 2026. Its November 8 Lobsters discussion had 40 points and 19 comments at 2026-11-09T08:00:06.392392+00:00.",
+      "why_early": "The primary account reports recently merged Rust support and defines its initial scope: leaf binaries, C shared-core APIs and Meson builds. This is a bounded new contribution path in an established project, not evidence of a wholesale rewrite or measured security improvement.",
+      "watch_next": "Concrete Rust components demonstrating API wrappers, distribution builds and behavior consistent with existing C binaries.",
+      "id": "story-cafb0b06f16b",
+      "number": 5,
+      "category": "Systems development",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://amutable.com/blog/systemd-loves-rust",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/62loik/systemd_loves_rust",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-08T06:55:05.530-06:00",
+          "observed_at": "2026-11-09T08:00:06.392392+00:00",
+          "url": "https://amutable.com/blog/systemd-loves-rust",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 40,
+            "comments": 19,
+            "url": "https://lobste.rs/s/62loik/systemd_loves_rust"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-09T08:00:06.392392+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Generate a whole visual plan in one pass",
+      "script": "Returning to robot planning, VFlash changes how a model produces spatial instructions. A bounding box or trajectory has a known structure, yet ordinary autoregressive generation emits its coordinates one token at a time. VFlash uses a lightweight drafter to predict an entire visual primitive in one forward pass. The researchers report lower prediction errors across evaluated two-dimensional and three-dimensional robot trajectory tasks. A world action model using VFlash plans achieved seventy point two percent average success across four MolmoSpaces task suites, against sixty-two point six percent for the baseline. Robotics researchers could investigate richer plans without paying the same sequential generation cost for every coordinate. The paper also reports preliminary motion-forecasting speed measurements. For a practical comparison, measure plan accuracy and downstream task completion together; a quickly drawn trajectory still has to guide useful movement.",
+      "why_now": "Submitted November 5, 2026 and highlighted November 8 at 03:37:38-05:00. The discovery post had 67 likes, 2 replies and 4843 views at 2026-11-09T08:00:06.392392+00:00; alphaXiv displayed '#3 on Trending'.",
+      "why_early": "Recent primary research introduces joint coordinate prediction with a lightweight drafter. Task-success results are author-reported. The abstract labels approximately 25x faster 3D point-motion generation as preliminary single-rollout measurements; model-pipeline timing should not be treated as full sensor-to-actuator latency.",
+      "watch_next": "Independent planning comparisons covering varied trajectory lengths, downstream success and complete perception-to-action latency.",
+      "id": "story-b2dcf9bb4d56",
+      "number": 6,
+      "category": "Physical AI research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.alphaxiv.org/abs/2611.08449",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/askalphaxiv/status/2119348608122449939",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-08T03:37:38-05:00",
+          "observed_at": "2026-11-09T08:00:06.392392+00:00",
+          "url": "https://www.alphaxiv.org/abs/2611.08449",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 67,
+            "comments": 2,
+            "views": 4843,
+            "url": "https://x.com/askalphaxiv/status/2119348608122449939"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-09T08:00:06.392392+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Redox reaches a shell on Cloud Hypervisor",
+      "script": "Down at the virtual machine boundary, Redox has merged a Virtio-FS driver and the changes needed to boot to a shell on Cloud Hypervisor. The Rust-based operating system puts drivers, filesystems and its network stack in separate userspace processes. Running as a virtual guest lets developers concentrate on a smaller set of virtual devices while the host handles physical hardware. That's a useful opening for operating-system researchers exploring Redox as a future server platform. Today's milestone is a shell and merged supporting work; the broader cloud-server direction still needs development. The report also discusses Redox hosting virtual machines, explicitly as a proposal. A concrete learning project is following the guest boot path and locating which responsibilities belong to Redox, the virtual machine monitor and the host kernel.",
+      "why_now": "MJ Pooladkhay published the primary progress report November 8, 2026. Its Lobsters discussion had 13 points and no comments at 2026-11-09T08:00:06.392392+00:00.",
+      "why_early": "The report identifies merged Virtio-FS work and merged kernel, bootloader and driver changes sufficient for a Cloud Hypervisor shell. Secure cloud hosting is a development direction, and Redox-as-host virtualization remains a proposal; neither is established as production-ready.",
+      "watch_next": "Reproducible guest images and demonstrations of networking, storage and service operation beyond the shell milestone.",
+      "id": "story-bac7e52e38bd",
+      "number": 7,
+      "category": "Open systems",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.redox-os.org/news/virtualized-redox",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/zozcwa/virtualized_redox_from_virtio_fs_cloud",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-08T15:06:06.921-06:00",
+          "observed_at": "2026-11-09T08:00:06.392392+00:00",
+          "url": "https://www.redox-os.org/news/virtualized-redox",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 13,
+            "comments": 0,
+            "url": "https://lobste.rs/s/zozcwa/virtualized_redox_from_virtio_fs_cloud"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-09T08:00:06.392392+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Measure the electricity behind a small Linux builder",
+      "script": "For a refreshingly physical infrastructure measurement, Wesley Moore put a Linux package builder on a smart plug. Across a little over seven months, the repurposed Ryzen nine fifty-nine-fifty-X system used ninety-eight point four kilowatt-hours. At his electricity rate, that cost thirty-two Australian dollars forty-seven, excluding the daily service fee. Buildbot recorded five thousand two hundred one package entries, probably inflated by retries. Moore switched the machine off between batches; idle draw was about fifty-five watts. This could help small distribution maintainers think about measuring a home build service. It isn't the project's complete energy bill: packages were first built on another workstation, and Moore estimates actual usage was likely more than double. Borrow the measurement method and include your own idle time, retries and preliminary builds.",
+      "why_now": "Moore published and updated the account November 9, 2026. Its Lobsters posting had 8 points and no comments at 2026-11-09T08:00:06.392392+00:00. Measurements cover March 30 through November 8, 2026.",
+      "why_early": "A same-day first-person measurement offers a new operational case study rather than a new build technology. The 98.4 kWh and AU$32.47 cover one builder, excluding workstation builds, service fees and unmeasured solar effects. The 5201 log entries are not a verified count of distinct successful packages.",
+      "watch_next": "Comparable measurements including developer workstation builds and the energy difference between idle operation and shutdown between batches.",
+      "id": "story-32f043bdc910",
+      "number": 8,
+      "category": "Developer infrastructure",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.wezm.net/v2/posts/2026/distro-energy-use",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/ezjewj/how_much_energy_does_building_distro",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-09T00:44:59.077-06:00",
+          "observed_at": "2026-11-09T08:00:06.392392+00:00",
+          "url": "https://www.wezm.net/v2/posts/2026/distro-energy-use",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 8,
+            "comments": 0,
+            "url": "https://lobste.rs/s/ezjewj/how_much_energy_does_building_distro"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-09T08:00:06.392392+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "A language model takes the SystemVerilog route",
+      "script": "And finally, SmolLM in Verilog puts a hundred-thirty-five-million-parameter language model through a SystemVerilog simulator. The tokenizer, thirty decoder layers, attention cache and text decoder live in the same source file. The author reports that two tested next-token outputs agreed with an independent Torch reference, including Paris after a prompt about France's capital. This is behavioral SystemVerilog running through Verilator, using real-number arithmetic, strings and file access. It isn't synthesizable FPGA or chip logic. Hardware-language learners and inference tinkerers can explore the full path from prompt bytes to output text, including a tokenizer-only mode. Patience belongs in the setup: the account estimates roughly twenty seconds per prompt token, so six tokens can mean about two minutes before generated text appears. Even a tiny geography quiz gives this simulator plenty to do.",
+      "why_now": "The author published the experiment November 7, 2026 and highlighted it November 8 at 02:11:42-05:00. The post had 56 likes, 8 replies and 2911 views at 2026-11-09T08:00:06.392392+00:00.",
+      "why_early": "A newly published first-person implementation executes the complete SmolLM-135M text path in behavioral SystemVerilog. Two tested next-token agreements do not establish broad numerical equivalence. The implementation is explicitly nonsynthesizable; working FPGA or ASIC deployment is not demonstrated, and rough timing is author-reported.",
+      "watch_next": "Independent reproduction and broader tokenizer and next-token comparisons against the Torch reference.",
+      "id": "story-831d18e3ed77",
+      "number": 9,
+      "category": "Offbeat experiments",
+      "role": "closer",
+      "sources": [
+        {
+          "url": "https://cneuralnets.xyz/blogs/ml/smollm-in-verilog",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/cneuralnetwork/status/2119326983410909386",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-08T02:11:42-05:00",
+          "observed_at": "2026-11-09T08:00:06.392392+00:00",
+          "url": "https://cneuralnets.xyz/blogs/ml/smollm-in-verilog",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 56,
+            "comments": 8,
+            "views": 2911,
+            "url": "https://x.com/cneuralnetwork/status/2119326983410909386"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-09T08:00:06.392392+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    }
+  ],
+  "interlude": {
+    "after_story": 4,
+    "title": "Thanks to Intelligrit",
+    "script": "Before we head into the operating system, a word of thanks to this episode's sponsor, Intelligrit. Take a moment to visit intelligrit dot com."
+  }
+}
