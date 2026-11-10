@@ -1,0 +1,394 @@
+{
+  "date": "2026-11-10",
+  "title": "TNP - 2026-11-10",
+  "intro": "Welcome to Trending Not Peak for Tuesday, November 10. Today, robot fingertips and spreadsheet cells open some unexpected doors. This voice is synthetic, and AI assisted with the writing. Follow your curiosity through the project links at trending not peak dot com.",
+  "outro": "Something to carry into your next project: Loopt to generate workflow YAML, PanoTac to explore touch-guided manipulation, and Recalc to inspect agents in cells. The sources await at trending not peak dot com. This is Trending Not Peak. Leave a little room in your next experiment for an interface you hadn't considered.",
+  "schema_version": 1,
+  "audio": {
+    "url": "https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-11-10/trending-not-peak-2026-11-10-kinetic-grid-r2.mp3",
+    "duration_seconds": 521.321769,
+    "bytes": 8343206,
+    "embedded_chapters": 12,
+    "sha256": "10623257e61e8c58d3942ac6033ca220a45b676671f392caa55ab274bd4417b8"
+  },
+  "stories": [
+    {
+      "title": "Search for better programs without narrating every thought",
+      "script": "First up, SwarmEvolve gives program-search agents a different way to exchange ideas. Hundreds of agents reason through internal model representations, sharing attention-cache information instead of writing out every intermediate thought. A novelty filter preserves different approaches before a summarizer combines them. Across twenty-one mathematical and scientific-computing problems, the researchers report a median three to eight minutes to reach the best scores competing frameworks reached in sixty minutes. On several problems, even their Qwen-three eight-B setup improved solutions originally found by AlphaEvolve with frontier models. These are author-reported research comparisons, with hardware and search budgets still consequential. If you build optimization systems, the possibility is spending more of your experiment exploring candidate programs. You could investigate it on a problem with an automatic scoring function, where each proposed improvement can be checked. The especially interesting question is whether preserving different internal approaches finds solutions that repeated text-based attempts keep missing.",
+      "why_now": "Submitted November 5, 2026 and highlighted November 9 at 05:06:52-05:00. The discovery post had 223 likes, 11 replies and 10769 views at 2026-11-10T08:00:05.880087+00:00; the retrieved alphaXiv page displayed '#7 on Trending'. This is one observation of interest, not measured acceleration.",
+      "why_early": "Recent primary research introduces latent-space swarm communication and novelty filtering for evolutionary program search. Timing and solution improvements are author-reported on 21 problems. Independent reproduction, resource-normalized comparisons and general deployment availability remain unestablished. Global saturation is unknown within the configured sources.",
+      "watch_next": "Independent comparisons that disclose hardware, total search costs and correctness checks for improved programs.",
+      "id": "story-b7e25b8dbd4d",
+      "number": 1,
+      "category": "AI research",
+      "role": "anchor",
+      "sources": [
+        {
+          "url": "https://www.alphaxiv.org/abs/2611.08483",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/askalphaxiv/status/2119733451024932897",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-09T05:06:52-05:00",
+          "observed_at": "2026-11-10T08:00:05.880087+00:00",
+          "url": "https://www.alphaxiv.org/abs/2611.08483",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 223,
+            "comments": 11,
+            "views": 10769,
+            "url": "https://x.com/askalphaxiv/status/2119733451024932897"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-10T08:00:05.880087+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Write workflow logic in a familiar language",
+      "script": "Next up, Loopt lets you write GitHub Actions workflows in code, then generate the standard YAML that GitHub runs. TypeScript, Python, Go and Rust are first-party options; other languages connect through a plugin protocol. It can also import existing workflow YAML into editable code. For maintainers juggling several similar build jobs, that offers a concrete experiment in making workflow changes easier to express and review. The source lives under a dedicated workflow directory, while generated files carry a notice telling you where to edit. Loopt is newly introduced, so import fidelity and coverage of your particular Actions features deserve checking. Take one small existing workflow, import it, regenerate it, and compare the result before changing its behavior. Keeping ordinary YAML as the output gives you something familiar to inspect when the abstraction gets confusing.",
+      "why_now": "Show HN introduced Loopt November 9, 2026 at 17:59:05+00:00. It had 13 points and 5 comments at 2026-11-10T08:00:05.880087+00:00. The retrieved repository showed 16 stars, no forks and 69 commits.",
+      "why_early": "A fresh public introduction supplies an MIT-licensed generator, four first-party languages, an extension protocol and an existing-YAML import path. The excerpt does not establish complete Actions coverage or lossless importing. Repository interest is not adoption.",
+      "watch_next": "Round-trip examples covering reusable workflows, expressions, permissions and matrix jobs.",
+      "id": "story-cc87e36a4699",
+      "number": 2,
+      "category": "Developer tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/preloopdev/loopt",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50429031",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-09T17:59:05+00:00",
+          "observed_at": "2026-11-10T08:00:05.880087+00:00",
+          "url": "https://github.com/preloopdev/loopt",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 13,
+            "comments": 5,
+            "url": "https://news.ycombinator.com/item?id=50429031"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-10T08:00:05.880087+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Give robot fingertips contact and shear feedback",
+      "script": "Turning to things a camera can't feel, PanoTac is a compliant robot fingertip that measures contact and sideways forces. Each finger produces a twelve-by-thirty-two grid, with three force components at each point, updated at up to a hundred hertz. The project lists a sensor cost of nine dollars forty cents. Across test-tube preparation, grain scooping and salt pouring, its researchers report an average forty-six point seven percentage-point improvement over vision-only policies. One demonstration uses weight cues to distinguish filled from empty opaque bottles. Robotics labs could explore touch-guided manipulation when an object hides the information a camera needs. The project links both method code and a hardware repository, giving that experiment somewhere to begin. That sensor price isn't the cost of the whole robot system. There's also a lovely interface detail: during data collection, tactile changes alter audio pitch and volume, letting a teleoperator hear the contact.",
+      "why_now": "A November 8, 2026 discovery post at 14:03:43-05:00 highlighted PanoTac. It had 117 likes, 8 replies and 5302 views at 2026-11-10T08:00:05.880087+00:00. The primary project page documents hardware, code links and task demonstrations; its publication date is not supplied.",
+      "why_early": "An emerging research artifact provides a concrete fingertip design and visuo-tactile learning demonstrations. The primary page reports $9.4 per sensor and a 46.7-percentage-point average improvement, which are used instead of the secondary post's rounded figures. Independent assembly, durability and task-transfer results remain unestablished.",
+      "watch_next": "Independent sensor builds documenting calibration consistency, durability and manipulation performance on unfamiliar objects.",
+      "id": "story-96bca3597fa6",
+      "number": 3,
+      "category": "Robotics research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://panotac.github.io",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/iliraliu_/status/2119506166099096033",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-08T14:03:43-05:00",
+          "observed_at": "2026-11-10T08:00:05.880087+00:00",
+          "url": "https://panotac.github.io",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 117,
+            "comments": 8,
+            "views": 5302,
+            "url": "https://x.com/iliraliu_/status/2119506166099096033"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-10T08:00:05.880087+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "A serving recipe joins four DGX Spark machines",
+      "script": "Back at the compute bench, a newly highlighted DeepSeek V-four point one Flash recipe distributes serving across four NVIDIA DGX Spark machines. The repository packages a tuned four-way tensor-parallel profile using SGLang and DSpark, built on a MiaAI-Lab recipe. That gives teams with this particular hardware a configuration to inspect when exploring a model server spread across several local machines. The accompanying comparison also discusses a vLLM branch, explicitly saying its release isn't ready. There aren't usable throughput figures in this account to turn that comparison into a winner. The grounded next step is narrower: reproduce the documented SGLang setup, then measure one representative coding workload. Record response time and completion quality together, so the cluster's usefulness has an application attached.",
+      "why_now": "The recipe comparison was highlighted November 8, 2026 at 06:13:02-05:00. The post had 74 likes, 15 replies and 12821 views at 2026-11-10T08:00:05.880087+00:00. The retrieved repository showed 95 stars, 17 forks and 318 commits.",
+      "why_early": "The fresh contribution is a hardware-specific tuned serving profile and comparison of evolving backend recipes. The primary repository identifies the four-machine SGLang/DSpark configuration; the discovery post describes the vLLM alternative as an unreleased branch. Comparative performance and independent reproduction are unestablished here.",
+      "watch_next": "Reproducible serving measurements with exact backend versions, network configuration and workload settings.",
+      "id": "story-69bbb8601e3a",
+      "number": 4,
+      "category": "Local AI infrastructure",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/knapcio/DeepSeek-V4.1-Flash-4x-DGX-Spark-TP4",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/ivanfioravanti/status/2119387715967861237",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-08T06:13:02-05:00",
+          "observed_at": "2026-11-10T08:00:05.880087+00:00",
+          "url": "https://github.com/knapcio/DeepSeek-V4.1-Flash-4x-DGX-Spark-TP4",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 74,
+            "comments": 15,
+            "views": 12821,
+            "url": "https://x.com/ivanfioravanti/status/2119387715967861237"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-10T08:00:05.880087+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Inspect package provenance in PyPI's new security tab",
+      "script": "Over at the package index, PyPI has finished rolling out redesigned project pages with a dedicated security tab. It shows release provenance states and attestations for individual files. Full provenance means every release file has an attestation. Depending on the type, an attestation can establish publication through a Trusted Publisher or connect a file to its source commit and build platform. Python maintainers and dependency reviewers now have a clearer place to inspect where an artifact came from. That history doesn't establish that the code itself is safe. The useful change is making the evidence visible at the point where someone chooses a dependency. Open a package your project already uses and inspect its release files. Then ask whether the recorded publishing and build origins match the project you intended to trust.",
+      "why_now": "PyPI published the completed-rollout announcement November 6, 2026. Its November 9 Lobsters posting at 15:45:49.846-06:00 had 7 points and 2 comments at 2026-11-10T08:00:05.880087+00:00.",
+      "why_early": "The material change is a newly live interface exposing existing attestation capabilities and release-level provenance states. Digital attestations themselves date to 2024. The interface improves access to provenance evidence without establishing package safety or measured reductions in malicious installations.",
+      "watch_next": "Maintainer responses to provenance warnings and examples showing how reviewers interpret mixed release-file attestations.",
+      "id": "story-c19a1c4d437c",
+      "number": 5,
+      "category": "Developer security",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://blog.pypi.org/posts/2026-11-06-ui-updates-complete",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/s1tppi/pypi_s_redesigned_project_pages_with",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-09T15:45:49.846-06:00",
+          "observed_at": "2026-11-10T08:00:05.880087+00:00",
+          "url": "https://blog.pypi.org/posts/2026-11-06-ui-updates-complete",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 7,
+            "comments": 2,
+            "url": "https://lobste.rs/s/s1tppi/pypi_s_redesigned_project_pages_with"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-10T08:00:05.880087+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Train a model around the clues it should use",
+      "script": "Now for a deeper model-training question. Mechanistic Shaping, from Goodfire, aims to influence which internal concepts a model relies on when making a decision. Correct labels alone can reward shortcuts, such as recognizing a treatment device in a medical image instead of the condition being studied. The researchers train against specifications about internal representations as well as outputs. Across vision, medical imaging and language experiments, including models up to thirty-two billion parameters, they report reducing targeted behaviors while preserving task performance. Model researchers could investigate this when ordinary accuracy hides dependence on an unwanted clue. Monitoring needs to evolve alongside training: a concept can move away from one probe or remain encoded in a nonlinear form. The paper studies those escape routes too. A useful experiment would test both the targeted shortcut and whether a newly fitted monitor can still recover it.",
+      "why_now": "Submitted November 4, 2026 and highlighted November 9 at 07:07:00-05:00. The discovery post had 131 likes, 5 replies and 5918 views at 2026-11-10T08:00:05.880087+00:00.",
+      "why_early": "Recent primary research combines representation-based training constraints with analysis of monitor circumvention across several domains and training paradigms. Findings are author-reported. The abstract supports concept drift, layer erasure and nonlinear persistence; it does not establish reliable removal of arbitrary unwanted concepts or clinical readiness.",
+      "watch_next": "Independent experiments pairing shortcut-reduction results with refitted and nonlinear monitors on held-out data.",
+      "id": "story-32e527677c70",
+      "number": 6,
+      "category": "AI research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.alphaxiv.org/abs/2611.07071",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/askalphaxiv/status/2119763684386054485",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-09T07:07:00-05:00",
+          "observed_at": "2026-11-10T08:00:05.880087+00:00",
+          "url": "https://www.alphaxiv.org/abs/2611.07071",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 131,
+            "comments": 5,
+            "views": 5918,
+            "url": "https://x.com/askalphaxiv/status/2119763684386054485"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-10T08:00:05.880087+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Fork inference state for decision-model workloads",
+      "script": "Speaking of decisions, Flide is a new inference engine for Jev-style decision models. These models serve decision workloads, and Flide exposes the Jev system-one API. Its central claim is exact state forking: reuse inference state while preserving the answer the model would give each question on its own. The project reports up to nine point five times the speed of vLLM and SGLang, a comparison that needs independent checking against matched workloads. There's an email-triage demo in version zero point one point eleven. If you're building a classifier that asks related questions about the same material, this offers a focused serving experiment. Compare isolated answers with forked-state answers first, then measure throughput. Preserving the decision is what makes the saved computation useful.",
+      "why_now": "Show HN introduced Flide November 9, 2026 at 04:43:12+00:00. It had 123 points and 29 comments at 2026-11-10T08:00:05.880087+00:00. The retrieved repository showed 309 stars, 11 forks and 28 commits, and announced the 0.1.11 email-triage demo dated November 10.",
+      "why_early": "A fresh Apache-2.0 inference implementation targets a specific decision-model API and claims exact state forking. The up-to-9.5x comparison and isolated-answer equivalence are project claims; hardware conditions, model coverage and independent reproduction are not established in the excerpt. This is a distinct serving project, not a repeat of the previously covered Drex model.",
+      "watch_next": "Matched benchmarks checking answer equivalence, model compatibility and throughput across realistic decision batches.",
+      "id": "story-8a1bc8cd9a4b",
+      "number": 7,
+      "category": "Open model tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/OmniJev/Flide",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50421155",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-09T04:43:12+00:00",
+          "observed_at": "2026-11-10T08:00:05.880087+00:00",
+          "url": "https://github.com/OmniJev/Flide",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 123,
+            "comments": 29,
+            "url": "https://news.ycombinator.com/item?id=50421155"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-10T08:00:05.880087+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Put an agent inside a spreadsheet cell",
+      "script": "For a different interface to agent work, Recalc makes a spreadsheet where a cell can contain a value, a formula, a terminal command, or a Claude Code or Codex agent. You can watch agents fill cells and open an individual cell in its own terminal. That's an intriguing workspace for developers who want several small investigations visible beside their inputs and results. Imagine comparing how agents approach a few public example tasks, with each attempt occupying a place you can return to. The repository provides an Apache-licensed implementation, examples and recipes. Its introduction doesn't establish that this layout improves task completion or that terminal-backed cells provide isolation. Start with a disposable project and inspect agents in cells while they handle bounded tasks. The experiment is partly about software, and partly about whether a grid makes their work easier to follow.",
+      "why_now": "Show HN introduced Recalc November 8, 2026 at 15:12:07+00:00. It had 30 points and 8 comments at 2026-11-10T08:00:05.880087+00:00. The retrieved repository showed 51 stars, 3 forks and 21 commits.",
+      "why_early": "A fresh public introduction supplies an Apache-2.0 implementation of a spreadsheet interface combining values, formulas, commands and coding agents. The available description establishes the interface concept, without independent usability, orchestration-reliability or isolation results.",
+      "watch_next": "Worked examples showing how cell execution, agent output and human inspection behave during failed or interrupted tasks.",
+      "id": "story-ad4d9bf888fc",
+      "number": 8,
+      "category": "Developer interfaces",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/sshah03/recalc",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50413970",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-08T15:12:07+00:00",
+          "observed_at": "2026-11-10T08:00:05.880087+00:00",
+          "url": "https://github.com/sshah03/recalc",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 30,
+            "comments": 8,
+            "url": "https://news.ycombinator.com/item?id=50413970"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-10T08:00:05.880087+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "A TLS certificate carries a readable protest",
+      "script": "And finally, Horrible Public Key Tricks puts a protest message somewhere most people see only a wall of certificate text. The author shows a TLS certificate whose encoded public-key material contains readable prose, then walks into the mathematics of RSA. It's a peculiar little artifact for cryptography learners: a familiar-looking certificate becomes something you can inspect for deliberate structure. The author's broader complaints about certificate infrastructure are arguments, rather than findings this experiment settles. The concrete curiosity is the crafted key material itself. Follow the worked example to explore how mathematical key components become encoded bytes. Apparently even a certificate can arrive with editorial commentary tucked inside.",
+      "why_now": "The primary account is dated November 8–9, 2026. Its November 9 Lobsters posting at 06:55:11.209-06:00 had 86 points and 9 comments at 2026-11-10T08:00:05.880087+00:00.",
+      "why_early": "A newly published first-person experiment displays a certificate containing deliberately readable encoded public-key material and begins a mathematical explanation. The excerpt does not establish the crafted key's security properties. The author's general claims about certificate infrastructure are not treated as verified findings.",
+      "watch_next": "Independent explanations reproducing the encoding construction and clearly characterizing its key-security properties.",
+      "id": "story-7cb7f032d2e0",
+      "number": 9,
+      "category": "Offbeat experiments",
+      "role": "closer",
+      "sources": [
+        {
+          "url": "https://maurycyz.com/projects/badcert",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/txkq8s/horrible_public_key_tricks",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-09T06:55:11.209-06:00",
+          "observed_at": "2026-11-10T08:00:05.880087+00:00",
+          "url": "https://maurycyz.com/projects/badcert",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 86,
+            "comments": 9,
+            "url": "https://lobste.rs/s/txkq8s/horrible_public_key_tricks"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-10T08:00:05.880087+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    }
+  ],
+  "interlude": {
+    "after_story": 4,
+    "title": "Thanks to Intelligrit",
+    "script": "We'll pause between the compute cluster and the package index to thank Intelligrit, this episode's sponsor. Visit intelligrit dot com when you're ready to explore."
+  }
+}

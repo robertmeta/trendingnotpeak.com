@@ -1,0 +1,53 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0.0,
+      "title": "Opening"
+    },
+    {
+      "startTime": 19.285,
+      "title": "Search for better programs without narrating every thought"
+    },
+    {
+      "startTime": 81.52,
+      "title": "Write workflow logic in a familiar language"
+    },
+    {
+      "startTime": 131.914,
+      "title": "Give robot fingertips contact and shear feedback"
+    },
+    {
+      "startTime": 189.426,
+      "title": "A serving recipe joins four DGX Spark machines"
+    },
+    {
+      "startTime": 238.781,
+      "title": "Thanks to Intelligrit"
+    },
+    {
+      "startTime": 248.855,
+      "title": "Inspect package provenance in PyPI's new security tab"
+    },
+    {
+      "startTime": 297.493,
+      "title": "Train a model around the clues it should use"
+    },
+    {
+      "startTime": 354.845,
+      "title": "Fork inference state for decision-model workloads"
+    },
+    {
+      "startTime": 402.601,
+      "title": "Put an agent inside a spreadsheet cell"
+    },
+    {
+      "startTime": 455.078,
+      "title": "A TLS certificate carries a readable protest"
+    },
+    {
+      "startTime": 499.874,
+      "title": "Closing"
+    }
+  ]
+}
