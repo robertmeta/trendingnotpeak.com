@@ -1,0 +1,394 @@
+{
+  "date": "2026-11-11",
+  "title": "TNP - 2026-11-11",
+  "intro": "It's Wednesday, November 11. Welcome to Trending Not Peak. Today, small models get better scaffolding, and a drawing becomes an agent workspace. AI helped write this episode, and the voice is synthetic. Explore every project at trending not peak dot com.",
+  "outro": "Three possibilities to take into your next project: LongCapHarness to explore long-context harnesses, Airgap-check to audit offline AI dependencies, and Aircad to review drawing edits. Find the papers, tools and details at trending not peak dot com. This is Trending Not Peak. And if you exchange a tarball today, perhaps check what came out.",
+  "schema_version": 1,
+  "audio": {
+    "url": "https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-11-11/trending-not-peak-2026-11-11-kinetic-grid-r2.mp3",
+    "duration_seconds": 563.569365,
+    "bytes": 9019452,
+    "embedded_chapters": 12,
+    "sha256": "7ead492a217688b36f5f28bbaf86cdbf8e4a39843a7dd350a2ab842c208c4a51"
+  },
+  "stories": [
+    {
+      "title": "Improve long-context reasoning around the model",
+      "script": "First up, LongCapHarness explores how much more a small model can do when you improve the software around it. The researchers break long-context reasoning into component capabilities, then repeatedly revise their implementations, tracked state and control logic using a development set. The model itself gets no additional training. Applied to Llama-three eight-B, the resulting harness also transfers to Qwen-two-point-five three-B. The authors report outperforming data-synthesis-and-training approaches on HELMET and RULER, with estimated development costs below half the estimated training costs of NExtLong and PolicyLong. That's a research comparison, rather than a universal cost advantage. For developers working with long documents, this opens another experiment before fine-tuning: change how the task is organized and what information survives between steps. LongCapHarness gives you a way to explore long-context harnesses. Pick a document task with checkable answers, hold the model fixed, and measure whether better scaffolding helps on examples outside your development set.",
+      "why_now": "Submitted November 7, 2026 and highlighted November 10 at 09:23:02-05:00. The discovery post had 172 likes, 67 replies and 11599 views at 2026-11-11T08:00:05.909358+00:00. This is a single observation of interest, not measured acceleration.",
+      "why_early": "Recent primary research introduces capability-guided harness revision without model post-training and reports transfer between two small models. Benchmark gains and cost estimates are author-reported; independent reproduction, application transfer and total deployment costs remain unestablished. Global saturation is unknown within the configured sources.",
+      "watch_next": "Independent held-out comparisons including harness-development costs, inference costs and transfer to unfamiliar document tasks.",
+      "id": "story-2f49b4966a48",
+      "number": 1,
+      "category": "AI research",
+      "role": "anchor",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2611.10463",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/omarsar0/status/2120160305347260443",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-10T09:23:02-05:00",
+          "observed_at": "2026-11-11T08:00:05.909358+00:00",
+          "url": "https://arxiv.org/abs/2611.10463",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 172,
+            "comments": 67,
+            "views": 11599,
+            "url": "https://x.com/omarsar0/status/2120160305347260443"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-11T08:00:05.909358+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Find the downloads hiding in an offline AI app",
+      "script": "Next up, Airgap-check asks a wonderfully practical question: what happens when your local AI application actually loses the network? Pointing an app at Ollama or vLLM doesn't remove every other dependency. A library might still fetch tokenizer data, embedding weights or a price map the first time you use it. Airgap-check is a newly introduced, MIT-licensed tool for auditing AI repositories for offline failures, telemetry and secret routing. Developers preparing disconnected deployments could use Airgap-check to audit offline AI dependencies before discovering them during installation. Its description doesn't establish complete detection coverage. A useful first exercise is an application you already understand: compare the findings with its startup and first-use behavior in a disposable environment with networking disabled. The interesting result is a concrete packing list: which files and configuration does this supposedly local application need before the cable comes out?",
+      "why_now": "Show HN introduced Airgap-check November 9, 2026 at 20:37:28+00:00. It had 11 points and no comments at 2026-11-11T08:00:05.909358+00:00. The retrieved repository showed 16 stars and 18 commits.",
+      "why_early": "A fresh public introduction supplies an MIT-licensed audit tool and documents specific first-use network dependencies. Detection completeness, false positives and independent runtime validation are not established. Its local-model configuration example does not imply that all Ollama or vLLM applications make these downloads.",
+      "watch_next": "Reproducible comparisons between audit findings and observed first-use failures with networking disabled.",
+      "id": "story-14239341632f",
+      "number": 2,
+      "category": "Local AI tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/humanethq/airgap-check",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50431705",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-09T20:37:28+00:00",
+          "observed_at": "2026-11-11T08:00:05.909358+00:00",
+          "url": "https://github.com/humanethq/airgap-check",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 11,
+            "comments": 0,
+            "url": "https://news.ycombinator.com/item?id=50431705"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-11T08:00:05.909358+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Give MiniMax's image model a two-step path",
+      "script": "Turning to image generation, MiniMax-H3-Image pDMD packages a two-step adapter for MiniMax's thirty-three-point-one-billion-parameter image transformer. The model card describes two denoising evaluations at the model's native sixteen-megapixel resolution, compared with the stock checkpoint's fixed six-step schedule. Akhaliq's package includes separate adapter layouts and a single ComfyUI checkpoint with the adapter already merged. The page reports verifying that checkpoint in stock ComfyUI. Creative-tool builders get a concrete way to explore fewer-step generation without assembling the weight conversion themselves. Two steps doesn't establish a particular response time on your GPU; the underlying model is still substantial. Start with a few prompts you know expose awkward details, and compare the two-step result with the stock schedule. Inspect composition and small features together. The useful discovery would be finding which drafts finish sooner while keeping the details your workflow needs.",
+      "why_now": "Akhaliq highlighted the package November 10, 2026 at 16:22:56-05:00. The post had 222 likes, 23 replies and 15838 views at 2026-11-11T08:00:05.909358+00:00. The retrieved model page showed 31 likes.",
+      "why_early": "A newly highlighted integration packages a pDMD two-evaluation LoRA, native and Diffusers layouts, and a premerged ComfyUI checkpoint. The adapter is described as byte-identical to an upstream release, so the fresh contribution is packaging and integration rather than invention of pDMD. Independent quality, wall-clock speed and memory measurements remain unestablished.",
+      "watch_next": "Matched-prompt comparisons documenting hardware, wall-clock generation time, memory use and detail retention against the stock six-step schedule.",
+      "id": "story-3c102b4fbf56",
+      "number": 3,
+      "category": "Open creative models",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://huggingface.co/akhaliq/minimax-h3-image-pdmd-2step",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/_akhaliq/status/2120265977657168218",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-10T16:22:56-05:00",
+          "observed_at": "2026-11-11T08:00:05.909358+00:00",
+          "url": "https://huggingface.co/akhaliq/minimax-h3-image-pdmd-2step",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 222,
+            "comments": 23,
+            "views": 15838,
+            "url": "https://x.com/_akhaliq/status/2120265977657168218"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-11T08:00:05.909358+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Recalibrate code judges using workflow outcomes",
+      "script": "Over in code evaluation, AutoRefine tackles a judge that quietly goes stale. When your coding agent changes, the prompt judging its patches may stop matching what your team actually accepts. AutoRefine rewrites that prompt using outcomes such as passed tests and merged or abandoned changes. Those labels can be noisy, so an informed teacher explains the labels it keeps and abstains when the judge's inputs can't explain the outcome. On seventeen independently held-out diffs from a deployed agent's current workflow, the researchers report chance-corrected agreement rising from zero point sixteen to zero point fifty-one. That's a small evaluation, and the older judge still performed better on sixteen older-workflow diffs. Teams using model-based quality gates could investigate recalibration alongside agent updates. There's a second useful signal here: when the teacher abstains, the judge may need more information about the change. A better prompt can't recover context it never receives.",
+      "why_now": "Submitted November 6, 2026 and highlighted November 10 at 15:35:02-05:00. The discovery post had 94 likes, 35 replies and 6733 views at 2026-11-11T08:00:05.909358+00:00.",
+      "why_early": "Recent primary research reports outcome-driven judge calibration with teacher abstention. The deployed-workflow comparison uses only 17 current-workflow diffs and 16 older-workflow diffs; Scott's pi is chance-corrected agreement, not raw accuracy. Independent validation and generalization across development teams remain open.",
+      "watch_next": "Larger prospective evaluations tracking calibration as agent behavior changes, including abstentions and missing judge inputs.",
+      "id": "story-ea813f828db1",
+      "number": 4,
+      "category": "AI evaluation",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2611.09291",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/omarsar0/status/2120253922933956644",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-10T15:35:02-05:00",
+          "observed_at": "2026-11-11T08:00:05.909358+00:00",
+          "url": "https://arxiv.org/abs/2611.09291",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 94,
+            "comments": 35,
+            "views": 6733,
+            "url": "https://x.com/omarsar0/status/2120253922933956644"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-11T08:00:05.909358+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Arrange Mac windows on a phone or tablet",
+      "script": "Back from the break, MeowDisplay turns an iPhone, iPad or another Mac into a display you can use to control your Mac. Its current version also lets you select individual Mac windows and arrange them in tabs or panes on an iPhone or iPad. That offers developers an interesting companion workspace: put documentation or a running application on the tablet while the main screen holds your editor. The project is free and open source, with a Mac companion requiring macOS fourteen or later. Android is in closed testing. One tempting demonstration needs a clear label: floating windows are planned for version two point one and aren't available in two point zero. For an initial experiment, use the existing pane layout with a pair of windows you switch between constantly. See whether moving them to a touch-controlled surface actually helps your work.",
+      "why_now": "Show HN introduced MeowDisplay November 9, 2026 at 18:39:22+00:00. It had 118 points and 45 comments at 2026-11-11T08:00:05.909358+00:00. The primary page identifies stable Mac version 2.0.0 and iOS 2.0 availability.",
+      "why_early": "A fresh public introduction documents available mirroring, extension and individual-window layouts. Android remains in closed testing, and floating windows are explicitly an upcoming 2.1 feature with no download yet. Independent latency, reliability and usability results are unestablished.",
+      "watch_next": "Independent reports on window-layout usability and connection latency, followed by actual availability of version 2.1.",
+      "id": "story-ee1076d5699b",
+      "number": 5,
+      "category": "Developer interfaces",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://meowdisplay.app",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50429636",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-09T18:39:22+00:00",
+          "observed_at": "2026-11-11T08:00:05.909358+00:00",
+          "url": "https://meowdisplay.app",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 118,
+            "comments": 45,
+            "url": "https://news.ycombinator.com/item?id=50429636"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-11T08:00:05.909358+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Train a robot to anticipate without generating video",
+      "script": "From touchscreens to robot control, La-JEPA studies a smaller policy that learns from predicting what happens next. During training, it predicts future visual features alongside robot actions, using a pretrained V-JEPA two point one encoder. During deployment, it generates only actions. The researchers report strong results against larger policies on RoboTwin two point zero and LIBERO-Plus, plus average success comparable to pi-zero-point-five across four real-robot tasks. For robotics researchers, the possibility is a controller that benefits from anticipating the scene without carrying a video generator through every action. The comparisons also contain an evaluation lesson: the team corrected corrupted instructions in the LIBERO-Plus evaluator and reran several baselines. That's consequential when a robot is supposed to follow language. Explore whether training-time future prediction helps your own control task, measuring both task success and the full deployed model's computational cost.",
+      "why_now": "Submitted November 5, 2026 and highlighted November 10 at 02:54:50-05:00. The discovery post had 128 likes, 3 replies and 6947 views at 2026-11-11T08:00:05.909358+00:00.",
+      "why_early": "Recent primary research separates training-time future-feature prediction from action-only inference and reports real-robot tests on four tasks. Results are author-reported, comparisons depend on embodied-pretraining status and corrected evaluator instructions, and deployment parameter counts include frozen encoders. Independent replication remains unestablished.",
+      "watch_next": "Independent evaluations using corrected instructions and reporting deployed parameter counts, control latency and task success together.",
+      "id": "story-b942059567d5",
+      "number": 6,
+      "category": "Robotics research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.alphaxiv.org/abs/2611.08156",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/askalphaxiv/status/2120062613589840261",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-10T02:54:50-05:00",
+          "observed_at": "2026-11-11T08:00:05.909358+00:00",
+          "url": "https://www.alphaxiv.org/abs/2611.08156",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 128,
+            "comments": 3,
+            "views": 6947,
+            "url": "https://x.com/askalphaxiv/status/2120062613589840261"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-11T08:00:05.909358+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Investigate misplaced trust inside unsafe Rust",
+      "script": "Down in foundational code, Microsoft's FORGE Lab has published memory-safety findings in Rust's standard library, including cases where entirely safe Rust can trigger undefined behavior. Some findings used help from Hyenas, the lab's research vulnerability-scanning system. Researchers then investigated the code, reproduced bugs and worked with Rust maintainers on reporting and fixes. The account identifies recurring trust mistakes inside unsafe implementations: assumptions about panics, user-provided behavior and the underlying system. Library maintainers can use those patterns to examine the boundary beneath their own safe APIs. The useful possibility is a more focused audit, with AI assistance helping surface candidates and concrete reproductions establishing what breaks. Hyenas is described as a research system, rather than a scanner you can download from this account. Follow one documented case from the safe call into the unsafe assumption, then look for that assumption in code you maintain.",
+      "why_now": "FORGE Lab published the first-person research account November 9, 2026. Its November 10 Lobsters discussion had 15 points and 1 comment at 2026-11-11T08:00:05.909358+00:00.",
+      "why_early": "The fresh contribution is a primary account of AI-assisted discoveries, human reproduction and recurring unsafe-code failure patterns. The excerpt does not establish affected-version coverage, a universal remediation release or public availability of Hyenas. Findings do not imply that ordinary safe Rust generally lacks memory-safety protections.",
+      "watch_next": "Maintainer-linked fixes and reproducible cases clarifying affected versions and how the unsafe assumptions were repaired.",
+      "id": "story-5560824566ee",
+      "number": 7,
+      "category": "Developer security",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://forge-blog.github.io/posts/rust-std-memory-safety",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/plreds/memory_safety_bugs_rust_standard_library",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-10T13:44:50.546-06:00",
+          "observed_at": "2026-11-11T08:00:05.909358+00:00",
+          "url": "https://forge-blog.github.io/posts/rust-std-memory-safety",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 15,
+            "comments": 1,
+            "url": "https://lobste.rs/s/plreds/memory_safety_bugs_rust_standard_library"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-11T08:00:05.909358+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Review an agent's edits inside a CAD drawing",
+      "script": "For a different kind of precise editing, Aircad has opened its browser-based drafting and solid-modeling workspace to everyone. It combines familiar drawing commands, multiplayer editing and an AI agent that works inside the drawing. The product demonstration shows a proposed stair change with an explicit apply-or-discard step and access to the underlying scripts. Designers and developers building physical projects could use Aircad to review drawing edits while keeping the geometry visible. It also advertises DWG opening with layouts, blocks and dimensions, making an existing drawing a possible starting point. A demonstration of code-related advice doesn't establish dependable building-code compliance. Keep the first experiment geometric: ask for a bounded dimension change in a copy of a drawing, inspect the proposed operations, and check the resulting measurements. That's a useful place to explore how conversational instructions and exact objects meet.",
+      "why_now": "Show HN introduced Aircad November 10, 2026 at 15:01:19+00:00. It had 37 points and 16 comments at 2026-11-11T08:00:05.909358+00:00. The primary page announces that Aircad is open to everyone.",
+      "why_early": "A fresh public opening documents browser CAD, collaborative editing and an agent with reviewable drawing changes. Product demonstrations establish the intended workflow, not independent modeling accuracy, DWG fidelity or dependable regulatory advice.",
+      "watch_next": "Independent drawing-edit examples documenting geometric accuracy, DWG round trips and the usefulness of reviewing generated scripts.",
+      "id": "story-893277f83528",
+      "number": 8,
+      "category": "Creative developer tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://aircad.com",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50441350",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-10T15:01:19+00:00",
+          "observed_at": "2026-11-11T08:00:05.909358+00:00",
+          "url": "https://aircad.com",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 37,
+            "comments": 16,
+            "url": "https://news.ycombinator.com/item?id=50441350"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-11T08:00:05.909358+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "One tiny tarball produces eight interpretations",
+      "script": "And finally, Harmen Stoppels has built The Hardest Tarball, an archive that his tests extract in eight distinct ways depending on the tool. The ingredients are modest: a repeated file stored as a hard link, a filename containing an accented character, and a size field that changes how the following bytes are interpreted. GNU tar's group produces the expected files. Other implementations skip an entry, turn header bytes into file contents, or reject the archive. Packaging-tool maintainers and file-format learners get a compact compatibility puzzle with a reproducible construction. These are the author's tests of releases current when he wrote the account. Explore it in a disposable directory and compare the extracted names and bytes across two libraries you use. A shared archive format still leaves plenty of room for a software disagreement. This one arrives neatly packed.",
+      "why_now": "Stoppels published the experiment November 7, 2026. Its November 10 Lobsters discussion had 62 points and 4 comments at 2026-11-11T08:00:05.909358+00:00.",
+      "why_early": "A newly published first-person compatibility experiment provides a compact construction and tool-specific extraction results. This is a fresh test artifact, not a newly invented archive format or a demonstrated exploit. Outcomes are author-reported for releases current at the time of writing.",
+      "watch_next": "Independent reproduction and archive-library responses clarifying ambiguous hard-link sizes and filename decoding.",
+      "id": "story-07abc360420e",
+      "number": 9,
+      "category": "Offbeat experiments",
+      "role": "closer",
+      "sources": [
+        {
+          "url": "https://stoppels.ch/2026/11/07/the-hardest-tarball.html",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/t7qkjb/hardest_tarball",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-10T07:47:03.168-06:00",
+          "observed_at": "2026-11-11T08:00:05.909358+00:00",
+          "url": "https://stoppels.ch/2026/11/07/the-hardest-tarball.html",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 62,
+            "comments": 4,
+            "url": "https://lobste.rs/s/t7qkjb/hardest_tarball"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-11T08:00:05.909358+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    }
+  ],
+  "interlude": {
+    "after_story": 4,
+    "title": "Thanks to Intelligrit",
+    "script": "Before we move from model experiments to hands-on interfaces, thank you to Intelligrit, this episode's sponsor. Explore intelligrit dot com when you have a moment."
+  }
+}

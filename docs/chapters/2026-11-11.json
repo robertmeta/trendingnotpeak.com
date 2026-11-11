@@ -1,0 +1,53 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0.0,
+      "title": "Opening"
+    },
+    {
+      "startTime": 19.364,
+      "title": "Improve long-context reasoning around the model"
+    },
+    {
+      "startTime": 81.521,
+      "title": "Find the downloads hiding in an offline AI app"
+    },
+    {
+      "startTime": 140.399,
+      "title": "Give MiniMax's image model a two-step path"
+    },
+    {
+      "startTime": 198.155,
+      "title": "Recalibrate code judges using workflow outcomes"
+    },
+    {
+      "startTime": 255.431,
+      "title": "Thanks to Intelligrit"
+    },
+    {
+      "startTime": 266.306,
+      "title": "Arrange Mac windows on a phone or tablet"
+    },
+    {
+      "startTime": 315.424,
+      "title": "Train a robot to anticipate without generating video"
+    },
+    {
+      "startTime": 376.058,
+      "title": "Investigate misplaced trust inside unsafe Rust"
+    },
+    {
+      "startTime": 434.696,
+      "title": "Review an agent's edits inside a CAD drawing"
+    },
+    {
+      "startTime": 489.57,
+      "title": "One tiny tarball produces eight interpretations"
+    },
+    {
+      "startTime": 539.644,
+      "title": "Closing"
+    }
+  ]
+}
