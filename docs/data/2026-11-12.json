@@ -1,0 +1,395 @@
+{
+  "date": "2026-11-12",
+  "title": "TNP - 2026-11-12",
+  "intro": "Welcome to Trending Not Peak for Thursday, November 12. Today, a browser tab becomes a model runtime, and a painting app shares its brushes with an agent. AI assisted with the writing, and this voice is synthetic. Explore the stories at trending not peak dot com.",
+  "outro": "A few possibilities for your next project: ExecuTorch to run models in browsers, AssemblyForNeovim to inspect compiler output, and ThingStudio to build microcontroller flows. Find the projects and their details at trending not peak dot com. This is Trending Not Peak. Have fun finding out what your tools can do.",
+  "schema_version": 1,
+  "audio": {
+    "url": "https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-11-12/trending-not-peak-2026-11-12-kinetic-grid-r2.mp3",
+    "duration_seconds": 561.083333,
+    "bytes": 8979332,
+    "embedded_chapters": 12,
+    "sha256": "b4e4b134df7e6aa409c9fe0b2374b443be17f3216d745899827f01bb2cddb4d6"
+  },
+  "stories": [
+    {
+      "title": "Take PyTorch models straight to the browser GPU",
+      "script": "First up, ExecuTorch has a new WebGPU backend that gives PyTorch models a direct route into a browser tab. Export through PyTorch to an ExecuTorch model file, then run that artifact in a WebGPU-enabled browser. You don't have to convert it into another framework's format along the way. The announcement describes support spanning language models, image segmentation and Whisper speech recognition. For web developers, that opens some lovely possibilities: a photo tool that processes pictures on the device, or transcription that doesn't send recordings to an inference server. PyTorch's team reports four to seven times faster prefill and two to ten times faster decoding than its CPU path on the same machine. Those are backend comparisons, with results depending on the workload and hardware. ExecuTorch gives you a concrete way to run models in browsers. Start with one supported model in the playground, then explore what happens when its inputs and outputs stay inside your application’s tab.",
+      "why_now": "PyTorch published the backend announcement November 10, 2026. Its discovery post at 17:45:20-05:00 had 99 likes, 6 replies and 10621 views at 2026-11-12T08:00:05.690144+00:00. This is a single interest observation, not measured acceleration.",
+      "why_early": "The meaningful change is a new WebGPU backend using the PyTorch export toolchain and a shared .pte artifact across supported browsers. Speed comparisons are author-reported against ExecuTorch's WebAssembly plus XNNPACK CPU path, not all browser inference engines. Independent device coverage and application-level measurements remain open. Global saturation is unknown within the configured sources.",
+      "watch_next": "Independent browser-and-device tests reporting model compatibility, memory use, loading time and complete application latency.",
+      "id": "story-7ad24f126f87",
+      "number": 1,
+      "category": "Local AI infrastructure",
+      "role": "anchor",
+      "sources": [
+        {
+          "url": "https://pytorch.org/blog/executorch-webgpu-pytorch-models-on-the-gpu-in-the-browser",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/pytorch/status/2120286712970854790",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-10T17:45:20-05:00",
+          "observed_at": "2026-11-12T08:00:05.690144+00:00",
+          "url": "https://pytorch.org/blog/executorch-webgpu-pytorch-models-on-the-gpu-in-the-browser",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 99,
+            "comments": 6,
+            "views": 10621,
+            "url": "https://x.com/pytorch/status/2120286712970854790"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-12T08:00:05.690144+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Evaluate agents on visually dense professional files",
+      "script": "Next up, Multimodal Knowledge Agent, or MKA, tests a different kind of agent competence: can it read a workspace full of visual files and produce a useful professional deliverable? Artificial Analysis has launched its implementation of Google DeepMind's benchmark, with two hundred tasks across ten industry verticals. Inputs include architectural drawings, engineering schematics and clinical scans. Outputs can be reports, spreadsheets or marked-up drawings. That's relevant if you're building document agents whose important information disappears when a file becomes plain text. Each run gets a Linux sandbox and up to two hundred fifty turns. The headline score measures the weighted share of harder rubric requirements satisfied, rather than the percentage of completely solved jobs. The leading listed model reaches fifty-seven percent on that measure. Evaluation teams could use the example tasks to design their own checks around actual files and deliverables. Ask whether the agent noticed the dimension on the drawing, then inspect whether that detail survived into its finished work.",
+      "why_now": "The benchmark launch was announced November 11, 2026 at 11:08:56-05:00. The post had 221 likes, 19 replies and 14661 views at 2026-11-12T08:00:05.690144+00:00.",
+      "why_early": "A newly launched independent implementation evaluates visual-file knowledge work under a documented harness. The dataset is private. GPT-6 Luna medium judges weighted rubric criteria without the original input files, and Climb WSR is not a complete-task success rate. Independent validation of the scoring process remains unestablished.",
+      "watch_next": "Evidence connecting rubric scores with expert assessment of deliverables, especially errors requiring reference to original visual inputs.",
+      "id": "story-e1048c87c3d1",
+      "number": 2,
+      "category": "AI evaluation",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://artificialanalysis.ai/evaluations/mka",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/patloeber/status/2120549346496352477",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-11T11:08:56-05:00",
+          "observed_at": "2026-11-12T08:00:05.690144+00:00",
+          "url": "https://artificialanalysis.ai/evaluations/mka",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 221,
+            "comments": 19,
+            "views": 14661,
+            "url": "https://x.com/patloeber/status/2120549346496352477"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-12T08:00:05.690144+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Peek at assembly without leaving Neovim",
+      "script": "Closer to the editor, AssemblyForNeovim puts compiler output in a floating window beside your code. The small Lua plugin supports C, C-plus-plus and Rust, with x-sixty-four and ARM sixty-four assembly. Point it at the function under your cursor or select a few lines. Inside the window, you can change the optimization level and rerun compilation. It uses your installed compilers and picks up a compilation database when one is present. Systems programmers and people learning performance work could use AssemblyForNeovim to inspect compiler output while an idea is still fresh. Does that little helper disappear after optimization? Does changing an expression change the generated instructions? The plugin gives you a quick place to look. Assembly alone won't tell you the speed of a complete application, but it can help you choose the next question to measure.",
+      "why_now": "Show HN introduced AssemblyForNeovim November 11, 2026 at 13:34:24+00:00. It had 101 points and 18 comments at 2026-11-12T08:00:05.690144+00:00. The retrieved repository displayed 188 stars, 9 forks and 2 commits.",
+      "why_early": "A fresh public introduction supplies a small, Unlicense-licensed editor integration with concrete controls and compiler requirements. The demonstration filename dates to October, so this is a new public introduction rather than evidence that implementation began yesterday. Compatibility across complex build configurations is unestablished.",
+      "watch_next": "Examples showing accurate build-flag handling for real C++, Cargo and cross-architecture projects.",
+      "id": "story-5afdc549e456",
+      "number": 3,
+      "category": "Developer tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/0xdeadf1sh/AssemblyForNeovim",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50453229",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-11T13:34:24+00:00",
+          "observed_at": "2026-11-12T08:00:05.690144+00:00",
+          "url": "https://github.com/0xdeadf1sh/AssemblyForNeovim",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 101,
+            "comments": 18,
+            "url": "https://news.ycombinator.com/item?id=50453229"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-12T08:00:05.690144+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "A robot policy gets a smaller inference footprint",
+      "script": "Turning to robot models, Runway's Praxis-one YAM checkpoint offers an experimental lower-precision path for a twenty-seven-billion-parameter policy. This version targets a two-arm robot setup with a top camera and cameras at each wrist. It received five thousand additional training steps with quantization-aware training on the routed expert layers. The model card says the policy's in-memory size falls from fifty-four point four gigabytes to seventeen point five when those experts run in NVIDIA's four-bit format. Robotics researchers with matching hardware get a specific artifact to investigate when fitting a policy onto a smaller GPU. There's a consequential hardware boundary: this experimental inference path supports SM-one-twenty GPUs, including the RTX fifty-ninety and RTX PRO six-thousand Blackwell. The full fifty-four-point-four-gigabyte checkpoint still downloads before packing at load time. A useful experiment would compare the same manipulation tasks in both precision modes, checking action quality alongside memory. Smaller weights earn their place when the robot still performs the task.",
+      "why_now": "NVIDIA Robotics highlighted the open-weight release November 11, 2026 at 16:29:17-05:00. The post had 144 likes, 15 replies and 6757 views at 2026-11-12T08:00:05.690144+00:00. The retrieved checkpoint page showed 1 like and 14 downloads last month.",
+      "why_early": "A newly highlighted Apache-2.0 checkpoint provides a concrete quantization-aware-trained variant. NVFP4 inference is explicitly experimental and restricted to SM120 GPUs; other layers remain bf16. The model card, rather than the broader promotional deployment claim, establishes the supported hardware and memory figures. Independent task-quality comparisons are absent.",
+      "watch_next": "Matched bf16 and NVFP4 manipulation evaluations reporting success, latency and total GPU memory on supported hardware.",
+      "id": "story-97f441458454",
+      "number": 4,
+      "category": "Open robotics models",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://huggingface.co/runwayml/praxis-1-yam-nvfp4",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/nvidiarobotics/status/2120629965528129702",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-11T16:29:17-05:00",
+          "observed_at": "2026-11-12T08:00:05.690144+00:00",
+          "url": "https://huggingface.co/runwayml/praxis-1-yam-nvfp4",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 144,
+            "comments": 15,
+            "views": 6757,
+            "url": "https://x.com/nvidiarobotics/status/2120629965528129702"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-12T08:00:05.690144+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Aim the red team at the boundary you need tested",
+      "script": "Back from the break, Perplexity's Escaping SPACE, Part Two has a useful finding about testing agent sandboxes: the challenge wording can change what your red team actually investigates. Its experiments ask models to cross a virtual-machine boundary or bypass network restrictions. In capture-the-flag tasks, the researchers observed agents spending substantial effort hunting for the secret string instead of examining the intended security mechanism. Explicitly directing them toward that boundary shifted their effort. The expanded evaluation now includes twelve models. Earlier experiments found network bypasses, which Perplexity says it fixed and retested; none of the original nine models escaped the virtual machine. For teams evaluating code-execution environments, the new possibility is a better-designed test. Compare a flag-focused task with a boundary-focused one, then inspect the attempted approaches. A model that searches enthusiastically isn't necessarily putting pressure on the part of your system you meant to assess.",
+      "why_now": "Perplexity published Part II November 11, 2026 and announced it at 13:21:22-05:00. The post had 175 likes, 54 replies and 31232 views at 2026-11-12T08:00:05.690144+00:00.",
+      "why_early": "The new primary report expands an earlier nine-model evaluation with three additional models and task-design experiments. This topic has no prior coverage in the supplied history. Boundary-directed behavior and remediation results are author-reported; failed escape attempts do not establish sandbox invulnerability.",
+      "watch_next": "Independent comparisons of red-team task wording, measuring vulnerability discovery rather than effort or flag-search activity alone.",
+      "id": "story-0205a5df7126",
+      "number": 5,
+      "category": "Agent security research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.perplexity.ai/hub/blog/escaping-space-part-ii",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/perplexity_ai/status/2120582674549203004",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-11T13:21:22-05:00",
+          "observed_at": "2026-11-12T08:00:05.690144+00:00",
+          "url": "https://www.perplexity.ai/hub/blog/escaping-space-part-ii",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 175,
+            "comments": 54,
+            "views": 31232,
+            "url": "https://x.com/perplexity_ai/status/2120582674549203004"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-12T08:00:05.690144+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Give a data agent a specialized prediction tool",
+      "script": "Over at the learning bench, DeepLearning.AI and Prior Labs have a new course on giving a data science agent a tabular foundation model. The course uses TabPFN, an open-weight model that makes predictions from dataset examples through in-context learning. You can explore classification and regression without training a separate model from scratch for each dataset. The agent's role is to understand the request and hand the prediction work to that specialized tool. That's an approachable architecture for developers building assistants around structured records. The lessons also cover interpreting predictions and caching the training context for repeated queries. Across eight video lessons and four code examples, there's a practical route from a table to an agent integration. Use a dataset with known outcomes and compare predictions on held-out rows. The interesting question is whether the agent chooses the right statistical task and whether the prediction tool earns your confidence on that data.",
+      "why_now": "The course page was updated November 11, 2026. Its announcement at 11:30:00-05:00 had 136 likes, 7 replies and 9204 views at 2026-11-12T08:00:05.690144+00:00. The page lists a 1h32m intermediate course with 8 video lessons and 4 code examples.",
+      "why_early": "The fresh contribution is a hands-on learning artifact connecting an existing tabular foundation model to an agent. It is not a new TabPFN release or evidence that in-context prediction outperforms task-specific training on every dataset. Reliability assessment is part of the documented course.",
+      "watch_next": "Worked integrations measuring prediction quality and whether the agent selects suitable prediction tasks and inputs.",
+      "id": "story-c5d31b24850d",
+      "number": 6,
+      "category": "AI learning",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://bit.ly/4sMtNOz",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/deeplearningai/status/2120554648788521464",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-11T11:30:00-05:00",
+          "observed_at": "2026-11-12T08:00:05.690144+00:00",
+          "url": "https://bit.ly/4sMtNOz",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 136,
+            "comments": 7,
+            "views": 9204,
+            "url": "https://x.com/deeplearningai/status/2120554648788521464"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-12T08:00:05.690144+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Compile visual flows onto a microcontroller",
+      "script": "Heading out onto the workbench, ThingStudio brings visual flow programming to microcontrollers running MicroPython. You arrange events and operations on your computer, then it compiles the flow into code and sends it to the board. Close the editor, and the saved program keeps running. The beta lists support for ESP-thirty-two, Raspberry Pi Pico chips and several other microcontroller families. Makers who already know a little programming could use ThingStudio to build microcontroller flows without manually managing every event in a growing loop. Its example combines a button-controlled light with timed sensor readings and network messages. The browser demo lets you build a flow and read the generated MicroPython before installing anything. Real-board execution requires the installed tool. The project is Apache licensed and designed to work locally, including offline documentation. Pick a sensor project you understand, inspect the generated code, and see whether the flow makes concurrent events easier to follow.",
+      "why_now": "Show HN introduced ThingStudio November 11, 2026 at 11:39:15+00:00. It had 14 points and 2 comments at 2026-11-12T08:00:05.690144+00:00. The primary site labels it beta and requests testers.",
+      "why_early": "A fresh public beta introduction documents a local visual editor, MicroPython compilation and on-board execution. Its browser demo does not itself run programs on physical boards. Supported-board breadth, timing behavior and independent hardware reliability remain unestablished.",
+      "watch_next": "Independent board tests covering concurrent events, restart behavior and readable generated MicroPython.",
+      "id": "story-424f94803151",
+      "number": 7,
+      "category": "Open hardware tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://thingstudio.net",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50452230",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-11T11:39:15+00:00",
+          "observed_at": "2026-11-12T08:00:05.690144+00:00",
+          "url": "https://thingstudio.net",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 14,
+            "comments": 2,
+            "url": "https://news.ycombinator.com/item?id=50452230"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-12T08:00:05.690144+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Share a painting's brushes with a coding agent",
+      "script": "For a more colorful workspace, Klad is a two-dimensional painting and animation app that a person and a coding agent can share. You draw with a pen in the editor. The agent draws through a command-line interface, using the same brushes on the same drawing, with each participant seeing the other's strokes immediately. Artists who code, game developers and interface experimenters have a concrete collaboration model to explore here. You could sketch a small scene and ask an agent to add a bounded visual element, then continue painting over its contribution. Klad is source-available, so check its license before planning a derivative product. The useful experiment is whether shared brush operations make a visual instruction easier to express and revise. A canvas gives you somewhere to point when words become awkward.",
+      "why_now": "Show HN introduced Klad November 11, 2026 at 16:00:50+00:00. It had 79 points and 31 comments at 2026-11-12T08:00:05.690144+00:00. The retrieved repository showed 141 stars, 9 forks and 166 commits.",
+      "why_early": "A fresh public introduction supplies a source-available painting and animation implementation with a shared human-and-agent brush interface. The description establishes the intended interaction, not independently measured artistic quality, responsiveness or collaboration benefits.",
+      "watch_next": "Worked sessions showing how agents inspect the canvas, place strokes and respond to human revisions.",
+      "id": "story-359bb99c4567",
+      "number": 8,
+      "category": "Creative developer tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/klad-app/klad",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50454951",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-11T16:00:50+00:00",
+          "observed_at": "2026-11-12T08:00:05.690144+00:00",
+          "url": "https://github.com/klad-app/klad",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 79,
+            "comments": 31,
+            "url": "https://news.ycombinator.com/item?id=50454951"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-12T08:00:05.690144+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "An old Windows game takes a native ARM route",
+      "script": "And finally, bo2-mac takes Call of Duty: Black Ops Two on an unusual compiler journey, from thirty-two-bit Windows instructions to native ARM sixty-four macOS. The project describes lifting the game through Remill into LLVM's intermediate representation, supplying a handwritten Windows runtime, and drawing Direct-three-D eleven graphics through Metal. Its beta targets campaign, Zombies and multiplayer against bots, built on your Mac from your own Steam copy. The repository includes no game files. Compiler enthusiasts and game-preservation tinkerers get an interesting system to inspect: translating instructions is only part of making an old program feel at home. Operating-system calls and graphics need somewhere to land too. The beta identifies measurements on one sixteen-gigabyte Apple M-one machine, so broad compatibility remains a question. Follow one piece of that runtime glue. An old game has brought quite a bit of Windows baggage on its Mac vacation.",
+      "why_now": "Show HN introduced bo2-mac November 11, 2026 at 04:56:47+00:00. It had 143 points and 64 comments at 2026-11-12T08:00:05.690144+00:00. The repository identifies its beta as November 3 and displayed 201 stars, 11 forks and 38 commits.",
+      "why_early": "A fresh public introduction documents a game-specific static-recompilation beta and concrete runtime architecture. The beta predates the discussion, and the excerpt identifies only one measured Apple M1 configuration. General game compatibility, performance and completeness are not established; this is not a universal Windows-game translator.",
+      "watch_next": "Independent builds from owned copies documenting functional coverage and behavior across additional Apple Silicon machines.",
+      "id": "story-d7608f1b23b7",
+      "number": 9,
+      "category": "Offbeat experiments",
+      "role": "closer",
+      "sources": [
+        {
+          "url": "https://github.com/adrbn/bo2-mac",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50449891",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-11T04:56:47+00:00",
+          "observed_at": "2026-11-12T08:00:05.690144+00:00",
+          "url": "https://github.com/adrbn/bo2-mac",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 143,
+            "comments": 64,
+            "url": "https://news.ycombinator.com/item?id=50449891"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-12T08:00:05.690144+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    }
+  ],
+  "interlude": {
+    "after_story": 4,
+    "title": "Thanks to Intelligrit",
+    "script": "Thanks to Intelligrit, this episode's sponsor, for supporting Trending Not Peak. Take your next curious click to intelligrit dot com."
+  }
+}

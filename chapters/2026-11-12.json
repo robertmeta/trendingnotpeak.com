@@ -1,0 +1,53 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0.0,
+      "title": "Opening"
+    },
+    {
+      "startTime": 19.046,
+      "title": "Take PyTorch models straight to the browser GPU"
+    },
+    {
+      "startTime": 77.844,
+      "title": "Evaluate agents on visually dense professional files"
+    },
+    {
+      "startTime": 140.399,
+      "title": "Peek at assembly without leaving Neovim"
+    },
+    {
+      "startTime": 189.596,
+      "title": "A robot policy gets a smaller inference footprint"
+    },
+    {
+      "startTime": 254.072,
+      "title": "Thanks to Intelligrit"
+    },
+    {
+      "startTime": 263.187,
+      "title": "Aim the red team at the boundary you need tested"
+    },
+    {
+      "startTime": 324.218,
+      "title": "Give a data agent a specialized prediction tool"
+    },
+    {
+      "startTime": 379.416,
+      "title": "Compile visual flows onto a microcontroller"
+    },
+    {
+      "startTime": 436.288,
+      "title": "Share a painting's brushes with a coding agent"
+    },
+    {
+      "startTime": 482.204,
+      "title": "An old Windows game takes a native ARM route"
+    },
+    {
+      "startTime": 540.518,
+      "title": "Closing"
+    }
+  ]
+}
