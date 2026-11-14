@@ -1,0 +1,57 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0.0,
+      "title": "Opening"
+    },
+    {
+      "startTime": 20.166,
+      "title": "Choose GPU kernel settings without the tuning wait"
+    },
+    {
+      "startTime": 76.961,
+      "title": "Give an existing agent a learning and execution layer"
+    },
+    {
+      "startTime": 130.312,
+      "title": "Complete video, depth and camera geometry together"
+    },
+    {
+      "startTime": 188.385,
+      "title": "Draw terminal borders between the cells"
+    },
+    {
+      "startTime": 240.623,
+      "title": "Let a weak actor become a useful teacher"
+    },
+    {
+      "startTime": 297.18,
+      "title": "Thanks to Intelligrit"
+    },
+    {
+      "startTime": 308.534,
+      "title": "Test whether an evaluation stays inside its boundary"
+    },
+    {
+      "startTime": 367.083,
+      "title": "Revisit the workhorse behind clustering"
+    },
+    {
+      "startTime": 423.0,
+      "title": "Explore model composition through energy functions"
+    },
+    {
+      "startTime": 478.276,
+      "title": "Send camera motion straight into a local avatar"
+    },
+    {
+      "startTime": 532.911,
+      "title": "Turn a word-solving session into string art"
+    },
+    {
+      "startTime": 575.708,
+      "title": "Closing"
+    }
+  ]
+}
