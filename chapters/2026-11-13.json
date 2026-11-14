@@ -1,0 +1,57 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0.0,
+      "title": "Opening"
+    },
+    {
+      "startTime": 20.486,
+      "title": "Let an agent organize memory as linked documents"
+    },
+    {
+      "startTime": 75.924,
+      "title": "Build a small chat service around a tiny protocol"
+    },
+    {
+      "startTime": 130.878,
+      "title": "Adapt a model by learning which weights to zero"
+    },
+    {
+      "startTime": 185.995,
+      "title": "Keep translations current with a daily correction loop"
+    },
+    {
+      "startTime": 242.309,
+      "title": "Check the lifecycle beneath a fast inference engine"
+    },
+    {
+      "startTime": 300.226,
+      "title": "Thanks to Intelligrit"
+    },
+    {
+      "startTime": 310.301,
+      "title": "Use Rust's never type throughout an API"
+    },
+    {
+      "startTime": 363.496,
+      "title": "Let a robot rehearse into task memory"
+    },
+    {
+      "startTime": 424.532,
+      "title": "Get an earlier signal that a speaker stopped"
+    },
+    {
+      "startTime": 480.441,
+      "title": "Explore a different JIT path for CPython"
+    },
+    {
+      "startTime": 538.117,
+      "title": "Inspect the source behind an AI-built browser arcade"
+    },
+    {
+      "startTime": 593.633,
+      "title": "Closing"
+    }
+  ]
+}
