@@ -1,0 +1,434 @@
+{
+  "date": "2026-11-15",
+  "title": "TNP - 2026-11-15",
+  "intro": "It's Sunday, November 15. Welcome to Trending Not Peak. Today, memories that earn their context space, smaller speech synthesis, and a font with flag-shaped ambitions. AI helped write this episode, and you're hearing a synthetic voice. Explore the stories at trending not peak dot com.",
+  "outro": "A few experiments to take with you: MemCredit to select useful memories, Gawain to require explicit Python types, and Nano-Edge-TTS to synthesize speech on CPUs. Find the projects and sources at trending not peak dot com. This is Trending Not Peak. Have fun exploring what a smaller component, a clearer declaration, or a particularly colorful letter might unlock.",
+  "schema_version": 1,
+  "audio": {
+    "url": "https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-11-15/trending-not-peak-2026-11-15-kinetic-grid-r2.mp3",
+    "duration_seconds": 599.794512,
+    "bytes": 9598802,
+    "embedded_chapters": 13,
+    "sha256": "37b8bf4929ee5c1fc9bae12e88b998236db433cff96c984fc822dd7226bffcf6"
+  },
+  "stories": [
+    {
+      "title": "Choose memories that change an agent's decision",
+      "script": "First up, MemCredit asks whether the memory that sounds relevant actually helps an agent decide what to do. During development, the researchers compare actions with and without individual memories, then train a small estimator on those differences. During use, ordinary relevance search gathers candidates, and predicted usefulness decides which memories get context space. The underlying agent policy stays unchanged. On ALFWorld, the authors report a success measure of eighty-six point five seven percent under a five-hundred-token historical-memory budget, compared with sixty-five point six seven percent for BM25 retrieval. They also evaluate WebShop. These are research results, with independent replication still open. Assistant builders could investigate MemCredit to select useful memories when a long history contains plenty of familiar-looking distractions. A revealing test would include two notes about the same object, only one of which changes the correct next action. Inspect which note survives the budget.",
+      "why_now": "Submitted November 11, 2026 and highlighted November 14 at 09:26:02-05:00. The discovery post had 192 likes, 61 replies and 14043 views at 2026-11-15T20:21:29.699948+00:00. This is a single interest observation, not measured acceleration.",
+      "why_early": "Recent primary research introduces intervention-derived memory credits and a lightweight utility estimator. The ALFWorld result is author-reported SR@50 under a 500-token historical-memory budget. Independent replication, estimator-development costs and transfer to deployed workflows remain unestablished. Global saturation is unknown within the configured sources.",
+      "watch_next": "Independent comparisons that include credit-generation costs and test utility estimation on unfamiliar tasks and agent policies.",
+      "id": "story-8160f380f7b9",
+      "number": 1,
+      "category": "AI research",
+      "role": "anchor",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2611.15600",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/omarsar0/status/2121610612040220832",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-14T09:26:02-05:00",
+          "observed_at": "2026-11-15T20:21:29.699948+00:00",
+          "url": "https://arxiv.org/abs/2611.15600",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 192,
+            "comments": 61,
+            "views": 14043,
+            "url": "https://x.com/omarsar0/status/2121610612040220832"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-15T20:21:29.699948+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Watch browser agents without losing keyboard focus",
+      "script": "Next up, Agweb tackles a very recognizable interruption: a coding agent opens a browser, and suddenly your typing lands somewhere else. This macOS browser uses WebKit and puts agent-driven tabs into one window designed never to take keyboard focus. Agents control it through a shell command, while you watch their activity live. Idle tabs are suspended. The developer built it after finding ordinary automation windows disruptive and headless browsing difficult to diagnose when sites blocked it. Developers running several browser tasks could explore whether a visible, quiet workspace makes failures easier to understand. The MIT-licensed implementation gives that interface experiment somewhere concrete to start. Put a small local test page through a few navigation steps, keep editing in your usual application, and see whether you can follow the browser's progress without constantly reclaiming your keyboard.",
+      "why_now": "Show HN introduced Agweb November 14, 2026 at 14:08:12+00:00. It had 107 points and 35 comments at 2026-11-15T20:21:29.699948+00:00. The retrieved repository displayed 220 stars, 6 forks and 163 commits.",
+      "why_early": "A fresh public introduction supplies a macOS WebKit implementation with shell control, visible tabs and focus-preserving behavior. Resource comparisons in the README are developer measurements on one Mac, not independent cross-machine benchmarks.",
+      "watch_next": "Independent sessions checking focus behavior, command compatibility and diagnosis of failed navigation across different sites.",
+      "id": "story-af7f8d8cd385",
+      "number": 2,
+      "category": "Developer tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/paul-nameless/agweb",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50497147",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-14T14:08:12+00:00",
+          "observed_at": "2026-11-15T20:21:29.699948+00:00",
+          "url": "https://github.com/paul-nameless/agweb",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 107,
+            "comments": 35,
+            "url": "https://news.ycombinator.com/item?id=50497147"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-15T20:21:29.699948+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Reuse hidden states when training data repeats",
+      "script": "Turning inside the model, Latent Feedback Transformers pass each token's final hidden state into the next token's input. A new study asks whether that extra work pays off compared with spending the same compute on more passes through the training data. Across the reported experiments, the authors find maximum savings of forty-eight percent in compute and forty-seven percent in unique data at matched loss. Their scaling law, fitted on models from sixty million to two hundred seventy-one million parameters, predicts held-out losses at seven hundred seventy-eight million within zero point three percent. Training researchers working with limited datasets could investigate this alternative to another ordinary epoch. The gains depend on the balance between data and model size, and predictions for much larger models remain predictions. A useful reproduction would hold the dataset and compute budget fixed, then compare both validation loss and downstream tasks.",
+      "why_now": "Submitted November 13, 2026 and highlighted November 14 at 23:39:33-05:00. The discovery post had 92 likes, 2 replies and 6734 views at 2026-11-15T20:21:29.699948+00:00; alphaXiv displayed '#2 on Trending'.",
+      "why_early": "The fresh contribution is a controlled repeated-data comparison and fitted scaling law for an existing latent-feedback idea. The primary abstract reports maximum unique-data savings of 47%, rather than the discovery post's 41%. Measurements span models through 778M parameters; larger-scale savings are extrapolations.",
+      "watch_next": "Independent matched-compute training runs and larger measured models testing the scaling-law extrapolations.",
+      "id": "story-f177a62e4995",
+      "number": 3,
+      "category": "Model training research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.alphaxiv.org/abs/2611.latent-feedback-transformers-scaling-law",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/askalphaxiv/status/2121825407414755355",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-14T23:39:33-05:00",
+          "observed_at": "2026-11-15T20:21:29.699948+00:00",
+          "url": "https://www.alphaxiv.org/abs/2611.latent-feedback-transformers-scaling-law",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 92,
+            "comments": 2,
+            "views": 6734,
+            "url": "https://x.com/askalphaxiv/status/2121825407414755355"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-15T20:21:29.699948+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Make Python's variable types explicit",
+      "script": "Closer to everyday code, Gawain takes a firm position on Python annotations: variables and class attributes should declare their types too. Existing type checkers can infer missing variable types, while familiar annotation lint rules concentrate on function signatures. Gawain checks the declarations, then runs ty or pyrefly to check whether those types are correct. That makes it an interesting option for teams that want type intent visible directly in a code review. Gawain lets you require explicit Python types across more of the program. The experiment is partly about readability: does declaring a local collection explain its intended shape, or bury a simple expression under extra ceremony? Start with a small module and review the requested annotations alongside the checker results. The tool is MIT licensed, so you can inspect exactly which declarations it requires before adopting that policy more widely.",
+      "why_now": "Show HN introduced Gawain November 15, 2026 at 04:39:25+00:00. It had 67 points and 51 comments at 2026-11-15T20:21:29.699948+00:00. The retrieved repository displayed 41 stars, 1 fork and 17 commits.",
+      "why_early": "A fresh public introduction supplies an MIT-licensed annotation-enforcement tool with ty and pyrefly integration. Its distinct contribution is requiring variable and class-attribute annotations; independent evidence of maintenance or defect-reduction benefits is absent.",
+      "watch_next": "Real-project examples showing annotation requirements, configuration choices and interactions with inferred or dynamically shaped values.",
+      "id": "story-5e606231a9fd",
+      "number": 4,
+      "category": "Developer tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/matheuzgomes/gawain",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50504072",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-15T04:39:25+00:00",
+          "observed_at": "2026-11-15T20:21:29.699948+00:00",
+          "url": "https://github.com/matheuzgomes/gawain",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 67,
+            "comments": 51,
+            "url": "https://news.ycombinator.com/item?id=50504072"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-15T20:21:29.699948+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Shrink Kokoro's speech decoder",
+      "script": "Turning to audio, Nano-Edge-TTS replaces Kokoro's waveform decoder while keeping its pronunciation, timing, pitch and voices. Two small networks control a pulse train and noise, which are converted into audio. The replacement decoder has one point seven five million parameters, bringing the whole model to thirty point two million. On an Apple M-four using one CPU thread, the author reports eleven times faster phoneme-to-audio processing across six validation sentences totaling fifty-five seconds. That's a small pipeline benchmark, and the model card describes a faint machine-like tone on some voiced sounds. Developers building local read-aloud tools could investigate Nano-Edge-TTS to synthesize speech on CPUs. The page includes paired samples, code and negative results, making the quality tradeoff unusually inspectable. Listen to the same sentence through both decoders, especially sustained vowels, before deciding where the smaller implementation fits.",
+      "why_now": "Show HN introduced Nano-Edge-TTS November 15, 2026 at 11:53:37+00:00. It had 10 points and 1 comment at 2026-11-15T20:21:29.699948+00:00. The retrieved model page displayed 7 likes.",
+      "why_early": "A fresh Apache-2.0 model artifact replaces Kokoro's 53.3M-parameter decoder with a 1.75M-parameter decoder. The model card supports an 11x phoneme-to-audio comparison on six sentences and a 33x decoder-only comparison on 240 sentences, rather than treating the headline's 70x realtime as comparative speedup. Listening evidence includes only one author-listener for an earlier checkpoint.",
+      "watch_next": "Independent listening tests and full-pipeline CPU measurements across longer passages, voices and additional hardware.",
+      "id": "story-23df15dc7f8d",
+      "number": 5,
+      "category": "Local audio models",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://huggingface.co/drmhse/nano-edge-tts",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50506255",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-15T11:53:37+00:00",
+          "observed_at": "2026-11-15T20:21:29.699948+00:00",
+          "url": "https://huggingface.co/drmhse/nano-edge-tts",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 10,
+            "comments": 1,
+            "url": "https://news.ycombinator.com/item?id=50506255"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-15T20:21:29.699948+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Give a database experiment its own branch",
+      "script": "Back at the database workbench, db-branch uses copy-on-write storage to give an experiment its own database branch. The newly introduced project describes ZFS clones, clustering across virtual machines and ProxySQL routing. Its README lists MySQL and PostgreSQL and proposes a practical workflow: give each pull request or coding agent a separate database copy. The project claims branches of large databases can be created in seconds without copying the underlying data up front. That could make migration experiments much less cumbersome for teams running their own servers. Actual creation times and supported configurations still need checking in your environment. A useful first trial would branch a disposable fixture database, apply a schema change, and compare both branches afterward. Include cleanup and storage growth in the exercise; the interesting result is a repeatable database workspace you can create and retire alongside a code change.",
+      "why_now": "Show HN introduced db-branch November 15, 2026 at 13:50:51+00:00. It had 25 points and 6 comments at 2026-11-15T20:21:29.699948+00:00. The retrieved repository displayed 9 stars, no forks and 123 commits.",
+      "why_early": "A fresh Apache-2.0 introduction provides a concrete self-hosted branching implementation. The repository description emphasizes MySQL, ZFS and ProxySQL, while the README also lists PostgreSQL. Seconds-scale creation is a project claim; database-specific feature parity, consistency and independent performance remain unestablished.",
+      "watch_next": "Reproducible engine-specific examples documenting branch consistency, creation time, storage growth and cleanup.",
+      "id": "story-180c301438ca",
+      "number": 6,
+      "category": "Developer infrastructure",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/db-branch/db-branch",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50506940",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-15T13:50:51+00:00",
+          "observed_at": "2026-11-15T20:21:29.699948+00:00",
+          "url": "https://github.com/db-branch/db-branch",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 25,
+            "comments": 6,
+            "url": "https://news.ycombinator.com/item?id=50506940"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-15T20:21:29.699948+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Separate the choices inside a vision encoder",
+      "script": "Over in multimodal research, Unbundling Multimodal Vision Encoding separates choices that usually arrive as one package. Does a model need visual pretraining? Does it need dedicated vision parameters? And must those parameters process the image before it reaches the language backbone? The researchers trained models under common data and compute conditions to untangle those questions. Their findings favor dedicated vision capacity, while a jointly trained encoder can match a separately pretrained one. Vision-only modules placed inside early backbone layers also perform comparably to a separate encoder and can reduce time to first token. For model architects, that opens a different place to spend the parameter budget. You could investigate an integrated visual front end without assuming that removing dedicated vision processing saves training work. The next revealing comparison would track visual accuracy, language performance and response latency together under the same lifetime compute budget.",
+      "why_now": "Submitted November 12, 2026 and highlighted November 15 at 03:34:00-05:00. The discovery post had 77 likes, 4 replies and 4195 views at 2026-11-15T20:21:29.699948+00:00; alphaXiv displayed '#1 on Trending'.",
+      "why_early": "Recent primary research disentangles visual pretraining, dedicated capacity and placement through controlled model training. Findings are author-reported and support architectural experiments rather than universal removal of encoder pretraining. Independent reproduction and production-level latency comparisons remain open.",
+      "watch_next": "Independent matched-compute reproductions examining in-fusion visual capacity across model sizes and practical serving workloads.",
+      "id": "story-91cb0883891b",
+      "number": 7,
+      "category": "Multimodal AI research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.alphaxiv.org/abs/2611.17334",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/askalphaxiv/status/2121884408450077153",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-15T03:34:00-05:00",
+          "observed_at": "2026-11-15T20:21:29.699948+00:00",
+          "url": "https://www.alphaxiv.org/abs/2611.17334",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 77,
+            "comments": 4,
+            "views": 4195,
+            "url": "https://x.com/askalphaxiv/status/2121884408450077153"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-15T20:21:29.699948+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Move a running bhyve guest between hosts",
+      "script": "Down at the virtualization layer, a new work-in-progress RFC demonstrates live migration for bhyve guests on FreeBSD fifteen point one. The implementation copies memory while the guest runs, tracks pages that change, then pauses the guest for the final transfer of memory and machine state. The destination starts only after receiving an explicit commit message. Before that point, a failed migration can resume the source guest. FreeBSD infrastructure developers get a working implementation to test while exploring host maintenance with less guest disruption. This is an initial experimental state built on bhyve's snapshot support. It isn't a general availability announcement. A useful lab exercise would compare live pre-copy with the included stop-and-copy mode, using the same guest workload. Measure the final pause and inspect what happens when the transfer fails before the commit point.",
+      "why_now": "The primary report presents a first working implementation and WIP RFC. Its November 15, 2026 Lobsters posting at 00:44:44.316-06:00 had 17 points and no comments at 2026-11-15T20:21:29.699948+00:00. The article's publication date is not supplied.",
+      "why_early": "The report explicitly describes initial working code for amd64 guest migration on FreeBSD 15.1, including dirty-page tracking and a migration protocol. Experimental snapshot foundations and WIP status limit readiness claims; broad device compatibility and operational reliability are unestablished.",
+      "watch_next": "RFC review and independent migration tests reporting guest configuration, pause duration and recovery from interrupted transfers.",
+      "id": "story-30cb51765b97",
+      "number": 8,
+      "category": "Open systems",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://gyptazy.com/blog/freebsd-bhyve-live-migration-support-rfc",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/hiayul/freebsd_bhyve_live_migration_moving_vms",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-15T00:44:44.316-06:00",
+          "observed_at": "2026-11-15T20:21:29.699948+00:00",
+          "url": "https://gyptazy.com/blog/freebsd-bhyve-live-migration-support-rfc",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 17,
+            "comments": 0,
+            "url": "https://lobste.rs/s/hiayul/freebsd_bhyve_live_migration_moving_vms"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-15T20:21:29.699948+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Make robot control easier to read from top to bottom",
+      "script": "From virtual machines to physical ones, Ben Visness has published Periodic-Oriented Programming, a programming philosophy drawn from years mentoring FIRST Robotics teams. The central idea is to keep much of the robot's logic readable from top to bottom in its periodic function. WPILib's TimedRobot framework calls these functions fifty times a second. Inputs become desired hardware state, safety constraints shape the outputs, and the hardware gets updated. Visness advocates few abstractions, with subsystem boundaries providing structure as programs grow. Student teams and mentors could study this as an alternative way to organize control code that newcomers need to understand quickly. It's a practitioner's design argument, rather than a controlled comparison of robot architectures. Take one small mechanism and trace its input all the way to its motor output. See whether the program's structure makes that path easy for a new teammate to explain.",
+      "why_now": "Visness published the account November 14, 2026. Its Lobsters posting at 21:16:42.257-06:00 had 18 points and 2 comments at 2026-11-15T20:21:29.699948+00:00.",
+      "why_early": "The fresh contribution is a documented programming approach and teaching artifact from an experienced practitioner. The periodic framework is established; the article does not demonstrate measured superiority over command-based designs or suitability for every control problem.",
+      "watch_next": "Complete team examples showing how periodic logic, subsystem boundaries and safety constraints remain understandable as mechanisms multiply.",
+      "id": "story-a75404b1ddf6",
+      "number": 9,
+      "category": "Robotics development",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://bvisness.me/periodic-oriented-programming",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/bwjt1b/periodic_oriented_programming_for_first",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-14T21:16:42.257-06:00",
+          "observed_at": "2026-11-15T20:21:29.699948+00:00",
+          "url": "https://bvisness.me/periodic-oriented-programming",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 18,
+            "comments": 2,
+            "url": "https://lobste.rs/s/bwjt1b/periodic_oriented_programming_for_first"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-15T20:21:29.699948+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "A flag becomes an editable alphabet",
+      "script": "And finally, Jamaican Alphabet Font starts with a wonderfully specific question: if Jamaica's flag looks like the letter X, what should the other letters look like? Bobbie Chen turned an alphabet by VelvetOnion into a font whose colors and shapes are built into the glyphs. The demo remains ordinary text that you can select, copy and search. A connected variant uses contextual font features to match neighboring background colors and join certain letters. Type designers and web developers get a playful example of how much an actual font can do before you reach for separate images or a canvas. Type the same phrase into both versions and watch the boundaries between letters change. The alphabet has acquired a surprisingly elaborate dress code.",
+      "why_now": "Show HN introduced the font November 15, 2026 at 00:56:45+00:00. It had 52 points and 7 comments at 2026-11-15T20:21:29.699948+00:00.",
+      "why_early": "A fresh public introduction supplies an editable demonstration of colored glyphs and contextual connections. The artifact establishes a concrete font experiment, without evidence of broad application compatibility or general reading benefits.",
+      "watch_next": "Technical explanations and application tests showing how contextual connections and built-in colors behave outside the web demo.",
+      "id": "story-2aad7466fcfc",
+      "number": 10,
+      "category": "Offbeat experiments",
+      "role": "closer",
+      "sources": [
+        {
+          "url": "https://bobbiec.github.io/jamaican-font.html",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50502839",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-15T00:56:45+00:00",
+          "observed_at": "2026-11-15T20:21:29.699948+00:00",
+          "url": "https://bobbiec.github.io/jamaican-font.html",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 52,
+            "comments": 7,
+            "url": "https://news.ycombinator.com/item?id=50502839"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-15T20:21:29.699948+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    }
+  ],
+  "interlude": {
+    "after_story": 5,
+    "title": "Thanks to Intelligrit",
+    "script": "Between the speech experiments and the database workbench, thanks to Intelligrit, this episode's sponsor. Follow another thread of curiosity at intelligrit dot com."
+  }
+}

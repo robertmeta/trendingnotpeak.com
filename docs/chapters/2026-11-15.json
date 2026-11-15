@@ -1,0 +1,57 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0.0,
+      "title": "Opening"
+    },
+    {
+      "startTime": 21.286,
+      "title": "Choose memories that change an agent's decision"
+    },
+    {
+      "startTime": 80.238,
+      "title": "Watch browser agents without losing keyboard focus"
+    },
+    {
+      "startTime": 133.43,
+      "title": "Reuse hidden states when training data repeats"
+    },
+    {
+      "startTime": 188.708,
+      "title": "Make Python's variable types explicit"
+    },
+    {
+      "startTime": 241.744,
+      "title": "Shrink Kokoro's speech decoder"
+    },
+    {
+      "startTime": 298.382,
+      "title": "Thanks to Intelligrit"
+    },
+    {
+      "startTime": 309.255,
+      "title": "Give a database experiment its own branch"
+    },
+    {
+      "startTime": 364.21,
+      "title": "Separate the choices inside a vision encoder"
+    },
+    {
+      "startTime": 422.041,
+      "title": "Move a running bhyve guest between hosts"
+    },
+    {
+      "startTime": 473.878,
+      "title": "Make robot control easier to read from top to bottom"
+    },
+    {
+      "startTime": 529.554,
+      "title": "A flag becomes an editable alphabet"
+    },
+    {
+      "startTime": 573.791,
+      "title": "Closing"
+    }
+  ]
+}
