@@ -1,0 +1,49 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0.0,
+      "title": "Opening"
+    },
+    {
+      "startTime": 21.845,
+      "title": "Give browser agents more useful work per call"
+    },
+    {
+      "startTime": 80.319,
+      "title": "Let a robot policy practice inside a learned world"
+    },
+    {
+      "startTime": 147.914,
+      "title": "Explore a module-aware C++ language server"
+    },
+    {
+      "startTime": 208.868,
+      "title": "Audit the privileged controls inside a browser extension"
+    },
+    {
+      "startTime": 271.904,
+      "title": "Thanks to Intelligrit"
+    },
+    {
+      "startTime": 282.861,
+      "title": "Build Rust date APIs around a new stability commitment"
+    },
+    {
+      "startTime": 344.616,
+      "title": "Follow Linux into an inspectable RISC-V processor"
+    },
+    {
+      "startTime": 410.053,
+      "title": "Record one Mac application's audio stream"
+    },
+    {
+      "startTime": 472.37,
+      "title": "A Nix build graph counts down the bottles"
+    },
+    {
+      "startTime": 531.962,
+      "title": "Closing"
+    }
+  ]
+}
