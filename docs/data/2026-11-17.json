@@ -1,0 +1,395 @@
+{
+  "date": "2026-11-17",
+  "title": "TNP - 2026-11-17",
+  "intro": "It's Tuesday, November 17. Welcome to Trending Not Peak. Today, explore a street by listening, keep Python results between runs, and peek inside a console's display firmware. AI helped write this episode, and you're hearing a synthetic voice. Explore the stories at trending not peak dot com.",
+  "outro": "A few useful places to begin: StreetReaderAI to explore streets virtually, funkycache to cache Python function results, and rbit to host Git repositories. Find the projects and sources at trending not peak dot com. This is Trending Not Peak. Have fun following a small question into a project, even if that question starts with a strangely cropped Wii game.",
+  "schema_version": 1,
+  "audio": {
+    "url": "https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-11-17/trending-not-peak-2026-11-17-kinetic-grid-r2.mp3",
+    "duration_seconds": 570.287846,
+    "bytes": 9126881,
+    "embedded_chapters": 12,
+    "sha256": "fc802f067beadb93833b0a995853f2330b7dbc2278fbf868a531b5cad27affff"
+  },
+  "stories": [
+    {
+      "title": "Explore a neighborhood through speech and questions",
+      "script": "First up, StreetReaderAI makes street-level imagery something you can explore without seeing the pictures. Google Research has released this accessibility web application, built with and for blind and low-vision users. Keyboard shortcuts or voice commands move you through street images, while spoken descriptions and follow-up questions help you investigate the surroundings. The application combines panoramic imagery with OpenStreetMap routing and nearby points of interest. That gives accessibility researchers and interface developers a concrete starting point for virtual neighborhood exploration. StreetReaderAI lets you explore streets virtually, including moving along blocks and across intersections. It's an imagery-based preview; it doesn't establish current conditions on a real walk. The Apache-licensed code can run locally or load in Google AI Studio. A useful experiment would revisit a familiar block and ask about a particular landmark. Then examine whether the description gives you enough spatial context to ask a better next question.",
+      "why_now": "Google Research announced the release November 16, 2026 at 13:26:43-05:00. The post had 131 likes, 11 replies and 7185 views at 2026-11-17T08:00:04.230695+00:00. The retrieved repository displayed 4 stars, 1 fork and 47 commits. These are single observations of interest, not measured acceleration.",
+      "why_early": "A fresh Apache-2.0 release supplies an inspectable multimodal accessibility application developed with blind and low-vision users. Local execution does not establish offline inference. Independent description accuracy, usability outcomes and current-street reliability are unestablished. Global saturation is unknown within the configured sources.",
+      "watch_next": "User studies examining spatial understanding, follow-up questions and how clearly the interface distinguishes imagery from current street conditions.",
+      "id": "story-5ffd1679511d",
+      "number": 1,
+      "category": "Accessible AI tools",
+      "role": "anchor",
+      "sources": [
+        {
+          "url": "https://github.com/research-ground/streetreaderAI",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/googleresearch/status/2122395958248120626",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-16T13:26:43-05:00",
+          "observed_at": "2026-11-17T08:00:04.230695+00:00",
+          "url": "https://github.com/research-ground/streetreaderAI",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 131,
+            "comments": 11,
+            "views": 7185,
+            "url": "https://x.com/googleresearch/status/2122395958248120626"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-17T08:00:04.230695+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Help a fast drafter notice the picture",
+      "script": "Turning to inference, MMFlash investigates why speculative decoding gets awkward when an answer depends on an image. A lightweight model proposes tokens, and the larger target model checks them together. That saves time when the proposals survive verification. The researchers found acceptance falling from forty-six percent for the least visually dependent quarter of tokens to twenty-two percent for the most dependent quarter. MMFlash adjusts drafter training to give extra weight to visually dependent tokens it predicts poorly. For long videos, it also uses sparse attention to reduce redundant work. Across its evaluated multimodal benchmarks, the authors report lossless decoding speedups up to three point five eight times. Serving engineers could investigate this when a fast text drafter struggles with visual questions. Compare image-dependent answers with ordinary descriptive text, and measure the complete request. The interesting opportunity is faster generation that still lets the target model decide which proposed words belong.",
+      "why_now": "The paper page lists publication November 13, 2026 and submission to Hugging Face November 16. Its November 16 discovery post at 03:27:03-05:00 had 137 likes, 32 replies and 16809 views at 2026-11-17T08:00:04.230695+00:00. The retrieved page displayed 35 upvotes.",
+      "why_early": "Recent primary research adapts multimodal drafting using token-level visual dependence and sparse attention for long video. The up-to-3.58x lossless speedup is author-reported across evaluated benchmarks, not a universal application speedup. Independent reproduction and broader model coverage remain open.",
+      "watch_next": "Matched reproductions reporting acceptance rates and complete request latency across image questions, long videos and different target models.",
+      "id": "story-a675cfcad554",
+      "number": 2,
+      "category": "AI inference research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://huggingface.co/papers/2611.18482",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/_akhaliq/status/2122245046263308321",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-16T03:27:03-05:00",
+          "observed_at": "2026-11-17T08:00:04.230695+00:00",
+          "url": "https://huggingface.co/papers/2611.18482",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 137,
+            "comments": 32,
+            "views": 16809,
+            "url": "https://x.com/_akhaliq/status/2122245046263308321"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-17T08:00:04.230695+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Keep Python function results after the process exits",
+      "script": "Closer to everyday Python, funkycache packages a persistent cache around a function decorator. Alex Chan built it after finding subtle bugs in the custom caching code behind a static site generator. Decorate an expensive function, and its result goes into SQLite, where another run can reuse it. Changes to the function's source file invalidate its cache. You can also declare dependencies on files and static values, such as a template or a library version. Build-tool authors could use funkycache to cache Python function results across repeated runs without writing retrieval and storage logic for every function. The best starting point is a deterministic operation with no side effects, like transforming an unchanged input file. Run it twice, then edit a declared dependency and check that the result rebuilds. That last step makes the experiment useful: saving time is lovely, provided yesterday's answer doesn't quietly survive today's input.",
+      "why_now": "Chan published the library introduction November 16, 2026 and says the implementation was written the preceding week. Its Lobsters posting at 07:15:54.972-06:00 had 8 points and no comments at 2026-11-17T08:00:04.230695+00:00.",
+      "why_early": "A newly introduced library turns an earlier site-specific SQLite cache into reusable function-level caching with explicit invalidation dependencies. The article supplies usage and implementation explanations; independent reliability and workload-level speed measurements are absent.",
+      "watch_next": "Real-project examples checking invalidation when source files, declared inputs and dependency versions change.",
+      "id": "story-20ac6c035d44",
+      "number": 3,
+      "category": "Developer libraries",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://alexwlchan.net/2026/funkycache",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/lpqxqi/funkycache_python_library_cache",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-16T07:15:54.972-06:00",
+          "observed_at": "2026-11-17T08:00:04.230695+00:00",
+          "url": "https://alexwlchan.net/2026/funkycache",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 8,
+            "comments": 0,
+            "url": "https://lobste.rs/s/lpqxqi/funkycache_python_library_cache"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-17T08:00:04.230695+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Compare local gesture decisions across Apple's engines",
+      "script": "Over on Apple Silicon, d1 gestures turns webcam frames into typed decisions using Liquid AI's d1-two-B. Each frame gets questions about hand gesture, facial expression and their locations. One forward pass returns probabilities without generating a text response. Ivan Fioravanti's new comparison runs the same model through MLX, Core AI on the GPU, and Core AI on the Neural Engine. On one MacBook Pro M-five Max, he reports roughly sixty-six to sixty-seven milliseconds for the GPU paths, versus one hundred ninety-seven milliseconds on the Neural Engine, with substantially lower reported power on that slower path. Interface experimenters have a concrete way to compare responsiveness with power draw. The benchmark used video because starting the live camera itself increased Neural Engine activity. Keep that distinction when reproducing it. Begin with a repeatable gesture clip, then test the complete camera application. Your preferred engine may depend on how quickly the interface actually needs its next decision.",
+      "why_now": "Fioravanti published the three-engine comparison November 16, 2026 at 14:33:01-05:00. It had 215 likes, 24 replies and 10356 views at 2026-11-17T08:00:04.230695+00:00. The retrieved repository displayed 30 stars, 3 forks and 7 commits. Reported M5 Max figures were MLX 66 ms/153 W, Core AI GPU 67 ms/120 W and Core AI Neural Engine 197 ms/37 W.",
+      "why_early": "The fresh contribution is a Core AI export and inspectable comparison across three execution paths for an existing local decision-model demo. Timing, power and matching-answer observations come from the developer on one machine. The measurement boundary for power and broader hardware behavior are unestablished; an iPhone version is described as work in progress.",
+      "watch_next": "Reproductions on additional Apple Silicon devices separating model execution, camera overhead and the scope of power measurements.",
+      "id": "story-4c67c0866fe3",
+      "number": 4,
+      "category": "Local AI experiments",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/ivanfioravanti/mlx-d1-gestures",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/ivanfioravanti/status/2122412645164744846",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-16T14:33:01-05:00",
+          "observed_at": "2026-11-17T08:00:04.230695+00:00",
+          "url": "https://github.com/ivanfioravanti/mlx-d1-gestures",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 215,
+            "comments": 24,
+            "views": 10356,
+            "url": "https://x.com/ivanfioravanti/status/2122412645164744846"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-17T08:00:04.230695+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Let agents supervise an ongoing training run",
+      "script": "Back from the break, AutoRL gives agents a job that usually involves somebody watching curves and wondering what went wrong. Its Perceptors monitor training behavior, rollouts, evaluations and efficiency. When something stalls or degrades, Proposers diagnose the problem and develop interventions. An Orchestrator reviews the recommendation, then applies approved changes through a live update or a checkpoint restart. The paper reports experiments with Qwen-three and LongCat-Flash-Lite that outperform static reinforcement-learning recipes and a general agent. Training researchers could investigate this architecture for routine supervision of a long experiment, especially when the next adjustment depends on what the run is doing now. The authors identify expensive validation as a continuing obstacle. A proposed change still needs evidence that it helps. A focused experiment would give the supervisor a known training fault, record its diagnosis, and compare recovery with a fixed recipe under a disclosed compute budget.",
+      "why_now": "AutoRL was submitted November 13, 2026. Its November 16 highlight at 15:40:02-05:00 had 212 likes, 39 replies and 12937 views at 2026-11-17T08:00:04.230695+00:00. This is one observation of interest, not measured acceleration.",
+      "why_early": "Recent primary research introduces process-level supervision of ongoing RL training through specialized agent roles. Superiority over static recipes and a general agent is author-reported. It does not establish open-ended recursive self-improvement or inexpensive validation.",
+      "watch_next": "Independent experiments documenting intervention histories, recovery from known faults and total compute spent validating proposed changes.",
+      "id": "story-64e4b1f0e4ac",
+      "number": 5,
+      "category": "AI training research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2611.17790",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/omarsar0/status/2122429507756069008",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-16T15:40:02-05:00",
+          "observed_at": "2026-11-17T08:00:04.230695+00:00",
+          "url": "https://arxiv.org/abs/2611.17790",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 212,
+            "comments": 39,
+            "views": 12937,
+            "url": "https://x.com/omarsar0/status/2122429507756069008"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-17T08:00:04.230695+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Rust nightly puts more cores into frontend compilation",
+      "script": "Next, Rust's compiler frontend now runs in parallel by default on nightly. That includes work such as type checking and borrow checking, which previously ran sequentially by default even though the LLVM backend already used multiple threads. The change has been enabled since the November fourteenth nightly, with the compiler team seeking real-project issues before stabilization. In its benchmark suite, eight frontend threads reduced mean clean cargo-check time for individual leaf crates by about forty-four percent. Incremental rebuild gains averaged a much smaller three to five percent, with the team acknowledging weak benchmarks for that case. Rust developers with slow checks have a useful trial available today. Compare clean checks and your ordinary edit-check cycle separately on a test checkout. Those are different waiting problems, and this release gives you a chance to discover which one extra frontend parallelism actually improves.",
+      "why_now": "The Rust Compiler Team published the announcement November 16, 2026. The default changed in nightly-2026-11-14. Its Lobsters posting at 09:22:38.857-06:00 had 26 points and no comments at 2026-11-17T08:00:04.230695+00:00.",
+      "why_early": "The meaningful change is default enablement on nightly ahead of stabilization, following years of opt-in support. Reported performance concerns clean builds of individual leaf crates, with an eight-thread mean cargo-check wall-time reduction of 44.23%. Incremental results are modest and explicitly less well characterized. This is distinct from the previously covered Rust 1.100 never-type release.",
+      "watch_next": "Real-project nightly reports covering correctness, clean and incremental build times, and remaining stabilization issues.",
+      "id": "story-b1036640ef17",
+      "number": 6,
+      "category": "Compiler development",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://blog.rust-lang.org/2026/11/16/enabling-parallel-frontend-on-nightly",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/8eivbk/enabling_parallel_frontend_on_nightly",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-16T09:22:38.857-06:00",
+          "observed_at": "2026-11-17T08:00:04.230695+00:00",
+          "url": "https://blog.rust-lang.org/2026/11/16/enabling-parallel-frontend-on-nightly",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 26,
+            "comments": 0,
+            "url": "https://lobste.rs/s/8eivbk/enabling_parallel_frontend_on_nightly"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-17T08:00:04.230695+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Prove that a valid trade can actually finish",
+      "script": "For a verification example, Harmonic has launched Rust support for Aristotle, alongside a case study with Manifest's open-source Solana order book. The company reports twenty-eight proved properties, including conditions under which a valid swap completes and an accounting of where swap errors originate. It also describes two findings that Manifest corrected. One involved rounding: a fill could meet the requested target, then fail during a subtraction that should no longer have happened. Another involved a conversion that could fail on a cancellation path even though its result wasn't used. Smart-contract developers and verification learners get a concrete example of asking whether valid operations make progress, alongside checking that funds remain protected. Each result includes a Lean statement the team can inspect. Follow the rounding example from its arithmetic failure to the corrected stopping rule. The useful habit is making successful completion an explicit property you can examine.",
+      "why_now": "Harmonic announced Rust support November 16, 2026 at 16:11:44-05:00. The post had 46 likes, 5 replies and 3038 views at 2026-11-17T08:00:04.230695+00:00. The accompanying first-party case study reports 28 proved results across 8 areas and 2 corrected findings.",
+      "why_early": "The fresh capability is Rust support demonstrated through a concrete order-book verification case. Proof results and remediation are vendor-reported. Statements depend on explicit liquidity, funding, range and token-program assumptions; they do not certify every behavior of the deployed system or eliminate external failure modes.",
+      "watch_next": "Independent inspection of the Lean statements, their assumptions and their correspondence to the corrected Rust implementation.",
+      "id": "story-910e519aaf48",
+      "number": 7,
+      "category": "crypto",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.harmonic.fun/aristotle/case-studies/manifest",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/harmonicmath/status/2122437487809425792",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-16T16:11:44-05:00",
+          "observed_at": "2026-11-17T08:00:04.230695+00:00",
+          "url": "https://www.harmonic.fun/aristotle/case-studies/manifest",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 46,
+            "comments": 5,
+            "views": 3038,
+            "url": "https://x.com/harmonicmath/status/2122437487809425792"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-17T08:00:04.230695+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Run a Git forge from one binary",
+      "script": "Back to project infrastructure, rbit is a newly introduced self-hosted Git forge written in Rust. Its current site identifies version zero point two point two and describes one binary backed by SQLite and an embedded store, with no additional services to run. Git works over HTTPS and a built-in SSH server. Teams, deploy keys, releases, mirrors and webhooks give a small project room to grow beyond a bare repository directory. Developers maintaining a private lab or a small collaboration could use rbit to host Git repositories while exploring a compact deployment. The site also lists two-factor sign-in, scoped tokens and an audit log; those features still deserve hands-on checking. Start with a disposable repository and another collaborator account. Push a branch, limit access, and follow a webhook through to its receiver. That gives you a practical tour of the pieces your own forge would need.",
+      "why_now": "Show HN introduced rbit November 15, 2026 at 21:54:20+00:00. It had 22 points and 12 comments at 2026-11-17T08:00:04.230695+00:00. The primary site identifies version 0.2.2.",
+      "why_early": "A fresh public introduction supplies an operating forge and a documented single-binary architecture. Feature descriptions come from the project; independent security review, backup-and-restore reliability and deployment-scale performance are unestablished. The site's rendering time is not treated as a general performance benchmark.",
+      "watch_next": "Independent installation reports covering repository recovery, permissions, SSH behavior and webhook delivery.",
+      "id": "story-dce95750aed0",
+      "number": 8,
+      "category": "Self-hosted developer tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://rbit.sh",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50511238",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-15T21:54:20+00:00",
+          "observed_at": "2026-11-17T08:00:04.230695+00:00",
+          "url": "https://rbit.sh",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 22,
+            "comments": 12,
+            "url": "https://news.ycombinator.com/item?id=50511238"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-17T08:00:04.230695+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Follow a cropped Wii picture into an eight-bit controller",
+      "script": "And finally, GaryOderNichts has gone digging into why Wii games can look worse through a Wii U's HDMI output than on an original Wii. The new account examines forced cropping and color bleed inside Wii Mode. Behind the picture sits a little eight-bit controller that translates the old Wii display registers into commands for the newer graphics hardware. To investigate its firmware, Gary first wrote a processor specification for Ghidra, drawing on related processors the tool already understood. The reverse engineering revealed a viewport configured to simulate overscan, cropping up to sixteen pixels. Changing the firmware bytes changes those viewport settings. Console-preservation tinkerers and reverse-engineering students get a wonderfully concrete path from a visible annoyance to the register values causing it. Follow that path through the writeup. Sometimes the missing edge of a game sends you all the way into a tiny processor hiding behind the television picture.",
+      "why_now": "GaryOderNichts published the first-person technical account November 16, 2026. Its Lobsters posting at 16:39:54.319-06:00 had 23 points and no comments at 2026-11-17T08:00:04.230695+00:00.",
+      "why_early": "The fresh contribution is a reverse-engineering account identifying display-firmware behavior behind longstanding Wii Mode problems. The processor-specification work dates to 2024. The excerpt documents direct viewport patching but does not establish a broadly tested consumer fix, complete color-bleed remediation or compatibility across titles.",
+      "watch_next": "Reproducible before-and-after display tests and clearly documented patch behavior across games and output configurations.",
+      "id": "story-21155fe202ea",
+      "number": 9,
+      "category": "Offbeat experiments",
+      "role": "closer",
+      "sources": [
+        {
+          "url": "https://garyodernichts.blogspot.com/2026/11/improving-wii-us-wii-mode.html",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/sz6o8w/improving_wii_u_s_wii_mode",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-16T16:39:54.319-06:00",
+          "observed_at": "2026-11-17T08:00:04.230695+00:00",
+          "url": "https://garyodernichts.blogspot.com/2026/11/improving-wii-us-wii-mode.html",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 23,
+            "comments": 0,
+            "url": "https://lobste.rs/s/sz6o8w/improving_wii_u_s_wii_mode"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-17T08:00:04.230695+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    }
+  ],
+  "interlude": {
+    "after_story": 4,
+    "title": "Thanks to Intelligrit",
+    "script": "Between local model experiments and training supervision, thank you to Intelligrit, this episode's sponsor. Follow your next curious idea to intelligrit dot com."
+  }
+}

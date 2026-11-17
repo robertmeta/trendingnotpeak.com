@@ -1,0 +1,53 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0.0,
+      "title": "Opening"
+    },
+    {
+      "startTime": 22.567,
+      "title": "Explore a neighborhood through speech and questions"
+    },
+    {
+      "startTime": 81.604,
+      "title": "Help a fast drafter notice the picture"
+    },
+    {
+      "startTime": 140.96,
+      "title": "Keep Python function results after the process exits"
+    },
+    {
+      "startTime": 195.515,
+      "title": "Compare local gesture decisions across Apple's engines"
+    },
+    {
+      "startTime": 256.473,
+      "title": "Thanks to Intelligrit"
+    },
+    {
+      "startTime": 267.268,
+      "title": "Let agents supervise an ongoing training run"
+    },
+    {
+      "startTime": 326.06,
+      "title": "Rust nightly puts more cores into frontend compilation"
+    },
+    {
+      "startTime": 379.335,
+      "title": "Prove that a valid trade can actually finish"
+    },
+    {
+      "startTime": 435.412,
+      "title": "Run a Git forge from one binary"
+    },
+    {
+      "startTime": 490.607,
+      "title": "Follow a cropped Wii picture into an eight-bit controller"
+    },
+    {
+      "startTime": 545.403,
+      "title": "Closing"
+    }
+  ]
+}
