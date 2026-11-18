@@ -1,0 +1,442 @@
+{
+  "date": "2026-11-18",
+  "title": "TNP - 2026-11-18",
+  "intro": "Welcome to Trending Not Peak for Wednesday, November 18. Today, share a database experiment through a link, give a reasoning loop a stopping signal, and meet some numerical birds. AI helped write this episode, and this voice is synthetic. Explore the stories at trending not peak dot com.",
+  "outro": "A few experiments to take with you: Datasette Lite to share database demos, Unref to find unused Python code, and d1 gestures to explore mobile gesture interfaces. Find their sources at trending not peak dot com. This is Trending Not Peak. Have fun making an idea small enough to try, even if your first prototype has feathers.",
+  "schema_version": 1,
+  "audio": {
+    "url": "https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-11-18/trending-not-peak-2026-11-18-kinetic-grid-r2.mp3",
+    "duration_seconds": 614.607143,
+    "bytes": 9835817,
+    "embedded_chapters": 13,
+    "sha256": "d6ae189fa0b8b2b36f488ca774c7fa767673a2d7c26a9f00ddc0569ff4bfd781"
+  },
+  "stories": [
+    {
+      "title": "Put a reproducible database demo inside a link",
+      "script": "First up, Datasette Lite has a complete rewrite that makes a browser tab a surprisingly capable database demonstration. Simon Willison's Python application runs through WebAssembly and Pyodide, with service workers helping it behave like the server version. A carefully constructed link can select a Datasette release or development commit, load a database, choose among more than a hundred SQLite versions, and install plugins. That gives library maintainers a lovely way to share database demos or reproduce a bug without asking somebody to launch a server. The announcement demonstrates a mapping plugin displaying country boundaries from a SQLite database. Remote data files need open cross-origin access headers, so an arbitrary download link won't always work. Datasette Lite makes the configuration part of what you share. Imagine sending a teammate the exact database, plugin and application version behind a confusing result, with the experiment ready to open in their browser.",
+      "why_now": "Willison published the rewrite account November 17, 2026. His announcement at 12:37:41-05:00 had 165 likes, 64 replies and 15655 views at 2026-11-18T08:00:06.329017+00:00. This is a single interest observation, not measured acceleration.",
+      "why_early": "The meaningful change is a complete service-worker-based rewrite with selectable Datasette references, SQLite versions and plugins. The first-party account demonstrates a concrete workflow; broad plugin compatibility and independent browser testing remain unestablished. Global saturation is unknown within the configured sources.",
+      "watch_next": "Reproducible bug-report links and independent tests of plugin compatibility across browser environments.",
+      "id": "story-6f0fb0223e38",
+      "number": 1,
+      "category": "Developer tools",
+      "role": "anchor",
+      "sources": [
+        {
+          "url": "https://simonwillison.net/2026/Nov/17/datasette-lite",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/simonw/status/2122746008736276734",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-17T12:37:41-05:00",
+          "observed_at": "2026-11-18T08:00:06.329017+00:00",
+          "url": "https://simonwillison.net/2026/Nov/17/datasette-lite",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 165,
+            "comments": 64,
+            "views": 15655,
+            "url": "https://x.com/simonw/status/2122746008736276734"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-18T08:00:06.329017+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Give latent reasoning a measure of progress",
+      "script": "Turning inside the model, Energy-Based Reasoners give a repeated reasoning loop something to follow. These models refine hidden internal states rather than spelling out every intermediate step. The researchers train an energy function that scores those states. Its gradient guides the next refinement, and the score provides a signal for when to stop. Their exploration-based training also visits additional candidate states to shape that landscape. Across four algorithmic reasoning benchmarks, the authors report matching or beating earlier recurrent models. On Sudoku-Extreme, they report ninety-nine point nine percent accuracy with three hundred forty-five times less inference compute than the next-best model, at comparable training compute. That's a specific research comparison, rather than a promised acceleration for chat assistants. Researchers studying adaptive computation could investigate whether a learned progress signal spends fewer iterations on easy problems. Compare correct answers, stopping behavior and compute together; a confident stopping rule needs to recognize when the puzzle is actually finished.",
+      "why_now": "The paper page lists publication November 6, 2026 and submission to Hugging Face November 17. The November 17 highlight at 17:08:15-05:00 had 205 likes, 6 replies and 12708 views at 2026-11-18T08:00:06.329017+00:00. The retrieved paper page displayed 7 upvotes.",
+      "why_early": "Recent primary research supplies an explicit energy formulation for latent-state refinement and stopping. The 345x inference-compute comparison concerns Sudoku-Extreme and the next-best evaluated model; independent reproduction and transfer beyond algorithmic benchmarks remain open. The highlight does not establish a new paper revision.",
+      "watch_next": "Independent matched-compute evaluations of stopping reliability and generalization to unfamiliar reasoning tasks.",
+      "id": "story-3e3c8acb7348",
+      "number": 2,
+      "category": "AI research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://huggingface.co/papers/2611.08977",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/_akhaliq/status/2122814097649742258",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-17T17:08:15-05:00",
+          "observed_at": "2026-11-18T08:00:06.329017+00:00",
+          "url": "https://huggingface.co/papers/2611.08977",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 205,
+            "comments": 6,
+            "views": 12708,
+            "url": "https://x.com/_akhaliq/status/2122814097649742258"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-18T08:00:06.329017+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Find Python names that nobody uses",
+      "script": "Closer to everyday maintenance, Unref is a newly introduced Python dead-code finder written in Rust and built on Ruff's parser. Its useful detail is how it matches names: a used function called parse in one module shouldn't hide an unused parse somewhere else. The project also includes rules for frameworks such as pytest, Pydantic and SQLAlchemy, where a name can have a job that ordinary references don't reveal. Python maintainers could use Unref to find unused Python code before a cleanup or refactor. The author reports checking roughly twenty-three hundred CPython files in under a second, about twenty times faster than Vulture in that benchmark. Speed makes repeated inspection inviting, although a report still needs review before deletion. Start with a module you know well, examine the proposed unused names, and check whether framework callbacks remain recognized. Unref gives that cleanup conversation a concrete set of candidates.",
+      "why_now": "Show HN introduced Unref November 16, 2026 at 13:30:30+00:00. It had 14 points and no comments at 2026-11-18T08:00:06.329017+00:00. The retrieved repository displayed 15 stars, no forks and 107 commits.",
+      "why_early": "A fresh MIT-licensed public introduction supplies module-aware name matching and framework-specific rules. The under-one-second and 20x comparisons are project measurements on CPython 3.15.0, not independent accuracy or general workload results.",
+      "watch_next": "Real-project reports measuring false positives around dynamic imports, framework callbacks and public APIs.",
+      "id": "story-a712a15bc038",
+      "number": 3,
+      "category": "Developer tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/Apakottur/unref",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50517410",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-16T13:30:30+00:00",
+          "observed_at": "2026-11-18T08:00:06.329017+00:00",
+          "url": "https://github.com/Apakottur/unref",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 14,
+            "comments": 0,
+            "url": "https://news.ycombinator.com/item?id=50517410"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-18T08:00:06.329017+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Revisit a driving scene with a different LiDAR",
+      "script": "Out on the simulated road, NVIDIA Research's LidarVerse generates the laser scans a vehicle uses to describe its surroundings in three dimensions. The same model changes jobs according to the scene evidence it receives. Maps can guide a new scene, an observed sequence can lead into a forecast, and sparse recorded sweeps can anchor a reconstruction viewed from another position. A shared tokenizer supports thirty-two, sixty-four and one hundred twenty-eight beam sensors. The team reports that its distilled causal checkpoint runs at ten frames per second on one H-one-hundred GPU. For perception researchers, the opening is testing how a scene might appear under a different viewpoint or scanning configuration. That could help investigate a sensor change before collecting an entirely new dataset. Generated scans still need comparison with recorded geometry. Pick a scene with known measurements and inspect whether important objects remain consistent as you change the virtual sensor.",
+      "why_now": "NVIDIA highlighted LidarVerse November 16, 2026 at 12:40:22-05:00. The post had 218 likes, 40 replies and 15090 views at 2026-11-18T08:00:06.329017+00:00. The primary project page presents code and checkpoint links.",
+      "why_early": "A newly highlighted primary research system unifies generation, forecasting and reconstruction-grounded resimulation across sensor configurations. Ten FPS is a team-reported result on a single H100. Independent fidelity, downstream perception benefits and deployment suitability remain unestablished.",
+      "watch_next": "Independent comparisons of generated and recorded geometry, followed by downstream perception evaluations across sensor configurations.",
+      "id": "story-603845c9be38",
+      "number": 4,
+      "category": "Physical AI research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://bit.ly/4zIQki0",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/nvidiaai/status/2122384294845071648",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-16T12:40:22-05:00",
+          "observed_at": "2026-11-18T08:00:06.329017+00:00",
+          "url": "https://bit.ly/4zIQki0",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 218,
+            "comments": 40,
+            "views": 15090,
+            "url": "https://x.com/nvidiaai/status/2122384294845071648"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-18T08:00:06.329017+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Share a tracking model across live camera feeds",
+      "script": "Back with ordinary cameras, tamserve tackles the machinery around tracking objects across video frames. Its introduction explains that SAM Two and the smaller EdgeTAM were written around one recorded video at a time. Tamserve supplies a serving engine for live, multiple-camera tracking, with one model copy per GPU serving the cameras. The project describes operation on one GPU or several and claims about four times less GPU memory than the original code, with identical masks. Those comparisons come from the project. Developers building a workshop camera tool or a live visual interface could investigate whether sharing the model makes several feeds practical on existing hardware. Begin with two repeatable video streams and a clearly identifiable object in each. Measure memory alongside frame delay and tracking quality. The useful result would be a service that keeps up with both streams without quietly sacrificing the object you wanted to follow.",
+      "why_now": "Show HN introduced tamserve November 16, 2026 at 21:14:39+00:00. It had 36 points and 2 comments at 2026-11-18T08:00:06.329017+00:00. The retrieved repository displayed 85 stars, 6 forks and 39 commits.",
+      "why_early": "A fresh Apache-2.0 introduction provides a concrete live multi-camera serving implementation. The repository description also lists SAM3, while the visible README introduction emphasizes SAM 2 and EdgeTAM. Memory, speed and mask-equivalence claims lack independent confirmation in the evidence.",
+      "watch_next": "Reproductions reporting camera count, model choice, GPU memory, end-to-end delay and mask equivalence.",
+      "id": "story-cc198026e3a4",
+      "number": 5,
+      "category": "AI serving tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/aryamandarda/tamserve",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50523377",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-16T21:14:39+00:00",
+          "observed_at": "2026-11-18T08:00:06.329017+00:00",
+          "url": "https://github.com/aryamandarda/tamserve",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 36,
+            "comments": 2,
+            "url": "https://news.ycombinator.com/item?id=50523377"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-18T08:00:06.329017+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Gesture decisions move onto phones and tablets",
+      "script": "Back from the break, a quick return to d1 gestures. Yesterday, we covered d1 gestures on the Mac. The project now includes iOS and iPad apps. Ivan Fioravanti reports about one hundred eighty milliseconds per decision on an iPhone eighteen Pro's Neural Engine, compared with about two hundred seventy on its GPU. He also reports about two hundred thirty milliseconds on an iPad Pro M-five. These are developer measurements on those devices. The underlying Liquid AI decision model answers typed questions about gestures and expressions without generating a chat response. Interface makers can now investigate that interaction on a handheld device. Use d1 gestures to explore mobile gesture interfaces, beginning with a few repeatable hand positions and measuring the complete camera interaction. The update also requires downloading the models again after a change involving precompiled questions. A desktop experiment has gained a much more portable place to try it.",
+      "why_now": "Fioravanti announced the iOS and iPad additions November 17, 2026 at 10:43:23-05:00. The post had 84 likes, 15 replies and 4384 views at 2026-11-18T08:00:06.329017+00:00. The retrieved repository showed 47 stars, 6 forks and 15 commits, versus 30 stars, 3 forks and 7 commits in yesterday's evidence.",
+      "why_early": "The material change is the addition of mobile applications, previously described as work in progress. Device timings are author-reported per-decision measurements; complete camera latency, sustained power use, accuracy and distribution availability remain unestablished.",
+      "watch_next": "Independent mobile builds measuring complete interaction latency, sustained operation and gesture accuracy.",
+      "id": "story-4c67c0866fe3",
+      "number": 6,
+      "category": "Local AI experiments",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/ivanfioravanti/mlx-d1-gestures",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/ivanfioravanti/status/2122717243632910647",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-17T10:43:23-05:00",
+          "observed_at": "2026-11-18T08:00:06.329017+00:00",
+          "url": "https://github.com/ivanfioravanti/mlx-d1-gestures",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 84,
+            "comments": 15,
+            "views": 4384,
+            "url": "https://x.com/ivanfioravanti/status/2122717243632910647"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-18T08:00:06.329017+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ],
+      "follow_up": {
+        "previous_date": "2026-11-17",
+        "what_changed": "The project now includes iOS and iPad apps.",
+        "why_revisit": "Mobile applications turn yesterday's Mac-only experiment and planned iPhone work into a concrete handheld implementation with initial device measurements."
+      }
+    },
+    {
+      "title": "Inspect the evidence behind an autonomous security test",
+      "script": "At the application boundary, Reflection has introduced Laser, an autonomous penetration-testing harness for its terminal agent, Mirror. The interesting design is the separation between acting and reviewing. An executor tests the scoped target and records observations in a shared evidence ledger. A separate supervisor reviews that evidence and guides the next turn, including when an approach stalls. Reflection says findings include attack graphs and captured evidence, giving security teams a way to inspect how a conclusion was reached. Laser is a research preview available exclusively to commercial partners accepted into the new Trusted Access Program. Security teams evaluating agent-assisted testing could examine whether that ledger makes findings easier to reproduce and turn into repairs. For a trial on an authorized test application, follow one finding backward from the report to the recorded observation. The practical question is whether another engineer can establish the same failure from that trail.",
+      "why_now": "Reflection launched the program November 17, 2026. Its announcement at 12:32:00-05:00 had 88 likes, 2 replies and 6293 views at 2026-11-18T08:00:06.329017+00:00.",
+      "why_early": "The fresh change is restricted research-preview access to Laser through a vetted commercial partner program. The first-party description documents scope, ledger and supervisor architecture; independent finding quality, containment behavior and operational effectiveness are unestablished.",
+      "watch_next": "Partner evaluations showing reproducible findings, clear scope enforcement and useful evidence trails through remediation.",
+      "id": "story-aa4cfbd0ca30",
+      "number": 7,
+      "category": "Agent security tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://reflection.ai/blog/launching-trusted-access-program",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/reflection_ai/status/2122744576708374715",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-17T12:32:00-05:00",
+          "observed_at": "2026-11-18T08:00:06.329017+00:00",
+          "url": "https://reflection.ai/blog/launching-trusted-access-program",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 88,
+            "comments": 2,
+            "views": 6293,
+            "url": "https://x.com/reflection_ai/status/2122744576708374715"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-18T08:00:06.329017+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Automate proofs for a particular family of compilers",
+      "script": "Over at the proof bench, Adam Chlipala describes new research using e-graphs to automate compiler verification. E-graphs efficiently represent many equivalent expressions, which makes them useful for exploring rewrites. This work applies that machinery to compiler definitions for languages the tool hasn't previously seen, without additional annotations written specifically to guide the proof. There's an important boundary around the result: these are research compilers for functional languages, with intermediate stages checked by sound type systems. This isn't an automatic correctness check for GCC or Clang. Programming-language researchers could investigate whether a compiler structured around those typed stages becomes easier to verify as it evolves. The paper is headed to POPL twenty twenty-seven; Chlipala points readers to Dustin Jamner's dissertation while the final paper is still pending. Follow the article's small function example through its compilation stages and see what each representation makes possible to prove.",
+      "why_now": "Chlipala published the first-person research explanation November 17, 2026. Its Lobsters posting at 12:18:12.198-06:00 had 9 points and no comments at 2026-11-18T08:00:06.329017+00:00.",
+      "why_early": "The author describes fresh POPL 2027 research and identifies a dissertation containing details, while explicitly stating that the final paper is not yet posted. Applicability is limited to the described family of typed functional-language compilers; the priority claim is qualified by the author.",
+      "watch_next": "The final paper and reproducible examples clarifying supported compiler definitions, proof scope and automation limits.",
+      "id": "story-b2631e103aa7",
+      "number": 8,
+      "category": "Compiler research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://stng.substack.com/p/automatic-checking-of-compiler-correctness",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/hode45/automatic_checking_compiler",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-17T12:18:12.198-06:00",
+          "observed_at": "2026-11-18T08:00:06.329017+00:00",
+          "url": "https://stng.substack.com/p/automatic-checking-of-compiler-correctness",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 9,
+            "comments": 0,
+            "url": "https://lobste.rs/s/hode45/automatic_checking_compiler"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-18T08:00:06.329017+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Read the agent-engineering talks at your own pace",
+      "script": "For something you can explore between experiments, AI Engineer Code Summit has published reading editions of fifty sessions. Each session brings together an illustrated essay, a recording and a full timestamped transcript. The November conference covered coding agents, code review and software factories. That packaging is useful if a technical talk contains one idea you want to study carefully without scrubbing through an entire conference day. Agent builders can search by topic, speaker or company, read the explanation, then return to the recorded demonstration for context. The collection includes talks about Claude Code practices and the infrastructure behind faster inference. These are speakers' accounts and arguments, rather than a common benchmark. Pick one design decision relevant to your own project and turn it into a small comparison. Having the written version beside the video makes the details much easier to revisit.",
+      "why_now": "The organizer announced the fifty written sessions November 17, 2026 at 10:00:03-05:00. The post had 112 likes, 7 replies and 7398 views at 2026-11-18T08:00:06.329017+00:00. The primary collection lists 27 November 11 sessions and 23 November 12 sessions.",
+      "why_early": "The fresh contribution is an organizer-published learning collection with illustrated reading editions and timestamped transcripts. Individual claims retain their speakers' evidentiary limits; publication of the collection does not independently validate those claims.",
+      "watch_next": "Worked reproductions that turn specific talk ideas into inspectable agent configurations and measured comparisons.",
+      "id": "story-d69d6d5a1f9e",
+      "number": 9,
+      "category": "Developer learning",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://ai.engineer/code/2026",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/aidotengineer/status/2122706337641763147",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-17T10:00:03-05:00",
+          "observed_at": "2026-11-18T08:00:06.329017+00:00",
+          "url": "https://ai.engineer/code/2026",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 112,
+            "comments": 7,
+            "views": 7398,
+            "url": "https://x.com/aidotengineer/status/2122706337641763147"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-18T08:00:06.329017+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Blend a bird from numbers and colors",
+      "script": "And finally, Birds drawn by code gives procedural graphics a very approachable subject. Nicolas Jonason's interactive generator represents each bird with forty-six numbers and seventeen colors. Drag across the map, and it blends the nearby birds. Open the panel underneath, and you can read the code, which Jonason says an agent wrote for him. Creative coders and people learning generative art get a small, inspectable example of turning a visual family into adjustable parameters. You could follow how a shape changes as you move, then find the corresponding operation in the implementation. The demo doesn't establish a general method for generating animals, and it doesn't need to. There's plenty to explore in one numerical flock. Move between two birds and look for the moment the blend starts to feel like a new character.",
+      "why_now": "Show HN introduced Birds as Code November 16, 2026 at 18:48:54+00:00. It had 22 points and 14 comments at 2026-11-18T08:00:06.329017+00:00.",
+      "why_early": "A fresh public introduction supplies an interactive procedural generator with readable code and a specified parameter representation. Agent authorship is the creator's attribution, not a controlled evaluation of autonomous visual programming.",
+      "watch_next": "Explanations or extensions showing how individual parameters control recognizable features and interpolation behavior.",
+      "id": "story-55edba111c34",
+      "number": 10,
+      "category": "Offbeat experiments",
+      "role": "closer",
+      "sources": [
+        {
+          "url": "https://erl-j.github.io/fun-zone/birds.html",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50521287",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-16T18:48:54+00:00",
+          "observed_at": "2026-11-18T08:00:06.329017+00:00",
+          "url": "https://erl-j.github.io/fun-zone/birds.html",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 22,
+            "comments": 14,
+            "url": "https://news.ycombinator.com/item?id=50521287"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-18T08:00:06.329017+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    }
+  ],
+  "interlude": {
+    "after_story": 5,
+    "title": "Thanks to Intelligrit",
+    "script": "Thanks to Intelligrit, this episode's sponsor, for supporting another day of useful discoveries. Keep exploring at intelligrit dot com."
+  }
+}

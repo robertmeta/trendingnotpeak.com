@@ -1,0 +1,57 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0.0,
+      "title": "Opening"
+    },
+    {
+      "startTime": 21.202,
+      "title": "Put a reproducible database demo inside a link"
+    },
+    {
+      "startTime": 78.158,
+      "title": "Give latent reasoning a measure of progress"
+    },
+    {
+      "startTime": 142.236,
+      "title": "Find Python names that nobody uses"
+    },
+    {
+      "startTime": 197.033,
+      "title": "Revisit a driving scene with a different LiDAR"
+    },
+    {
+      "startTime": 252.469,
+      "title": "Share a tracking model across live camera feeds"
+    },
+    {
+      "startTime": 308.307,
+      "title": "Thanks to Intelligrit"
+    },
+    {
+      "startTime": 317.744,
+      "title": "Gesture decisions move onto phones and tablets"
+    },
+    {
+      "startTime": 375.02,
+      "title": "Inspect the evidence behind an autonomous security test"
+    },
+    {
+      "startTime": 433.976,
+      "title": "Automate proofs for a particular family of compilers"
+    },
+    {
+      "startTime": 492.454,
+      "title": "Read the agent-engineering talks at your own pace"
+    },
+    {
+      "startTime": 544.769,
+      "title": "Blend a bird from numbers and colors"
+    },
+    {
+      "startTime": 591.802,
+      "title": "Closing"
+    }
+  ]
+}
