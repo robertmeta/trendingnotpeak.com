@@ -1,0 +1,395 @@
+{
+  "date": "2026-11-19",
+  "title": "TNP - 2026-11-19",
+  "intro": "It's Thursday, November 19. Welcome to Trending Not Peak. Today, share build work across enormous checkouts, explore interactive video generation, and give exact geometry a Rust interface. AI helped write this episode, and the voice is synthetic. Explore every story at trending not peak dot com.",
+  "outro": "Take a few experiments with you: ABFS to reuse Android build work, springrep to generate exact CAD solids, and FastFrames to test interactive video generation. Find the sources at trending not peak dot com. This is Trending Not Peak. Have fun finding the smallest version of something you've wanted to build. A dancing baby is already handling the music.",
+  "schema_version": 1,
+  "audio": {
+    "url": "https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-11-19/trending-not-peak-2026-11-19-kinetic-grid-r2.mp3",
+    "duration_seconds": 609.233197,
+    "bytes": 9750053,
+    "embedded_chapters": 12,
+    "sha256": "48fff20740921b4df646271053210e604dee4b7add78d971cae84b1ee9dfd0f0"
+  },
+  "stories": [
+    {
+      "title": "Make enormous workspaces cheaper to start",
+      "script": "First up, ABFS makes a fresh Android workspace a much smaller interruption. Google's Android team has open-sourced Another Build File Service, spanning a Linux filesystem module, background services and server infrastructure. It loads files when needed and shares cached source and build results through content-based identifiers. The team reports reducing checkout time from about thirty-six minutes to under eight seconds, and full builds from about eighty minutes to just over two. Those Android results depend on the shared infrastructure and available cached work; they aren't a promise that arbitrary compilation suddenly takes two minutes. The possibility is especially useful for teams creating disposable workspaces for people or coding agents. ABFS lets them reuse Android build work instead of making every new checkout start cold. Its design also targets other massive Git projects. Follow what happens when two workspaces need the same build output, then investigate what changes when one input differs. That's a practical place to begin understanding those dramatic numbers.",
+      "why_now": "The Android ABFS Team published its open-source announcement November 17, 2026. The November 18 Lobsters posting had 10 points and 1 comment at 2026-11-19T08:00:06.248268+00:00. These are single observations of interest, not measured acceleration.",
+      "why_early": "The material change is public availability of infrastructure already used for Android workflows. The emerging opportunity is adapting its content-addressed workspace and build-cache design. Reported Android timings do not establish equivalent gains for other projects or uncached builds; global saturation is unknown within the configured sources.",
+      "watch_next": "Independent deployments documenting cache prerequisites, infrastructure costs and behavior after source or build inputs change.",
+      "id": "story-a35503d6298b",
+      "number": 1,
+      "category": "Developer infrastructure",
+      "role": "anchor",
+      "sources": [
+        {
+          "url": "https://developers.googleblog.com/en/accelerating-development-for-massive-git-repositories",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/0ajpus/accelerating_development_for_massive",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-18T10:00:07.744-06:00",
+          "observed_at": "2026-11-19T08:00:06.248268+00:00",
+          "url": "https://developers.googleblog.com/en/accelerating-development-for-massive-git-repositories",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 10,
+            "comments": 1,
+            "url": "https://lobste.rs/s/0ajpus/accelerating_development_for_massive"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-19T08:00:06.248268+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Improve an agent by changing one runtime component",
+      "script": "Turning to the software around an agent, Harnesses That Improve Themselves studies a controlled way to revise that software while leaving model weights frozen. The framework separates context, control flow, action interfaces and verification. An optimizer diagnoses failures, patches a component, validates the candidate and deploys an accepted update. That gives agent builders something more specific to investigate than asking for a better prompt. A loop breaker, for example, can change what happens when repeated actions stop producing progress. In the reported SWE-bench Lite experiment, gated modular edits reached forty percent accuracy at forty-six point seven thousand tokens per task. A full rewrite reached forty-two point five percent at four hundred fifty-one point six thousand tokens. Those figures come from a small, forty-issue held-out set. The authors also report better cross-model transfer for modular edits. Pick one recurring failure in your own test harness and evaluate a bounded runtime change against untouched tasks. Keep the evaluator outside the editable components.",
+      "why_now": "Submitted November 17, 2026 and highlighted November 18 at 10:34:02-05:00. The discovery post had 159 likes, 47 replies and 11234 views at 2026-11-19T08:00:06.248268+00:00.",
+      "why_early": "Recent primary research introduces a modular self-modification framework and validation gates. Detailed numerical comparisons are reported in the discovery account and concern 40 held-out issues. This is distinct from previously covered supervision of ongoing RL training; independent replication and operational transfer remain open.",
+      "watch_next": "Reproductions using larger untouched task sets, disclosed optimization costs and evaluators protected from modification.",
+      "id": "story-1ab67f281b20",
+      "number": 2,
+      "category": "AI research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2611.22299",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/omarsar0/status/2123077276350976396",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-18T10:34:02-05:00",
+          "observed_at": "2026-11-19T08:00:06.248268+00:00",
+          "url": "https://arxiv.org/abs/2611.22299",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 159,
+            "comments": 47,
+            "views": 11234,
+            "url": "https://x.com/omarsar0/status/2123077276350976396"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-19T08:00:06.248268+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Explore video generation with shorter feedback loops",
+      "script": "Over in moving pictures, Apple's FastFrames release includes two autoregressive video diffusion models that generate four-hundred-eighty-line video in two steps. The smaller model has one point three billion parameters; the larger has fourteen billion. The release also includes an optimized LingBot model for camera-conditioned control. Creative-tool developers can use FastFrames to test interactive video generation, with profiling scripts and a browser-based control demo providing concrete starting points. For the smaller model on one GPU, the published component timings total thirty-five point four milliseconds with a full key-value cache. That timing describes the listed generation components, rather than every part of a complete interactive application. Installation currently specifies Linux and an NVIDIA GPU with a CUDA twelve point eight compatible driver. An Apple release doesn't mean an Apple Silicon runtime is included. For a first experiment, repeat a simple camera movement and measure input-to-visible-response time alongside the consistency of the generated scene.",
+      "why_now": "FastFrames was highlighted November 18, 2026 at 01:47:04-05:00. The post had 91 likes, 23 replies and 6291 views at 2026-11-19T08:00:06.248268+00:00. The retrieved Apple model page displayed 233 likes and documented released models, checkpoints and profiling commands.",
+      "why_early": "A newly surfaced official implementation supplies 1.3B and 14B models, training material and an interactive integration. The 35.4ms component total concerns FastFrames-S on one GPU with a full KV cache. Independent end-to-end latency, hardware coverage and interactive consistency remain unestablished; licensing is apple-amlr.",
+      "watch_next": "Independent installations reporting GPU specifications, complete interaction latency and scene consistency during camera control.",
+      "id": "story-0f2a3986db5a",
+      "number": 3,
+      "category": "Open video models",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://huggingface.co/apple/FastFrames-L",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/ivanfioravanti/status/2122944663904747898",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-18T01:47:04-05:00",
+          "observed_at": "2026-11-19T08:00:06.248268+00:00",
+          "url": "https://huggingface.co/apple/FastFrames-L",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 91,
+            "comments": 23,
+            "views": 6291,
+            "url": "https://x.com/ivanfioravanti/status/2122944663904747898"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-19T08:00:06.248268+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Build exact CAD geometry through Rust",
+      "script": "Heading onto the workbench, springrep is a newly introduced CAD kernel written in Rust. It represents solid boundaries using analytic surfaces and NURBS, the mathematical curves and surfaces used in precise design. Its operations include combining and subtracting solids, rounding edges, sweeping profiles and exporting STEP files. Robotics developers and makers building procedural parts could use springrep to generate exact CAD solids from code. The introductory example creates a plate, cuts a circular opening, rounds an edge and writes a bracket file. Faces retain names tied to the features that created them, giving later operations something meaningful to select. The project says every result is validated, returning an error when a solid fails its checks. Its accuracy and benchmark claims still need independent reproduction. There's an inviting first exercise here: change one bracket dimension, inspect the resulting volume and reopen the STEP export in another CAD application. That connects a short program to a part another tool can examine.",
+      "why_now": "Show HN introduced springrep November 18, 2026 at 21:08:47+00:00. It had 29 points and 5 comments at 2026-11-19T08:00:06.248268+00:00. The primary site supplies a runnable bracket example and identifies an MIT license.",
+      "why_early": "A fresh public introduction supplies a pure-Rust boundary-representation kernel with named features, validation and STEP export. The site's 1e-7mm accuracy and comparative speed descriptions are project claims, not independently established manufacturing precision or broad CAD compatibility.",
+      "watch_next": "Independent geometry-conformance results and STEP round trips covering difficult booleans, fillets and parameter changes.",
+      "id": "story-1190fbbe33df",
+      "number": 4,
+      "category": "Open engineering tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://springcraft-ai.github.io/springrep",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50552140",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-18T21:08:47+00:00",
+          "observed_at": "2026-11-19T08:00:06.248268+00:00",
+          "url": "https://springcraft-ai.github.io/springrep",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 29,
+            "comments": 5,
+            "url": "https://news.ycombinator.com/item?id=50552140"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-19T08:00:06.248268+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Give model layers persistent companion states",
+      "script": "Back inside the model, Latent Lattice Language Models add a persistent companion state to individual layers. Ordinary computation moves through the model's depth. These extra states also travel forward as new tokens arrive, influencing attention, memory writes and other computation. They don't add token positions or extra key-value cache entries. Researchers exploring compact language models get another architectural choice to compare with simply adding parameters or layers. On twenty billion FineWeb-Edu training tokens, the authors report that a four-hundred-six-million-parameter model reduced validation perplexity from fifteen point four one to fourteen point four zero against a parameter-matched Transformer. Lower perplexity means better prediction of held-out text; it doesn't by itself establish better assistant behavior. The paper also reports gains when combining the lattice with other architectural enhancements. A useful reproduction would measure text prediction, generation speed and total state memory together. Persistent state becomes especially interesting when you can see both what it improves and what it costs to maintain.",
+      "why_now": "Submitted November 16, 2026 and highlighted November 18 at 22:25:00-05:00. The discovery post had 147 likes, 2 replies and 6891 views at 2026-11-19T08:00:06.248268+00:00; alphaXiv displayed '#18 on Trending'.",
+      "why_early": "Recent primary research introduces persistent per-layer latent streams and reports controlled small-model pretraining results. This differs from previously covered latent-feedback and iterative reasoning systems. Independent reproduction, larger-scale behavior and practical serving tradeoffs remain open.",
+      "watch_next": "Matched reproductions measuring perplexity, downstream tasks, recurrent-state memory and generation throughput.",
+      "id": "story-b2e7dd67612d",
+      "number": 5,
+      "category": "Model architecture research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.alphaxiv.org/abs/2611.21608",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/askalphaxiv/status/2123256197361078287",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-18T22:25:00-05:00",
+          "observed_at": "2026-11-19T08:00:06.248268+00:00",
+          "url": "https://www.alphaxiv.org/abs/2611.21608",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 147,
+            "comments": 2,
+            "views": 6891,
+            "url": "https://x.com/askalphaxiv/status/2123256197361078287"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-19T08:00:06.248268+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Bring build and database context into a coding session",
+      "script": "Closer to everyday development, GitHub Copilot has added eight service connectors in public preview. These GitHub-verified MCP servers include Buildkite, Supabase and Box, with a connection you can reuse across Copilot clients. The useful change is bringing external project context into the same session where you're working on code. GitHub gives two concrete examples: inspect a failed Buildkite build before fixing the code, or check a Supabase schema before writing a migration. A developer maintaining an application could investigate whether that saves the repeated handoff between a browser, copied logs and an editor. The preview covers all Copilot plans, although business and enterprise access depends on administrator policies, and some services require their own approval settings. Begin with a read-only question whose answer you can check, such as which build step failed. Then compare the connector's result with the original build record. That establishes a useful baseline before combining retrieved context with changes.",
+      "why_now": "GitHub published the connector expansion November 18, 2026. Its announcement at 19:50:29-05:00 had 60 likes, 26 replies and 19352 views at 2026-11-19T08:00:06.248268+00:00.",
+      "why_early": "The specific new capability is eight additional connectors in public preview, joining more than 25 existing services. This is an integration expansion rather than a new protocol. Cross-client behavior, permission handling and workflow reliability remain to be independently tested.",
+      "watch_next": "Practical trials showing consistent connections, scoped permissions and accurate retrieval across Copilot clients.",
+      "id": "story-8e2ce054ff04",
+      "number": 6,
+      "category": "Developer integrations",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.blog/changelog/2026-11-18-connect-supabase-box-calendly-and-more-to-copilot",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/github/status/2123217310752342095",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-18T19:50:29-05:00",
+          "observed_at": "2026-11-19T08:00:06.248268+00:00",
+          "url": "https://github.blog/changelog/2026-11-18-connect-supabase-box-calendly-and-more-to-copilot",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 60,
+            "comments": 26,
+            "views": 19352,
+            "url": "https://x.com/github/status/2123217310752342095"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-19T08:00:06.248268+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Inspect a robot harness built around images and tools",
+      "script": "Returning to physical tasks, ORA has released version zero point one of its open robot-use harness. It lets a language model operate through camera images and tools. The project describes using open-weight models without a separately trained vision-language-action model, robot training or task memory. That gives robotics researchers a different integration to investigate: how much useful behavior can come from the surrounding tools and control loop? On DeepSeek V-four point one Flash, the team reports RoboDojo performance increasing from five point two to thirty-nine point nine percent compared with its October preview. RoboTwin rose from seventy-one point five to seventy-nine point six percent. Those are project-reported benchmark comparisons, rather than a guarantee for an unfamiliar robot or task. The Apache-licensed repository includes examples and a run gallery. Follow one recorded attempt from camera observation to tool action, especially where the system needs another look. That can reveal more about the harness than a successful final frame alone.",
+      "why_now": "The team announced ORA v0.1 November 18, 2026 at 19:37:25-05:00. The post had 57 likes, 2 replies and 5951 views at 2026-11-19T08:00:06.248268+00:00. The retrieved repository displayed 141 stars, 6 forks and 30 commits.",
+      "why_early": "A new numbered release supplies an open harness and comparisons with its October preview. The supplied history contains no previous ORA coverage. Benchmark improvements are team-reported; physical generalization, operating costs and independent reproduction remain unestablished.",
+      "watch_next": "Independent runs documenting robot setup, tool interfaces, failures and complete task success under repeatable conditions.",
+      "id": "story-fbc517d2c544",
+      "number": 7,
+      "category": "Open robotics tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/fast-rua/ORA",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/haoailab/status/2123214025580536251",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-18T19:37:25-05:00",
+          "observed_at": "2026-11-19T08:00:06.248268+00:00",
+          "url": "https://github.com/fast-rua/ORA",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 57,
+            "comments": 2,
+            "views": 5951,
+            "url": "https://x.com/haoailab/status/2123214025580536251"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-19T08:00:06.248268+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Make package archives mean the same thing to every tool",
+      "script": "At the package boundary, PyPI has explained stricter checks now rejecting some uploaded source and built distributions. The problem is parser disagreement. Two tools can receive identical archive bytes and extract different contents, which means a security scanner might inspect something different from what an installer uses. Even a matching file hash doesn't resolve that disagreement. PyPI's checks aim to make archives conform more closely to their packaging specifications; one documented rejection covers the legacy V-seven tar format. Python package maintainers can use this announcement to investigate release failures and check whether their build tooling produces compliant distributions. The team says package consumers face no breaking implications from these changes. Maintainers seeing failures should use supported Python versions and conforming build backends. For an exercise in your own release pipeline, build a disposable package and inspect both its source archive and wheel metadata. The useful outcome is agreement about what you're actually shipping.",
+      "why_now": "PyPI published its first-party explanation November 18, 2026, describing checks added over recent weeks and months. Its Lobsters posting had 7 points and no comments at 2026-11-19T08:00:06.248268+00:00.",
+      "why_early": "The emerging change is stricter upload enforcement within an ongoing parser-differential hardening initiative. Additional checks are planned. The announcement does not establish elimination of all archive ambiguity or all malicious packages.",
+      "watch_next": "Further documented checks and maintainer reports identifying build-backend changes needed for compliant uploads.",
+      "id": "story-0d000275bdc6",
+      "number": 8,
+      "category": "Software supply chain",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://blog.pypi.org/posts/2026-11-18-stricter-checks-for-uploaded-sdists",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/kfpoos/stricter_checks_for_uploaded",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-18T14:00:42.222-06:00",
+          "observed_at": "2026-11-19T08:00:06.248268+00:00",
+          "url": "https://blog.pypi.org/posts/2026-11-18-stricter-checks-for-uploaded-sdists",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 7,
+            "comments": 0,
+            "url": "https://lobste.rs/s/kfpoos/stricter_checks_for_uploaded"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-19T08:00:06.248268+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Let a browser baby find the beat",
+      "script": "And finally, Baby Plus Music Visualizer gives browser audio analysis a tiny, enthusiastic dance partner. Feed it a local audio file, the microphone or its built-in demo, and a three-dimensional baby chooses dances to match the music's energy. Accessories join the performance. The page also lets you tap the beat, including with the T key, when its tempo estimate needs help. Creative coders could explore that human correction as much as the animation: automatic analysis gets the interaction started, and a simple input lets the listener steer it. The project says everything runs inside the page, microphone sound isn't recorded or sent elsewhere, and the page works offline. Three.js handles the rendering, with web-audio-beat-detector providing a second tempo opinion. Play the demo, tap a different rhythm and watch the response. Your next audio interface might benefit from a similarly obvious way to say, actually, the beat is over here.",
+      "why_now": "Show HN introduced Baby Plus Music Visualizer November 18, 2026 at 18:00:55+00:00. It had 10 points and 6 comments at 2026-11-19T08:00:06.248268+00:00. The retrieved page identifies version 36.",
+      "why_early": "A fresh public introduction supplies a playable browser experiment combining tempo detection, energy-based dance selection and manual beat correction. Privacy and offline behavior are project descriptions; no independent tempo-accuracy or cross-browser results are supplied.",
+      "watch_next": "Examples showing how manual beat correction and dance selection behave across contrasting music and browser environments.",
+      "id": "story-289cbb7045a5",
+      "number": 9,
+      "category": "Offbeat experiments",
+      "role": "closer",
+      "sources": [
+        {
+          "url": "https://hberg.com/bpm",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50549718",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-18T18:00:55+00:00",
+          "observed_at": "2026-11-19T08:00:06.248268+00:00",
+          "url": "https://hberg.com/bpm",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 10,
+            "comments": 6,
+            "url": "https://news.ycombinator.com/item?id=50549718"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-19T08:00:06.248268+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    }
+  ],
+  "interlude": {
+    "after_story": 4,
+    "title": "Thanks to Intelligrit",
+    "script": "Before we head from solid geometry into model architecture, thanks to Intelligrit, this episode's sponsor. Explore another possibility at intelligrit dot com."
+  }
+}

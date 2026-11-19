@@ -1,0 +1,53 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0.0,
+      "title": "Opening"
+    },
+    {
+      "startTime": 22.564,
+      "title": "Make enormous workspaces cheaper to start"
+    },
+    {
+      "startTime": 84.081,
+      "title": "Improve an agent by changing one runtime component"
+    },
+    {
+      "startTime": 149.512,
+      "title": "Explore video generation with shorter feedback loops"
+    },
+    {
+      "startTime": 211.429,
+      "title": "Build exact CAD geometry through Rust"
+    },
+    {
+      "startTime": 272.464,
+      "title": "Thanks to Intelligrit"
+    },
+    {
+      "startTime": 283.34,
+      "title": "Give model layers persistent companion states"
+    },
+    {
+      "startTime": 350.055,
+      "title": "Bring build and database context into a coding session"
+    },
+    {
+      "startTime": 410.287,
+      "title": "Inspect a robot harness built around images and tools"
+    },
+    {
+      "startTime": 470.199,
+      "title": "Make package archives mean the same thing to every tool"
+    },
+    {
+      "startTime": 530.352,
+      "title": "Let a browser baby find the beat"
+    },
+    {
+      "startTime": 585.146,
+      "title": "Closing"
+    }
+  ]
+}
