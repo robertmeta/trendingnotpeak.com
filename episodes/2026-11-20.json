@@ -1,0 +1,395 @@
+{
+  "date": "2026-11-20",
+  "title": "TNP - 2026-11-20",
+  "intro": "It's Friday, November 20. Welcome to Trending Not Peak. Today, build an editable film workspace, connect PCs for larger local models, and assemble a pretend GPU. AI assisted with the writing, and you're hearing a synthetic voice. Explore the stories at trending not peak dot com.",
+  "outro": "A few starting points: Dreamverse Harness to assemble films, pgledger-ui to trace transfers, and PHP to prefill arguments. Find the sources at trending not peak dot com. This is Trending Not Peak. Have fun turning one interesting component into something you can explore, even if you spend the weekend wiring your GPU one logic gate at a time.",
+  "schema_version": 1,
+  "audio": {
+    "url": "https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-11-20/trending-not-peak-2026-11-20-kinetic-grid-r2.mp3",
+    "duration_seconds": 604.680476,
+    "bytes": 9676938,
+    "embedded_chapters": 12,
+    "sha256": "3eb8c0a567477fb01fb858e1d2d1b94a37feea3b7397c9040acf7d9b456be0e5"
+  },
+  "stories": [
+    {
+      "title": "Give local video generation an editable film workspace",
+      "script": "First up, Dreamverse Harness puts the work around video generation into an open-source workspace. Hao AI Lab's FastVideo team has released a visual canvas for assets and a timeline for the final cut, connected to an agent with directing tools. That means a character reference, a generated take and an edit can remain separate pieces you can inspect and change. Independent filmmakers and creative-tool developers could use Dreamverse Harness to assemble films, starting with a short sequence rather than hoping one prompt produces the whole thing. It ships with a FastVideo server running FastH3, including a local DGX Spark setup. Other models or APIs connect through provider plugins. The team's fully local workflow depends on the hardware and components you choose. An inviting first project is two shots with the same character. Change the camera angle in one, then recut the sequence without throwing away the other.",
+      "why_now": "The FastVideo team announced the open-source release November 19, 2026. Its post at 15:41:16-05:00 had 82 likes, 5 replies and 6505 views at 2026-11-20T08:00:06.173199+00:00. This is one observation of interest, not measured acceleration.",
+      "why_early": "A fresh release supplies an editable canvas, timeline, directing tools and provider-plugin architecture around FastVideo. Local DGX Spark operation is documented by the team; independent installation results, character consistency and complete production costs remain unestablished. Global saturation is unknown within the configured sources.",
+      "watch_next": "Independent short-film projects documenting local setup, provider choices and selective regeneration across connected shots.",
+      "id": "story-5284e4600e8c",
+      "number": 1,
+      "category": "Open creative tools",
+      "role": "anchor",
+      "sources": [
+        {
+          "url": "https://haoailab.com/blogs/dreamverse-harness",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/haoailab/status/2123516981643190734",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-19T15:41:16-05:00",
+          "observed_at": "2026-11-20T08:00:06.173199+00:00",
+          "url": "https://haoailab.com/blogs/dreamverse-harness",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 82,
+            "comments": 5,
+            "views": 6505,
+            "url": "https://x.com/haoailab/status/2123516981643190734"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-20T08:00:06.173199+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Search a long model context through a tree",
+      "script": "Turning to long context, RecSA changes how a model searches its stored attention information. Recursive Sparse Attention builds a tree over the key-value cache and searches it level by level. Unselected branches still contribute summaries, while a different position scheme keeps relative distances within the range encountered during training. The team initialized from Qwen-three four-B and trained on six hundred twenty million tokens, all in thirty-two-thousand-token sequences. On RULER, its reported score at one million tokens was sixty point five, compared with forty for the strongest evaluated baseline. On one H-two-hundred, the team also reports faster prefill and decoding at five hundred twenty-four thousand tokens. Model researchers could investigate extending context without training on equally long documents. These are research comparisons, and a long-context benchmark doesn't establish reliable understanding of an entire codebase. A useful reproduction would hide related facts far apart, then check retrieval accuracy alongside latency and total cache memory.",
+      "why_now": "The primary account is dated November 17, 2026. The team's November 18 post at 14:20:52-05:00 had 78 likes, 3 replies and 6893 views at 2026-11-20T08:00:06.173199+00:00.",
+      "why_early": "Recent primary research combines logarithmic per-query selection with positional handling intended to extrapolate beyond training length. Reported H200 speedups are 3.2x prefill and 3.8x decoding at 524K, against dense FlashAttention in the same framework. Sparse reads do not imply logarithmic total cache storage. Independent reproduction and application-level utility remain open.",
+      "watch_next": "Independent matched-training comparisons measuring long-context task accuracy, complete memory use and latency with and without cache offloading.",
+      "id": "story-e0635dea39f9",
+      "number": 2,
+      "category": "AI architecture research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://haoailab.com/blogs/recsa",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/haoailab/status/2123134363290452046",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-18T14:20:52-05:00",
+          "observed_at": "2026-11-20T08:00:06.173199+00:00",
+          "url": "https://haoailab.com/blogs/recsa",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 78,
+            "comments": 3,
+            "views": 6893,
+            "url": "https://x.com/haoailab/status/2123134363290452046"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-20T08:00:06.173199+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Follow a surprising balance through a ledger",
+      "script": "Closer to the database, pgledger-ui gives a double-entry ledger a clickable map. Paul Gross built it around pgledger, his ledger implementation in PostgreSQL. Open an account and you can see its balance history, transfer entries and common counterparties. Follow a transfer into another account, or click a metadata value to find related activity. Application developers debugging payment flows could use pgledger-ui to trace transfers when a balance doesn't match their expectations. The universal search also accepts account names, identifiers, idempotency keys and metadata values. Everything arrives in a single Go binary that queries the database and serves a webpage. This is a focused interface for pgledger, so it doesn't automatically understand an arbitrary accounting schema. The concrete experiment practically writes itself: create a small test payment, follow its entries, and check whether the interface helps you explain where every amount went. That explanation is much easier to share than a pile of disconnected SQL results.",
+      "why_now": "Gross published the first-person introduction November 19, 2026. Its Lobsters posting at 13:55:10.812-06:00 had 5 points and no comments at 2026-11-20T08:00:06.173199+00:00.",
+      "why_early": "A newly introduced reusable interface exposes pgledger accounts, transfers and metadata through linked views and search. The author's demonstrations establish a concrete debugging workflow, without independent usability, security or scale measurements.",
+      "watch_next": "Real application examples showing how linked metadata and transfer views explain unexpected balances.",
+      "id": "story-598fd509cdda",
+      "number": 3,
+      "category": "Developer tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.pgrs.net/2026/11/19/visualizing-a-ledger-with-pgledger-ui",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/gftix3/visualizing_ledger_with_pgledger_ui",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-19T13:55:10.812-06:00",
+          "observed_at": "2026-11-20T08:00:06.173199+00:00",
+          "url": "https://www.pgrs.net/2026/11/19/visualizing-a-ledger-with-pgledger-ui",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 5,
+            "comments": 0,
+            "url": "https://lobste.rs/s/gftix3/visualizing_ledger_with_pgledger_ui"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-20T08:00:06.173199+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "A coming Windows preview links PCs for local inference",
+      "script": "Over on the desk, Microsoft's RDMA over USB4 announcement sketches a small local-model cluster made from connected Windows PCs. A compatible inference framework can split one model across their combined memory and GPU compute. The transport uses NetworkDirect, the Windows interface already used with datacenter RDMA adapters, and avoids requiring a dedicated RDMA network card. Microsoft identifies an open-source USB4 provider and a llama-dot-cpp-based testbed. Developers whose model won't fit on one machine get a concrete implementation to study, especially if suitable PCs are already available. The important timing detail is that the developer preview is coming soon to Windows Insiders in the Experimental channel, Future Platforms. It isn't generally available today. Nor does connecting a cable automatically make every inference engine distributed. When the preview arrives, a useful first comparison would hold the model constant and measure capacity, token latency and setup effort across one machine and two.",
+      "why_now": "Microsoft published the announcement November 19, 2026. AMD's supporting post at 12:50:36-05:00 had 109 likes, 10 replies and 10357 views at 2026-11-20T08:00:06.173199+00:00.",
+      "why_early": "The meaningful change is an announced Windows USB4 RDMA implementation with an open-source provider and inference testbed. The primary account explicitly says the Insider developer preview is coming soon. Compatibility requirements, independent performance and practical multi-PC deployment remain to be evaluated.",
+      "watch_next": "Preview availability and reproducible two-PC inference tests documenting supported hardware, framework changes and end-to-end latency.",
+      "id": "story-edfb727e838d",
+      "number": 4,
+      "category": "Local AI infrastructure",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://techcommunity.microsoft.com/blog/microsoftusbblog/introducing-rdma-over-usb4%C2%AE-on-windows-run-larger-local-ai-models-across-pcs/4574602",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/aiatamd/status/2123474032800522248",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-19T12:50:36-05:00",
+          "observed_at": "2026-11-20T08:00:06.173199+00:00",
+          "url": "https://techcommunity.microsoft.com/blog/microsoftusbblog/introducing-rdma-over-usb4%C2%AE-on-windows-run-larger-local-ai-models-across-pcs/4574602",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 109,
+            "comments": 10,
+            "views": 10357,
+            "url": "https://x.com/aiatamd/status/2123474032800522248"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-20T08:00:06.173199+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Design functional RNA through an experimental feedback loop",
+      "script": "From computer memory to molecular structure, RhoAgent studies an agent that proposes RNA candidates and revises them using experimental feedback. Its generative tool, RDiff, conditions designs on base interactions and functional motifs. That gives the system structural requirements to work with, beyond asking for a promising sequence. In Nature Biotechnology, the researchers report active ribozymes with forty to seventy percent sequence similarity to their wild-type counterparts. They also report up to sixfold better cleavage efficiency for the hovlinc ribozyme relative to a human-expert-truncated construct, and a fluorogenic aptamer scaffold with fluorescence improved by two hundred thirty percent relative to the wild type. Synthetic-biology researchers could investigate designing scaffolds that position functional RNA components while preserving their activity. These are laboratory research results, rather than an available treatment or a general guarantee of molecular function. The feedback loop is the useful idea to examine: which experimental result changes the next design, and how does the system preserve the function you actually wanted?",
+      "why_now": "Nature Biotechnology published the paper November 19, 2026. The discovery post at 09:24:19-05:00 had 234 likes, 12 replies and 22416 views at 2026-11-20T08:00:06.173199+00:00.",
+      "why_early": "New primary research reports experimentally evaluated RNA design using an agent and diffusion-based structural tool. Results concern specified ribozymes, aptamers and compositional scaffolds. The abstract does not establish clinical utility, general design reliability or public software availability; full article access is subscription-limited.",
+      "watch_next": "Independent reproductions and accessible methods showing experimental budgets, failed designs and preservation of component activity.",
+      "id": "story-fe5a5c26a88f",
+      "number": 5,
+      "category": "AI science research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.nature.com/articles/s41587-026-03362-3",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/erictopol/status/2123422121145835854",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-19T09:24:19-05:00",
+          "observed_at": "2026-11-20T08:00:06.173199+00:00",
+          "url": "https://www.nature.com/articles/s41587-026-03362-3",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 234,
+            "comments": 12,
+            "views": 22416,
+            "url": "https://x.com/erictopol/status/2123422121145835854"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-20T08:00:06.173199+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "PHP gains partial application and native polling primitives",
+      "script": "Back in application code, PHP eight point six has arrived with a small feature that can simplify how functions fit together. Partial Function Application lets you supply some arguments now and receive a closure that accepts the rest. The original function runs when those remaining arguments arrive. You can use PHP to prefill arguments when adapting an existing operation for a filter or another callback. Its release example uses a version comparison, keeping the fixed comparison values beside the operation they configure. There's also a new Time Duration class representing stopwatch-style elapsed time. For event-loop authors, the Polling API exposes scalable I/O multiplexing through native mechanisms such as epoll and kqueue. Those are useful additions for different layers of the stack, without requiring every application to adopt all of them. A focused first experiment is to rewrite one existing callback using partial application, then ask whether the relationship between fixed inputs and changing inputs became easier to read.",
+      "why_now": "The official release page dates PHP 8.6.0 to November 19, 2026. Its Lobsters posting at 04:17:55.143-06:00 had 18 points and 4 comments at 2026-11-20T08:00:06.173199+00:00.",
+      "why_early": "The emerging opportunity is newly released language and runtime functionality, particularly partial application and polling primitives. PHP itself is established; independent migration experience and event-loop adoption of the new API are still emerging.",
+      "watch_next": "Library examples adopting partial application and event-loop implementations using the Polling API.",
+      "id": "story-1ab3c6f9fcc2",
+      "number": 6,
+      "category": "Programming languages",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.php.net/releases/8.6/en.php",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/xn50o0/php_8_6_release_announcement",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-19T04:17:55.143-06:00",
+          "observed_at": "2026-11-20T08:00:06.173199+00:00",
+          "url": "https://www.php.net/releases/8.6/en.php",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 18,
+            "comments": 4,
+            "url": "https://lobste.rs/s/xn50o0/php_8_6_release_announcement"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-20T08:00:06.173199+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Coordinate image generation in one forward pass",
+      "script": "Turning to images, Jeveration explores generation through parallel decisions. It builds on a frozen vision-language model and predicts an image in one forward pass. The tricky part is making all those simultaneous predictions agree on one coherent picture. The researchers give every position a shared random state, then use a learned distribution over discrete image codes to help the model make use of it. One checkpoint supports text-to-image generation, image-to-image generation and dense prediction tasks. The authors report generating a five-hundred-twelve-by-five-hundred-twelve image in seventy-eight milliseconds, with competitive quality in their evaluated comparisons. Creative-interface researchers could investigate whether that short generation step makes repeated visual feedback practical. The figure isn't a complete application latency measurement or a promise for unspecified hardware. A useful test would repeatedly change one visual instruction, checking how quickly the whole interface responds and whether the resulting image stays coherent. Fast individual decisions become interesting when they still assemble into something you meant.",
+      "why_now": "The paper page lists publication November 18, 2026 and submission to Hugging Face November 19. The November 19 discovery post at 04:56:00-05:00 had 171 likes, 20 replies and 22320 views at 2026-11-20T08:00:06.173199+00:00. The retrieved page displayed 121 upvotes and '#1 Paper of the day'.",
+      "why_early": "Recent primary research repurposes a frozen vision-language backbone for coordinated single-pass generation and related visual tasks. The 78ms and up-to-122x comparisons are author-reported; the latter concerns evaluated unified models. Independent quality, hardware-specific latency and interactive application results remain open.",
+      "watch_next": "Independent reproductions comparing image quality, diversity and complete interaction latency on disclosed hardware.",
+      "id": "story-5df7924d971b",
+      "number": 7,
+      "category": "AI generation research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://huggingface.co/papers/2611.24738",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/_akhaliq/status/2123354595061907578",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-19T04:56:00-05:00",
+          "observed_at": "2026-11-20T08:00:06.173199+00:00",
+          "url": "https://huggingface.co/papers/2611.24738",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 171,
+            "comments": 20,
+            "views": 22320,
+            "url": "https://x.com/_akhaliq/status/2123354595061907578"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-20T08:00:06.173199+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "A Ruby case-conversion bug crosses a memory boundary",
+      "script": "At the runtime boundary, Veria Labs has disclosed Ruby2Shell, a one-byte heap overflow in Ruby string case conversion that it reports turning into remote code execution. The surprising detail is ordinary capitalization. In certain legacy single-byte encodings, a lowercase sharp S becomes two uppercase letters, while the affected loop checks space for only one byte. UTF-eight strings follow a different path and aren't affected by this bug. Ruby application maintainers have a concrete reason to inspect their runtime: the report lists fixes in three point three point fourteen, three point four point thirteen and four point zero point ten. It also identifies default exposure through Rails and classic-style Sinatra on affected runtimes. Products that bundle Ruby need their vendor's update. Security reviewers can explore how an apparently simple text operation reaches native memory handling. The broader experiment is checking whether tests cover transformations that expand text, rather than assuming one input character always occupies one output slot.",
+      "why_now": "The new researcher disclosure appeared in a November 19, 2026 Lobsters posting at 04:50:28.630-06:00, with 26 points and 6 comments at 2026-11-20T08:00:06.173199+00:00. The primary report was updated November 20 at 08:00 UTC and identifies CVE-2026-132825.",
+      "why_early": "A fresh first-party security account documents the primitive, affected paths, fixed Ruby releases and vendor-specific status. Remote code execution is the researcher's reported finding; a public demonstration is scheduled for November 25 or later if major vendor fixes remain outstanding. Product status is time-sensitive.",
+      "watch_next": "Vendor fixes for bundled runtimes and the planned technical demonstration explaining the reported remote-code-execution path.",
+      "id": "story-21c18831fcc7",
+      "number": 8,
+      "category": "Developer security",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://verialabs.com/ruby2shell",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/usdf7t/ruby2shell_ghsa_34m4_m9fh_gqp5",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-19T04:50:28.630-06:00",
+          "observed_at": "2026-11-20T08:00:06.173199+00:00",
+          "url": "https://verialabs.com/ruby2shell",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 26,
+            "comments": 6,
+            "url": "https://lobste.rs/s/usdf7t/ruby2shell_ghsa_34m4_m9fh_gqp5"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-20T08:00:06.173199+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Build a GPU one logic gate at a time",
+      "script": "And finally, IT THINKS! lets you approach the AI hardware stack from an unusually small starting point: one NAND gate. Catchy's newly released hardware puzzle game asks you to wire circuits, turn working designs into reusable chips, build a programmable processor and eventually scale the architecture into a GPU. You can watch signals move and test each design on a live bench before building the next layer. Hardware-curious developers get a playful way to investigate how arithmetic and memory become programmable machinery. This is a simulated construction game, so completing it doesn't establish that you've designed a manufacturable chip. The Steam page also offers a demo, giving the experiment a smaller starting commitment. Build an early component, deliberately break one connection and see whether you can explain the failed test. After a day of models and serving infrastructure, there's something appealing about finding the problem by following a wire.",
+      "why_now": "The Steam page dates the release to November 19, 2026. Show HN introduced it at 19:35:03+00:00 that day; the discussion had 12 points and no comments at 2026-11-20T08:00:06.173199+00:00. The retrieved store page showed 11 reviews, 90% positive.",
+      "why_early": "A newly released game and available demo provide a concrete interactive route from NAND circuits toward programmable GPU architecture. Store descriptions establish the intended activities, without independent evidence of educational outcomes or real-hardware design readiness.",
+      "watch_next": "Player-built architectures and detailed examples showing how the game connects logic circuits, kernels and parallel execution.",
+      "id": "story-a1e2304c6e2d",
+      "number": 9,
+      "category": "Offbeat learning",
+      "role": "closer",
+      "sources": [
+        {
+          "url": "https://store.steampowered.com/app/5196330/IT_THINKS_Build_Your_Own_GPU",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50565099",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-19T19:35:03+00:00",
+          "observed_at": "2026-11-20T08:00:06.173199+00:00",
+          "url": "https://store.steampowered.com/app/5196330/IT_THINKS_Build_Your_Own_GPU",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 12,
+            "comments": 0,
+            "url": "https://news.ycombinator.com/item?id=50565099"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-20T08:00:06.173199+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    }
+  ],
+  "interlude": {
+    "after_story": 4,
+    "title": "Thanks to Intelligrit",
+    "script": "Before we move from connected computers to RNA design, thanks to Intelligrit, this episode's sponsor. Find another place to explore at intelligrit dot com."
+  }
+}

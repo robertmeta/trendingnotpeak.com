@@ -1,0 +1,53 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0.0,
+      "title": "Opening"
+    },
+    {
+      "startTime": 21.846,
+      "title": "Give local video generation an editable film workspace"
+    },
+    {
+      "startTime": 74.391,
+      "title": "Search a long model context through a tree"
+    },
+    {
+      "startTime": 137.669,
+      "title": "Follow a surprising balance through a ledger"
+    },
+    {
+      "startTime": 197.985,
+      "title": "A coming Windows preview links PCs for local inference"
+    },
+    {
+      "startTime": 260.539,
+      "title": "Thanks to Intelligrit"
+    },
+    {
+      "startTime": 271.335,
+      "title": "Design functional RNA through an experimental feedback loop"
+    },
+    {
+      "startTime": 337.413,
+      "title": "PHP gains partial application and native polling primitives"
+    },
+    {
+      "startTime": 398.366,
+      "title": "Coordinate image generation in one forward pass"
+    },
+    {
+      "startTime": 461.883,
+      "title": "A Ruby case-conversion bug crosses a memory boundary"
+    },
+    {
+      "startTime": 525.96,
+      "title": "Build a GPU one logic gate at a time"
+    },
+    {
+      "startTime": 580.357,
+      "title": "Closing"
+    }
+  ]
+}
