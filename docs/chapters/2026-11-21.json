@@ -1,0 +1,53 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0.0,
+      "title": "Opening"
+    },
+    {
+      "startTime": 22.085,
+      "title": "Carry unfinished code between machines"
+    },
+    {
+      "startTime": 78.083,
+      "title": "Let an agent search quantization recipes"
+    },
+    {
+      "startTime": 143.439,
+      "title": "Give a Slack coding task its own computer"
+    },
+    {
+      "startTime": 197.595,
+      "title": "Connect everyday health questions with FAQ answers"
+    },
+    {
+      "startTime": 258.792,
+      "title": "Thanks to Intelligrit"
+    },
+    {
+      "startTime": 269.35,
+      "title": "Reduce setup work for local AMD serving"
+    },
+    {
+      "startTime": 330.865,
+      "title": "Help a generated world remember the return trip"
+    },
+    {
+      "startTime": 394.063,
+      "title": "Bring C sources into an Alice package"
+    },
+    {
+      "startTime": 450.858,
+      "title": "Connect a Raft proof with implementation behavior"
+    },
+    {
+      "startTime": 513.413,
+      "title": "Draw a party-game clue using only triangles"
+    },
+    {
+      "startTime": 570.365,
+      "title": "Closing"
+    }
+  ]
+}

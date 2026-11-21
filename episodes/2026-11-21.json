@@ -1,0 +1,394 @@
+{
+  "date": "2026-11-21",
+  "title": "TNP - 2026-11-21",
+  "intro": "Welcome to Trending Not Peak for Saturday, November 21. Today, carry unfinished code between machines, search health information locally, and draw under a very triangular constraint. This episode has AI-assisted writing and a synthetic voice. Explore the stories at trending not peak dot com.",
+  "outro": "A few places to start: jj-musubi to sync unfinished changes, OpenMed to search medical FAQs, and Alice to build OCaml with C. Explore their sources at trending not peak dot com. This is Trending Not Peak. Have fun finding another use for something you already understand, or discovering how difficult a recognizable drawing becomes when every shape has three corners.",
+  "schema_version": 1,
+  "audio": {
+    "url": "https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-11-21/trending-not-peak-2026-11-21-kinetic-grid-r2.mp3",
+    "duration_seconds": 596.768413,
+    "bytes": 9550651,
+    "embedded_chapters": 12,
+    "sha256": "49d446a8e5b392a5102d6de4ea5b8f63d638f2f4281ce0c34e243b1a86cf02b1"
+  },
+  "stories": [
+    {
+      "title": "Carry unfinished code between machines",
+      "script": "First up, jj-musubi lets unfinished Jujutsu work follow you between computers. Bryan O'Sullivan's new tool synchronizes snapshots, commits and rewritten history through a hub over SSH. Jujutsu already records the working copy as a commit, so a snapshot can travel without inventing a temporary branch to push. Developers who edit on a laptop and build elsewhere could use jj-musubi to sync unfinished changes. Each machine keeps its own working copy; incoming history doesn't replace files underneath a running build. You can also inspect an agent's remote workspace from your laptop, while temporary repositories can lease their membership so vanished machines don't accumulate forever. This is intended for one person using several machines, with that trust relationship defining its security model. There's a pleasantly concrete first experiment: edit on one computer, record a snapshot, and inspect the change on another before deciding to update its files.",
+      "why_now": "O'Sullivan published the introduction November 18, 2026. Its November 20 Lobsters posting had 46 points and 27 comments at 2026-11-21T08:00:06.738143+00:00. This is one observation of interest, not measured acceleration.",
+      "why_early": "A new public tool supplies live synchronization of Jujutsu history, including unfinished snapshots and rewrites. The author documents personal workflows; independent reliability under concurrent edits and interrupted connections remains unestablished. Global saturation is unknown within the configured sources.",
+      "watch_next": "Independent tests of disconnected work, concurrent rewrites and recovery after interrupted synchronization.",
+      "id": "story-187a6d2ce5aa",
+      "number": 1,
+      "category": "Developer tools",
+      "role": "anchor",
+      "sources": [
+        {
+          "url": "https://www.serpentine.com/posts/2026/announcing-jj-musubi",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/tj1j4b/announcing_jj_musubi_live_sync_for",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-20T03:39:11.806-06:00",
+          "observed_at": "2026-11-21T08:00:06.738143+00:00",
+          "url": "https://www.serpentine.com/posts/2026/announcing-jj-musubi",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 46,
+            "comments": 27,
+            "url": "https://lobste.rs/s/tj1j4b/announcing_jj_musubi_live_sync_for"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-21T08:00:06.738143+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Let an agent search quantization recipes",
+      "script": "Turning to smaller model representations, QDA asks an agent to design a quantization recipe for a particular model and precision. Quantization stores model values with fewer bits, but preserving useful behavior takes more than choosing a file size. QDA combines compatible methods, builds candidates and evaluates them repeatedly. Its fast screening compares candidate outputs with the original model on reasoning traces hidden from the agent. Promising candidates then generate longer answers to expose failures such as repetition loops. Across four reasoning models, the authors report average gains of zero point nine to two point two percentage points over the strongest public recipes at three tested precision settings, using sixty-four GPU-hours per search. Model-serving researchers could investigate adapting compression to a specific deployment rather than accepting one general recipe. The library, evaluator and harness are promised for release. Until then, the paper offers an inspectable design question: can a cheap screening signal reliably identify which expensive evaluations deserve the compute?",
+      "why_now": "QDA was submitted November 17, 2026 and highlighted November 19 at 15:45:03-05:00. The discovery post had 142 likes, 13 replies and 11837 views at 2026-11-21T08:00:06.738143+00:00.",
+      "why_early": "Recent primary research reports closed-loop quantization design with a compatible method library and rapid candidate evaluator. The abstract reports gains of 0.9, 1.4 and 2.2 percentage points at W4A16, W4A8 and W3A16. Results are author-reported, and software release is future tense.",
+      "watch_next": "Release of the evaluator and harness, followed by independent searches that include screening accuracy and total GPU cost.",
+      "id": "story-0e580c33761c",
+      "number": 2,
+      "category": "AI inference research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2611.23388",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/omarsar0/status/2123517934974955558",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-19T15:45:03-05:00",
+          "observed_at": "2026-11-21T08:00:06.738143+00:00",
+          "url": "https://arxiv.org/abs/2611.23388",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 142,
+            "comments": 13,
+            "views": 11837,
+            "url": "https://x.com/omarsar0/status/2123517934974955558"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-21T08:00:06.738143+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Give a Slack coding task its own computer",
+      "script": "Closer to the team chat, OpenComputer introduces an open-source coding agent that works on its own computer. Mention Computer in a Slack thread with a task, and the project describes a workflow where teammates can watch and steer the work before the result arrives as a pull request. You can self-host it in your cloud or use the hosted offering. For a team whose small development requests already begin in chat, that makes the conversation a possible starting interface for implementation. The interesting experiment is whether the agent's separate workspace and visible progress make those requests easier to supervise. The repository carries an Apache license and includes self-hosting documentation. Its description calls it a faster Devin alternative, but there isn't a supported comparative speed result to promise here. Start with a bounded maintenance task whose expected change is easy to review, and see how well the thread preserves the context behind the resulting pull request.",
+      "why_now": "Show HN introduced OpenComputer November 20, 2026 at 20:19:56+00:00. It had 103 points and 28 comments at 2026-11-21T08:00:06.738143+00:00. The retrieved repository displayed 809 stars and 84 forks.",
+      "why_early": "A fresh public introduction supplies an Apache-2.0 repository and a concrete Slack-to-computer-to-pull-request workflow. Self-hosting is documented; independent task reliability, comparative speed and operational costs are unestablished.",
+      "watch_next": "Independent self-hosted examples showing how teams steer tasks and review the resulting pull requests.",
+      "id": "story-e54c27197d1f",
+      "number": 3,
+      "category": "Open developer tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/diggerhq/opencomputer",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50581403",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-20T20:19:56+00:00",
+          "observed_at": "2026-11-21T08:00:06.738143+00:00",
+          "url": "https://github.com/diggerhq/opencomputer",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 103,
+            "comments": 28,
+            "url": "https://news.ycombinator.com/item?id=50581403"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-21T08:00:06.738143+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Connect everyday health questions with FAQ answers",
+      "script": "For a focused search component, OpenMed has released EmbeddingGemma Two BiomedicalEvidence two-seventy-M version two. The model turns English health questions and answer passages into vectors, so a search system can match ordinary language with relevant medical information. It has two hundred seventy-one million parameters, runs on a CPU and uses an Apache license. Developers building a patient-information library could use OpenMed to search medical FAQs while keeping the retrieval model on their own hardware. The team reports its ranking score improving from eighty-one point six to ninety-one point eight on nineteen hundred sixty-six held-out FAQ questions. That's a retrieval measurement; it doesn't establish diagnostic accuracy. Inputs are limited to five hundred twelve tokens, and questions and passages need the model's specified prefixes. A useful prototype would return the original answer passage with its source clearly visible. Then compare everyday descriptions with clinical terminology and inspect which passages actually rise to the top.",
+      "why_now": "OpenMed announced the model November 19, 2026 at 12:30:00-05:00. Its post had 124 likes, 2 replies and 4544 views at 2026-11-21T08:00:06.738143+00:00. The retrieved model page displayed 3 likes.",
+      "why_early": "A newly announced Apache-2.0 artifact supplies CPU-capable English medical question-to-answer retrieval. OpenMed reports NDCG@10 improving from 81.6 to 91.8 on 1,966 held-out questions. Independent evaluation, broader language coverage and clinical outcomes are unestablished.",
+      "watch_next": "Independent retrieval comparisons on unfamiliar patient-information collections, including failures caused by phrasing and passage length.",
+      "id": "story-0d48c56d4159",
+      "number": 4,
+      "category": "Local retrieval models",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://huggingface.co/OpenMed/EmbeddingGemma2-BiomedicalEvidence-270M-v2",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/openmed_ai/status/2123468848276103526",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-19T12:30:00-05:00",
+          "observed_at": "2026-11-21T08:00:06.738143+00:00",
+          "url": "https://huggingface.co/OpenMed/EmbeddingGemma2-BiomedicalEvidence-270M-v2",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 124,
+            "comments": 2,
+            "views": 4544,
+            "url": "https://x.com/openmed_ai/status/2123468848276103526"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-21T08:00:06.738143+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Reduce setup work for local AMD serving",
+      "script": "Back from the break, ROCm ten point two brings some useful packaging changes for people serving models on AMD hardware. AMD's builds move to vLLM zero point thirty-two and SGLang zero point five point twenty-one, with both frameworks running on Python three point fourteen. The official vLLM images also include AITER, AMD's optimized AI kernels, for Radeon GPUs and Ryzen AI processors without a separate manual installation. On those platforms, the kernels compile the first time they're used. That distinction matters when you're measuring a fresh launch against a warmed-up server. Developers with compatible hardware get a more direct route into testing a local inference service. The release also expands storage support through hipFile and consolidates Systems Profiler binaries into one command. Rather than assuming every improvement affects your workload, pick one model and record installation effort, first-request time and steady serving behavior. Those observations can tell you whether the refreshed stack removes the particular friction you've been working around.",
+      "why_now": "AMD published the ROCm 10.2.0 account November 18, 2026 and highlighted it November 19 at 15:00:23-05:00. The post had 135 likes, 5 replies and 5481 views at 2026-11-21T08:00:06.738143+00:00.",
+      "why_early": "The meaningful change is updated serving builds and integrated AITER packaging in a newly released stack. ROCm is established; independent experience with these versions and hardware-specific compatibility is still emerging. First-use kernel compilation affects cold-start comparisons.",
+      "watch_next": "Reproducible Radeon and Ryzen AI installations documenting compatibility, initial compilation and sustained inference behavior.",
+      "id": "story-bfb5a7a9b0f6",
+      "number": 5,
+      "category": "Local AI infrastructure",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://rocm.blogs.amd.com/ecosystems-and-partners/rocm-10.2-blog/README.html?term=11-19",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/aiatamd/status/2123506694953046180",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-19T15:00:23-05:00",
+          "observed_at": "2026-11-21T08:00:06.738143+00:00",
+          "url": "https://rocm.blogs.amd.com/ecosystems-and-partners/rocm-10.2-blog/README.html?term=11-19",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 135,
+            "comments": 5,
+            "views": 5481,
+            "url": "https://x.com/aiatamd/status/2123506694953046180"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-21T08:00:06.738143+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Help a generated world remember the return trip",
+      "script": "Over in interactive video, WorldTrace tackles a wonderfully recognizable failure: you look away, return to a place, and the generated scene has changed. The researchers identify two memory problems. Stored observations become hard to retrieve when their time positions extend beyond the training range, and compressing differently rotated attention keys can damage the summary. WorldTrace assigns compressed memories positions within the familiar range and removes those rotations before merging keys. The model's own attention helps decide which observations stay intact. On LoopBench, the team reports a thirty-two point six percent improvement in average DINOv2 recall similarity over a sliding window with the same cache budget, without retraining the generator. Interactive-world researchers could investigate longer explorations that preserve recognizable places. That score measures visual similarity on a benchmark, rather than proving a physically consistent world. A revealing demonstration would revisit the same room after several different detours and compare which details survive each return.",
+      "why_now": "NVIDIA highlighted WorldTrace November 20, 2026 at 11:35:12-05:00. Its post had 87 likes, 69 replies and 10719 views at 2026-11-21T08:00:06.738143+00:00. The primary project page identifies NeurIPS 2026.",
+      "why_early": "Newly highlighted primary research supplies a training-free memory framework and LoopBench evaluation. The primary page specifies a 32.6% improvement in average DINOv2 recall similarity at equal cache budget. Independent reproduction and application-level persistence remain unestablished.",
+      "watch_next": "Independent long-detour evaluations examining object details, layout consistency and memory costs beyond the benchmark.",
+      "id": "story-7f62c88be324",
+      "number": 6,
+      "category": "Video model research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://nvda.ws/4knUqaA",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/nvidiaai/status/2123817447413395732",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-20T11:35:12-05:00",
+          "observed_at": "2026-11-21T08:00:06.738143+00:00",
+          "url": "https://nvda.ws/4knUqaA",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 87,
+            "comments": 69,
+            "views": 10719,
+            "url": "https://x.com/nvidiaai/status/2123817447413395732"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-21T08:00:06.738143+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Bring C sources into an Alice package",
+      "script": "Turning to language tooling, Alice zero point six adds building blocks for bringing more OCaml packages into its package format. Packages can now include C source files, which Alice compiles and links into the executable. A configuration script can supply custom C linker arguments, and packages can explicitly request built-in modules such as Unix and Str. OCaml developers exploring this tool can use Alice to build OCaml with C, starting with a small native dependency. The release also adds a bytecode backend alongside the default native backend. The author introduced that partly to compile configuration scripts more quickly, since their output can be cached. These additions support a small collection of manually ported Opam packages; they don't imply automatic compatibility with the whole repository. Follow one small package through its configuration script and linker settings. That's a concrete way to see whether Alice can describe the dependency your project actually needs.",
+      "why_now": "The primary release page dates Alice v0.6.0 to November 21, 2026. Its Lobsters posting is timestamped November 20 at 10:44:09.585-06:00 and had 18 points and 3 comments at 2026-11-21T08:00:06.738143+00:00; the supplied dates differ.",
+      "why_early": "A new numbered release adds C compilation, configuration scripts, explicit built-in module access and bytecode builds. The author describes support for a small manually ported package collection, leaving broad Opam compatibility unestablished.",
+      "watch_next": "Additional package ports demonstrating native-library discovery, linker configuration and consistent native and bytecode builds.",
+      "id": "story-4b5b878faaa3",
+      "number": 7,
+      "category": "Programming tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.alicecaml.org/blog/alice-v0-6-0",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/18c0lq/alice_v0_6_0",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-20T10:44:09.585-06:00",
+          "observed_at": "2026-11-21T08:00:06.738143+00:00",
+          "url": "https://www.alicecaml.org/blog/alice-v0-6-0",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 18,
+            "comments": 3,
+            "url": "https://lobste.rs/s/18c0lq/alice_v0_6_0"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-21T08:00:06.738143+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Connect a Raft proof with implementation behavior",
+      "script": "At the distributed-systems bench, Antithesis has published a verification account for the designs inside two production Raft libraries, from etcd and HashiCorp. A proof of the original consensus protocol doesn't automatically cover every implementation extension. The team used AI, TLA-plus and trace validation to connect formal models with observed software behavior. Model checking, testing and proof attempts exposed code bugs or gaps in the models, which they then revised. Their final proofs establish core safety properties for the modeled designs after the necessary fixes and workarounds. Distributed-systems engineers get public artifacts to inspect, including models that cover features such as snapshots and leadership transfers. The scope matters: these results concern the features modeled, rather than every possible behavior of either library. The useful possibility is a feedback loop where testing challenges the model and the model challenges the code. Follow one discrepancy through that loop and ask what evidence established that the two finally agreed.",
+      "why_now": "Antithesis published the first-party account November 19, 2026. Its November 20 Lobsters posting had 7 points and no comments at 2026-11-21T08:00:06.738143+00:00.",
+      "why_early": "A fresh technical account combines formal models, trace validation, testing and proofs for implementation-specific Raft designs. Proofs depend on modeled features and applied fixes or workarounds. Artifacts are offered for open review; independent assessment remains open.",
+      "watch_next": "External inspection of the formal artifacts, trace coverage and correspondence between modeled designs and patched implementations.",
+      "id": "story-cdd1de2e369d",
+      "number": 8,
+      "category": "Distributed systems research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://antithesis.com/blog/2026/verifying-formal-models",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/4qcr3k/verifying_formal_models_raft",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-20T15:54:45.756-06:00",
+          "observed_at": "2026-11-21T08:00:06.738143+00:00",
+          "url": "https://antithesis.com/blog/2026/verifying-formal-models",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 7,
+            "comments": 0,
+            "url": "https://lobste.rs/s/4qcr3k/verifying_formal_models_raft"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-21T08:00:06.738143+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Draw a party-game clue using only triangles",
+      "script": "And finally, Polydraw gives the party-game artist sixty seconds and exactly one kind of shape: triangles. Everyone else guesses the prompt. Spritely's new game-jam devlog explains how that small constraint became a peer-to-peer game using Goblins and Hoot. The drawing coordinates are normalized so the same triangles scale across different canvas sizes. Behind the interface, actors represent players, the lobby, the game and each player's controller. The team first simulated a round in one process, then connected the actors across machines using OCapN and an encrypted relay. Game developers curious about distributed applications get a concrete account of that transition under a deadline. It's also a very approachable design exercise: choose a familiar object and see how few triangles make it recognizable. Your drawing may be questionable, but every other player needs to receive the same questionable drawing. That gives the networking a job everyone at the party can understand.",
+      "why_now": "Spritely published the devlog November 19, 2026 after the Autumn Lisp Game Jam. Its November 20 Lobsters posting had 15 points and no comments at 2026-11-21T08:00:06.738143+00:00.",
+      "why_early": "A fresh first-party development account documents a completed game-jam contribution and its transition from local actor simulation to networked play. It provides a concrete distributed-game example, without independent scalability or reliability measurements.",
+      "watch_next": "Further game examples showing how actor interactions and the relay behave across different peers and network conditions.",
+      "id": "story-a5c85db7e98a",
+      "number": 9,
+      "category": "Offbeat experiments",
+      "role": "closer",
+      "sources": [
+        {
+          "url": "https://spritely.institute/news/lisp-game-jam-devlog-polydraw.html",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/irqtic/lisp_game_jam_devlog_polydraw",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-20T05:18:47.299-06:00",
+          "observed_at": "2026-11-21T08:00:06.738143+00:00",
+          "url": "https://spritely.institute/news/lisp-game-jam-devlog-polydraw.html",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 15,
+            "comments": 0,
+            "url": "https://lobste.rs/s/irqtic/lisp_game_jam_devlog_polydraw"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-21T08:00:06.738143+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    }
+  ],
+  "interlude": {
+    "after_story": 4,
+    "title": "Thanks to Intelligrit",
+    "script": "Before we head into local serving tools, thanks to Intelligrit, this episode's sponsor. Give your next idea somewhere else to wander at intelligrit dot com."
+  }
+}
