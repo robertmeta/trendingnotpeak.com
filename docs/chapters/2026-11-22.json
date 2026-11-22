@@ -1,0 +1,53 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0.0,
+      "title": "Opening"
+    },
+    {
+      "startTime": 21.681,
+      "title": "Give a Postgres experiment one executable"
+    },
+    {
+      "startTime": 78.794,
+      "title": "Train small calls to organize much longer tasks"
+    },
+    {
+      "startTime": 141.832,
+      "title": "Give new package releases a waiting period"
+    },
+    {
+      "startTime": 203.106,
+      "title": "Turn a RISC-V board into a NixOS build server"
+    },
+    {
+      "startTime": 262.622,
+      "title": "Thanks to Intelligrit"
+    },
+    {
+      "startTime": 273.338,
+      "title": "Measure an agent's ability to build a retrieval system"
+    },
+    {
+      "startTime": 331.737,
+      "title": "Repeat model computation without multiplying its cache"
+    },
+    {
+      "startTime": 396.131,
+      "title": "Spend less memory keeping a sorted set in order"
+    },
+    {
+      "startTime": 460.208,
+      "title": "Explore coding work as a search tree"
+    },
+    {
+      "startTime": 520.844,
+      "title": "Let an empty commit hold your next idea"
+    },
+    {
+      "startTime": 578.12,
+      "title": "Closing"
+    }
+  ]
+}

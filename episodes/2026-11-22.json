@@ -1,0 +1,394 @@
+{
+  "date": "2026-11-22",
+  "title": "TNP - 2026-11-22",
+  "intro": "It's Sunday, November 22. Welcome to Trending Not Peak. Today, carry Postgres in one executable, teach agents through smaller tasks, and grow your TODO list into a tree. AI helped write this episode, and the voice is synthetic. Explore the stories at trending not peak dot com.",
+  "outro": "A few experiments to take with you: miniPG to run disposable Postgres databases, Dependency Cooldown to delay fresh package installs, and agent-mcts to explore alternative coding paths. Find the sources at trending not peak dot com. This is Trending Not Peak. Have fun giving an idea a small place to start, even if today's first commit contains nothing except your intention to begin.",
+  "schema_version": 1,
+  "audio": {
+    "url": "https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-11-22/trending-not-peak-2026-11-22-kinetic-grid-r2.mp3",
+    "duration_seconds": 605.082766,
+    "bytes": 9683583,
+    "embedded_chapters": 12,
+    "sha256": "26739daea73a67bd6ede837cd2ed90632de1f99b3efe0b846351611b737e8de7"
+  },
+  "stories": [
+    {
+      "title": "Give a Postgres experiment one executable",
+      "script": "First up, miniPG makes trying a Postgres-backed tool a smaller undertaking. Jeff Lindsay has packaged a full Postgres server and client into one executable for Mac, Windows and Linux. Point it at a directory, give it a query, and that directory becomes your database. You can also start a server or have miniPG launch another program with database connection settings supplied through its environment. When that program ends, there's no database daemon left to manage. Developers exploring self-hosted software could use miniPG to run disposable Postgres databases without first arranging a Docker installation or a separate database service. This is real Postgres wrapped for convenient execution; it isn't an embedded database library. That distinction matters when planning an application's architecture. The inviting experiment is much smaller: take a tool you've postponed trying because it requires Postgres, launch it against a throwaway directory, and see whether you actually like it before committing to a permanent setup.",
+      "why_now": "Lindsay published the first-person implementation account November 20, 2026. Its November 21 Lobsters posting at 13:32:22.642-06:00 had 12 points and 3 comments at 2026-11-22T08:00:06.238658+00:00.",
+      "why_early": "A fresh technical introduction documents a self-contained executable, direct queries, server mode and environment-configured program launching. Cross-platform support is author-reported; independent compatibility and lifecycle tests remain unestablished. Global saturation is unknown within the configured sources.",
+      "watch_next": "Independent trials launching existing Postgres applications, including shutdown, recovery and database-directory portability.",
+      "id": "story-c4d11d791049",
+      "number": 1,
+      "category": "Local developer tools",
+      "role": "anchor",
+      "sources": [
+        {
+          "url": "https://progrium.xyz/articles/2026/single-binary-postgres",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/pvylnk/how_i_got_postgres_into_single_binary",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-21T13:32:22.642-06:00",
+          "observed_at": "2026-11-22T08:00:06.238658+00:00",
+          "url": "https://progrium.xyz/articles/2026/single-binary-postgres",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 12,
+            "comments": 3,
+            "url": "https://lobste.rs/s/pvylnk/how_i_got_postgres_into_single_binary"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-22T08:00:06.238658+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Train small calls to organize much longer tasks",
+      "script": "Turning to agent research, Language Model Harnesses Can Be Compositional Generalizers asks whether long tasks can become easier to learn when the surrounding software breaks them into familiar pieces. A recursive language-model harness manages context programmatically and delegates smaller calls. The researchers train that behavior in simpler synthetic environments, including simulated tools and subcalls, rather than always running an entire expensive task. They report generalization from short tasks to tasks two to sixty-four times longer. Their RLM twenty-seven-B improves average results on a difficult long-context suite by twenty-six point nine percent over the original model in the same harness, while using roughly half as many inference tokens. These are research results, with code, logs and data offered for inspection. For agent-training researchers, the possibility is targeted practice for the individual decisions that organize a larger job. Examine a decomposition that transfers into a new domain, then ask which shared structure made that transfer possible.",
+      "why_now": "Submitted November 20, 2026 and highlighted November 21 at 04:41:23-05:00. The discovery post had 167 likes, 6 replies and 7172 views at 2026-11-22T08:00:06.238658+00:00. The retrieved alphaXiv page displayed '#1 on Trending' and 225 saves.",
+      "why_early": "New primary research introduces surrogate harness training and reports length and domain generalization. The 26.9% average improvement compares RLM-27B with Qwen3.8-27B in the same harness. This differs from earlier coverage of runtime harness self-modification: it trains model behavior within a compositional harness. Independent reproduction remains open.",
+      "watch_next": "Reproductions testing transfer to unfamiliar domains while disclosing synthetic training costs and complete inference budgets.",
+      "id": "story-4ffaf559a72c",
+      "number": 2,
+      "category": "AI training research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.alphaxiv.org/abs/2611.harness-cg",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/askalphaxiv/status/2124075694871220565",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-21T04:41:23-05:00",
+          "observed_at": "2026-11-22T08:00:06.238658+00:00",
+          "url": "https://www.alphaxiv.org/abs/2611.harness-cg",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 167,
+            "comments": 6,
+            "views": 7172,
+            "url": "https://x.com/askalphaxiv/status/2124075694871220565"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-22T08:00:06.238658+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Give new package releases a waiting period",
+      "script": "Closer to everyday coding, Dependency Cooldown is a small Claude Code configuration with a useful boundary. It tells supported package managers to skip versions published within the last seven days. The setting applies to commands Claude Code starts, including package-based MCP servers and hooks. Developers supervising coding agents could use Dependency Cooldown to delay fresh package installs, giving newly published or hijacked releases time to attract scrutiny. It also requests approval when a command explicitly mentions changing the cooldown controls. The version requirements are essential: npm needs eleven point ten or newer, pnpm needs eleven or newer, and the author tested uv zero point eleven. Older npm silently ignores the setting. Pip, Yarn and Bun aren't covered. This doesn't establish that an older package is safe, but it makes release age an explicit part of the environment. Inspect the configuration, then test one recent version and one older version with the package manager you actually use.",
+      "why_now": "The author highlighted the setting November 21, 2026 at 21:15:55-05:00. The post had 39 likes, 20 replies and 2741 views at 2026-11-22T08:00:06.238658+00:00. The retrieved component page showed 1 download and a November 22 static scan with 4 observations, which are not confirmed vulnerabilities.",
+      "why_early": "A newly introduced, inspectable configuration combines package-manager age controls with approval patterns. Coverage depends on supported versions and invocation paths; effectiveness against actual supply-chain attacks is not independently measured.",
+      "watch_next": "Tests covering package-manager versions, indirect installs and attempts to override or evade the configured age controls.",
+      "id": "story-5c48ebc5c05d",
+      "number": 3,
+      "category": "Developer security",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.aitmpl.com/component/settings/environment/dependency-cooldown",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/dani_avila7/status/2124325975076823188",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-21T21:15:55-05:00",
+          "observed_at": "2026-11-22T08:00:06.238658+00:00",
+          "url": "https://www.aitmpl.com/component/settings/environment/dependency-cooldown",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 39,
+            "comments": 20,
+            "views": 2741,
+            "url": "https://x.com/dani_avila7/status/2124325975076823188"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-22T08:00:06.238658+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Turn a RISC-V board into a NixOS build server",
+      "script": "Down on the workbench, George Huebner has documented bringing NixOS up on a Zhihe Computing A-two-ten RISC-V board. His goal was a build server for learning about Linux bring-up and testing software on physical RISC-V hardware. The account includes a complete configuration and reports working sound, HDMI, wireless networking, Ethernet and the GPU. For distribution contributors, that's a concrete path beyond testing everything in an emulator. Huebner cross-compiled more than a thousand packages from his desktop and encountered two package issues that weren't specific to RISC-V. Memory was a more substantial obstacle: some linking processes used over nine gigabytes, requiring sharply reduced build parallelism. This is one developer's working setup, and he explicitly stops short of recommending a board purchase. If you're already investigating this hardware, follow how his configuration separates the machine doing the build from the machine that will run it. That separation is the reusable part of the experiment.",
+      "why_now": "Huebner published the first-person bring-up account November 20, 2026. Its November 21 Lobsters posting at 18:30:07.226-06:00 had 10 points and 1 comment at 2026-11-22T08:00:06.238658+00:00.",
+      "why_early": "A fresh implementation account supplies a complete A210 configuration and reported peripheral checks. Results concern one board and setup; broad hardware reliability and independent reproduction are unestablished.",
+      "watch_next": "Independent boots using the configuration, followed by native package-testing results and documented hardware-specific failures.",
+      "id": "story-39de030757e6",
+      "number": 4,
+      "category": "Open hardware development",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://feyor.sh/blog/nixos-bringup-on-an-alibaba-riscv-board",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/6jloca/nixos_bring_up_on_alibaba_risc_v_board",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-21T18:30:07.226-06:00",
+          "observed_at": "2026-11-22T08:00:06.238658+00:00",
+          "url": "https://feyor.sh/blog/nixos-bringup-on-an-alibaba-riscv-board",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 10,
+            "comments": 1,
+            "url": "https://lobste.rs/s/6jloca/nixos_bring_up_on_alibaba_risc_v_board"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-22T08:00:06.238658+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Measure an agent's ability to build a retrieval system",
+      "script": "Back from the break, AutoRAGBench gives coding agents a whole retrieval-system development job. Across nine tasks, an agent gets no starter code or prescribed strategy. It has six hours and one H-eight-hundred GPU to inspect data, build a pipeline and improve it through experiments. The researchers compare nine agent configurations. GPT-six point one Sol with Codex CLI achieves an average score of fifty-six point one, against forty-four point four for a composite baseline taking the best published human method on each task. Starting from human-designed systems on seven tasks, that agent adds sixteen point six points on average. Those are benchmark results, rather than evidence that an agent will outperform your search team on an unfamiliar collection. Retrieval engineers get a useful evaluation shape to study: judge the system produced after a fixed development budget. For your own experiment, keep an untouched question set and record which pipeline changes actually improve the answers.",
+      "why_now": "AutoRAGBench was submitted November 19, 2026 and highlighted November 21 at 12:55:02-05:00. The discovery post had 75 likes, 35 replies and 7765 views at 2026-11-22T08:00:06.238658+00:00.",
+      "why_early": "Recent primary research evaluates open-code RAG development under explicit time and hardware constraints. Results are author-reported across nine benchmark tasks; the composite Human-SOTA baseline is not a matched six-hour human study. Independent replication and transfer to private corpora remain open.",
+      "watch_next": "Independent evaluations with untouched corpora, disclosed development costs and analysis of which agent-generated changes survive held-out testing.",
+      "id": "story-7676369af2a8",
+      "number": 5,
+      "category": "AI engineering research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2611.25582",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/omarsar0/status/2124199923424104874",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-21T12:55:02-05:00",
+          "observed_at": "2026-11-22T08:00:06.238658+00:00",
+          "url": "https://arxiv.org/abs/2611.25582",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 75,
+            "comments": 35,
+            "views": 7765,
+            "url": "https://x.com/omarsar0/status/2124199923424104874"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-22T08:00:06.238658+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Repeat model computation without multiplying its cache",
+      "script": "Inside the model, Looped CED explores how repeated computation can avoid accumulating a separate attention cache for every round. Its causal encoder-decoder architecture repeatedly refines the encoder representations that supply shared attention information. Training with varying loop counts encourages those representations to converge, allowing rounds to share the final round's cache. Model architects investigating recurrent depth could use that design to study extra computation within a smaller memory budget. The researchers report thirty-six point eight times less key-value cache per token in an eight-round serving test using a five-hundred-fifty-two-billion-parameter DeepSeek model. Throughput rose by up to three point six times on the tested short-prompt workload. Here's the essential distinction: those large-model experiments measure serving efficiency. Quality was evaluated separately on models up to three hundred forty million parameters. The next revealing experiment would bring quality and serving measurements together at the same scale, so the memory saving comes with a clear account of the answers produced.",
+      "why_now": "Submitted November 9, 2026 and highlighted November 20 at 05:59:00-05:00. The discovery post had 229 likes, 10 replies and 20197 views at 2026-11-22T08:00:06.238658+00:00.",
+      "why_early": "Recent primary research combines cross-layer and cross-round KV sharing. The 552B DeepSeek-V4.1-Flash serving tests use one 4xGB200 node, with per-round KV emulated by limiting the cache pool and equal compute across comparisons. The highlight is a discovery signal, not a new paper revision; large-scale quality remains unestablished.",
+      "watch_next": "Matched large-model evaluations reporting output quality, cache memory and complete serving performance under the same recurrent setup.",
+      "id": "story-3760e169c279",
+      "number": 6,
+      "category": "AI architecture research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.alphaxiv.org/abs/2611.13378",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/askalphaxiv/status/2123732838188974259",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-20T05:59:00-05:00",
+          "observed_at": "2026-11-22T08:00:06.238658+00:00",
+          "url": "https://www.alphaxiv.org/abs/2611.13378",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 229,
+            "comments": 10,
+            "views": 20197,
+            "url": "https://x.com/askalphaxiv/status/2123732838188974259"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-22T08:00:06.238658+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Spend less memory keeping a sorted set in order",
+      "script": "Returning to data structures, Valkey has explained a change to large sorted sets in version nine point two. A skiplist keeps elements in separately allocated nodes joined by pointers. Its replacement, called fbtree, uses a high-fanout B-plus-tree design that packs more ordering information together. The implementation adds SIMD searches, linked leaves and shortcuts for sequential inserts and pops. Application developers using large leaderboards or other score-ordered collections could investigate whether the change makes better use of their memory budget. In a five-million-member test, the team reports reducing per-member memory overhead by thirty-six to forty-three percent, saving up to one hundred nine megabytes. That's overhead in the tested collection, rather than the same percentage off an entire server's memory. Small sorted sets still use the compact listpack representation. A useful comparison would replay your own mix of insertions, rank queries and removals, recording memory alongside latency. The structure that stores the order can matter almost as much as the values.",
+      "why_now": "Valkey published the technical explanation November 16, 2026. Its November 20 Lobsters posting at 22:31:29.960-06:00 had 6 points and no comments at 2026-11-22T08:00:06.238658+00:00.",
+      "why_early": "The meaningful implementation change is replacement of the large-sorted-set skiplist in Valkey 9.2. The 36–43% reduction concerns per-member overhead in a five-million-member project test. Independent workload measurements and release availability are not established by the excerpt.",
+      "watch_next": "Workload-specific comparisons covering memory, rank and score queries, sequential operations and mixed updates.",
+      "id": "story-7f5e727dd517",
+      "number": 7,
+      "category": "Database engineering",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://valkey.io/blog/from-skiplist-to-b+tree",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/ixhrac/from_skiplists_b_trees_making_valkey",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-20T22:31:29.960-06:00",
+          "observed_at": "2026-11-22T08:00:06.238658+00:00",
+          "url": "https://valkey.io/blog/from-skiplist-to-b+tree",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 6,
+            "comments": 0,
+            "url": "https://lobste.rs/s/ixhrac/from_skiplists_b_trees_making_valkey"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-22T08:00:06.238658+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Explore coding work as a search tree",
+      "script": "For another way to organize an agent, agent-mcts puts Monte Carlo tree search around a coding-agent command-line interface. That turns alternative coding trajectories into something the surrounding harness can search, rather than relying entirely on one continuing attempt. Developers studying agent control could use agent-mcts to explore alternative coding paths on a bounded task. The newly introduced project is MIT-licensed, and its README says it has been verified with Claude Code. It also describes coding-agent interfaces such as Codex CLI, but that doesn't establish equal verification across every backend. There isn't a supported performance gain to promise here. The interesting experiment is a comparison under the same total budget: give the ordinary agent and the search harness the same small bug, then inspect their resulting patches with independent checks. Include the cost of exploring alternatives. A tree full of plausible approaches becomes useful when its chosen branch produces a repair you can explain.",
+      "why_now": "Show HN introduced agent-mcts November 21, 2026 at 13:53:08+00:00. It had 15 points and no comments at 2026-11-22T08:00:06.238658+00:00. The retrieved repository displayed 8 stars, 1 fork and 32 commits.",
+      "why_early": "A fresh public introduction supplies an MIT-licensed test-time search harness. The README explicitly identifies Claude Code as verified; other backend compatibility and comparative task performance remain unestablished.",
+      "watch_next": "Matched-budget comparisons reporting successful repairs, search overhead and independently checked backend compatibility.",
+      "id": "story-ef67826b8d46",
+      "number": 8,
+      "category": "Open agent tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/natsu0529/agent-mcts",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50589235",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-21T13:53:08+00:00",
+          "observed_at": "2026-11-22T08:00:06.238658+00:00",
+          "url": "https://github.com/natsu0529/agent-mcts",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 15,
+            "comments": 0,
+            "url": "https://news.ycombinator.com/item?id=50589235"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-22T08:00:06.238658+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Let an empty commit hold your next idea",
+      "script": "And finally, TODOs JJ Style gives an empty commit a surprisingly productive job: remembering work you haven't started. Ben C describes making empty Jujutsu changes, writing their descriptions in advance, and arranging them into a TODO tree. A task that depends on another task simply sits above it. When it's time to begin, he rebases that change onto the work it belongs with. Developers who forget a separate TODO file get a playful workflow to explore right inside their version history. The author also configures Jujutsu's private-commits rule to prevent descriptions with a chosen prefix from being pushed. That's an explicit setting, rather than a property every empty change automatically has. This is a personal technique using existing features, not a newly released task manager. Put two dependent chores into a disposable repository and move the first one into place. Your future work now has a little family tree, and none of its ancestors has written any code yet.",
+      "why_now": "The first-person workflow account appeared in a November 21, 2026 Lobsters posting at 09:17:18.956-06:00. It had 48 points and 9 comments at 2026-11-22T08:00:06.238658+00:00. The supplied article text does not identify a publication date.",
+      "why_early": "The fresh contribution is a concrete practitioner workflow combining described empty changes, dependency-shaped history and a private-commits rule. Jujutsu's underlying features are established; this is distinct from prior coverage of jj-musubi synchronization. Independent usability benefits are unmeasured.",
+      "watch_next": "Examples showing how TODO trees remain manageable as tasks finish, dependencies change and work moves between branches.",
+      "id": "story-55b71229e5b9",
+      "number": 9,
+      "category": "Offbeat developer workflows",
+      "role": "closer",
+      "sources": [
+        {
+          "url": "https://bwc9876.dev/blog/jj_todo",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/qxzs4y/todos_jj_style",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-21T09:17:18.956-06:00",
+          "observed_at": "2026-11-22T08:00:06.238658+00:00",
+          "url": "https://bwc9876.dev/blog/jj_todo",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 48,
+            "comments": 9,
+            "url": "https://lobste.rs/s/qxzs4y/todos_jj_style"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-22T08:00:06.238658+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    }
+  ],
+  "interlude": {
+    "after_story": 4,
+    "title": "Thanks to Intelligrit",
+    "script": "From a physical build server to experiments in retrieval, thanks to Intelligrit, this episode's sponsor. Keep your curiosity moving at intelligrit dot com."
+  }
+}
