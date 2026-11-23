@@ -1,0 +1,393 @@
+{
+  "date": "2026-11-23",
+  "title": "TNP - 2026-11-23",
+  "intro": "Welcome to Trending Not Peak for Monday, November 23. Today, make debugging practice harder on purpose, help a model remember rejected drafts, and reprogram your desktop while it's running. AI helped write this episode, and you're hearing a synthetic voice. Explore the stories at trending not peak dot com.",
+  "outro": "Three experiments to carry into the week: BuggyMLE to build graded debugging tasks, DNeo to test parallel token drafting, and Gliver to customize a running desktop. Find the sources at trending not peak dot com. This is Trending Not Peak. Have fun following a useful question into something you can change, especially when the thing you're changing is the desktop holding your editor.",
+  "schema_version": 1,
+  "audio": {
+    "url": "https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-11-23/trending-not-peak-2026-11-23-kinetic-grid-r2.mp3",
+    "duration_seconds": 616.989048,
+    "bytes": 9874252,
+    "embedded_chapters": 12,
+    "sha256": "dc4a314a84a9edd1c34201daeedaa2cc286ee6bd8ed675d45026945cf71724c6"
+  },
+  "stories": [
+    {
+      "title": "Turn working ML repositories into harder debugging practice",
+      "script": "First up, BuggyMLE makes debugging practice harder by deliberately breaking working machine-learning repositories. The researchers use agents to inject controlled bugs, producing more than sixty-six hundred repository variants from two hundred twenty-two source projects. A difficulty measure combines ten structural features, including dependency depth and patch size. That gives agent researchers a way to build graded debugging tasks instead of repeatedly testing against problems their models already solve. Across fourteen evaluated models, the highest solve rate falls from ninety-five percent on the easiest tier to nine percent on the hardest. Training a Qwen-three point five nine-B model on the resulting curriculum also raises its reported SWE-bench Lite resolve rate from twenty-four to thirty-three percent. These are author-reported research results. BuggyMLE offers an especially useful experiment for teams studying their own coding assistants: vary how much code a repair must touch, keep the checks independent, and see where successful local fixes stop adding up to a working repository.",
+      "why_now": "Submitted November 18, 2026 and highlighted November 22 at 14:25:02-05:00. The discovery post had 85 likes, 38 replies and 8087 views at 2026-11-23T08:00:05.794418+00:00. This is one interest observation, not measured acceleration.",
+      "why_early": "Recent primary research introduces controlled repository mutations, a structural difficulty metric and a training curriculum. Results are author-reported. The evidence does not establish public artifact availability, independent reproduction or equivalent gains on naturally occurring private-repository bugs. Global saturation is unknown within the configured sources.",
+      "watch_next": "Reproductions checking mutation validity, held-out repository separation and transfer from injected bugs to naturally occurring failures.",
+      "id": "story-5bd812d1ea64",
+      "number": 1,
+      "category": "AI training research",
+      "role": "anchor",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2611.25088",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/omarsar0/status/2124584960464220408",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-22T14:25:02-05:00",
+          "observed_at": "2026-11-23T08:00:05.794418+00:00",
+          "url": "https://arxiv.org/abs/2611.25088",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 85,
+            "comments": 38,
+            "views": 8087,
+            "url": "https://x.com/omarsar0/status/2124584960464220408"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-23T08:00:05.794418+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Let a token drafter remember its rejected proposals",
+      "script": "Turning to inference, DNeo gives a small drafting model a memory of words the larger model rejected. In speculative decoding, the drafter proposes several tokens, and the target model verifies them together. More accepted proposals can mean less time waiting for generation. DNeo changes how the drafter receives the target model's internal features, using Mixture-of-Features Attention to preserve information that ordinary projections can lose. It also keeps rejection memory separate from the next draft's embeddings and selects target layers unevenly. The paper reports generation one point three times as fast as DFlash-two without increasing the drafter's footprint or reducing generation quality. Serving researchers can use DNeo to test parallel token drafting, with code and weights linked from the paper page. The revealing comparison is a complete request under the same hardware and sampling settings. Watch accepted tokens alongside latency: remembering a rejected proposal earns its keep when the next proposal gives the target more useful work to approve.",
+      "why_now": "Submitted November 16, 2026 and highlighted November 21 at 21:46:00-05:00. The discovery post had 115 likes, 2 replies and 6534 views at 2026-11-23T08:00:05.794418+00:00. The retrieved paper page displayed 71 saves.",
+      "why_early": "Recent primary research introduces feature encoding and rejection memory for parallel drafting, with code and weights linked. The abstract reports 1.3x generation speed against DFlash-2; the discovery summary gives a narrower up-to-20.7% result for Qwen3-4B on one H100 across six benchmarks. These figures should not be treated as interchangeable or universal application speedups.",
+      "watch_next": "Independent matched-hardware comparisons reporting acceptance rates, drafter memory and complete request latency.",
+      "id": "story-ed86e05dd24f",
+      "number": 2,
+      "category": "AI inference research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.alphaxiv.org/abs/2611.21925",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/askalphaxiv/status/2124333546156519673",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-21T21:46:00-05:00",
+          "observed_at": "2026-11-23T08:00:05.794418+00:00",
+          "url": "https://www.alphaxiv.org/abs/2611.21925",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 115,
+            "comments": 2,
+            "views": 6534,
+            "url": "https://x.com/askalphaxiv/status/2124333546156519673"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-23T08:00:05.794418+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Check whether your workflow parser agrees with GitHub",
+      "script": "Closer to continuous integration, a new technical writeup documents GitHub Actions accepting YAML that a conforming parser should reject. The example involves a multiline, single-quoted string whose closing line isn't indented enough. GitHub accepts the workflow, while tools following the YAML specification can fail before they inspect what the workflow does. That's a concrete problem for developers building security scanners, migration tools or workflow editors. The author encountered it through zizmor, and initially changed a parser to accept the example before recognizing that the example itself violated the specification. The account now points toward reverting that parser change. You can explore the mismatch with the small workflow in the article, comparing a strict parser with GitHub's behavior. It also suggests a useful addition to a tool's regression collection: real files that the service accepts but the format specification rejects. Those cases help make an otherwise baffling parse failure something a user can understand and repair.",
+      "why_now": "Published November 22, 2026. Its Lobsters posting at 15:49:18.929-06:00 had 47 points and 13 comments at 2026-11-23T08:00:05.794418+00:00.",
+      "why_early": "A fresh first-person investigation identifies a specific specification mismatch and a proposed reversal of an earlier parser accommodation. The original user report is older. GitHub's underlying parser and version are presented as inference, and no GitHub fix is established.",
+      "watch_next": "Resolution of the linked parser issues and clear diagnostics for workflows accepted by GitHub but rejected by conforming YAML tools.",
+      "id": "story-97db6e234af3",
+      "number": 3,
+      "category": "Developer tooling",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://yossarian.net/til/post/github-actions-accepts-invalid-yaml",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/leqwqu/github_actions_accepts_invalid_yaml",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-22T15:49:18.929-06:00",
+          "observed_at": "2026-11-23T08:00:05.794418+00:00",
+          "url": "https://yossarian.net/til/post/github-actions-accepts-invalid-yaml",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 47,
+            "comments": 13,
+            "url": "https://lobste.rs/s/leqwqu/github_actions_accepts_invalid_yaml"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-23T08:00:05.794418+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Trace an upload through its hidden document interpreter",
+      "script": "At the file-processing boundary, pwn dot ai has published Upload2Shell, a Ghostscript vulnerability account with a useful lesson for application audits. Researcher Paulos Yibelo describes a use-after-free in the Type One font loader, tracked as C V E twenty twenty-six, one two five three nine six. The team reports using the memory corruption to bypass Ghostscript's safer-processing mode and execute commands as the rendering process. An upload endpoint didn't need to call Ghostscript directly. ImageMagick and its language bindings could send a file into that interpreter while making a preview or processing an image. Application maintainers can investigate the same dependency path in their own authorized test environment: which library receives the upload, which format handler it selects, and which interpreter ultimately reads the bytes. Some related findings are still being fixed. The practical opportunity is a more complete processing inventory, including interpreters linked into a process, where searching for an explicit Ghostscript command would miss the connection.",
+      "why_now": "The primary technical account is dated November 21, 2026. Its Lobsters posting at 18:52:23.423-06:00 had 5 points and 4 comments at 2026-11-23T08:00:05.794418+00:00.",
+      "why_early": "The new contribution is a detailed first-party disclosure of CVE-2026-125396 and indirect application paths, following a September announcement. Exploitation and application reach are researcher-reported. The excerpt establishes neither fixed version numbers nor uniform exposure across products, and says some related bugs remain under remediation.",
+      "watch_next": "Vendor-linked fixes and reproducible dependency-path audits distinguishing affected configurations from applications that merely use related libraries.",
+      "id": "story-06fabb2baab2",
+      "number": 4,
+      "category": "Developer security",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://pwn.ai/upload2shell/research.html",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/n5i1ds/ghostscript_cve_2026_125396",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-21T18:52:23.423-06:00",
+          "observed_at": "2026-11-23T08:00:05.794418+00:00",
+          "url": "https://pwn.ai/upload2shell/research.html",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 5,
+            "comments": 4,
+            "url": "https://lobste.rs/s/n5i1ds/ghostscript_cve_2026_125396"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-23T08:00:05.794418+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Separate the next C++ draft from the next shipping compiler",
+      "script": "Back from the break, Herb Sutter's C-plus-plus committee report puts two different horizons on the same page. The committee has completed technical work on C-plus-plus twenty-six again, after its approval ballot returned additional international comments, mostly concerning contracts. The updated document is expected to go through a second approval ballot. That gives library authors a current place to examine the direction of preconditions, postconditions and contract assertions without assuming the standard is already published. Meanwhile, the committee adopted labeled break and continue, ranges any-view and views slice into the draft for C-plus-plus twenty-nine. Those are future language and library changes, rather than features this report establishes in your installed compiler. For developers maintaining nested loops or range-heavy APIs, the report offers concrete proposals to follow. Pick one awkward control-flow example from your own code and compare its current expression with the adopted direction. Then check implementation support separately before turning that sketch into a project dependency.",
+      "why_now": "Sutter published the first-person committee report November 21, 2026. Its Lobsters posting at 07:57:53.737-06:00 had 22 points and 28 comments at 2026-11-23T08:00:05.794418+00:00.",
+      "why_early": "The meaningful changes are renewed completion of C++26 technical work after ballot comments and newly adopted C++29 draft features. A second C++26 approval ballot is anticipated; publication and compiler availability are not established.",
+      "watch_next": "The updated C++26 ballot document and compiler implementation reports for the newly adopted C++29 features.",
+      "id": "story-c73fc7815b46",
+      "number": 5,
+      "category": "Programming languages",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://herbsutter.com/2026/11/21/c26-is-done-again-trip-report-november-2026-iso-c-standards-meeting-buzios-brazil",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/fjueso/c_26_is_done_again_trip_report_november",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-21T07:57:53.737-06:00",
+          "observed_at": "2026-11-23T08:00:05.794418+00:00",
+          "url": "https://herbsutter.com/2026/11/21/c26-is-done-again-trip-report-november-2026-iso-c-standards-meeting-buzios-brazil",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 22,
+            "comments": 28,
+            "url": "https://lobste.rs/s/fjueso/c_26_is_done_again_trip_report_november"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-23T08:00:05.794418+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Examine a proposed common measure of pretraining progress",
+      "script": "On the measurement side, OpenAI has published internal perplexity measurements and proposed using that kind of evaluation across model developers. Perplexity measures how well a model predicts held-out text; lower values mean better average predictions. Chief scientist Jakub Pachocki argues that tracking this pretraining signal can help explain capability changes and inform shared safety standards. The post places GPT-three point five at approximately zero point nine nine log-perplexity and GPT-four at approximately zero point nine one on OpenAI's current main evaluation dataset. Those numbers describe that dataset, so they aren't scores you can directly compare with a loss reported on another collection. Researchers designing evaluations get a concrete proposal to examine: what would developers need to hold constant before a shared prediction metric became informative? The useful experiment is to compare prediction loss with the actual tasks you care about. Agreement could make the metric helpful; disagreements could reveal capabilities or deployment behavior that one average doesn't capture.",
+      "why_now": "OpenAI published the primary essay November 22, 2026. A discovery post at 12:08:48-05:00 had 91 likes, 19 replies and 9007 views at 2026-11-23T08:00:05.794418+00:00.",
+      "why_early": "The fresh contribution is disclosure of internal measurements and a proposal for cross-developer comparison. This is an author's argument and proposed shared framework, not an adopted standard or a validated universal mapping from loss to capability.",
+      "watch_next": "Independent responses specifying comparable datasets, measurement procedures and evidence connecting prediction loss with task-level capabilities.",
+      "id": "story-1a10f1676d46",
+      "number": 6,
+      "category": "AI evaluation",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://openai.com/index/perplexity-and-intelligence",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/btibor91/status/2124550678626660680",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-22T12:08:48-05:00",
+          "observed_at": "2026-11-23T08:00:05.794418+00:00",
+          "url": "https://openai.com/index/perplexity-and-intelligence",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 91,
+            "comments": 19,
+            "views": 9007,
+            "url": "https://x.com/btibor91/status/2124550678626660680"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-23T08:00:05.794418+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Recover fresher release notifications from a feed",
+      "script": "Returning to smaller infrastructure, Joshua Rogers has documented a workaround for stale Chrome release feeds. His notification bot watches release information to learn about fixed Chromium vulnerabilities, but Feedburner could lag behind the underlying blog. A Blogger feed address with the redirect-equals-false parameter bypasses the redirect and returns fresher entries in his tests. That's useful for people maintaining release monitors, dependency dashboards or security-notification bots, where receiving a valid feed isn't the same as receiving the latest post. The account includes dated responses and explores conditional requests, although its title is quite honest about caching only partly working. This is a workaround for a particular publishing path, rather than a newly announced feed standard. A practical first check is to compare your bot's newest entry with the publisher's page and inspect the redirects between them. Then test the alternative address over time. A beautifully reliable poller still needs somebody to notice when it's reliably collecting yesterday's news.",
+      "why_now": "The fresh account includes HTTP observations from November 21, 2026 and a recently discovered redirect=false workaround. Its November 22 Lobsters posting at 06:30:56.181-06:00 had 9 points and no comments at 2026-11-23T08:00:05.794418+00:00.",
+      "why_early": "A new practitioner finding documents a concrete workaround for an older stale-feed problem. Results concern the tested Blogger and Feedburner paths; broad compatibility, permanence and complete conditional-cache behavior are not established.",
+      "watch_next": "Repeated freshness checks and documented conditional-request behavior on the bypass feed.",
+      "id": "story-ef6bd601a8ca",
+      "number": 7,
+      "category": "Developer infrastructure",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://joshua.hu/fixing-google-feedburner-cache-problem-atom-rss",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/nbtm5j/fixing_google_s_feedburner_problem",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-22T06:30:56.181-06:00",
+          "observed_at": "2026-11-23T08:00:05.794418+00:00",
+          "url": "https://joshua.hu/fixing-google-feedburner-cache-problem-atom-rss",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 9,
+            "comments": 0,
+            "url": "https://lobste.rs/s/nbtm5j/fixing_google_s_feedburner_problem"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-23T08:00:05.794418+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Sketch a neighborhood mesh before placing radios",
+      "script": "Out in the neighborhood, Mesh coverage calculator turns radio placement into an interactive planning experiment. Draw a boundary, choose a technology such as LoRa, Meshtastic or Wi-Fi, and adjust antenna heights, gains and radio settings. The interface estimates node counts and coverage, with heatmaps, link profiles and data exports. Community-network tinkerers could use it to compare possible rooftop sites before carrying equipment around town. Its propagation model combines free-space path loss with a diffraction method, using terrain elevations and OpenStreetMap buildings. Indoor penetration and multipath reflections aren't modeled, which materially limits how you should read an indoor coverage estimate. There's also an airtime section for exploring voice bitrate and hop-count assumptions. That doesn't establish that calls over the planned mesh will work. Start with two locations you can actually measure, compare the predicted link with the observed signal, and use the difference to ask better placement questions. The map gives your radio experiment a place to begin.",
+      "why_now": "The author introduced the local-first WASM calculator in a November 22, 2026 Lobsters posting at 12:17:44.770-06:00. It had 5 points and 3 comments at 2026-11-23T08:00:05.794418+00:00.",
+      "why_early": "A fresh public introduction supplies an interactive propagation and placement calculator with explicit models and data sources. Coverage and node counts are estimates. Field validation, indoor accuracy and working mesh voice calls are not established.",
+      "watch_next": "Field comparisons between predicted links and measured signals, with documented terrain, building-data and radio-setting assumptions.",
+      "id": "story-9e45ba9d200f",
+      "number": 8,
+      "category": "Open networking tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://meshcoveragecalculator.lalala.ing",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/e89tey/calculate_radio_link_placement_node",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-22T12:17:44.770-06:00",
+          "observed_at": "2026-11-23T08:00:05.794418+00:00",
+          "url": "https://meshcoveragecalculator.lalala.ing",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 5,
+            "comments": 3,
+            "url": "https://lobste.rs/s/e89tey/calculate_radio_link_placement_node"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-23T08:00:05.794418+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Make your window manager a live programming playground",
+      "script": "And finally, Gliver gives the window manager itself a place in your programming session. Christine Lemmer-Webber's new account explores this early Wayland tiling window manager, written in Guile Scheme and inspired by StumpWM and Emacs. Its describe-key interface connects commands with their keyboard bindings. A local socket lets you connect through Geiser, inspect the running system, jump to a command's definition and evaluate changes immediately. Scheme learners and desktop tinkerers could use Gliver to customize a running desktop, with the thing they're studying visibly rearranging the windows around them. The article is enthusiastic, but precise about the release situation: version zero point zero point five is upcoming, bugs and missing features remain, and the proposed Guix package hasn't landed. There's a lovely small exercise here. Find the command behind one familiar shortcut, run it from the interactive prompt, then trace its definition. Your desktop becomes an unusually persistent practice project. You were probably going to spend the afternoon moving windows around anyway.",
+      "why_now": "Lemmer-Webber published the first-person account November 22, 2026. Its Lobsters posting at 14:10:15.360-06:00 had 38 points and 4 comments at 2026-11-23T08:00:05.794418+00:00.",
+      "why_early": "The fresh practitioner account documents a usable live-hacking workflow around an explicitly early window manager. Version 0.0.5 and Guix inclusion are pending, with bugs and missing features acknowledged. The article does not establish a newly shipped release or broad desktop reliability.",
+      "watch_next": "The 0.0.5 release, progress on Guix packaging and user examples of live changes that remain understandable and recoverable.",
+      "id": "story-6115d4488ca8",
+      "number": 9,
+      "category": "Offbeat developer tools",
+      "role": "closer",
+      "sources": [
+        {
+          "url": "https://dustycloud.org/blog/gliver-completes-the-guix-desktop",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/wc8fla/gliver_completes_guix_desktop",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-22T14:10:15.360-06:00",
+          "observed_at": "2026-11-23T08:00:05.794418+00:00",
+          "url": "https://dustycloud.org/blog/gliver-completes-the-guix-desktop",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 38,
+            "comments": 4,
+            "url": "https://lobste.rs/s/wc8fla/gliver_completes_guix_desktop"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-23T08:00:05.794418+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    }
+  ],
+  "interlude": {
+    "after_story": 4,
+    "title": "Thanks to Intelligrit",
+    "script": "Before we move from document processing to language design, thank you to Intelligrit, this episode's sponsor. Explore another possibility at intelligrit dot com."
+  }
+}
