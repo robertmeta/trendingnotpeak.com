@@ -1,0 +1,53 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0.0,
+      "title": "Opening"
+    },
+    {
+      "startTime": 21.28,
+      "title": "Give generated worlds a reason to stop at walls"
+    },
+    {
+      "startTime": 78.475,
+      "title": "Adopt stronger types one C file at a time"
+    },
+    {
+      "startTime": 137.749,
+      "title": "Compile arithmetic circuits into model weights"
+    },
+    {
+      "startTime": 203.265,
+      "title": "Keep a personal sales pipeline in editable files"
+    },
+    {
+      "startTime": 261.182,
+      "title": "Thanks to Intelligrit"
+    },
+    {
+      "startTime": 272.058,
+      "title": "Let an agent choose between training and harness changes"
+    },
+    {
+      "startTime": 333.174,
+      "title": "Test your website in a newly downloadable browser engine"
+    },
+    {
+      "startTime": 389.728,
+      "title": "Explore dictation that writes into your current application"
+    },
+    {
+      "startTime": 443.403,
+      "title": "Run graphical Linux experiments inside a browser"
+    },
+    {
+      "startTime": 503.638,
+      "title": "Give an old Nintendo a low-poly fireplace"
+    },
+    {
+      "startTime": 557.796,
+      "title": "Closing"
+    }
+  ]
+}

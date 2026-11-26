@@ -1,0 +1,397 @@
+{
+  "date": "2026-11-24",
+  "title": "TNP - 2026-11-24",
+  "intro": "It's Tuesday, November 24. Welcome to Trending Not Peak. Today, give generated worlds solid walls, add new types to C, and carry a sales pipeline in plain text. The writing is AI-assisted, and this voice is synthetic. Explore the stories at trending not peak dot com.",
+  "outro": "Take a few possibilities with you: NoPeWorld to prevent virtual wall crossings, Type-C to extend C incrementally, and Hermit CRM to organize local sales records. Find the sources at trending not peak dot com. This is Trending Not Peak. Have fun giving an idea somewhere to run, whether that's a browser tab or an old Nintendo sitting beside the television.",
+  "schema_version": 1,
+  "audio": {
+    "url": "https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-11-24/trending-not-peak-2026-11-24-kinetic-grid-r2.mp3",
+    "duration_seconds": 582.682517,
+    "bytes": 9325011,
+    "embedded_chapters": 12,
+    "sha256": "737901f62c09805b8266d8b75d58c5c45caad1090361573ec4467dae89056564"
+  },
+  "stories": [
+    {
+      "title": "Give generated worlds a reason to stop at walls",
+      "script": "First up, NoPeWorld tackles a basic problem in interactive generated video: press forward toward a wall, and you might simply pass through it. The researchers found that diffusion transformers already carry information in their hidden states that can predict these collisions. They train a small prediction head above a frozen model, then replace an unsafe action with a safer one intended to preserve what the player wanted. Across six video world models, the authors report reducing the average physical violation rate from seventy-four percent to sixteen percent. That's a substantial research result, with plenty of collisions still remaining. Interactive-world researchers can use NoPeWorld to prevent virtual wall crossings while investigating how an action filter changes control. The team says it has released code, weights and its NoPeBench benchmark. A revealing experiment would approach the same obstacle from several angles and check both whether you stop and whether you can still steer naturally around it.",
+      "why_now": "The paper page lists publication November 20, 2026 and submission to Hugging Face November 23. The November 23 discovery post at 02:49:21-05:00 had 190 likes, 18 replies and 23977 views at 2026-11-24T08:00:05.577963+00:00. The retrieved page displayed 55 upvotes and '#2 Paper of the day'.",
+      "why_early": "Recent primary research introduces a benchmark and a lightweight action-filtering framework using frozen-model hidden states, with code, benchmark and weights reported released. The 74% to 16% comparison is author-reported across six models. Zero-shot generalization is also an author result; independent replication and complete physical consistency remain unestablished. Global saturation is unknown within the configured sources.",
+      "watch_next": "Independent tests measuring collision rates and preservation of intended movement across unfamiliar scenes, viewpoints and moving obstacles.",
+      "id": "story-775420f6229d",
+      "number": 1,
+      "category": "AI world-model research",
+      "role": "anchor",
+      "sources": [
+        {
+          "url": "https://huggingface.co/papers/2611.27963",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/_akhaliq/status/2124772275593654290",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-23T02:49:21-05:00",
+          "observed_at": "2026-11-24T08:00:05.577963+00:00",
+          "url": "https://huggingface.co/papers/2611.27963",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 190,
+            "comments": 18,
+            "views": 23977,
+            "url": "https://x.com/_akhaliq/status/2124772275593654290"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-24T08:00:05.577963+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Adopt stronger types one C file at a time",
+      "script": "Next up, Type-C offers a gradual route into a different kind of C programming. Its compiler translates the extended language into readable C, then hands that output to your existing C compiler. The project describes variants, exhaustive matching, distinct types for identifiers and units, generic types, and errors represented as values. A C-eleven file is already a Type-C file, so adoption can begin with one source file. Systems programmers experimenting with clearer interfaces could use Type-C to extend C incrementally. Picture two identifiers that are both integers but refer to different things. Distinct types give you a way to express that difference in the program. The project is explicit about its status: the README examples work today, while other designed features remain unbuilt. Start with a small example, inspect its generated C, and see whether the extra type information makes an accidental mix-up easier to catch without obscuring the code you ultimately compile.",
+      "why_now": "Show HN introduced Type-C November 22, 2026 at 18:40:57+00:00. It had 41 points and 13 comments at 2026-11-24T08:00:05.577963+00:00. The retrieved repository displayed 15 stars, no forks and 516 commits.",
+      "why_early": "A fresh public introduction supplies a BSD-2-Clause compiler with an incremental C11 adoption path and readable C output. The README explicitly separates working examples from language features that are designed but unimplemented. Broad C compatibility and production reliability are unestablished.",
+      "watch_next": "Independent examples documenting supported constructs, generated C behavior and adoption inside existing C projects.",
+      "id": "story-5328a366e59b",
+      "number": 2,
+      "category": "Programming languages",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/stass/type-c",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50602561",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-22T18:40:57+00:00",
+          "observed_at": "2026-11-24T08:00:05.577963+00:00",
+          "url": "https://github.com/stass/type-c",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 41,
+            "comments": 13,
+            "url": "https://news.ycombinator.com/item?id=50602561"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-24T08:00:05.577963+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Compile arithmetic circuits into model weights",
+      "script": "Turning inside the model, Zero-Gradient Circuit Grafting asks whether a language model can receive an arithmetic capability through mathematical construction. The method compiles deterministic circuits into pretrained weights without training examples or runtime hooks. Its compiler handles signed addition, subtraction and multiplication over four to eight digits, alongside small Boolean circuits. On twelve hundred six-digit arithmetic cases in B-F-sixteen precision, the author reports ninety-nine point one seven percent accuracy for Granite four point two three-B and one hundred percent for Qwen three point five four-B, using the paper's arithmetic-prefix format. The added active nonzero weights amount to less than zero point zero six percent of either original model. Model researchers get an unusual alternative to investigate alongside fine-tuning and external calculators. The interface deserves attention too: the paper evaluates resuming ordinary text after a calculation separately. Computing a number correctly and fitting that number into a useful response are two behaviors an experiment needs to check together.",
+      "why_now": "Submitted November 19, 2026 and highlighted November 23 at 20:42:00-05:00. The discovery post had 186 likes, 21 replies and 11299 views at 2026-11-24T08:00:05.577963+00:00. The retrieved paper page displayed 48 saves and '#8 on Trending'.",
+      "why_early": "Recent primary research presents an analytical compiler for bounded deterministic circuits in pretrained models. The abstract reports 99.17% and 100% ALU-prefix accuracy on 1,200 six-digit BF16 cases, distinct from other figures in the author's social summary. Mid-sentence resumption is reported at 98–100%. Independent reproduction, broader arithmetic use and practical integration remain open.",
+      "watch_next": "Independent reproductions examining arithmetic formats, natural-language continuation, memory costs and preservation of unrelated language behavior.",
+      "id": "story-a6aae0368d22",
+      "number": 3,
+      "category": "AI architecture research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.alphaxiv.org/abs/2611.26450",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/askalphaxiv/status/2125042215781110146",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-23T20:42:00-05:00",
+          "observed_at": "2026-11-24T08:00:05.577963+00:00",
+          "url": "https://www.alphaxiv.org/abs/2611.26450",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 186,
+            "comments": 21,
+            "views": 11299,
+            "url": "https://x.com/askalphaxiv/status/2125042215781110146"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-24T08:00:05.577963+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Keep a personal sales pipeline in editable files",
+      "script": "Closer to a one-person business, Hermit CRM puts companies, contacts, deals and tasks into plain text files on your laptop. The free, Apache-licensed application is available for Mac and Linux, with a browser interface over those records. Freelancers and founders could use Hermit CRM to organize local sales records, then ask their own coding assistant to adapt the workspace. The site's dashboard example creates a TOML file describing open deals and upcoming work, with displayed numbers linking back to the underlying records. That makes customization something you can inspect as a file. Its outreach feature also describes researching a company, drafting a message and waiting for approval. Keeping records locally doesn't establish that every connected AI operation stays on the laptop; that depends on the tools you choose. A useful first exercise is a fictional client and one follow-up task. Add a field you actually need, then inspect what changed beneath the interface.",
+      "why_now": "Show HN introduced Hermit CRM November 23, 2026 at 10:09:02+00:00. It had 46 points and 5 comments at 2026-11-24T08:00:05.577963+00:00. The primary site identifies version 1.1.0 and an Apache 2.0 license.",
+      "why_early": "A fresh public introduction provides a concrete single-user CRM built around local plain text records and agent-assisted customization. Features and approval behavior are project descriptions. Independent reliability, integration privacy and customization maintainability remain unestablished.",
+      "watch_next": "Independent installations showing record portability, backup recovery and inspectable customizations using different coding assistants.",
+      "id": "story-565feb7b8895",
+      "number": 4,
+      "category": "Local-first applications",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://hermitcrm.io",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50609708",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-23T10:09:02+00:00",
+          "observed_at": "2026-11-24T08:00:05.577963+00:00",
+          "url": "https://hermitcrm.io",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 46,
+            "comments": 5,
+            "url": "https://news.ycombinator.com/item?id=50609708"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-24T08:00:05.577963+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Let an agent choose between training and harness changes",
+      "script": "Back from the break, CoEvoBench studies a decision agent builders face constantly: change the model, or change the software around it? The benchmark gives an LLM researcher a common base model, an initial harness and twenty-four hours. It can launch training runs, revise the harness, or combine both, before submitting one pair for separate test tasks. Across five agentic domains, the authors report that the strongest researcher closes more than four-fifths of the gap to an instruction-tuned reference system. The pattern is more interesting than a single score: improvements worked on interaction tasks, while long-horizon coding rarely benefited. The researchers also found that a strong first improvement didn't reliably lead to another. Teams studying automated agent development could borrow that experimental structure. Give the optimizer a bounded budget and keep final evaluation separate. Then inspect why it chose another training run over a smaller control-flow change, and whether the next round actually learned anything from the previous result.",
+      "why_now": "CoEvoBench was submitted November 20, 2026 and highlighted November 23 at 09:17:02-05:00. The discovery post had 147 likes, 49 replies and 10131 views at 2026-11-24T08:00:05.577963+00:00.",
+      "why_early": "New primary research evaluates joint model-and-harness optimization across five domains under a 24-hour budget, with separate test tasks and a code link on the paper page. This differs from prior coverage of fixed-model harness optimization and ongoing RL supervision. Results show limited successive improvement, rather than established open-ended recursive self-improvement.",
+      "watch_next": "Independent runs examining component-selection decisions, development-set overfitting and whether successive rounds produce held-out gains.",
+      "id": "story-b6b5f90ee059",
+      "number": 5,
+      "category": "AI evaluation research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2611.27116",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/omarsar0/status/2124869837545701845",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-23T09:17:02-05:00",
+          "observed_at": "2026-11-24T08:00:05.577963+00:00",
+          "url": "https://arxiv.org/abs/2611.27116",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 147,
+            "comments": 49,
+            "views": 10131,
+            "url": "https://x.com/omarsar0/status/2124869837545701845"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-24T08:00:05.577963+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Test your website in a newly downloadable browser engine",
+      "script": "Over in the browser, Ladybird has entered alpha with downloads for macOS and Linux. Its engine is built from scratch, giving web developers another implementation against which to test their sites. Until now, trying current development required building from source. The rolling alpha adds automatic updates, an in-browser broken-site report and crash reports you can inspect before deciding whether to send. For developers maintaining a component library, that lowers the effort required to discover assumptions that another engine exposes. Ladybird supports WebDriver for automated testing and the Firefox DevTools protocol. The alpha status matters here: websites can fail, crashes are expected, and the team makes no security promises today. Use it as a deliberate testing environment. Pick one page with an unusual layout or interaction, compare the result, and reduce a failure to a small example. A new engine gives that tiny reproduction a useful destination.",
+      "why_now": "Andreas Kling announced the alpha November 23, 2026. Its Lobsters posting at 10:13:03.376-06:00 had 95 points and 31 comments at 2026-11-24T08:00:05.577963+00:00.",
+      "why_early": "The material change is downloadable macOS and Linux alpha builds with rolling automatic updates, replacing the previous source-build requirement for trying development versions. The engine is established work, but this distribution channel is new. Compatibility failures, crashes and an immature security posture are explicitly acknowledged.",
+      "watch_next": "Small compatibility reproductions, automated WebDriver trials and fixes arriving through the rolling alpha channel.",
+      "id": "story-69a7af6d9248",
+      "number": 6,
+      "category": "Web development",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://ladybird.org/posts/alpha",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/h6webg/ladybird_is_now_alpha",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-23T10:13:03.376-06:00",
+          "observed_at": "2026-11-24T08:00:05.577963+00:00",
+          "url": "https://ladybird.org/posts/alpha",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 95,
+            "comments": 31,
+            "url": "https://lobste.rs/s/h6webg/ladybird_is_now_alpha"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-24T08:00:05.577963+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Explore dictation that writes into your current application",
+      "script": "Turning to audio, FireVoice has a fresh public introduction, and its current site emphasizes dictation directly into the application you're using. Speak a sentence, and the project says it removes fillers, repairs repetitions and adds punctuation where your cursor sits. That could be useful for developers drafting comments, answering a teammate or getting an unfinished thought into notes without changing windows. The site describes offline operation on your own computer and a voice trigger, Hey FireVoice. Its prominent download button targets Windows, although the page also advertises Mac and Linux. Check the available build for your platform before planning around it. There's a good small evaluation here: dictate the same paragraph into your editor and your notes app, including a project name and a deliberate correction. Compare the resulting text with what you meant. Cleanup is helpful when it preserves the odd technical word you actually wanted.",
+      "why_now": "Show HN introduced FireVoice November 24, 2026 at 02:58:20+00:00. It had 11 points and 2 comments at 2026-11-24T08:00:05.577963+00:00. The submission calls it an open-source voice studio; the retrieved primary page foregrounds local dictation and a new voice trigger.",
+      "why_early": "A fresh public introduction supplies a concrete local dictation workflow. Offline processing, cleanup behavior and platform coverage are project claims. The prominent download targets Windows while broader platform labels appear elsewhere; model requirements, independent accuracy and equivalent builds are unestablished. The site's typing-speed comparison is not treated as a measured product speedup.",
+      "watch_next": "Independent installations documenting available platforms, hardware requirements, offline behavior and preservation of technical vocabulary.",
+      "id": "story-23640cedfeb4",
+      "number": 7,
+      "category": "Local AI tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://firevoice.fabwaseem.com",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50623038",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-24T02:58:20+00:00",
+          "observed_at": "2026-11-24T08:00:05.577963+00:00",
+          "url": "https://firevoice.fabwaseem.com",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 11,
+            "comments": 2,
+            "url": "https://news.ycombinator.com/item?id=50623038"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-24T08:00:05.577963+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Run graphical Linux experiments inside a browser",
+      "script": "For a different kind of desktop experiment, trynix now boots graphical programs inside a browser. Farid Zakaria's new account describes replacing its browser QEMU engine with unkernel, which compiles Linux to WebAssembly while emulating user programs. The author reports workload-dependent speedups of two to thirty-two times. More visibly, the system now connects Wayland windows, WebGL-two graphics and browser audio. Developers teaching Linux tools or exploring Nix packages could investigate sharing an environment someone can open without arranging a local installation. The examples range from Solitaire and spinning gears to Firefox running inside the page. Networking uses a WebSocket connection to a relay, so the browser experience includes outside infrastructure. The speed figures are the author's measurements. Begin with a small graphical program and compare startup with interaction once it's running. Getting a window to appear is one milestone; making the experiment pleasant enough to keep exploring is another.",
+      "why_now": "Zakaria published the implementation account November 23, 2026. The supplied discovery row is timestamped November 24 at 06:30:33+00:00; its Lobsters observation had 5 points and no comments at 2026-11-24T08:00:05.577963+00:00. The account dates unkernel's publication to November 19.",
+      "why_early": "The fresh change is trynix's adoption of a new execution engine alongside graphical, audio and networking support. The 2x–32x range is author-reported and workload-dependent. Broad package compatibility and independent interactive performance are unestablished; networking relies on a Wisp relay.",
+      "watch_next": "Reproducible browser trials separating cold startup, graphics responsiveness, package compatibility and relay-dependent networking.",
+      "id": "story-a9c56d12d300",
+      "number": 8,
+      "category": "Developer experimentation",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://fzakaria.com/2026/11/23/2035-came-early",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50624497",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/rkk6o8/2035_came_early",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-24T06:30:33+00:00",
+          "observed_at": "2026-11-24T08:00:05.577963+00:00",
+          "url": "https://fzakaria.com/2026/11/23/2035-came-early",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 5,
+            "comments": 0,
+            "url": "https://lobste.rs/s/rkk6o8/2035_came_early"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-24T08:00:05.577963+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Give an old Nintendo a low-poly fireplace",
+      "script": "And finally, Hearth 64 turns a Nintendo sixty-four into a cozy fireplace screensaver. The newly introduced homebrew project targets stock four-megabyte hardware and a real CRT television, with automatic detection of NTSC sixty-hertz and PAL fifty-hertz operation through libdragon. Its scene includes layered flames, embers and flickering point lighting across a low-poly hearth. Retro developers get a compact project for exploring how much atmosphere a constrained machine can produce. The repository offers a ready-to-run ROM for supported flash cartridges or the ares emulator. You could begin in the emulator, inspect how the lighting changes the stone and logs, then follow that effect into the source. Working across the advertised hardware still deserves hands-on checking. There's something very appealing about giving an old console a new job where nobody has to rescue a princess, win a race or even pick up the controller.",
+      "why_now": "Show HN introduced Hearth 64 November 23, 2026 at 01:52:12+00:00. It had 12 points and 5 comments at 2026-11-24T08:00:05.577963+00:00. The retrieved repository displayed 9 stars, no forks and 2 commits.",
+      "why_early": "A fresh public introduction provides source and a ready-to-run fireplace ROM targeting stock 4MB N64 hardware, CRT displays and ares. Hardware compatibility, timing detection and visual behavior are project descriptions without independent test results in the evidence.",
+      "watch_next": "Independent runs on NTSC and PAL consoles and source walkthroughs explaining the flame rendering and dynamic lighting.",
+      "id": "story-004112385fd7",
+      "number": 9,
+      "category": "Offbeat experiments",
+      "role": "closer",
+      "sources": [
+        {
+          "url": "https://github.com/njgreb/n64fireplace",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50606513",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-23T01:52:12+00:00",
+          "observed_at": "2026-11-24T08:00:05.577963+00:00",
+          "url": "https://github.com/njgreb/n64fireplace",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 12,
+            "comments": 5,
+            "url": "https://news.ycombinator.com/item?id=50606513"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-24T08:00:05.577963+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    }
+  ],
+  "interlude": {
+    "after_story": 4,
+    "title": "Thanks to Intelligrit",
+    "script": "Before we turn from personal workflows to agent experiments, thanks to Intelligrit, this episode's sponsor. Take your next curious question to intelligrit dot com."
+  }
+}
