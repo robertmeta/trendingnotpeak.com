@@ -1,0 +1,436 @@
+{
+  "date": "2026-11-25",
+  "title": "TNP - 2026-11-25",
+  "intro": "Welcome to Trending Not Peak for Wednesday, November 25. Today, give analytics its own database lane, bring document parsing home, and share an interface arrangement through a link. AI helped write this episode, and the voice is synthetic. Explore the stories at trending not peak dot com.",
+  "outro": "Take a few useful experiments with you: Mason to query Postgres analytics, OCRia-1 to parse documents locally, and Sashay to share pane layouts. Find their sources at trending not peak dot com. This is Trending Not Peak. Have fun giving an idea something concrete to do, whether that's reading a difficult table or making a twenty-six-year-old graphics demo splash again.",
+  "schema_version": 1,
+  "audio": {
+    "url": "https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-11-25/trending-not-peak-2026-11-25-kinetic-grid-r2.mp3",
+    "duration_seconds": 634.600998,
+    "bytes": 10156005,
+    "embedded_chapters": 13,
+    "sha256": "1b9085a08a338ee3c70a99b06a7c4d44723f7cf1b35f2a6b6fed32a9c9e40c64"
+  },
+  "stories": [
+    {
+      "title": "Give Postgres analytics a columnar read replica",
+      "script": "First up, Mason gives a Postgres application another place to send its big analytical questions. It synchronizes selected tables and columns into DuckDB, then translates incoming Postgres queries for that columnar engine. The application still speaks Postgres SQL. In the team's demonstration, grouping ten million request rows takes fifteen point seven seconds on the primary and about point nineteen seconds on Mason, with the same answer. That's one published comparison, rather than a forecast for your dashboard. Developers could use Mason to query Postgres analytics while exploring a separate path for reports or agent questions. It runs as one Node.js process, and synchronization can happen on demand, through polling or through logical replication. The project explicitly says narrow primary-key lookups aren't its strength. Pick one expensive group-by from a test database, compare the answers, and measure how fresh the replica is when the underlying rows change.",
+      "why_now": "Show HN introduced Mason November 24, 2026 at 16:11:52+00:00. It had 94 points and 18 comments at 2026-11-25T08:00:04.920111+00:00. This is one observation of early interest, not measured acceleration.",
+      "why_early": "A fresh Apache-2.0 introduction supplies a single-process Postgres-facing analytical replica with selectable synchronization methods. SQL compatibility and performance are project claims; independent conformance, synchronization reliability and workload results remain unestablished. Global saturation is unknown within the configured sources.",
+      "watch_next": "Independent tests comparing query answers, synchronization lag and mixed analytical workloads against the original Postgres database.",
+      "id": "story-66e6136a2975",
+      "number": 1,
+      "category": "Database tools",
+      "role": "anchor",
+      "sources": [
+        {
+          "url": "https://masondata.ai",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50630294",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-24T16:11:52+00:00",
+          "observed_at": "2026-11-25T08:00:04.920111+00:00",
+          "url": "https://masondata.ai",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 94,
+            "comments": 18,
+            "url": "https://news.ycombinator.com/item?id=50630294"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-25T08:00:04.920111+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Keep experimental attempts separately accessible",
+      "script": "Turning to research agents, MLEvolver asks what an experiment-running agent should remember between attempts. The researchers separate two choices: how to preserve past experiments, and how to keep useful lessons. Across three models and two benchmark families, individually accessible attempt records beat a rolling summary. Context folding, which condenses each attempt into a short digest, performed best in all six settings. For lessons, deleting persistently unused ones helped more on average than merging them or making them permanent rules. The combined harness reached a reported seventy-two point seven percent medal rate on MLE-Bench Lite, ahead of AIDE and OpenEvolve under the same inference budget. Agent builders get a specific design to investigate: preserve the experiment history while pruning the advice nobody uses. Compare that with your current memory system on repeated optimization tasks. Inspect whether the agent can retrieve an earlier failure when it becomes relevant again.",
+      "why_now": "The paper was submitted November 20, 2026. Its November 24 highlight at 19:50:02-05:00 had 52 likes, 20 replies and 5337 views at 2026-11-25T08:00:04.920111+00:00.",
+      "why_early": "Recent primary research isolates context and skill mechanisms against a shared recency-truncation baseline before combining them. Results are author-reported across gpt-oss-120b, gpt-6-luna and gpt-6-sol. This studies experimental memory curation, distinct from previously covered harness self-modification and compositional training; independent replication remains open.",
+      "watch_next": "Reproductions measuring retrieval of past attempts, effects of lesson deletion and total costs on unfamiliar experimental tasks.",
+      "id": "story-5f8e1aab0c8b",
+      "number": 2,
+      "category": "AI agent research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2611.28244",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/omarsar0/status/2125391524712309135",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-24T19:50:02-05:00",
+          "observed_at": "2026-11-25T08:00:04.920111+00:00",
+          "url": "https://arxiv.org/abs/2611.28244",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 52,
+            "comments": 20,
+            "views": 5337,
+            "url": "https://x.com/omarsar0/status/2125391524712309135"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-25T08:00:04.920111+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Download a document parser for your own infrastructure",
+      "script": "Over in document processing, LlamaIndex has released the weights for OCRia-1, its four-billion-parameter parsing model. The team describes it as handling complex tables, charts and difficult scans, and says the weights are available through Hugging Face and Ollama. That changes where you can experiment: the model can run on infrastructure you control. Developers building searchable archives could use OCRia-1 to parse documents locally, then feed the extracted material into their existing retrieval pipeline. The release has its own model license, so open weights shouldn't be read as an unrestricted licensing promise. There's no supported hardware requirement or accuracy comparison to give you here. A useful first evaluation is a small collection with known answers: a table with merged cells, a chart with labeled values, and a rough scan. Check whether the extracted relationships survive, especially before turning a tidy-looking output into searchable facts.",
+      "why_now": "LlamaIndex announced the weight release November 24, 2026 at 14:46:06-05:00. The post had 69 likes, 11 replies and 29747 views at 2026-11-25T08:00:04.920111+00:00. The retrieved model page displayed 57 likes.",
+      "why_early": "The material change is downloadable OCRia-1 weights for self-hosted document parsing, rather than a newly invented parsing task. The model page identifies ocria-1-license. Independent extraction accuracy, hardware requirements and complete document-processing reliability are not established by the evidence.",
+      "watch_next": "Independent installations and document-level evaluations covering table structure, chart values, difficult scans and license suitability.",
+      "id": "story-0c646d92e216",
+      "number": 3,
+      "category": "Open-weight document models",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://huggingface.co/llamaindex/OCRia-1",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/llama_index/status/2125315040723062872",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-24T14:46:06-05:00",
+          "observed_at": "2026-11-25T08:00:04.920111+00:00",
+          "url": "https://huggingface.co/llamaindex/OCRia-1",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 69,
+            "comments": 11,
+            "views": 29747,
+            "url": "https://x.com/llama_index/status/2125315040723062872"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-25T08:00:04.920111+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Turn proof counterexamples into runtime tests",
+      "script": "At the correctness bench, Conao3 has published a Clojure investigation combining Lean proofs with differential testing. Small integer and bit-manipulation functions became Lean models. When a property failed, the author translated the counterexample into a Clojure input and reproduced the behavior in the original implementation. Larger collections were tested against Java collections instead. The author reports seventeen bugs they couldn't find in the project's issue tracker or community site, using Clojure one point twelve point seven and JDK twenty-one. Interestingly, three million differential-test operations found no mismatch in the HAMT itself; failures appeared in surrounding code and boundaries between mechanisms. Library maintainers could borrow this division of work: prove a small arithmetic property, then test how the surrounding system uses it. Follow one counterexample through the original runtime and proposed correction. The useful result is a reproducible failing input, with a precise account of the property it violates.",
+      "why_now": "The first-person account is dated November 24, 2026. Its Lobsters posting at 09:22:24.477-06:00 had 67 points and 5 comments at 2026-11-25T08:00:04.920111+00:00.",
+      "why_early": "A fresh practitioner investigation reports 17 previously unlocated bugs and describes reproduction in Clojure 1.12.7. Prior-report status is the author's search finding, not an authoritative project determination. Lean proofs concern modeled small functions; differential testing does not prove whole-collection correctness, and upstream acceptance or fixes are unestablished.",
+      "watch_next": "Maintainer assessments, minimized regression tests and accepted corrections linking each finding to its modeled property.",
+      "id": "story-fcd389b84f71",
+      "number": 4,
+      "category": "Software verification",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://s.conao3.com/blog/2026/e4f733",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/yyktrz/i_checked_clojure_s_core_with_lean_found_17",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-24T09:22:24.477-06:00",
+          "observed_at": "2026-11-25T08:00:04.920111+00:00",
+          "url": "https://s.conao3.com/blog/2026/e4f733",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 67,
+            "comments": 5,
+            "url": "https://lobste.rs/s/yyktrz/i_checked_clojure_s_core_with_lean_found_17"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-25T08:00:04.920111+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Put an adjustable workspace in a shareable URL",
+      "script": "Closer to the interface, Sashay is a sliding-pane library with a nice answer to a familiar problem: your useful arrangement disappears when somebody else opens the application. Pane widths, open panes and expanded bars can fit into a short layout code in the URL. Developers building a document browser or inspection tool could use Sashay to share pane layouts, keeping a list beside the detail somebody needs to examine. Dragging a divider snaps it to simple fractions. Panes that run out of room fold under their neighbors, and phone layouts expose tabs. The site identifies version one point three, an MIT license, a dependency-free core and a React interface requiring React nineteen or newer. It also documents keyboard controls on every edge. Build a tiny list-and-detail view, squeeze it down to phone width, then send its layout link to another screen. See whether the arrangement still communicates what you wanted someone to inspect.",
+      "why_now": "Show HN introduced Sashay November 25, 2026 at 03:10:18+00:00. It had 24 points and 5 comments at 2026-11-25T08:00:04.920111+00:00. The primary site identifies version 1.3.0.",
+      "why_early": "A fresh public introduction supplies working demos, URL-encoded arrangements and documented pane interactions. The core has zero runtime dependencies, while the React interface requires React 19 or newer and ESM. Independent accessibility, deep-stack performance and application integration results remain unestablished.",
+      "watch_next": "Real applications testing shared layouts across screen sizes, keyboard navigation and deep navigation stacks.",
+      "id": "story-08bee0fe1cc4",
+      "number": 5,
+      "category": "Interface development",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://vcarl.com/sashay",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50637936",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-25T03:10:18+00:00",
+          "observed_at": "2026-11-25T08:00:04.920111+00:00",
+          "url": "https://vcarl.com/sashay",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 24,
+            "comments": 5,
+            "url": "https://news.ycombinator.com/item?id=50637936"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-25T08:00:04.920111+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Run robot policies without loading PyTorch",
+      "script": "Back from the break, ExecuTorch-TensorRT offers a smaller runtime path for robot policies written in PyTorch. With Torch-TensorRT two point fifteen and ExecuTorch one point six, you compile a model into an ExecuTorch program backed by TensorRT. The robot can then run it from C-plus-plus or Python without loading PyTorch. Operations TensorRT can't handle can still run on the GPU. The NVIDIA and Meta teams report fitting a three-point-six-billion-parameter policy on an eight-gigabyte Jetson Orin Nano, where eager PyTorch runs out of memory. Their GR00T one point seven example takes about two hundred milliseconds per action chunk. Robotics developers investigating onboard inference get a concrete deployment route to compare with their current export process. An action chunk contains a short plan, so that timing isn't a per-action measurement. Measure the complete loop with cameras and other models running too. Everything on that little board shares the same memory.",
+      "why_now": "The joint technical account is dated November 24, 2026. PyTorch's highlight at 16:00:25-05:00 had 65 likes, 6 replies and 11232 views at 2026-11-25T08:00:04.920111+00:00.",
+      "why_early": "The fresh integration combines Torch-TensorRT 2.15 and ExecuTorch 1.6 for deployment without loading torch. Team measurements report speed and memory within 4% of their fastest tested TensorRT setup on Jetson Orin Nano. Independent full-loop latency, model coverage and sustained robot operation remain unestablished.",
+      "watch_next": "Independent deployments reporting compilation failures, fallback behavior, complete memory use and action-chunk deadlines under realistic sensor workloads.",
+      "id": "story-e03c29c99322",
+      "number": 6,
+      "category": "Edge AI infrastructure",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://bit.ly/4zFSdv6",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/pytorch/status/2125333742889603093",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-24T16:00:25-05:00",
+          "observed_at": "2026-11-25T08:00:04.920111+00:00",
+          "url": "https://bit.ly/4zFSdv6",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 65,
+            "comments": 6,
+            "views": 11232,
+            "url": "https://x.com/pytorch/status/2125333742889603093"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-25T08:00:04.920111+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Let video codecs identify redundant model inputs",
+      "script": "Turning to generated video, CodecOPSD borrows an idea from the machinery that compresses ordinary video. A generation model may receive reference images, depth maps or motion clips. All of those become input tokens, including plenty of repeated information. The researchers use a codec to identify redundant tokens, then train an adapter to work with the pruned inputs. Across sixteen conditioning modalities on their video diffusion model, they report removing sixty-six percent of condition tokens on average with almost no quality loss. Denoising becomes twice as fast in their tests, and cache memory falls by up to seventy-three percent in key-value-cache mode. Creative-tool researchers could investigate richer combinations of references within a smaller processing budget. Those figures concern the evaluated generation machinery, rather than an entire application's response time. Compare a sequence with one reference against the same sequence with several. Check whether removing repeated information preserves the small detail that made each reference useful.",
+      "why_now": "The paper page lists publication November 23, 2026 and submission to Hugging Face November 25. Its November 24 highlight at 23:46:14-05:00 had 50 likes, 10 replies and 6132 views at 2026-11-25T08:00:04.920111+00:00. The retrieved page displayed 7 upvotes.",
+      "why_early": "Recent primary research combines codec-based condition-token pruning with on-policy self-distillation. The page links models and a demonstration. Token reduction, denoising speed and cache savings are author-reported; independent fidelity and end-to-end application measurements remain open.",
+      "watch_next": "Independent comparisons measuring reference adherence, temporal consistency and complete generation costs as conditioning inputs increase.",
+      "id": "story-b1087b6b614d",
+      "number": 7,
+      "category": "AI video research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://huggingface.co/papers/2611.31184",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/_akhaliq/status/2125450969085546500",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-24T23:46:14-05:00",
+          "observed_at": "2026-11-25T08:00:04.920111+00:00",
+          "url": "https://huggingface.co/papers/2611.31184",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 50,
+            "comments": 10,
+            "views": 6132,
+            "url": "https://x.com/_akhaliq/status/2125450969085546500"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-25T08:00:04.920111+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Share a browser profile across concurrent sessions",
+      "script": "Meanwhile, Browser Use has announced real-time profile synchronization across concurrent cloud browsers. The company says a login, cart, session and settings can follow the browsers as they run, without changes to existing code. For developers splitting an authenticated workflow across several browser workers, that could remove repeated sign-ins and stale copies of session state. The useful experiment is small: sign into a test account in one browser, change a harmless preference, and check whether a second running browser sees it. Shared state also creates an interesting coordination question. If two workers change the same cart or setting, what result does each observe? The announcement doesn't document conflict handling or independent reliability measurements. Start with workers that read different pages, then introduce one controlled state change. That gives you a way to examine synchronization before making concurrent actions depend on it.",
+      "why_now": "Browser Use announced real-time profile synchronization November 24, 2026 at 22:23:04-05:00. The post had 62 likes, 7 replies and 5803 views at 2026-11-25T08:00:04.920111+00:00.",
+      "why_early": "The meaningful change is newly announced synchronization of running browser profiles, rather than browser automation generally. The capability is described by the vendor's primary announcement. Supported state boundaries, propagation delay and concurrent-write semantics remain unestablished.",
+      "watch_next": "Documented synchronization semantics and reproducible concurrent-browser tests covering logins, state propagation and conflicting changes.",
+      "id": "story-ef244017b146",
+      "number": 8,
+      "category": "Browser automation",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://browser-use.com",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/browser_use/status/2125430040091668580",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-24T22:23:04-05:00",
+          "observed_at": "2026-11-25T08:00:04.920111+00:00",
+          "url": "https://browser-use.com",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 62,
+            "comments": 7,
+            "views": 5803,
+            "url": "https://x.com/browser_use/status/2125430040091668580"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-25T08:00:04.920111+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Test which model units support one next-token answer",
+      "script": "For a look inside a small model, Open Interpretability Explain traces a next-token answer through neurons and attention heads. It first records typical activations over twenty thousand tokens. Then it ranks units by how unusually they activate and how sensitive the chosen answer is to them. Crucially, it also switches units off to test those estimates. In the project's Pythia seventy-million demonstration, keeping eighty-six explained units while placing other neurons at baseline restores eighty-one point nine percent of the probability assigned to the answer, sky. Random neuron sets restore thirteen percent on average. Interpretability learners get a concrete example of moving from an attribution score to an intervention. This is a small-model demonstration with a young explanation registry, rather than a complete account of an assistant's reasoning. Explore one prompt, inspect the units it highlights, and compare the explanation with what happens when those units are actually changed.",
+      "why_now": "The primary explanation is dated November 22, 2026. Show HN introduced it November 24 at 13:47:20+00:00; the discussion had 11 points and 1 comment at 2026-11-25T08:00:04.920111+00:00.",
+      "why_early": "A fresh public tool introduction demonstrates baseline-based attribution, ablation and probability restoration on EleutherAI/pythia-70m. Numerical results concern one illustrated prompt and project experiments. Registry coverage, explanation validity across prompts and applicability to larger models remain open.",
+      "watch_next": "Reproductions across varied prompts comparing attributed units, intervention results and robustness of the proposed explanations.",
+      "id": "story-b201b7d7611b",
+      "number": 9,
+      "category": "AI interpretability tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://open-interpretability.com/posts/explain/index.html",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50628121",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-24T13:47:20+00:00",
+          "observed_at": "2026-11-25T08:00:04.920111+00:00",
+          "url": "https://open-interpretability.com/posts/explain/index.html",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 11,
+            "comments": 1,
+            "url": "https://news.ycombinator.com/item?id=50628121"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-25T08:00:04.920111+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Poke a piece of graphics-card history in your browser",
+      "script": "And finally, GPU demos brings graphics-card showpieces from nineteen ninety-eight through two thousand six into the browser. These unofficial ports are rebuilt from the original files, with demonstrations from 3dfx, NVIDIA, ATI and Animusic. You can poke a reflective bubble, disturb a pond, or change how many fur layers a werewolf wears. Graphics learners get something more useful than a nostalgic screenshot: controls that expose how an effect is assembled. ATI's Car Paint demonstration builds its finish layer by layer. NVIDIA's Bugs includes a Depth Vision switch for inspecting overdraw. Pick one effect and change a single control while watching what disappears. That makes an old hardware sales pitch into a small rendering lesson. The gallery credits the original owners and recommends sound. If your next interface needs an obvious response to a click, a twenty-six-year-old pond still has a pretty good suggestion.",
+      "why_now": "Show HN introduced the browser gallery November 25, 2026 at 04:31:48+00:00. It had 69 points and 14 comments at 2026-11-25T08:00:04.920111+00:00.",
+      "why_early": "The fresh contribution is a playable browser collection of unofficial ports, rather than new discoveries about the original graphics hardware. The site documents interactive controls and credits original assets. Port fidelity and cross-browser compatibility are not independently established.",
+      "watch_next": "Technical porting accounts explaining how original effects map to browser rendering and where behavior differs from the historical demos.",
+      "id": "story-fe89a7f4f466",
+      "number": 10,
+      "category": "Offbeat graphics experiments",
+      "role": "closer",
+      "sources": [
+        {
+          "url": "https://gpu-demo-gallery.pages.dev",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50638503",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-25T04:31:48+00:00",
+          "observed_at": "2026-11-25T08:00:04.920111+00:00",
+          "url": "https://gpu-demo-gallery.pages.dev",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 69,
+            "comments": 14,
+            "url": "https://news.ycombinator.com/item?id=50638503"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-25T08:00:04.920111+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    }
+  ],
+  "interlude": {
+    "after_story": 5,
+    "title": "Thanks to Intelligrit",
+    "script": "Thanks to Intelligrit, this episode's sponsor, for supporting today's discoveries. Before we move from browser layouts to robot runtimes, take a look at intelligrit dot com."
+  }
+}

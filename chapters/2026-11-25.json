@@ -1,0 +1,57 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0.0,
+      "title": "Opening"
+    },
+    {
+      "startTime": 21.526,
+      "title": "Give Postgres analytics a columnar read replica"
+    },
+    {
+      "startTime": 79.283,
+      "title": "Keep experimental attempts separately accessible"
+    },
+    {
+      "startTime": 138.081,
+      "title": "Download a document parser for your own infrastructure"
+    },
+    {
+      "startTime": 193.993,
+      "title": "Turn proof counterexamples into runtime tests"
+    },
+    {
+      "startTime": 253.191,
+      "title": "Put an adjustable workspace in a shareable URL"
+    },
+    {
+      "startTime": 309.507,
+      "title": "Thanks to Intelligrit"
+    },
+    {
+      "startTime": 321.022,
+      "title": "Run robot policies without loading PyTorch"
+    },
+    {
+      "startTime": 378.298,
+      "title": "Let video codecs identify redundant model inputs"
+    },
+    {
+      "startTime": 440.449,
+      "title": "Share a browser profile across concurrent sessions"
+    },
+    {
+      "startTime": 495.484,
+      "title": "Test which model units support one next-token answer"
+    },
+    {
+      "startTime": 554.837,
+      "title": "Poke a piece of graphics-card history in your browser"
+    },
+    {
+      "startTime": 609.394,
+      "title": "Closing"
+    }
+  ]
+}
