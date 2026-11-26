@@ -1,0 +1,436 @@
+{
+  "date": "2026-11-26",
+  "title": "TNP - 2026-11-26",
+  "intro": "It's Thursday, November 26. Welcome to Trending Not Peak. Today, fork a running experiment, give a coding agent a local model, and turn a desk clock into company. AI helped write this episode, and you're hearing a synthetic voice. Explore the stories at trending not peak dot com.",
+  "outro": "Three possibilities to carry away: TimeTravelContainer to fork running tool sessions, rustling to serve local coding models, and Carry to save chats as Markdown. Explore their sources at trending not peak dot com. This is Trending Not Peak. Have fun making something worth checking on, especially if a tiny pixel pet gets to watch it work.",
+  "schema_version": 1,
+  "audio": {
+    "url": "https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-11-26/trending-not-peak-2026-11-26-kinetic-grid-r2.mp3",
+    "duration_seconds": 642.917029,
+    "bytes": 10288903,
+    "embedded_chapters": 13,
+    "sha256": "f35bad948bfee427bf483d5bd04fc16f3a1c6331b87f4802d8c2e2599dfcb0f3"
+  },
+  "stories": [
+    {
+      "title": "Fork an experiment without restarting its tools",
+      "script": "First up, TimeTravelContainer makes a running tool session something an agent can branch. Its rootless runtime clones processes, memory, files and network state using copy-on-write. Unchanged memory stays shared; changed pages consume additional space. Imagine an agent reaching an interesting point in a chip-design tool, then exploring two alternatives without loading the whole environment twice. Agent researchers could use TimeTravelContainer to fork running tool sessions and compare those branches. Across two electronic-design automation workflows, the authors report environment cloning eighty-four point one times faster, memory reductions of thirty-one to seventy-two percent, and complete agent runs one point seven to nine point four times faster. Those results concern the evaluated design tools. The paper describes support for Linux, Apple Silicon Macs and Windows through WSL two, without root privileges or hardware virtualization. A revealing next experiment would branch at the same checkpoint and inspect whether each copy preserves the state needed to continue independently.",
+      "why_now": "Submitted November 24, 2026 and highlighted November 25 at 09:35:02-05:00. The discovery post had 109 likes, 38 replies and 9423 views at 2026-11-26T08:00:05.761570+00:00. This is one interest observation, not measured acceleration.",
+      "why_early": "Recent primary research introduces live copy-on-write container forking and evaluates MAGE with Innovus and EvoDRC with KLayout. Performance and platform support are author-reported. Public software availability, independent reproduction and general workload behavior are not established. Global saturation is unknown within the configured sources.",
+      "watch_next": "Accessible runtime artifacts and independent tests of fork fidelity, divergent branches, network behavior and complete agent costs.",
+      "id": "story-b4016557d0bf",
+      "number": 1,
+      "category": "Agent infrastructure research",
+      "role": "anchor",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2611.32255",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/omarsar0/status/2125599144102531334",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-25T09:35:02-05:00",
+          "observed_at": "2026-11-26T08:00:05.761570+00:00",
+          "url": "https://arxiv.org/abs/2611.32255",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 109,
+            "comments": 38,
+            "views": 9423,
+            "url": "https://x.com/omarsar0/status/2125599144102531334"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-26T08:00:05.761570+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Keep an agent's host awake while it works",
+      "script": "Closer to the editor, Visual Studio Code one point one forty-eight addresses an extremely ordinary way for unattended agent work to stop: the computer falls asleep. A preview setting lets supported Agent Hosts prevent idle sleep during active turns, including after you close the window. The default applies while plugged in, and the hold ends shortly after the work finishes. Developers leaving a bounded task running get a useful control over the machine doing that work. The release also introduces experimental creation of isolated Linux Dev Containers without writing a container configuration, plus cleanup of inactive agent worktrees on remote hosts. Microsoft reports chat responses beginning thirty percent faster on average than in the previous stable release. That's response startup, rather than task completion. Start with a small task and check the host's behavior when the editor closes. The important machine may be the remote one, rather than the laptop in front of you.",
+      "why_now": "VS Code 1.148 shipped November 25, 2026. The official announcement at 13:01:04-05:00 had 201 likes, 18 replies and 19873 views at 2026-11-26T08:00:05.761570+00:00.",
+      "why_early": "The meaningful changes are a preview keep-awake control and experimental container and sandbox features in a new stable editor release. The editor itself is established. Supported-host behavior and independent workflow measurements remain to be tested.",
+      "watch_next": "Trials documenting supported hosts, keep-awake lifecycle and agent-created Dev Container behavior.",
+      "id": "story-881626c4e7b2",
+      "number": 2,
+      "category": "Developer tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://aka.ms/VSCode/148",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/code/status/2125650996277731811",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-25T13:01:04-05:00",
+          "observed_at": "2026-11-26T08:00:05.761570+00:00",
+          "url": "https://aka.ms/VSCode/148",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 201,
+            "comments": 18,
+            "views": 19873,
+            "url": "https://x.com/code/status/2125650996277731811"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-26T08:00:05.761570+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Restore parallel drafting to feedback models",
+      "script": "Turning inside the model, Feedback Shortcut tackles a dependency that makes speculative decoding awkward. Latent Feedback Transformers feed one position's final hidden state into the next position. That can improve prediction, but the next token now needs information that hasn't been computed yet. Feedback Shortcut learns a small projection that supplies a stand-in, allowing several drafted tokens to be checked together. During the next verification pass, it corrects the preceding drafts using newly available states, without another model call. At one hundred thirty-five million and seven hundred eighty million parameters, the authors report decoding two point four to two point eight times faster than exact latent-feedback decoding, with nearly matching text-prediction quality and about two percent extra training compute. Architecture researchers get a concrete way to investigate feedback without giving up parallel verification. Compare prediction quality and complete generation latency together, especially as batch size changes. The scheduling of a correction can matter as much as the correction itself.",
+      "why_now": "Submitted November 20, 2026 and highlighted November 25 at 01:09:00-05:00. The discovery post had 186 likes, 13 replies and 7351 views at 2026-11-26T08:00:05.761570+00:00. The paper page displayed 97 saves.",
+      "why_early": "Recent primary research combines state alignment with pipelined correction at 135M and 780M scales. The abstract reports remaining within 10^-4 bits per byte of exact decoding on Paloma. Code is linked from the paper page; larger-scale and independent results remain open.",
+      "watch_next": "Matched reproductions across model scales and batch sizes reporting prediction quality, latency and correction overhead.",
+      "id": "story-ea754d3b4887",
+      "number": 3,
+      "category": "AI inference research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.alphaxiv.org/abs/2611.feedback-shortcut-speculative-decoding",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/askalphaxiv/status/2125471796547743945",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-25T01:09:00-05:00",
+          "observed_at": "2026-11-26T08:00:05.761570+00:00",
+          "url": "https://www.alphaxiv.org/abs/2611.feedback-shortcut-speculative-decoding",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 186,
+            "comments": 13,
+            "views": 7351,
+            "url": "https://x.com/askalphaxiv/status/2125471796547743945"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-26T08:00:05.761570+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Test captioned video in an embeddable browser engine",
+      "script": "Over in the browser engine, Servo zero point eight adds subtitles and captions over video elements. Its new progress report also documents inert content, which lets an interface make a subtree unavailable for interaction, and focus-visible styling for keyboard focus. Developers embedding web interfaces now have specific behaviors to test against this release. A small captioned player with a modal settings panel would exercise several of those additions in one understandable example. The team also fixed a typed-array performance problem that had caused Flutter web content to hang. Accessibility work remains in progress: more ARIA roles are exposed, and integration requires enabling a preference. WebGL two and WebGPU also remain behind preferences. That gives engine contributors a clear experimental boundary. Check whether captions track playback, then move through the controls with the keyboard and inspect which elements remain reachable when the dialog opens.",
+      "why_now": "Servo published the first-party progress report November 25, 2026, documenting October changes included in Servo 0.8.0. Its Lobsters posting had 47 points and no comments at 2026-11-26T08:00:05.761570+00:00.",
+      "why_early": "A newly documented release adds concrete platform capabilities to an alternative embeddable engine. The implementation work occurred in October. Accessibility integration and advanced graphics remain explicitly gated or in progress; broad compatibility is not established.",
+      "watch_next": "Caption, dialog and keyboard-navigation tests in embedded applications, with accessibility results reported separately.",
+      "id": "story-add01f09c0ff",
+      "number": 4,
+      "category": "Web engines",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://servo.org/blog/2026/11/25/october-in-servo",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/tf9ldm/october_servo_video_captions_inert",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-25T08:31:31.655-06:00",
+          "observed_at": "2026-11-26T08:00:05.761570+00:00",
+          "url": "https://servo.org/blog/2026/11/25/october-in-servo",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 47,
+            "comments": 0,
+            "url": "https://lobste.rs/s/tf9ldm/october_servo_video_captions_inert"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-26T08:00:05.761570+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Combine generated imagery with editable programs",
+      "script": "For visual creation, NVIDIA's Nemotron-Labs-VisualCreation connects two useful representations: discrete tokens for raster images, and explicit programs for structured artifacts. A shared interface generates, renders and inspects the results. Its harness plans the work, selects image candidates and makes targeted repairs to editable structured or hybrid outputs. Creative-tool researchers could investigate a document that combines expressive imagery with a chart or layout that remains editable. The framework includes an image tokenizer, a raster generator and a family of structured-code models. With the same raster generator, the authors report their native harness raising one GenEval-two evaluation score from thirty-one point seven one to fifty-two point five six. That's evidence about the evaluated system, rather than a guarantee that every requested page becomes correct. An interesting test would change one chart label after generation and inspect whether the repair preserves the rest of the composition. Editability becomes tangible when a small correction stays small.",
+      "why_now": "The paper page lists publication November 23, 2026 and submission to Hugging Face November 25. Its November 25 highlight had 121 likes, 26 replies and 16758 views at 2026-11-26T08:00:05.761570+00:00. The retrieved page displayed 82 upvotes.",
+      "why_early": "Recent primary research introduces a shared visual generation-and-rendering interface and coordinated model components. The 31.71 to 52.56 result concerns GenEval2 Soft-TIFA GM with the same raster generator. Artifact availability, independent editing reliability and complete workflow costs are not established.",
+      "watch_next": "Accessible implementations and independent examples testing targeted repairs while preserving unrelated layout and content.",
+      "id": "story-6485007814db",
+      "number": 5,
+      "category": "AI creative research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://huggingface.co/papers/2611.31358",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/_akhaliq/status/2125499465587208669",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-25T02:58:57-05:00",
+          "observed_at": "2026-11-26T08:00:05.761570+00:00",
+          "url": "https://huggingface.co/papers/2611.31358",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 121,
+            "comments": 26,
+            "views": 16758,
+            "url": "https://x.com/_akhaliq/status/2125499465587208669"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-26T08:00:05.761570+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Try an open-weight model through a hosted endpoint",
+      "script": "Back from the break, Tencent's Hy4 Flash is now available through Fireworks serverless. The open-weight mixture-of-experts model has about two hundred twenty billion total parameters, with about twelve billion active per token, and accepts text and images. Fireworks launches it with a five-hundred-twelve-thousand-token context window, below the model's stated one-million-token window. Teams building document-processing or research workflows get a hosted way to evaluate it before arranging their own serving infrastructure. On CorporateBench, Fireworks reports seventy-five point nine percent at about one point three cents per task, using its published deployment prices. That narrowly exceeds the compared Claude Opus five point five score in that run. The provider also reports weaker rankings on health and long-horizon software-engineering benchmarks. Choose a document question with an answer you can verify, then compare correctness and actual billed usage. The opportunity is finding a suitable model for a particular job, with the cost measured alongside the answer.",
+      "why_now": "Fireworks published its availability announcement November 25, 2026. Tencent highlighted it November 26 at 00:46:13-05:00; the post had 29 likes, 4 replies and 2294 views at 2026-11-26T08:00:05.761570+00:00.",
+      "why_early": "The material change is serverless availability of Hy4 Flash on Fireworks. Provider benchmark results are dated November 22 and use high reasoning. CorporateBench scored 75.9% versus 75.4% for Claude Opus 5.5, with recorded costs of $0.013 versus $2.80. Independent deployment comparisons and application transfer remain open.",
+      "watch_next": "Independent document-workflow evaluations reporting answer accuracy, effective context use and complete request costs.",
+      "id": "story-39d32f3c4bc4",
+      "number": 6,
+      "category": "Open model serving",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://fireworks.ai/blog/hy4-flash-on-fireworks",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/tencenthunyuan/status/2125828452519739677",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-26T00:46:13-05:00",
+          "observed_at": "2026-11-26T08:00:05.761570+00:00",
+          "url": "https://fireworks.ai/blog/hy4-flash-on-fireworks",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 29,
+            "comments": 4,
+            "views": 2294,
+            "url": "https://x.com/tencenthunyuan/status/2125828452519739677"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-26T08:00:05.761570+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Give a Mac coding agent a specialized local engine",
+      "script": "Meanwhile, on Apple Silicon, rustling is a Rust inference engine built specifically for Inkling two Mini. It exposes an OpenAI-compatible API, allowing tools such as Codex, aider and OpenCode to connect much as they would to a hosted model. Developers exploring an on-device assistant could use rustling to serve local coding models while studying a deliberately specialized runtime. Supporting one model family gives the project room to optimize around its details. The README describes generating whole tokens in one GPU submission, retaining processed prompts across requests and restarts, and copying token sequences repeated from the conversation. Those are implementation descriptions; there's no supported comparative speed result to promise here. Apple Silicon is required, and other platforms aren't supported. Begin with a small repository question, restart the engine, then repeat the request. Record startup behavior and check the answer as carefully as you check the wait.",
+      "why_now": "Show HN introduced rustling November 25, 2026 at 19:42:36+00:00. It had 12 points and no comments at 2026-11-26T08:00:05.761570+00:00. The retrieved repository displayed 6 stars, 1 fork and 51 commits.",
+      "why_early": "A fresh public introduction supplies a specialized local engine and compatible API for existing coding tools. The repository carries Apache-2.0 and MIT licenses. Hardware memory requirements, independent performance and coding-task reliability are not established by the excerpt.",
+      "watch_next": "Independent Apple Silicon installations documenting memory requirements, prompt-cache persistence and checked coding outputs.",
+      "id": "story-5e2106f0eb89",
+      "number": 7,
+      "category": "Local AI tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://github.com/onatm/rustling",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50646482",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-25T19:42:36+00:00",
+          "observed_at": "2026-11-26T08:00:05.761570+00:00",
+          "url": "https://github.com/onatm/rustling",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 12,
+            "comments": 0,
+            "url": "https://news.ycombinator.com/item?id=50646482"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-26T08:00:05.761570+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Keep AI conversations in a searchable local folder",
+      "script": "Away from model serving, Carry gives conversations a life outside their original chat interface. The browser extension describes automatically backing up chats, projects and files from ChatGPT, Claude, Gemini and Grok into a folder you choose. You can search the saved material and attach a transcript when continuing in another assistant. Developers who scatter design decisions across several services could use Carry to save chats as Markdown, then search those records with familiar tools. The useful distinction is that continuing means supplying a saved transcript; it doesn't promise an exact transfer of another system's internal state. Carry says backups stay local and aren't uploaded. A focused first trial is one conversation containing code and an attached file. Inspect what reaches the folder, search for a distinctive line, and open the saved transcript elsewhere. The experiment succeeds when you can recover the part of the discussion you actually needed.",
+      "why_now": "Show HN introduced Carry November 25, 2026 at 03:19:02+00:00. It had 27 points and 19 comments at 2026-11-26T08:00:05.761570+00:00.",
+      "why_early": "A fresh public introduction offers automatic local Markdown backups, cross-provider search and transcript-based continuation. Local-only storage and provider coverage are vendor descriptions. Independent export completeness, attachment handling and resilience to service-interface changes remain unestablished.",
+      "watch_next": "Independent backup-and-restore checks covering code formatting, attachments, project organization and cross-provider continuation.",
+      "id": "story-c220a15a9da7",
+      "number": 8,
+      "category": "Personal developer tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://carry.md",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50637995",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-25T03:19:02+00:00",
+          "observed_at": "2026-11-26T08:00:05.761570+00:00",
+          "url": "https://carry.md",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 27,
+            "comments": 19,
+            "url": "https://news.ycombinator.com/item?id=50637995"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-26T08:00:05.761570+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Find DNS records pointing at released cloud addresses",
+      "script": "At the infrastructure boundary, Intruder has published a practical investigation of dangling DNS records pointing at released AWS Elastic IP addresses. The researchers report taking over US Treasury subdomains within bug-bounty scope, then reporting the findings and getting them fixed. Their reported cloud cost was about three dollars per valid takeover. The underlying problem is familiar but easy to leave behind during cleanup: a hostname still points at an address the organization no longer controls. If someone else receives that address, traffic intended for the old service can reach them. Cloud maintainers can turn this account into a concrete inventory question. Compare public DNS records with addresses currently allocated to your organization, especially after retiring a service. The researchers' cost and coverage describe their experiment, rather than every environment. A useful improvement is making DNS removal part of releasing an address, with a check that catches the forgotten record before it becomes somebody else's endpoint.",
+      "why_now": "Intruder published and updated the first-party research November 24, 2026. Its November 25 Lobsters posting had 25 points and 2 comments at 2026-11-26T08:00:05.761570+00:00.",
+      "why_early": "The fresh contribution is a scoped practical demonstration that this established takeover class remains exploitable, including researcher-reported Treasury findings fixed through a bounty program. The approximately $3 cost concerns valid takeovers in that experiment; broad prevalence is not established.",
+      "watch_next": "Defensive inventory methods and lifecycle checks that identify stale DNS records before cloud addresses are released.",
+      "id": "story-ed1a27f016b6",
+      "number": 9,
+      "category": "Cloud security",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.intruder.io/research/taking-over-us-treasury-subdomains-for-3-each",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/ogxwpi/taking_over_us_treasury_subdomains_for_3",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-25T04:27:49.339-06:00",
+          "observed_at": "2026-11-26T08:00:05.761570+00:00",
+          "url": "https://www.intruder.io/research/taking-over-us-treasury-subdomains-for-3-each",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 25,
+            "comments": 2,
+            "url": "https://lobste.rs/s/ogxwpi/taking_over_us_treasury_subdomains_for_3"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-26T08:00:05.761570+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Let a tiny desk pet watch your agents",
+      "script": "And finally, TokenTV turns an approximately five-dollar GeekMagic SmallTV clock into pixel pets for Claude Code and Codex. The project says the characters react to your agents while keeping usage limits visible, without flashing replacement firmware. For developers who already have one of these little displays, that's an inviting example of moving a software status indicator onto the desk. The repository is MIT-licensed and includes the integration code to explore. Its price describes the advertised clock, rather than a guaranteed total build cost, and compatibility still needs checking on the device you have. Watch how one agent event becomes one visible reaction, then consider what other state deserves a glanceable signal. A tiny companion that notices your coding session has changed is a wonderfully specific new job for a clock.",
+      "why_now": "Show HN introduced TokenTV November 25, 2026 at 13:51:44+00:00. It had 45 points and 3 comments at 2026-11-26T08:00:05.761570+00:00. The retrieved repository displayed 134 stars, 18 forks and 66 commits.",
+      "why_early": "A fresh public introduction supplies an MIT-licensed integration for a specific inexpensive clock, with agent-reactive pets and usage displays. No-flashing operation, hardware compatibility and usage accuracy are project descriptions without independent validation in the evidence.",
+      "watch_next": "Independent device setups showing supported clock variants, agent reactions and accurate usage updates.",
+      "id": "story-cbdccf31bdf3",
+      "number": 10,
+      "category": "Offbeat hardware projects",
+      "role": "closer",
+      "sources": [
+        {
+          "url": "https://github.com/click6067-ship-it/token-tv",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50642300",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-25T13:51:44+00:00",
+          "observed_at": "2026-11-26T08:00:05.761570+00:00",
+          "url": "https://github.com/click6067-ship-it/token-tv",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 45,
+            "comments": 3,
+            "url": "https://news.ycombinator.com/item?id=50642300"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-26T08:00:05.761570+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    }
+  ],
+  "interlude": {
+    "after_story": 5,
+    "title": "Thanks to Intelligrit",
+    "script": "A quick thank-you to Intelligrit, this episode's sponsor, for supporting today's discoveries. Before we get back to building, explore intelligrit dot com."
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0.0,
+      "title": "Opening"
+    },
+    {
+      "startTime": 20.646,
+      "title": "Fork an experiment without restarting its tools"
+    },
+    {
+      "startTime": 84.644,
+      "title": "Keep an agent's host awake while it works"
+    },
+    {
+      "startTime": 140.958,
+      "title": "Restore parallel drafting to feedback models"
+    },
+    {
+      "startTime": 203.755,
+      "title": "Test captioned video in an embeddable browser engine"
+    },
+    {
+      "startTime": 261.028,
+      "title": "Combine generated imagery with editable programs"
+    },
+    {
+      "startTime": 325.105,
+      "title": "Thanks to Intelligrit"
+    },
+    {
+      "startTime": 335.1,
+      "title": "Try an open-weight model through a hosted endpoint"
+    },
+    {
+      "startTime": 396.455,
+      "title": "Give a Mac coding agent a specialized local engine"
+    },
+    {
+      "startTime": 453.565,
+      "title": "Keep AI conversations in a searchable local folder"
+    },
+    {
+      "startTime": 510.518,
+      "title": "Find DNS records pointing at released cloud addresses"
+    },
+    {
+      "startTime": 570.437,
+      "title": "Let a tiny desk pet watch your agents"
+    },
+    {
+      "startTime": 619.794,
+      "title": "Closing"
+    }
+  ]
+}
