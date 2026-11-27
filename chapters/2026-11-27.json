@@ -1,0 +1,53 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0.0,
+      "title": "Opening"
+    },
+    {
+      "startTime": 22.566,
+      "title": "Open the pipeline behind a robot action model"
+    },
+    {
+      "startTime": 86.323,
+      "title": "Experiment with reusable blocks of native CSS"
+    },
+    {
+      "startTime": 144.401,
+      "title": "Put running iOS simulators in Finder"
+    },
+    {
+      "startTime": 202.076,
+      "title": "Design research agents around scientific responsibilities"
+    },
+    {
+      "startTime": 264.953,
+      "title": "Thanks to Intelligrit"
+    },
+    {
+      "startTime": 275.109,
+      "title": "Manage Garage storage through a new web interface"
+    },
+    {
+      "startTime": 332.946,
+      "title": "Turn technical notes into scheduled practice"
+    },
+    {
+      "startTime": 392.221,
+      "title": "Ask a local vision agent which parcel is yours"
+    },
+    {
+      "startTime": 448.218,
+      "title": "Experiment with silent prompts from webcam lip reading"
+    },
+    {
+      "startTime": 503.974,
+      "title": "Borrow interface questions from forty years of style guides"
+    },
+    {
+      "startTime": 564.05,
+      "title": "Closing"
+    }
+  ]
+}
