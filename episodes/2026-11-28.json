@@ -1,0 +1,395 @@
+{
+  "date": "2026-11-28",
+  "title": "TNP - 2026-11-28",
+  "intro": "It's Saturday, November 28. Welcome to Trending Not Peak. Today, give agent teamwork a fair test, run a model inside a browser, and build a pocket puzzle machine. AI helped write this episode, and the voice is synthetic. Explore the stories at trending not peak dot com.",
+  "outro": "A few possibilities to take with you: Pimalaya to sync mail, Ming to draft interface images, and Tiny Hat to build retro games. Find the projects and sources at trending not peak dot com. This is Trending Not Peak. Have fun making something you wanted to exist, especially if it fits in your pocket and boots straight into a puzzle.",
+  "schema_version": 1,
+  "audio": {
+    "url": "https://github.com/robertmeta/trendingnotpeak.com/releases/download/episode-2026-11-28/trending-not-peak-2026-11-28-kinetic-grid-r2.mp3",
+    "duration_seconds": 612.344717,
+    "bytes": 9799806,
+    "embedded_chapters": 12,
+    "sha256": "0138f9bd2b141c7b24d482025f3a208865f34e18f396267a00661f83a01e7dbc"
+  },
+  "stories": [
+    {
+      "title": "Give agent teamwork an equal-budget test",
+      "script": "First up, Recursive Collective Intelligence asks when talking to other agents actually helps. The researchers compare teams with independent agents using the same computation budget. Their toughest comparison counts a problem as solved whenever any independent agent gets it right. Passing that bar requires something useful from the conversation. In their experiments, forwarding facts split across agents puts teams above that comparison at three model scales, by about a third at twenty-seven billion parameters. Identical agents also spontaneously form information-sharing hubs, with a reported eighteen-percentage-point accuracy improvement. Agent builders get a concrete question to investigate: what does each worker know that another worker needs? You could divide a bounded investigation into separate evidence collections, then compare collaboration with independent attempts under the same token budget. The paper also reports successive training gains from groups' own outputs on unseen benchmark problems. These are controlled research results, with an especially practical design lesson: give communication information worth carrying.",
+      "why_now": "Submitted November 24, 2026 and highlighted November 27 at 10:19:02-05:00. At 2026-11-28T08:00:06.327650+00:00, the discovery post had 221 likes, 55 replies and 17686 views. This is one observation of interest, not measured acceleration.",
+      "why_early": "Recent primary research introduces an equal-budget evaluation ladder and experiments on information sharing and recursive training. Findings are author-reported and conditional on the evaluated settings; they do not establish universal benefits from agent teams. Independent reproduction and transfer to practical development workflows remain open. Global saturation is unknown within the configured sources.",
+      "watch_next": "Independent equal-budget comparisons testing whether separated evidence and communication improve held-out practical tasks.",
+      "id": "story-34eb349a7b52",
+      "number": 1,
+      "category": "AI agent research",
+      "role": "anchor",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2611.32606",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/omarsar0/status/2126334991768711575",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-27T10:19:02-05:00",
+          "observed_at": "2026-11-28T08:00:06.327650+00:00",
+          "url": "https://arxiv.org/abs/2611.32606",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 221,
+            "comments": 55,
+            "views": 17686,
+            "url": "https://x.com/omarsar0/status/2126334991768711575"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-28T08:00:06.327650+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Put personal information tools on one storage contract",
+      "script": "Closer to your own files, Pimalaya has released its command-line family together around the first stable pimdir standard. Neverest synchronizes mail, contacts and calendars into one store. Himalaya, Cardamum and Calendula read and search that information, while Carillon watches for changes and fires hooks. Developers building personal dashboards could use Pimalaya to sync mail, then give several small tools access to the same local representation. The coordinated release also standardizes JSON output, errors and exit codes through a shared toolkit. That's useful when a script needs a dependable answer rather than text designed only for a terminal. Existing users should pay attention to migration: the author says these major releases contain breaking changes. A focused experiment would connect a test account, synchronize it, and query one calendar entry and one contact. Then inspect how a requested edit enters the store. The interesting possibility is composing your own interface over information that otherwise lives in separate applications.",
+      "why_now": "Pimalaya published the coordinated stable release November 26, 2026. Its November 27 Lobsters posting at 02:01:31.196-06:00 had 9 points and 10 comments at 2026-11-28T08:00:06.327650+00:00.",
+      "why_early": "The material change is a coordinated CLI release atop pimdir storage, sync and search 1.0.0, with shared versioned contracts. The tools themselves have prior versions. Breaking changes are explicitly acknowledged; independent migration, synchronization and backend-compatibility results are unestablished.",
+      "watch_next": "Migration reports and round-trip synchronization tests across mail, contacts and calendar backends.",
+      "id": "story-5fbce23ce0ce",
+      "number": 2,
+      "category": "Local developer tools",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://blog.pimalaya.org/pimalaya-goes-stable",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/kaj037/pimalaya_goes_stable",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-27T02:01:31.196-06:00",
+          "observed_at": "2026-11-28T08:00:06.327650+00:00",
+          "url": "https://blog.pimalaya.org/pimalaya-goes-stable",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 9,
+            "comments": 10,
+            "url": "https://lobste.rs/s/kaj037/pimalaya_goes_stable"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-28T08:00:06.327650+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Let repeated model layers share attention memory",
+      "script": "Turning inside the model, Mixture-of-Loops Transformer changes what passes between repeated trips through shared layers. Ordinary looping carries the previous pass's internal state forward, creating a dependency that can slow generation. This design lets layers selectively read stored attention keys and values across loops instead. Its U-shaped version separates building that memory from reading it to predict tokens. Model researchers could investigate getting more useful computation from shared weights while avoiding some repeated decoding work. After four hundred billion training tokens, the authors report one point seven times the validation-loss token efficiency of OLMo-three at seven hundred million parameters. Their three-billion-parameter mixture-of-experts model improves ten-task average accuracy by two point one percentage points. The latency comparison needs its own sentence: matching the non-looped baseline was demonstrated at roughly one hundred thirteen million parameters. Code is linked from the paper page. A valuable next test would bring the larger-model quality results and decoding measurements together on the same system.",
+      "why_now": "Submitted November 25, 2026 and highlighted November 27 at 23:55:15-05:00. The discovery post had 172 likes, 6 replies and 4926 views at 2026-11-28T08:00:06.327650+00:00. The retrieved paper page displayed 98 saves and '#2 on Trending'.",
+      "why_early": "Recent primary research introduces selective cross-loop KV reuse, loop-forcing training and U-MoLT, with code linked. This differs from previously covered Looped CED and Feedback Shortcut mechanisms. Quality measurements at 700M–3B and latency measurements at approximately 113M must remain separate; independent reproduction is open.",
+      "watch_next": "Matched quality and latency evaluations at larger scales, including memory construction and complete request costs.",
+      "id": "story-de9fc20a8136",
+      "number": 3,
+      "category": "AI architecture research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.alphaxiv.org/abs/2611.34923",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/askalphaxiv/status/2126540399175184872",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-27T23:55:15-05:00",
+          "observed_at": "2026-11-28T08:00:06.327650+00:00",
+          "url": "https://www.alphaxiv.org/abs/2611.34923",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 172,
+            "comments": 6,
+            "views": 4926,
+            "url": "https://x.com/askalphaxiv/status/2126540399175184872"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-28T08:00:06.327650+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Run a small language model entirely inside a browser",
+      "script": "Over in the browser, LLM.OS runs small Qwen models on your CPU through a WebAssembly inference engine compiled from Zig. The engine is about fifty-two kilobytes. The model weights are a separate, much larger download, cached after the first visit. Developers exploring private browser tools could experiment without an inference API or GPU code. The project reports about thirty-nine generated tokens per second for Qwen-three-point-five two-B using eight threads on an Apple M-three Max. That's a measurement on one machine. There's also a Python mode: the model writes code that a separate, networkless WebAssembly Python environment executes for calculations and small charts. The faster inference path rounds activations and can choose different tokens from the more exact implementation. Start with a short question and a calculation whose answer you know. Then compare prompt-reading time with generation time. This experiment makes the browser itself a useful place to study the complete local inference experience.",
+      "why_now": "Show HN introduced LLM.OS November 28, 2026 at 00:16:59+00:00. It had 13 points and 2 comments at 2026-11-28T08:00:06.327650+00:00. The primary page dates its native-comparison measurements November 27–28.",
+      "why_early": "A fresh public introduction provides CPU-only browser inference and a separate networkless Python execution environment. Engine size excludes model weights. Performance and privacy behavior are project descriptions; the faster activation-quantized path can differ from exact inference, and broad browser and hardware behavior remains unestablished.",
+      "watch_next": "Independent browser trials documenting weight downloads, memory use, prompt processing, output differences and Python execution behavior.",
+      "id": "story-f28a4ad2b384",
+      "number": 4,
+      "category": "Local AI experiments",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://tesseracted.com/experiments-llm-os",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50673018",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-28T00:16:59+00:00",
+          "observed_at": "2026-11-28T08:00:06.327650+00:00",
+          "url": "https://tesseracted.com/experiments-llm-os",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 13,
+            "comments": 2,
+            "url": "https://news.ycombinator.com/item?id=50673018"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-28T08:00:06.327650+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Make verified answers inform a student's token training",
+      "script": "Back from the break, Verifiable On-Policy Distillation connects two training signals that don't automatically agree. A verifier can check a completed math answer, but that gives sparse feedback about one attempted response. A teacher model can score every possible next token, although its preferences don't guarantee a correct answer. The new method uses agreement between teacher preferences and verified outcomes to adjust that denser guidance, including guidance for tokens the student didn't sample. Researchers training smaller reasoning models get an implementation to inspect, with code linked from the paper page. Across eight math benchmarks, the reported average for Qwen-three four-B rises from sixty-four point seven one percent under ordinary distillation to sixty-six point three eight percent. The smaller one-point-seven-billion-parameter student also improves in the reported comparison. This still needs sampled attempts and outcome verification. A useful reproduction would record verifier costs alongside accuracy, then inspect whether the extra supervision helps on problems held out from training.",
+      "why_now": "Submitted November 23, 2026 and highlighted November 26 at 22:00:01-05:00. The discovery post had 190 likes, 6 replies and 12454 views at 2026-11-28T08:00:06.327650+00:00. The retrieved page displayed 234 saves and '#15 on Trending'.",
+      "why_early": "Recent primary research couples verifier outcomes with dense teacher supervision across two teacher–student configurations and eight mathematical reasoning benchmarks. Code is linked. Results are author-reported; transfer beyond verifiable math tasks and independent compute-adjusted gains remain open.",
+      "watch_next": "Reproductions comparing held-out accuracy, rollout budgets, verifier costs and learning efficiency with ordinary distillation.",
+      "id": "story-26718f3e78ba",
+      "number": 5,
+      "category": "AI training research",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://www.alphaxiv.org/abs/2611.30325",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/askalphaxiv/status/2126149012806132182",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-26T22:00:01-05:00",
+          "observed_at": "2026-11-28T08:00:06.327650+00:00",
+          "url": "https://www.alphaxiv.org/abs/2611.30325",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 190,
+            "comments": 6,
+            "views": 12454,
+            "url": "https://x.com/askalphaxiv/status/2126149012806132182"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-28T08:00:06.327650+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Follow an inference-tuning experiment on one GB10",
+      "script": "Meanwhile, Runtime Notes has published a detailed Inkling two Mini tuning account on one NVIDIA G-B-ten system. The author stayed with vLLM, preserved the model's one-hundred-thirty-one-thousand-seventy-two-token context, and left a second model loaded but idle. The resulting measurements are one hundred one generated tokens per second for one request, and about one hundred ninety-six in aggregate across four concurrent requests. A thirty-two-thousand-token prompt took nine point seven seconds to reach its first generated token. Those figures describe the author's MSI EdgeXpert with one hundred twenty-eight gigabytes of shared memory. Local-serving developers get a concrete request path to study, from prompt processing through speculative drafting and verification to expert computation. The account covers vLLM settings, CUDA graphs and GPU kernels. Follow one adjustment at a time on comparable hardware, recording both first-token delay and sustained generation. A faster stream doesn't automatically mean a faster answer to a long prompt.",
+      "why_now": "The first-person tuning account is dated November 27, 2026. Its Show HN posting at 18:59:55+00:00 had 54 points and 11 comments at 2026-11-28T08:00:06.327650+00:00.",
+      "why_early": "The fresh contribution is a documented vLLM tuning result on a specific GB10 setup, rather than a new Inkling model release or a repeat of the previously covered rustling engine. Measurements are author-reported; the second loaded model was idle, and broader hardware or concurrent mixed-model performance is unestablished.",
+      "watch_next": "Independent reproduction of the configuration, separating prefill, single-request decode and concurrent throughput.",
+      "id": "story-41a6c39389e7",
+      "number": 6,
+      "category": "Local model engineering",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://runtimenotes.com/blog/getting-101-tok-s-from-inkling-2-mini-in-vllm-on-one-gb10",
+          "kind": "source"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50670443",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "hacker_news",
+          "published_at": "2026-11-27T18:59:55+00:00",
+          "observed_at": "2026-11-28T08:00:06.327650+00:00",
+          "url": "https://runtimenotes.com/blog/getting-101-tok-s-from-inkling-2-mini-in-vllm-on-one-gb10",
+          "metrics": {},
+          "community": {
+            "family": "hacker_news",
+            "score": 54,
+            "comments": 11,
+            "url": "https://news.ycombinator.com/item?id=50670443"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-28T08:00:06.327650+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Explore open weights for visual design drafts",
+      "script": "For visual work, inclusionAI has released Ming-Image zero point two Design, a six-billion-parameter image model under the MIT license. The model card describes improvements to complex composition, lighting and text rendering, with uses including product hero images, interface drafts and spatial renderings. Developers could use Ming to draft interface images while exploring several visual directions before choosing one to implement. The card includes a landing-page example with explicit headings, button labels and layout instructions, giving you a concrete starting point for checking typography. It also describes finer character-part decomposition for downstream editing and animation. Those are project claims to evaluate with actual outputs. An image of an interface still needs implementation before its buttons do anything; the page describes combining Ming with a separate language model for interactive pages. Begin with a small mockup containing exact text you can inspect. Then change one label and see how much of the composition survives the revision.",
+      "why_now": "The model release was highlighted November 26, 2026 at 08:21:36-05:00. The post had 20 likes, 2 replies and 1408 views at 2026-11-28T08:00:06.327650+00:00. The retrieved model card displayed 176 likes and cited preliminary November 23 evaluation results and a November 25 leaderboard position.",
+      "why_early": "The material change is the upgraded, open-weight 6B design model with MIT licensing and an inference route. Composition, text rendering and decomposition capabilities are project descriptions. Independent fidelity, hardware requirements and reliability of targeted edits remain unestablished; leaderboard placement is not a workflow guarantee.",
+      "watch_next": "Independent tests of exact text rendering, controlled revisions and usable decomposition outputs with disclosed hardware requirements.",
+      "id": "story-9cc617c714e6",
+      "number": 7,
+      "category": "Open image models",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://huggingface.co/inclusionAI/Ming-Image-0.2-Design",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/adinayakup/status/2125943053081034777",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-26T08:21:36-05:00",
+          "observed_at": "2026-11-28T08:00:06.327650+00:00",
+          "url": "https://huggingface.co/inclusionAI/Ming-Image-0.2-Design",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 20,
+            "comments": 2,
+            "views": 1408,
+            "url": "https://x.com/adinayakup/status/2125943053081034777"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-28T08:00:06.327650+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Boot a small retro game-development workshop",
+      "script": "Down at the workbench, Tiny Hat is a Linux distribution aimed at retro gaming and game development on thirty-two-bit and sixty-four-bit x-eighty-six computers. It includes the Orbiton editor and ways to compile and run C, DOS assembly, Game Boy Advance programs, and LÖVE with Fennel. Learners with an old computer could use Tiny Hat to build retro games in an environment already arranged around that task. Its small footprint is part of the appeal: the project reports eighty-seven megabytes of memory after boot on the thirty-two-bit version, and just over one hundred on the sixty-four-bit version. Disk use is a little above six hundred megabytes. Beneath the retro focus are modern components including Wayland, SDL-three and PipeWire. Some applications in the thirty-two-bit build currently require SSE, which matters on older processors. Open an included example, change one visible behavior, and compile it again. That's a pleasantly direct introduction to making the machine do something of your own.",
+      "why_now": "The author introduced Tiny Hat on Lobsters November 27, 2026 at 03:11:13.547-06:00. The posting had 49 points and 8 comments at 2026-11-28T08:00:06.327650+00:00.",
+      "why_early": "A fresh author introduction presents a dedicated, signed and reportedly reproducible retro-development distribution. Footprint and hardware behavior are project-reported. Some i686 applications currently require SSE; aarch64 and Raspberry Pi 4 support are experimental. Independent compatibility and reproducibility checks remain open.",
+      "watch_next": "Independent boots on older x86 machines, reproducible-image checks and removal of the remaining unintended SSE requirements.",
+      "id": "story-3cf71f2230f5",
+      "number": 8,
+      "category": "Open development environments",
+      "role": "story",
+      "sources": [
+        {
+          "url": "https://roboticoverlords.org/tinyhat",
+          "kind": "source"
+        },
+        {
+          "url": "https://lobste.rs/s/mbm7xw/tiny_hat_new_linux_distro_dedicated_retro",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "lobsters",
+          "published_at": "2026-11-27T03:11:13.547-06:00",
+          "observed_at": "2026-11-28T08:00:06.327650+00:00",
+          "url": "https://roboticoverlords.org/tinyhat",
+          "metrics": {},
+          "community": {
+            "family": "lobsters",
+            "score": 49,
+            "comments": 8,
+            "url": "https://lobste.rs/s/mbm7xw/tiny_hat_new_linux_distro_dedicated_retro"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-28T08:00:06.327650+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Give a pocket computer exactly one puzzle to run",
+      "script": "And finally, Circle with a Line puts a Witness-inspired puzzle game on a pocket-sized Waveshare ESP-thirty-two S-three AMOLED touch board. Steren describes prompting the project from scratch in plain C, including its puzzle generator, vector graphics and synthesized audio, without external game libraries. The screen is the puzzle: drag a line from its starting circle through channels to the exit. Fifty levels across seven chapters introduce rules on small boards before combining them on larger ones. For developers curious about dedicated devices, the inviting possibility is an object that boots directly into something you made. The author describes the board as costing about thirty dollars. The detailed explanation of generation and hardware handling is agent-written, so those internals deserve inspection rather than automatic trust. If you already have the supported board, follow the build instructions and change one puzzle rule. Your weekend project could become a little machine whose entire purpose is giving somebody one satisfying problem.",
+      "why_now": "Steren published the first-person project account November 26, 2026 and highlighted it at 20:44:34-05:00. The post had 48 likes, 9 replies and 6319 views at 2026-11-28T08:00:06.327650+00:00.",
+      "why_early": "A fresh implementation account documents a dedicated ESP32-S3 puzzle game and a route to source and flashing instructions. The detailed internal explanation is explicitly attributed by the author to an agent. Hardware-revision detection, puzzle uniqueness and performance are not independently established; the advertised board price is not a guaranteed total cost.",
+      "watch_next": "Independent builds on supported board revisions and source checks of puzzle solvability, uniqueness and generation behavior.",
+      "id": "story-b91e01c03d0b",
+      "number": 9,
+      "category": "Offbeat hardware experiments",
+      "role": "closer",
+      "sources": [
+        {
+          "url": "https://labs.steren.fr/2026/circle-with-a-line-esp32",
+          "kind": "source"
+        },
+        {
+          "url": "https://x.com/steren/status/2126130025678406100",
+          "kind": "source"
+        }
+      ],
+      "observations": [
+        {
+          "kind": "x",
+          "published_at": "2026-11-26T20:44:34-05:00",
+          "observed_at": "2026-11-28T08:00:06.327650+00:00",
+          "url": "https://labs.steren.fr/2026/circle-with-a-line-esp32",
+          "metrics": {},
+          "community": {
+            "family": "x",
+            "score": 48,
+            "comments": 9,
+            "views": 6319,
+            "url": "https://x.com/steren/status/2126130025678406100"
+          },
+          "momentum": {
+            "type": "early_community_activity",
+            "observed_at": "2026-11-28T08:00:06.327650+00:00",
+            "caveat": "Single observation of early interest; not measured acceleration"
+          }
+        }
+      ]
+    }
+  ],
+  "interlude": {
+    "after_story": 4,
+    "title": "Thanks to Intelligrit",
+    "script": "Before we move from running models to training them, thanks to Intelligrit, this episode's sponsor. Bring your next curious idea to intelligrit dot com."
+  }
+}
